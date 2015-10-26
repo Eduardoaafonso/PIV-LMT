@@ -1,2 +1,0 @@
-% solo comentarios
-disp('hola');
