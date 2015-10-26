@@ -1,6 +1,6 @@
 %
-E=imread('D:\IC-UFLA\Testes\DARPA RaceDay/014.jpg');
-F=imread('D:\IC-UFLA\Testes\DARPA RaceDay/018.jpg');
+E=imread('DARPA RaceDay/014.jpg');
+F=imread('DARPA RaceDay/018.jpg');
 %setting parameters 
 pr = 0; % inicial pearson
 ws = 30; %window size
