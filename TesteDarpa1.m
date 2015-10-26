@@ -1,11 +1,12 @@
 addpath(genpath('mfiles'));
-img1=imread('D:\IC-UFLA\PIV\Codigos\PIV-LMT\DARPA RaceDay/019.jpg');
-img2=imread('D:\IC-UFLA\PIV\Codigos\PIV-LMT\DARPA RaceDay/030-1.jpg');
+img1=imread('DARPA RaceDay/019.jpg');
+img2=imread('DARPA RaceDay/030-1.jpg');
 
 %setting parameters 
 px = 0; %xcorr2
 
 %ROI
+%% 
 WSIZE = 35; %window size
 col0=143;
 lin0=15;

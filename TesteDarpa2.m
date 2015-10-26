@@ -1,6 +1,7 @@
+%
 addpath(genpath('mfiles'));
 
-img1=imread('D:\IC-UFLA\PIV\Codigos\PIV-LMT\DARPA RaceDay/019.jpg');
+img1=imread('DARPA RaceDay/019.jpg');
 img1 = rgb2gray(img1);
 img1 = double(img1);
 
@@ -15,10 +16,10 @@ lin0=15;
 [ROI]=select_region(img1,lin0,col0,WSIZE);
 %show_roi(img1,lin0,col0,WSIZE);
 
-srcFiles  = dir('D:\IC-UFLA\PIV\Codigos\PIV-LMT\DARPA RaceDay\*.jpg');
+srcFiles  = dir('DARPA RaceDay\*.jpg');
 
 for c = 20:80 %length(srcFiles)
-filename = strcat ('D:\IC-UFLA\PIV\Codigos\PIV-LMT\DARPA RaceDay\', srcFiles (c).name);
+filename = strcat ('DARPA RaceDay\', srcFiles(c).name);
 rawimage2 = imread (filename);
 img2 = rgb2gray(rawimage2);
 img2 = double(img2);

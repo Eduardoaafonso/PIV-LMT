@@ -1,4 +1,4 @@
-
+%
 E=imread('D:\IC-UFLA\Testes\DARPA RaceDay/014.jpg');
 F=imread('D:\IC-UFLA\Testes\DARPA RaceDay/018.jpg');
 %setting parameters 
