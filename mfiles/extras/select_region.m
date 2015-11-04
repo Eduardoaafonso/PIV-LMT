@@ -1,8 +1,13 @@
-function ROI=select_region(Img1,LINHA_INICIAL,COLUNA_INICIAL,WSIZE)
 
-ROI = zeros(WSIZE,WSIZE);
+% Esta funça carrega  matrizes(ROI e img1) e retorna matriz (ROI).
+% recebe como parametros de entrada roi_params, img1
+% e retorna como saida ROI
+% Desenvolvedor: Eduardo Afonso, Fernando
+% Email: eduardoafonsobaixista@gmail.com
+% website: github https://github.com/Eduardoaafonso/PIV-LMT
+function ROI=select_region(roi_params, img1)
 
-ROI = Img1(LINHA_INICIAL+[1:WSIZE],COLUNA_INICIAL+[1:WSIZE]); %region of interesting image 1 (ROI)
+ROI = zeros(roi_params.WSIZEL,roi_params.WSIZEC);
 
-ROI = double(ROI);
+ROI = img1(roi_params.lin0+[0:roi_params.WSIZEL-1],roi_params.col0+[0:roi_params.WSIZEC-1]); %region of interesting image 1 (ROI)
 

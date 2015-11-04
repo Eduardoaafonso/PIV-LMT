@@ -1,25 +1,31 @@
-function [lin0, col0, point_lin, point_col, pr] = find_with_pearson(ROI, img1, img2)
+% Descrever parâmetros input e output;
+% input: 
+% ROI = DESCREVER O QUE É!
+% roi_params = 
+% img1
+% img2
+% ouput:
+% roi2_params:
+% match_params: 
+% recebe como parametros de entrada ROI,roi_params, img1, img2
+% e retorna como saida roi2_params, match_params
+% Desenvolvedor: Eduardo Afonso, Fernando
+% Email: eduardoafonsobaixista@gmail.com
+% website: github https://github.com/Eduardoaafonso/PIV-LMT
+function [match_params] = find_with_pearson(ROI,roi_params, search_params, img1, img2)
 %setting parameters 
 px = 0; %xcorr2
 
-%ROI
-WSIZE = 35; %window size
-col0=143;
-lin0=15;
-StepSIZE=4;
 
-[lin_steps,col_steps]=number_of_steps(img1,WSIZE, StepSIZE);
+[lin_match, col_match, pr]= search_match (search_params.StepSIZE, img2, ROI,roi_params);
 
-[vx1, vy1, pr]= position_vector (lin_steps, col_steps, WSIZE, StepSIZE, img2, ROI);
 
-%figure;
-%imagesc(img2)
-%hold on
-%plot_vector(lin0,col0, vx1-lin0,vy1-col0);
-%hold off
-
-%coordenadas do vector que será plotado
-point_lin = vx1-lin0;
-point_col = vy1-col0;
-
+% vector de avanço
+match_params.lin0       = roi_params.lin0;
+match_params.col0       = roi_params.col0;
+match_params.lin0_match = lin_match;
+match_params.col0_match = col_match;
+match_params.vector_lin = match_params.lin0_match - match_params.lin0;
+match_params.vector_col = match_params.lin0_match - match_params.lin0;
+match_params.pr=pr;
 end

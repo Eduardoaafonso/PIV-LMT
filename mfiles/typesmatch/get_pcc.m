@@ -1,3 +1,10 @@
+
+% Esta funça carrega matrizes (ROI, L) e retorna um número (pcc)
+% recebe como parametros de entrada ROI,L
+% e retorna como saida pcc
+% Desenvolvedor: Eduardo Afonso, Fernando
+% Email: eduardoafonsobaixista@gmail.com
+% website: github https://github.com/Eduardoaafonso/PIV-LMT
 function pcc=get_pcc(ROI,L);
 
 mediaA = (mean2(ROI)).*ones(size(ROI));

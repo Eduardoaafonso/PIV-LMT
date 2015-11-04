@@ -1,3 +1,4 @@
+
 function [vx, vy]= position_vectorxcorr(col_steps, lin_steps)
 calculating how many times will be done the loop
 %retorn vx,vy        
@@ -17,4 +18,5 @@ calculating how many times will be done the loop
                 end
             end
        end
+
 end
