@@ -18,11 +18,13 @@ srcFiles  = dir('Mini/*.png');
 
 P{1}=[roi_params.lin0 roi_params.col0];
 KK=2;
+
+tic
 for c = 1:8 %length(srcFiles)
     filename = ['Mini/', srcFiles(c).name];
     img2=load_image_from_filename(filename);
-
-    match_params = find_with_pearson(ROI,roi_params,search_params, img1, img2); %pr = PCC maior
+    %size(img2)
+    match_params = find_with_pearson(ROI,roi_params,search_params,  img2); %pr = PCC maior
 
 	P{KK}=[match_params.lin0_match match_params.col0_match];
 	KK=KK+1;
@@ -34,6 +36,7 @@ for c = 1:8 %length(srcFiles)
     %points_pr.pr modificar para fazer sentido
 
 end
+toc
 
 figure;
 imagesc(img2)

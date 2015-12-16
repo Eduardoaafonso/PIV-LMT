@@ -1,10 +1,31 @@
-% Esta funça carrega a matrizes (img2, ROI) e números(roi2_params e match_params) e retorna uma matriz (ROI)
-% se o PCC for menor que 0,85. 
-% recebe como paramettros de entrada img2, roi2_params, ROI, match_params
-% e retorna como saida ROI (atualizado)
+% Esta função constrói um novo roi;
+
+% inputs
+% img2 = imagem 2;
+% ROI = regiao de interesse; 
+% match_params = parâmetros da parte da imagem 2 com maior semelhança ao ROI;
+% 	match_params.lin0 		= linha inicial do ROI antigo;
+% 	match_params.col0 		= coluna inicial do ROI antigo;
+% 	match_params.lin0_match = linha inicial do novo ROI;
+% 	match_params.col0_match = coluna inicial do novo ROI;
+% 	match_params.vector_lin = tamanho da linha do vector de avanço;
+% 	match_params.vector_col = tamanho da coluna do vector de avanço;
+% 	match_params.pr			= coeficiente de pearson relacionado ao novo ROI;
+%
+% outputs: 
+% roi2_params = parâmetros do novo ROI;
+% 	roi2_params.WSIZEL
+% 	roi2_params.WSIZEC
+% 	roi2_params.lin0
+% 	roi2_params.col0
+% 	roi2_params.lin
+% 	roi2_params.col
+% NROI = nova região de interesse;
+%
 % Desenvolvedor: Eduardo Afonso, Fernando
 % Email: eduardoafonsobaixista@gmail.com
 % website: github https://github.com/Eduardoaafonso/PIV-LMT
+
 function [NROI roi2_params]=new_roi( img2, ROI, roi_params,match_params)
 
 	WSIZEL=size(ROI,1);

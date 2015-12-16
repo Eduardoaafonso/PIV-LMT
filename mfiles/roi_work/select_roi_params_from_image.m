@@ -1,6 +1,20 @@
-% Esta funça carrega matriz (img1) e retorna números da img1 (WSIZEL, WSIZEC, LIN0 e COL0)
-% recebe como parametros de entrada img1
-% e retorna como saida roi_params
+%
+% Esta função gera parâmetros da região de interesse (ROI); 
+%
+% input
+% img1 = imagem1 
+%
+% outputs
+% Parâmetros do ROI (região de interesse):
+% roi_params = 
+% 	roi_params.WSIZEL= quantidade de linhas;
+% 	roi_params.WSIZEC= quantidade de colunas;
+% 	roi_params.lin0=linha inicial;
+% 	roi_params.col0=coluna inicial;
+% 	roi_params.lin= linha final;
+% 	roi_params.col= coluna final;
+% 
+%
 % Desenvolvedor: Eduardo Afonso, Fernando
 % Email: eduardoafonsobaixista@gmail.com
 % website: github https://github.com/Eduardoaafonso/PIV-LMT
