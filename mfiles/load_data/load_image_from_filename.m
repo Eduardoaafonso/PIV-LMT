@@ -11,6 +11,8 @@
 % website: github https://github.com/Eduardoaafonso/PIV-LMT
 function img1=load_image_from_filename(filename)
     img1=imread(filename);
-    %img1 = rgb2gray(img1);
+    if length(size(img1))>2
+    img1 = rgb2gray(img1);
+    end
     %img1 = double(img1);
 end

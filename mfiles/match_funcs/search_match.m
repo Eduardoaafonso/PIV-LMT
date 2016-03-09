@@ -7,9 +7,9 @@
 % roi_params = par�metros do roi antigo 
 % 	roi_params.WSIZEL
 % 	roi_params.WSIZEC
-% 	roi_params.lin0
+% 	roi_params.lin0     :linha inicial na imagen
 % 	roi_params.col0
-% 	roi_params.lin
+% 	roi_params.lin      :linha final na imagen
 % 	roi_params.col
 %
 % outputs:
@@ -21,10 +21,8 @@
 % Email: eduardoafonsobaixista@gmail.com
 % website: github https://github.com/Eduardoaafonso/PIV-LMT
 
-function [lin_match, col_match, pr]= search_match ( StepSIZE, img2, ROI,roi_params) 
+function [lin_match, col_match, pr, AREA, fator]= search_match ( StepSIZE, img2, ROI,roi_params) 
     pr = 0; % inicial pearson
-    
-	
 
     WSIZEL=size(ROI,1);
     WSIZEC=size(ROI,2);
@@ -57,15 +55,37 @@ function [lin_match, col_match, pr]= search_match ( StepSIZE, img2, ROI,roi_para
   col_match= 0;
   pr=-2;
   
-  fator=1;
-	for col=c0:StepSIZE:cf;
-	for lin=l0:StepSIZE:lf;
+  WSIZEL
+  WSIZEC
+  IIII=1;
+ for fator=0.8:0.05:1.2;
+   %AREALINE= WSIZEL*fator
+   %AREACOL = WSIZEC*fator
+	for col=c0:StepSIZE:floor(COLMAX-(WSIZEC*fator)); %modificacao cf para COLMAX-WSIZE*fator
+  fprintf('%d\r',IIII); IIII=IIII+1;
+	for lin=l0:StepSIZE:floor(LINMAX-(WSIZEL*fator));
+ 
+  if(WSIZEL*fator<LINMAX) && (WSIZEC*fator<COLMAX)    
+        TEMPROI = img2(   lin + [0: floor(WSIZEL*fator)-1] , ... % linhas
+                    col + [0: floor(WSIZEC*fator)] -1 );    % colunas
         
-        TEMPROI = img2(   lin + [0:round(WSIZEL*fator)-1] , ... % linhas
-                    col + [0:round(WSIZEC*fator)-1] );    % colunas
+        %TEMPROI = rgb2gray(TEMPROI);
 
+        %ROI = rgb2gray(ROI);
+        ROI = double(ROI); 
         %TEMPROI=resize48_image (TEMPROI);
         %ROI=resize48_image (ROI);
+        
+        %size(TEMPROI)
+        %size(ROI)
+        
+         A=size(TEMPROI,1)*size(TEMPROI,2);
+
+        
+        TEMPROI=resizeminus(ROI,TEMPROI);
+        
+        TEMPROI = double(TEMPROI);
+        %size(TEMPROI)
         
         pcc=get_pcc(ROI,TEMPROI);
                 
@@ -75,7 +95,9 @@ function [lin_match, col_match, pr]= search_match ( StepSIZE, img2, ROI,roi_para
             %MODIFICA��O: +1 para que n�o haja lin_match=0, pois a imagem n�o tem coordenada [0,0].
         	col_match =col; %axis y of vector 
             %MODIFICA��O: +1 para que n�o haja col_match=0, pois a imagem n�o tem coordenada [0,0].
+          AREA=A;
         end
+    end
     end
     end
 %COLMAX
@@ -84,3 +106,5 @@ function [lin_match, col_match, pr]= search_match ( StepSIZE, img2, ROI,roi_para
 %  col_match
 %  pr
 end
+
+disp('');

@@ -30,11 +30,11 @@ img2=imread('Mini/0000000001.png');
  %a taxa de reducao
  reduction = (max_value/32); 
 
-II = imresize(img1, 1/reduction);
-JJ = imresize(img2, 1/reduction);
+II = imresize(img1, 2);
+%JJ = imresize(img2, 1/reduction);
 
-pcc_normal = get_pcc(img1, img2)
-pcc_reduced = get_pcc(II, JJ)
+%pcc_normal = get_pcc(img1, img2)
+%pcc_reduced = get_pcc(II, JJ)
 
 size(II)
 figure;

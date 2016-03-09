@@ -1,11 +1,11 @@
 %
-% Esta função gera parâmetros da região de interesse (ROI); 
+% Esta funï¿½ï¿½o gera parï¿½metros da regiï¿½o de interesse (ROI); 
 %
 % input
 % img1 = imagem1 
 %
 % outputs
-% Parâmetros do ROI (região de interesse):
+% Parï¿½metros do ROI (regiï¿½o de interesse):
 % roi_params = 
 % 	roi_params.WSIZEL= quantidade de linhas;
 % 	roi_params.WSIZEC= quantidade de colunas;
@@ -21,7 +21,7 @@
 function roi_params=select_roi_params_from_image(img1)
     figure;
     imagesc(img1);
-    [col,lin]=ginput(2);
+    [col,lin]=ginput(2)
     col=sort(col);
     lin=sort(lin);
     
@@ -31,6 +31,7 @@ function roi_params=select_roi_params_from_image(img1)
     roi_params.col0=floor(col(1));
     roi_params.lin=floor(lin(2));
     roi_params.col=floor(col(2));
+    roi_params.d=1.0;
 	rectangle('Position',[roi_params.col0, roi_params.lin0, roi_params.WSIZEC, roi_params.WSIZEL], 'LineWidth',3, 'EdgeColor','b');
 	msgbox ("Points selected");
 end

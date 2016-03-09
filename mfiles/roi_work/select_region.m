@@ -1,9 +1,9 @@
 %
-% Esta função constroi a região de interesse selecionada 
+% Esta funï¿½ï¿½o constroi a regiï¿½o de interesse selecionada 
 %
 % inputs
 % roi_params = 
-% Parâmetros do ROI 
+% Parï¿½metros do ROI 
 % 	roi_params.WSIZEL
 % 	roi_params.WSIZEC
 % 	roi_params.lin0
@@ -14,7 +14,7 @@
 % img1= imagem 1; 
 
 % outputs
-% ROI =  ROI construído, utilizando os parâmetros do ROI(roi_params);
+% ROI =  ROI construï¿½do, utilizando os parï¿½metros do ROI(roi_params);
 %
 % Desenvolvedor: Eduardo Afonso, Fernando
 % Email: eduardoafonsobaixista@gmail.com

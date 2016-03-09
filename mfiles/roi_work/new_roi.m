@@ -1,55 +1,65 @@
-% Esta função constrói um novo roi;
+% Esta funï¿½ï¿½o constrï¿½i um novo roi;
 
 % inputs
 % img2 = imagem 2;
 % ROI = regiao de interesse; 
-% match_params = parâmetros da parte da imagem 2 com maior semelhança ao ROI;
+% match_params = parï¿½metros da parte da imagem 2 com maior semelhanï¿½a ao ROI;
 % 	match_params.lin0 		= linha inicial do ROI antigo;
 % 	match_params.col0 		= coluna inicial do ROI antigo;
 % 	match_params.lin0_match = linha inicial do novo ROI;
 % 	match_params.col0_match = coluna inicial do novo ROI;
-% 	match_params.vector_lin = tamanho da linha do vector de avanço;
-% 	match_params.vector_col = tamanho da coluna do vector de avanço;
+% 	match_params.vector_lin = tamanho da linha do vector de avanï¿½o;
+% 	match_params.vector_col = tamanho da coluna do vector de avanï¿½o;
 % 	match_params.pr			= coeficiente de pearson relacionado ao novo ROI;
 %
 % outputs: 
-% roi2_params = parâmetros do novo ROI;
-% 	roi2_params.WSIZEL
-% 	roi2_params.WSIZEC
-% 	roi2_params.lin0
-% 	roi2_params.col0
-% 	roi2_params.lin
-% 	roi2_params.col
-% NROI = nova região de interesse;
+% nroi_params = parï¿½metros do novo ROI;
+% 	nroi_params.WSIZEL
+% 	nroi_params.WSIZEC
+% 	nroi_params.lin0
+% 	nroi_params.col0
+% 	nroi_params.lin
+% 	nroi_params.col
+% NROI = nova regiï¿½o de interesse;
 %
 % Desenvolvedor: Eduardo Afonso, Fernando
 % Email: eduardoafonsobaixista@gmail.com
 % website: github https://github.com/Eduardoaafonso/PIV-LMT
 
-function [NROI roi2_params]=new_roi( img2, ROI, roi_params,match_params)
-
+function [NROI nroi_params]=new_roi( img2, ROI, roi_params,match_params, fator)
+  
+	LINMAX=size(img2,1);
+	COLMAX=size(img2,2);
+  
 	WSIZEL=size(ROI,1);
 	WSIZEC=size(ROI,2);
+  
+  %match_params.lin0_match = match_params.lin0_match -floor(WSIZEL*1.5*fator);
+  %match_params.col0_match = match_params.col0_match -floor(WSIZEC*1.5*fator);
+  
+     if(WSIZEL*fator<LINMAX) && (WSIZEC*fator<COLMAX) && match_params.pr <0.925 %%%%MUDANÃ‡A ADICIONEI (WSIZEL*fator<LINMAX) && (WSIZEC*fator<COLMAX)
+        NROI = img2(    match_params.lin0_match+[0:floor(WSIZEL*fator)-1] , ...
+                        match_params.col0_match+[0:floor(WSIZEL*fator)-1] ); % new region of interesting image 1 (NROI)
+        
+        %MUDANÃ‡A de WSIZEL+fator para floor(WSIZEL*fator)-1
+        %Adicionei o fator como parametro
+        
+        NROI = double(NROI); %alteracao feita para que o codigo funcione com reducao de imagem.
 
-    if match_params.pr <0.85
-        NROI = img2(    match_params.lin0_match+[0:WSIZEL-1], ...
-                        match_params.col0_match+[0:WSIZEC-1]); % new region of interesting image 1 (NROI)
-
-        NROI = double(NROI);
-
-    	roi2_params.WSIZEL =WSIZEL; %window size
-    	roi2_params.WSIZEC =WSIZEC; %window size
-    	roi2_params.lin0=match_params.lin0_match;
-    	roi2_params.col0=match_params.col0_match;
-    	roi2_params.lin =match_params.lin0_match+WSIZEL;
-    	roi2_params.col =match_params.col0_match+WSIZEC;
+    	nroi_params.WSIZEL =WSIZEL; %window size
+    	nroi_params.WSIZEC =WSIZEC; %window size
+    	nroi_params.lin0=match_params.lin0_match;
+    	nroi_params.col0=match_params.col0_match;
+      nroi_params.d=roi_params.d/fator;
+    	nroi_params.lin =match_params.lin0_match+floor(WSIZEL*fator)-1;
+    	nroi_params.col =match_params.col0_match+floor(WSIZEC*fator)-1;
         figure;
         imagesc(NROI)
 		refresh 
-        disp('Muda roi')
+        disp('>>>>>>>>>>>>>>>>Muda roi<<<<<<<<<<<<<<<<<<')
     else
         NROI=ROI;
-		roi2_params=roi_params;
+		nroi_params=roi_params;
         disp('Conserva roi')
     end
-end
+ end
