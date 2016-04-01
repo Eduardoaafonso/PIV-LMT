@@ -1,0 +1,88 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[utf8]{inputenc}
+
+\title{}
+\author{}
+
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+
+\end{abstract}
+
+\section{Introduction}
+%%%%%%%State of art
+Monocular vision has been demonstrating a flourishing field in autonomous vehicles.\\ Several applications has presented excellent 
+solutions to problems presented nowadays. Therefore, this research contributes with an innovation, using Particle Image 
+Velocimetry(PIV)\cite{Bastiaans} and Pearson's Correlation Coefficient(PCC)\cite{Miranda Neto}.\\ The proposal is follow objects in scene and
+stipulate its relative velocity utilizing the both techniques cited above.These parameters are calculated in 2 and 3 dimensions and
+generate a coefficient relative to velocity of approaching and removal of objects.
+
+Matlab is software used to simulations. PIV went the most important point of the beginning this project, considering the applications 
+with it.\\ Generally, this technique is utilised to calculate the field of velocity in fluids. Thus, it's possible to calcule the field
+of velocity of any objects that moves in scene. So, PIV was adjusted for situation to autonomous vehicles, using PCC and bank of dates of 
+KITTI\cite{Geiger}.
+
+\section{Theoretical fundament}
+\subsection{Pearson correlation}
+\subsection{PIV}
+
+\section{System description}
+
+Diagrama1
+ %A gente vai explicar o algoritmo como uma caixa fechada , que coisa entra e que coisa sai
+ %e os parametros a sintonizar.
+ % como usar ele quando implementado, como se fosse uma caixa preta.
+\section{Algorithm description}
+DiagramaX
+\subsection{Renew ROI criteria}
+Diagrama2
+\subsection{factor of approaching - Relative velocity}
+
+% descrição do sistemA
+\section{Numerical results}
+%testes com diferentes parametros
+% tabelas e graficos
+
+\section{Conclusion}
+PIV has presented satisfactory results. Different kinds of information that can be concluded, like: estimate collision, tracking of
+objects in 2 or 3 dimensions and factor of approaching and removal. The simulations in Matlab has given promissories results: (TABLES
+and GRAPHICS).
+
+PIV is great tool to analizy tracking and velocity of objects and it shows an exepcional field to develop different ways to
+solve the problems of applicability in autonomous vehicles.
+\section{Acknowledgement}
+FAPEMIG\\
+numero de bolsa\\
+numero de projeto\\
+numero de aluno
+
+\begin{thebibliography}{10}
+        \bibitem{Aoude} AOUDE, Georges S. et al. \textsl{Sampling-Based Threat Assessment Algorithms for Intersection Collisions Involving 
+        Errant Drivers}. IFAC Symposium on Intelligent Autonomous Vehicles, 2010.
+        
+	\bibitem{Bastiaans} BASTIANNS, Rob J .M. \textsl{Cross-correlation PIV; theory, implementation and accuracy}. 
+        Eindhoven: Technische Universiteit Eindhoven, 2000. - EUT Report 99-W-OOl. - ISBN: 90-386-2851-X.
+        
+        \bibitem{Geiger} GEIGER, Andreas et al.
+        \textsl{Vision meets Robotics: The KITTI Dataset}. International Journal of Robotics Research (IJRR), 2013.
+        
+        \bibitem{Jones} JONAS, Thomas.\textsl{Real-Time Probabilistic Collision Avoidance for Autonomous Vehicles, Using Order Reductive 
+        Conflict Metrics}. Submitted to the Department of Aeronautics and Astronautics
+	in partial fulfillment of the requirements for the degree of Doctor of Philosophy. Massachusetts Institute of Technology. June, 2003.
+        
+        \bibitem{Miranda Neto} MIRANDA NETO, Arthur et al. \textsl{Image Processing Using Pearson’s Correlation Coefficient: 
+        Applications on Autonomous Robotics}. 
+        Autonomous Robot Systems (Robotica), 2013 13th International Conference on, 2013.
+	
+	\bibitem{Woerner} WOERNER, Kyle.\textsl{COLREGS-Compliant Autonomous Collision Avoidance Using Multi-Objective Optimization
+	with Interval Programming}. Submitted to the Department of Mechanical Engineering in partial fulfillment of the requirements for the 
+	degrees of Naval Engineer and Master of Science in Mechanical Engineering. Massachusetts Institute of Technology. June, 2014.
+	
+\end{thebibliography}
+
+\end{document}
