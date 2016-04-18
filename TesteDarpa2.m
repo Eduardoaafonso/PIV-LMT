@@ -6,7 +6,7 @@ clear
 addpath(genpath('~/~PIV-LMT/PIV-LMT/mfiles'));
 
 %img1=load_image_from_filename('Mini/0000000000.png');
-img1=load_image_from_filename('~/~PIV-LMT/PIV-LMT/mini3/gray/400.jpg');
+img1=load_image_from_filename('~/~PIV-LMT/PIV-LMT/mini3/gray/100.jpg');
 
 
 %Setting
@@ -28,7 +28,7 @@ P{1}=[roi_params.lin0 roi_params.col0 roi_params.d ];
 KK=2;
 
 tic
-for c = 1:30 %length(srcFiles)
+for c = 1:400 %length(srcFiles)
     filename = ['~/~PIV-LMT/PIV-LMT/mini3/gray/', srcFiles(c).name];
     img2=load_image_from_filename(filename);
     %size(img2)

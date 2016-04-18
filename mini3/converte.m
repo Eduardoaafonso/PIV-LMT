@@ -1,6 +1,6 @@
 
 
-for c = 400:450 %length(srcFiles)
+for c = 100:455 %length(srcFiles)
     filename = [ num2str(c),'.jpg'];
     img2=imread(filename);
     img2 = rgb2gray(img2);

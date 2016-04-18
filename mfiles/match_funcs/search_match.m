@@ -59,16 +59,18 @@ function [lin_match, col_match, pr, AREA, fator]= search_match ( StepSIZE, img2,
   WSIZEC
   IIII=1;
  for fator=0.8:0.05:1.2;
-   %AREALINE= WSIZEL*fator
-   %AREACOL = WSIZEC*fator
 	for col=c0:StepSIZE:floor(COLMAX-(WSIZEC*fator)); %modificacao cf para COLMAX-WSIZE*fator
   fprintf('%d\r',IIII); IIII=IIII+1;
 	for lin=l0:StepSIZE:floor(LINMAX-(WSIZEL*fator));
  
-  if(WSIZEL*fator<LINMAX) && (WSIZEC*fator<COLMAX)    
+  if ((floor(WSIZEL*fator)+lin-1) < LINMAX) && ((floor(WSIZEC*fator)+col-1) < COLMAX)    
         TEMPROI = img2(   lin + [0: floor(WSIZEL*fator)-1] , ... % linhas
                     col + [0: floor(WSIZEC*fator)] -1 );    % colunas
-        
+                    
+  %else   {
+   %     TEMPROI = img2(   lin + [0:auxMaxLin] , ... % mantem para nao ultrapassar COLMAX e nem LINMAX
+    %                col + [0:auxMaxCol] );          % COLMAX e nem LINMAX
+     %   }
         %TEMPROI = rgb2gray(TEMPROI);
 
         %ROI = rgb2gray(ROI);
@@ -79,8 +81,7 @@ function [lin_match, col_match, pr, AREA, fator]= search_match ( StepSIZE, img2,
         %size(TEMPROI)
         %size(ROI)
         
-         A=size(TEMPROI,1)*size(TEMPROI,2);
-
+        A=size(TEMPROI,1)*size(TEMPROI,2);
         
         TEMPROI=resizeminus(ROI,TEMPROI);
         
