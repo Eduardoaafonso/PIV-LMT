@@ -6,7 +6,7 @@ clear
 addpath(genpath('~/~PIV-LMT/PIV-LMT/mfiles'));
 
 %img1=load_image_from_filename('Mini/0000000000.png');
-img1=load_image_from_filename('~/~PIV-LMT/PIV-LMT/mini3/gray/100.jpg');
+img1=load_image_from_filename('~/~PIV-LMT/PIV-LMT/mini3/gray/300.jpg');
 
 
 %Setting
@@ -28,17 +28,18 @@ P{1}=[roi_params.lin0 roi_params.col0 roi_params.d ];
 KK=2;
 
 tic
-for c = 1:400 %length(srcFiles)
+for c = 1:154 %length(srcFiles)
     filename = ['~/~PIV-LMT/PIV-LMT/mini3/gray/', srcFiles(c).name];
     img2=load_image_from_filename(filename);
     %size(img2)
-    [match_params, AREA, fator,LOST] = find_with_pearson(ROI,roi_params,search_params,img2); %pr = PCC maior
+    [match_params, AREA, LOST] = find_with_pearson(ROI,roi_params,search_params,img2); %pr = PCC maior
     
     pearson=match_params.pr
     
     if LOST==1
       break;
     end
+    
     AROI=(size(ROI,1)*size(ROI,2))
     AREA
     FATD = aprox(ROI, AREA)
@@ -51,7 +52,7 @@ for c = 1:400 %length(srcFiles)
     %ROI=new_roi(
     disp(num2str(c));
     
-    [ROI roi_params]=new_roi( img2, ROI,roi_params,match_params, fator);
+    [ROI roi_params]=new_roi( img2, ROI,roi_params,match_params);
     %points_pr.pr modificar para fazer sentido
     
     disp(' ');

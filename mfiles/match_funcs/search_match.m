@@ -21,7 +21,7 @@
 % Email: eduardoafonsobaixista@gmail.com
 % website: github https://github.com/Eduardoaafonso/PIV-LMT
 
-function [lin_match, col_match, pr, AREA, fator]= search_match ( StepSIZE, img2, ROI,roi_params) 
+function [lin_match, col_match, pr, AREA, fator_match]= search_match ( StepSIZE, img2, ROI,roi_params) 
     pr = 0; % inicial pearson
 
     WSIZEL=size(ROI,1);
@@ -29,27 +29,6 @@ function [lin_match, col_match, pr, AREA, fator]= search_match ( StepSIZE, img2,
 
 	LINMAX=size(img2,1);
 	COLMAX=size(img2,2);
-	% LengthSearch = variavel usada para determinar a regiao que ser� varrida pelo ROI
-	LengthSearch=floor(WSIZEL*1.5);
-
-	
-	l0=roi_params.lin0-LengthSearch;
-	if l0<1
-		l0=1;
-	end
-	c0=roi_params.col0-LengthSearch;
-	if c0<1
-		c0=1;
-	end
-
-	lf=roi_params.lin0+LengthSearch;
-	if lf>(LINMAX-WSIZEL)
-		lf=(LINMAX-WSIZEL);
-	end
-	cf=roi_params.col0+LengthSearch;
-	if cf>(COLMAX-WSIZEC)
-		cf=(COLMAX-WSIZEC);
-	end
   
   lin_match= 0;
   col_match= 0;
@@ -58,19 +37,48 @@ function [lin_match, col_match, pr, AREA, fator]= search_match ( StepSIZE, img2,
   WSIZEL
   WSIZEC
   IIII=1;
- for fator=0.8:0.05:1.2;
-	for col=c0:StepSIZE:floor(COLMAX-(WSIZEC*fator)); %modificacao cf para COLMAX-WSIZE*fator
+  
+  
+ for fator=0.8:0.05:1.3;
+
+  	% LengthSearch = variavel usada para determinar a regiao que ser� varrida pelo ROI
+	LengthSearchL=floor(WSIZEL*fator*0.5);
+  LengthSearchC=floor(WSIZEC*fator*0.5);
+  
+	l0=roi_params.lin0-LengthSearchL;
+	if l0<1
+		l0=1;
+	end
+	c0=roi_params.col0-LengthSearchC;
+	if c0<1
+		c0=1;
+	end
+
+	lf=roi_params.lin0+LengthSearchL;
+	if lf>(LINMAX-floor(WSIZEL*fator))
+		lf=(LINMAX-floor(WSIZEL*fator));
+	end
+  if lf<1
+  lf=1;
+  end
+  
+	cf=roi_params.col0+LengthSearchC;
+	if cf>(COLMAX-floor(WSIZEC*fator))
+		cf=(COLMAX-floor(WSIZEC*fator));
+	end
+  if cf<1
+  cf=1;
+  end
+
+  for col=c0:StepSIZE:cf;
   fprintf('%d\r',IIII); IIII=IIII+1;
-	for lin=l0:StepSIZE:floor(LINMAX-(WSIZEL*fator));
+	for lin=l0:StepSIZE:lf;
+  
  
-  if ((floor(WSIZEL*fator)+lin-1) < LINMAX) && ((floor(WSIZEC*fator)+col-1) < COLMAX)    
-        TEMPROI = img2(   lin + [0: floor(WSIZEL*fator)-1] , ... % linhas
-                    col + [0: floor(WSIZEC*fator)] -1 );    % colunas
+  %if ((floor(WSIZEL*fator)+lin-1) < LINMAX) && ((floor(WSIZEC*fator)+col-1) < COLMAX)    
+        TEMPROI = img2(   lin + [0: (floor(WSIZEL*fator)-1)] , ... % linhas
+                    col + [0: (floor(WSIZEC*fator)-1)]);    % colunas
                     
-  %else   {
-   %     TEMPROI = img2(   lin + [0:auxMaxLin] , ... % mantem para nao ultrapassar COLMAX e nem LINMAX
-    %                col + [0:auxMaxCol] );          % COLMAX e nem LINMAX
-     %   }
         %TEMPROI = rgb2gray(TEMPROI);
 
         %ROI = rgb2gray(ROI);
@@ -97,6 +105,7 @@ function [lin_match, col_match, pr, AREA, fator]= search_match ( StepSIZE, img2,
         	col_match =col; %axis y of vector 
             %MODIFICA��O: +1 para que n�o haja col_match=0, pois a imagem n�o tem coordenada [0,0].
           AREA=A;
+          fator_match=fator;
         end
     end
     end
