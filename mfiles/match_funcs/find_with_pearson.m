@@ -41,7 +41,7 @@ function [match_params, AREA,LOST] = find_with_pearson(ROI,roi_params, search_pa
 	match_params.vector_col = match_params.lin0_match - match_params.lin0;
 	match_params.pr=pr;
   
-  if pr < 0.75
+  if pr < 0.1 %0.75
     LOST=1;
   else
     LOST=0;

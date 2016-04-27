@@ -42,8 +42,8 @@ function [lin_match, col_match, pr, AREA, fator_match]= search_match ( StepSIZE,
  for fator=0.8:0.05:1.3;
 
   	% LengthSearch = variavel usada para determinar a regiao que ser� varrida pelo ROI
-	LengthSearchL=floor(WSIZEL*fator*0.5);
-  LengthSearchC=floor(WSIZEC*fator*0.5);
+	LengthSearchL=floor(WSIZEL*fator*1.5);
+  LengthSearchC=floor(WSIZEC*fator*1.5); %0.5
   
 	l0=roi_params.lin0-LengthSearchL;
 	if l0<1
@@ -69,11 +69,11 @@ function [lin_match, col_match, pr, AREA, fator_match]= search_match ( StepSIZE,
   if cf<1
   cf=1;
   end
-
+  
   for col=c0:StepSIZE:cf;
   fprintf('%d\r',IIII); IIII=IIII+1;
-	for lin=l0:StepSIZE:lf;
-  
+	for lin=l0:StepSIZE:lf; 
+ 
  
   %if ((floor(WSIZEL*fator)+lin-1) < LINMAX) && ((floor(WSIZEC*fator)+col-1) < COLMAX)    
         TEMPROI = img2(   lin + [0: (floor(WSIZEL*fator)-1)] , ... % linhas
