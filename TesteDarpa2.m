@@ -3,10 +3,10 @@ close all
 clc
 clear
 
-addpath(genpath('~/~PIV-LMT/PIV-LMT/mfiles'));
+addpath(genpath('mfiles'));
 
 %img1=load_image_from_filename('Mini/0000000000.png');
-img1=load_image_from_filename('/home/eduardo/~PIV-LMT/PIV-LMT/mini/gray/0000000000.png');
+img1=load_image_from_filename('mini/gray/0000000000.png');
 
 
 %Setting
@@ -21,7 +21,7 @@ roi_params=select_roi_params_from_image(img1);
 search_params.StepSIZE=1; %observacao: se colocar o stepsize em funcao do tamanho do ROI
 
 %srcFiles  = dir('Mini/*.png');
-srcFiles  = dir('/home/eduardo/~PIV-LMT/PIV-LMT/mini/gray/*.png');
+srcFiles  = dir('mini/gray/*.png');
 
 
 P{1}=[roi_params.lin0 roi_params.col0 roi_params.d ];
@@ -29,7 +29,7 @@ KK=2;
 
 tic
 for c = 1:5 %length(srcFiles)
-    filename = ['/home/eduardo/~PIV-LMT/PIV-LMT/mini/gray/', srcFiles(c).name];
+    filename = ['mini/gray/', srcFiles(c).name];
     img2=load_image_from_filename(filename);
     %size(img2)
     [match_params, AREA, LOST] = find_with_pearson(ROI,roi_params,search_params,img2); %pr = PCC maior
@@ -64,3 +64,5 @@ imagesc(img2)
 hold on
 plot_vector(P);%roi2_params.point_col-roi_params.col0);     % vetor coluna
 hold off
+
+rmpath(genpath('mfiles'));
