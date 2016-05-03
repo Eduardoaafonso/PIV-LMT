@@ -51,18 +51,18 @@
 
 \section{INTRODUCTION}
 
-Monocular vision has been demonstrating a flourishing field in autonomous vehicles. Several applications has presented  
-solutions to current problems. Although systems of low computational cost and effective are a challenge to field. \\
-The Particle Image Velocimetry (PIV)\cite{Bastiaans} is used in many fields of knowledge \cite{Story, Xu}, and generally to calculate 
-the velocity of fluids in different parts. Here, PIV was adjusted for situation of autonomous vehicles, using PCC\cite{Miranda Neto}
-and KITTI's bank of dates\cite{Geiger}.\\
+Monocular vision has been demonstrating a flourishing field in autonomous vehicles. Several applications have presented  
+solutions to current problems. Although systems of low computational cost and effectivity are a challenge to field. \\
+The Particle Image Velocimetry (PIV)\cite{Bastiaans} is used in many fields of knowledge \cite{Story, Xu}, to calculate 
+the velocity of fluids in different parts. Here, PIV was adjusted for situation of autonomous vehicles, using PCC
+\cite{Miranda Neto} and KITTI's bank of dates\cite{Geiger}.\\
 
 \section{THEORETICAL FUNDAMENT}
 
 \subsection{PEARSON CORRELATION COEFFICIENT - PCC}
 
 PCC is used in statistical analyses, pattern recognition and computer vision. 
-Applications include disparity measurement, object recognition and comparing two images. The followed equation
+Applications include disparity measurement and object recognition, comparing two images. The followed equation
 describes PCC for monochrome digital images\cite{Eugene}:
 
 \begin{equation}$$
@@ -72,25 +72,29 @@ $r_i = \frac{\sum\limits_i (x_i-x_m)(y_i-y_m)}{\sqrt{\sum\limits_i (x_i-x_m)^2} 
 $
 $$\end{equation}
 
-Where $x_i$ is the intensity of the i th pixel in image 1, $y_i$ is the intensity of the i th pixel in image 2, $x_m$ is the mean intensity of
-image 1, and $y_m$ is the mean intensity of image 2 \cite{Miranda Neto}.
+Where, $x_i$ is the intensity of the i-th pixel in image 1, $y_i$ is the intensity of the i-th pixel in image 2, $x_m$ is 
+the mean intensity of image 1, and $y_m$ is the mean intensity of image 2 \cite{Miranda Neto}.
 
 \subsection{PARTICLE IMAGE VELOCIMETRY - PIV}
 
-PIV is a method of determining velocity fields from images of seeded flows\cite{Bastiaans}.
-Its result is given by field of vector, demonstrating direction, sense and intensity of velocity in each particle. Moreover,
+PIV is a method to determine a velocity field from images of seeded flows\cite{Bastiaans}.
+Its result is given as as field of vectors, demonstrating direction, sense and intensity of velocity in each particle. Moreover,
 it is possible to calculate rapidly the velocities of any part of image.\\
 
 \section{SYSTEM DESCRIPTION}
 The purpose of this algorithm is tracking objects, producing added informations about the followed target.
-The algorithm developed takes inputs sequential frames and Region Of Interesting(ROI). They are important to
-define the parameters used to generate the tracking of objects and more details: relative velocity and factor of approaching or departure.
-\\With ROI determined, the system enters in looping to follow the target as shown in the fig. 1.
+The algorithm developed takes as inputs sequential frames and Region Of Interesting(ROI). They are important to
+define the parameters used to generate the tracking of objects and other details as: the relative velocity, the factor of 
+approaching and of departure
+
+With ROI determined, the system enters in looping to follow the target as shown in the fig. 1.
 
 \begin{figure}[bhp]
 \includegraphics[width=\columnwidth]{images/figure1-diagram1.eps}
-\caption{With object detected, the highest value of PCC in the Window Of Search (WOS) of next frame identifies the target, and the result of search is a vector. 
-Which its beginning and its end are on the first and last position, respectively. After, these processing is made again for next frames.}
+\caption{With object detected, the highest value of PCC in the Window Of Search (WOS) of next frame identifies the target, 
+and the result of search is a vector. 
+Which its beginning and its end are on the first and last position, respectively. After, these processing is made again for 
+next frames.}
 \end{figure}
 
 In 2 dimensions, the objects are tracking and given information about its horizontal or vertical relative velocity.
