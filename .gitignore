@@ -1,3 +1,6 @@
 octave-workspace
+*.aux 
+*.backup
+*.log
 *~
 *.db
