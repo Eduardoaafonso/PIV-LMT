@@ -32,6 +32,7 @@ function roi_params=select_roi_params_from_image(img1)
     roi_params.lin=floor(lin(2));
     roi_params.col=floor(col(2));
     roi_params.d=1.0;
-	rectangle('Position',[roi_params.col0, roi_params.lin0, roi_params.WSIZEC, roi_params.WSIZEL], 'LineWidth',3, 'EdgeColor','b');
+	rectangle('Position',[roi_params.col0, roi_params.lin0, roi_params.WSIZEC, roi_params.WSIZEL], 'LineWidth',3, 'EdgeColor','r');
+  refresh();
 	msgbox ("Points selected");
 end
