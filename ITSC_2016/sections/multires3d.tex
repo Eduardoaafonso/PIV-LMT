@@ -1,0 +1,31 @@
+\subsubsection{MULTI-LAYER 3D APPROXIMATION}
+The multi-layer is a technique to track objects that move in 3 dimensions. The layers are organized of the smallest to the biggest, 
+there is a rate which layers increase. With this proceeding, the algorithm is capable of track objects that in second scene was larger than first.\\
+
+%usa Multi-resolution match criteria e explica isso dos tamanhos
+
+\subsubsection{FACTOR OF APPROACHING - RELATIVE VELOCITY}
+Factor of approaching is a dimensionless number related to the rate of approaching or departure of an object to the camera. The factor
+is determined how showed at equation 2:
+
+\begin{equation}
+\centering
+\everymath{\displaystyle}
+f_a = \frac{Area_r}{Area_f} 
+\end{equation}
+
+Where $f_a$ is the factor of approaching, $Area_r$ is area of ROI and $Area_f$ is area of current frame.\\
+The factor has two means, e.g., if the rate of approaching increase quickly, so the target is approaching. Or the apposite, if factor decreases, thus 
+object is departing.\\
+Relative velocity is calculate using a simples equation of kinematic in physics:
+
+
+\begin{equation}
+\centering
+\everymath{\displaystyle}
+ v = \frac{\Delta s}{\Delta t}
+\end{equation}
+
+Where $v$ is relative velocity, $\Delta s$ is difference in between two pixels and $\Delta t$ is time of proceeding.\\
+Velocity calculated is relative for simple reason that it is impossible to know the real distance between the camera and object in this
+condition.\\
