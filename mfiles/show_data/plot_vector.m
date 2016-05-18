@@ -22,6 +22,6 @@ delta_col=P{N}(1,2)-P{1}(1,2);
     scatter(P{II}(1,2),P{II}(1,1));
   end
   
-	quiver(col0, lin0,delta_col , delta_lin,'k','maxheadsize',0.2,'linewidth',2,'AutoScale','off') %Plot of pcc test
+	quiver(col0, lin0,delta_col , delta_lin,'k','maxheadsize',0.2,'linewidth',5,'AutoScale','off') %Plot of pcc test
     
 end
