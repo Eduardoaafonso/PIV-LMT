@@ -10,5 +10,5 @@ imagesc(img2)
 hold on
 plot_vector(P);%roi2_params.point_col-roi_params.col0);     % vetor coluna
 hold off
-saveas (gcf ,'graph2.eps');
+saveas (gcf ,'graph2.png');
 

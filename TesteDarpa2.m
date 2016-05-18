@@ -6,7 +6,7 @@ clear
 addpath(genpath('mfiles'));
 
 %img1=load_image_from_filename('Mini/0000000000.png');
-img1=load_image_from_filename('/home/eduardo/Projetos/ProjPiv/PIV-LMT/tests/test1/0000000000.png');
+img1=load_image_from_filename('tests/test1/0000000000.png');
 
 
 %Setting
@@ -21,15 +21,15 @@ roi_params=select_roi_params_from_image(img1);
 search_params.StepSIZE=1; %observacao: se colocar o stepsize em funcao do tamanho do ROI
 
 %srcFiles  = dir('Mini/*.png');
-srcFiles  = dir('/home/eduardo/Projetos/ProjPiv/PIV-LMT/tests/test1/*.png');
+srcFiles  = dir('tests/test1/*.png');
 
 
 P{1}=[roi_params.lin0 roi_params.col0 roi_params.d ];
 KK=2;
 
 tic
-for c = 1:10 %length(srcFiles)
-    filename = ['/home/eduardo/Projetos/ProjPiv/PIV-LMT/tests/test1/', srcFiles(c).name];
+for c = 1:8 %length(srcFiles)
+    filename = ['tests/test1/', srcFiles(c).name];
     img2=load_image_from_filename(filename);
     %size(img2)
     [match_params, AREA, LOST] = find_with_pearson(ROI,roi_params,search_params,img2); %pr = PCC maior
