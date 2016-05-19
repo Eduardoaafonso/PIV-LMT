@@ -18,17 +18,15 @@ After, this processing is made again to the next frames.}
 \label{fig:system}
 \end{figure}
 
-In 2 dimensions, the objects are tracking and given information about its horizontal 
-or vertical relative velocity.
-When the target moves in 3 dimensions, outputs are the resultant of relative 
+In a 2 dimensional analysis, the tracked objects given us information about your horizontal 
+and vertical position and relative velocity respect to the observer.
+When the target is analyzed in 3 dimensions, 
+the initial $ROI$ has the position $(x,y,1)$;
+where, $x$ and $y$ represent a position (horizontal and vertical) in the analyzed image,
+and $1$ represents the initial depth position of object in the $ROI$.
+Thus, all the results of depth will be relatives to this value, 
+In this sense only can be calculated relative values of
 velocity and the factor of approaching or departure. 
-There isn't a factor in 2 dimensions, since approaching or departure don't exist 
-in this situation.
-
-The algorithm developed takes as initial input a key frame with a Region Of 
-Interesting ($ROI$) at the position $(x,y,1)$.
-Where, $x$ and $y$ represent a position (line and column) in analyzed image,
-and $1$ represents the initial deepest position of object in the $ROI$.
 
 %Diagrama1
  %A gente vai explicar o algoritmo como uma caixa fechada , que coisa entra e que coisa sai
