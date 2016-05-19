@@ -10,12 +10,11 @@ enters in looping to follow the target in the frames as is shown in the Fig. \re
 
 \begin{figure}[bhp]
 \includegraphics[width=\columnwidth]{images/figure1-diagram1.eps}
-\caption{With object detected, the highest value of PCC in the Window Of Search 
-(WOS) of next frame identifies the target, 
-and the result of search is a vector. 
-Which its beginning and its end are on the first and last position, respectively. 
-After, these processing is made again for 
-next frames.}
+\caption{With a current $ROI$ selected, a highest value of $PCC$, between the $ROI$ 
+and the Window Of Search (WOS) of next frame, identifies the target; 
+the result of search is a displacement vector
+between the first and last position of object. 
+After, this processing is made again to the next frames.}
 \label{fig:system}
 \end{figure}
 
