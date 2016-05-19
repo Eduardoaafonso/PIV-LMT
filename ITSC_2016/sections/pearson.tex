@@ -1,16 +1,16 @@
 
-\subsection{PEARSON CORRELATION COEFFICIENT - PCC}
+\subsection{THE PEARSON CORRELATION COEFFICIENT}
 
-PCC is used in statistical analyses, pattern recognition and computer vision. 
-Applications include disparity measurement and object recognition, comparing two images. The followed equation
-describes PCC for monochrome digital images\cite{Eugene}:
+$PCC$ is used in statistical analyses, pattern recognition and computer vision. 
+It can be used to comparing two images in an object recognition system. 
+The followed equation describes the calculus of $PCC$ between two gray scale digital images\cite{Eugene},
+represented by the matrices $A$ and $B$ with $M$ elements each one,
+\begin{equation}
+r = \frac{\sum \limits_{i}^{M} (a_i-\mu_a)(b_i-\mu_b)}{\sqrt{\sum \limits_{i}^{M} (a_i-\mu_a)^2} \sqrt{\sum\limits_{i}^{M} (b_i-\mu_b)^2}}.
+\end{equation}
 
-\begin{equation}$$
-\centering
-\everymath{\displaystyle}
-$r_i = \frac{\sum\limits_i (x_i-x_m)(y_i-y_m)}{\sqrt{\sum\limits_i (x_i-x_m)^2} \sqrt{\sum\limits_i (y_i-y_m)^2}}
-$
-$$\end{equation}
-
-Where, $x_i$ is the intensity of the i-th pixel in image 1, $y_i$ is the intensity of the i-th pixel in image 2, $x_m$ is 
-the mean intensity of image 1, and $y_m$ is the mean intensity of image 2 \cite{Miranda Neto}.
+Where, $a_i$ is the intensity of the i-th pixel in the  matrix $A$, 
+$b_i$ is the intensity of the i-th pixel in the matrix $B$, 
+$\mu_a$ is the mean intensity of $A$,
+$\mu_b$ is the mean intensity of $B$ and
+$r$ is the correlation coefficient\cite{Miranda Neto}.

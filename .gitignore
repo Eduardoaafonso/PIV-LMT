@@ -2,5 +2,7 @@ octave-workspace
 *.aux 
 *.backup
 *.log
+*.dvi
 *~
 *.db
+*.pdf

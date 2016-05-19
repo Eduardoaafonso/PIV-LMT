@@ -1,21 +1,37 @@
-The purpose of this algorithm is tracking objects, producing added informations about the followed target.
-The algorithm developed takes as inputs sequential frames and Region Of Interesting(ROI). They are important to
-define the parameters used to generate the tracking of objects and other details as: the relative velocity, the factor of 
+The purpose of this algorithm is to make 3D tracking objects, producing added informations 
+about the followed target.
+
+
+They are important to define the parameters used to generate the tracking of 
+objects and other details as: the relative velocity, the factor of 
 approaching and of departure
 
-With ROI determined, the system enters in looping to follow the target as shown in the fig. 1.
+With ROI determined, the system enters in looping to follow the target as shown 
+in the Fig. \ref{fig:system}.
+
 
 \begin{figure}[bhp]
 \includegraphics[width=\columnwidth]{images/figure1-diagram1.eps}
-\caption{With object detected, the highest value of PCC in the Window Of Search (WOS) of next frame identifies the target, 
+\caption{With object detected, the highest value of PCC in the Window Of Search 
+(WOS) of next frame identifies the target, 
 and the result of search is a vector. 
-Which its beginning and its end are on the first and last position, respectively. After, these processing is made again for 
+Which its beginning and its end are on the first and last position, respectively. 
+After, these processing is made again for 
 next frames.}
+\label{fig:system}
 \end{figure}
 
-In 2 dimensions, the objects are tracking and given information about its horizontal or vertical relative velocity.
-When the target moves in 3 dimensions, outputs are the resultant of relative velocity and the factor of approaching or departure. 
-There isn't a factor in 2 dimensions, since approaching or departure don't exist in this situation.
+In 2 dimensions, the objects are tracking and given information about its horizontal 
+or vertical relative velocity.
+When the target moves in 3 dimensions, outputs are the resultant of relative 
+velocity and the factor of approaching or departure. 
+There isn't a factor in 2 dimensions, since approaching or departure don't exist 
+in this situation.
+
+The algorithm developed takes as initial input a key frame with a Region Of 
+Interesting ($ROI$) at the position $(x,y,1)$.
+Where, $x$ and $y$ represent a position (line and column) in analyzed image,
+and $1$ represents the initial deepest position of object in the $ROI$.
 
 %Diagrama1
  %A gente vai explicar o algoritmo como uma caixa fechada , que coisa entra e que coisa sai
