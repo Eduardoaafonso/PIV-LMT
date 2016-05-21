@@ -3,7 +3,7 @@ To make both tests they were used the images available by KITTI\cite{Geiger}.
 
 
 In the first test, see Fig. \ref{fig:imgpapercerta}, 
-the algorithm makes the tracking of an object with 
+the algorithm makes the tracking of an object through of 9 images with 
 a displacement approximately perpendicular to the observer (approximately 2D displacement).
 \begin{figure}[!hbt]
 \centering
@@ -31,8 +31,8 @@ to discount areas that do not belong to the object.
 The Fig. \ref{fig:res_graph1v} shows the velocity of departure factor
 to a value $d_0=1$ and a $\Delta t=1$. It is easy to see that the variation,
 between frames, of departure factor is very small when compared with 1, 
-having a mean departure velocity of $-0.017020$. This imply a mean approach of $1.7\%$ of $d_0$
-by frame.
+having a mean departure factor velocity of $-0.017020$. This imply a mean approach of $1.7\%$ of $d_0$
+in each one of 9 frames.
 \begin{figure}[!hbt]
 \centering
 \includegraphics[width=0.8\columnwidth]{images/graph1v.eps}
@@ -43,32 +43,44 @@ by frame.
 
 In the second test, we prove the functionality of algorithm in 3D. 
 The program compares the images and calculate the departure factor 
-based on the area of object. The Fig. \ref{fig:target} demonstrates the 
-tracking from initial at the final position of target.
+based on the object area. The Fig. \ref{fig:target} demonstrates the 
+tracking of $100$ images from initial at the final position of target, 
+highlighted with red boxes;
+where, the vector in blue color describes the movement of object. 
 \begin{figure}[!hbt]
 \centering
   \subfloat[]{\label{fig:targeinit} \includegraphics[width=.48\columnwidth]{images/images/351.jpg}}
-  \subfloat[]{\label{fig:targeend} \includegraphics[width=.48\columnwidth]{images/images/450.jpg}}
+  \subfloat[]{\label{fig:targeend} \includegraphics[width=.48\columnwidth]{images/graph2p.eps}}
   \caption{The object in (a) is the initial position and its area is 
   fewer than the figure in (b), which is in final position. 
   The factor is calculate dividing both areas.}
   \label{fig:target}
 \end{figure}
-The vector that describes the movement of object is showed. 
-We can observe the significant increase in area of vehicle. So, it 
-contributes, directly, with the departure factor.
+In the figure, we can observe a significant increase in the area of vehicle. 
+So, your influence in the departure factor can be seen in the Fig. \ref{fig:res_graph2}.
 
 \begin{figure}[!hbt]
 \includegraphics[width=\columnwidth]{images/graph2.eps}
 \caption{Departure factor for each frame in the test 2.}
 \label{fig:res_graph2}
 \end{figure}
-The graphic of Fig. \ref{fig:res_graph2} with the departure factor in each frame
-of test 2, could be interpreted as position per time, 
-because that the departure factor describes the relative target position.
-Thus in the first image the analyzed object is at a distance $d$ and in the last frame
-the object is at a distance of $40\%$ of $d$.
+The graphic shows the departure factor in each frame
+of test 2, if we interpret this value as position in each sample time, 
+then the departure factor describes the relative target position.
+So that, in the first image the analyzed object is at a distance $d_0$ 
+and in the last image the object is at a distance of $52.42\%$ of $d_0$.
+The departure distance decreases in discrete steps because the departure
+factor is selected also in discrete steps, so that if the target is
+between two consecutive analysis layers (scales), then the algorithm
+approximates the target to the nearest layer. 
+\begin{figure}[!hbt]
+\includegraphics[width=\columnwidth]{images/graph2v.eps}
+\caption{Velocity of departure factor for each frame in the test 2.}
+\label{fig:res_graph2v}
+\end{figure}
+The velocity of departure factor can be seen in the Fig. \ref{fig:res_graph2v}.
 
+-0.0048060
 
 
 One application using tracking and departure factor is 
