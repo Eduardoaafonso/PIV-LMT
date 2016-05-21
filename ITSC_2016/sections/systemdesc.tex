@@ -1,11 +1,12 @@
-The purpose of this algorithm is to make a 3D tracking object, producing position informations 
+The purpose of this algorithm is to make a (3D) tracking system, producing position informations 
 about the followed target.
 These informations will be relevant to define parameters 
 as: the relative velocity, the factor of approaching and of departure.
 
-The proposed algorithm begin with a key frame image where a initial Region Of Interest ($ROI$) is determined; 
+The proposed algorithm is shown in the Fig. \ref{fig:system}, 
+this begin with a key frame image where a initial Region Of Interest ($ROI$) is determined; 
 the system then receive a stream of image frames and the tracking system 
-enters in looping to follow the target in the frames as is shown in the Fig. \ref{fig:system}.
+enters in looping to follow the target in the next frames.
 
 
 \begin{figure}[bhp]

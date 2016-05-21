@@ -1,5 +1,6 @@
 \subsubsection{MULTI-SCALE 3D INTERPRETATION}
-The multi-scale is a technique to track objects that moves in 3 dimensions. 
+We call multi-scale match to technique here presented 
+to track objects that moves in 3 dimensions. 
 To understand this technique we need to analyze the same object in 
 two different positions, as in the Figure \ref{fig:multiscale3d}.
 
@@ -9,7 +10,7 @@ two different positions, as in the Figure \ref{fig:multiscale3d}.
   \caption{Interpretation of the area relation in the multi-scale tracking.}
   \label{fig:multiscale3d}
 \end{figure}
-The figure show, using the colors blue and red, the same object of width $L$ located at two 
+The figure show, using the colors blue and red, the same object (of width $L$) located at two 
 different distances, being these $d$ and $\alpha d$, respectively. 
 In both cases, one picture of scene is obtained,
 so that, the plane of photography is located at a distance $h$ of observer.
@@ -42,9 +43,9 @@ Where $f_a$ and $\alpha$ are defined as the area factor and departure factor,
 respectively; $Area_r$ is the area of ROI and $Area_f$ 
 is the area of analyzed region in the current image frame. 
 
-Thus, if we consider that the object analyzed in the $ROI$ was to a distance $d$,
-them the object in the analyzed region was to a distance of $\alpha d$ (or $\sqrt{f_a} d$),
-so that if the $i-th$ image was analyzed, then $\alpha_i$ and $d_i=\alpha_i d$ will be obtained.
+Thus, if we consider that the object analyzed in the $ROI$ was to a distance $d_0$,
+them the object in the analyzed region was to a distance of $\alpha d_0$ (or $\sqrt{f_a} d_0$),
+so that if the $i-th$ image was analyzed, then $\alpha_i$ and $d_i=\alpha_i d_0$ will be obtained.
 
 The departure factor, $\alpha_i$, has two interpretations, if the rate of departure increase quickly, 
 means that the object is departing. Or the apposite, if factor decreases, the 
