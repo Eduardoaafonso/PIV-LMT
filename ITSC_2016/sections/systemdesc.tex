@@ -1,6 +1,6 @@
 The purpose of this algorithm is to make a 3D tracking objects, producing position informations 
 about the followed target.
-These informations will be relevant to define the parameters 
+These informations will be relevant to define parameters 
 as: the relative velocity, the factor of approaching and of departure.
 
 The proposed algorithm begin with a key frame image where a initial Region Of Interest ($ROI$) is determined; 
@@ -19,10 +19,10 @@ After, this processing is made again to the next frames.}
 \end{figure}
 
 In a 2 dimensional analysis, the tracked objects given us information about your horizontal 
-and vertical position and relative velocity respect to the observer.
+and vertical position and relative perpendicular velocity respect to the observer.
 When the target is analyzed in 3 dimensions, 
-the initial $ROI$ has the position $(x,y,d=1)$;
-where, $x$ and $y$ represent a position (horizontal and vertical) in the analyzed image,
+the initial $ROI$ has the position $(x=x_0,y=x_0,d=1)$;
+where, $x_0$ and $y_0$ represent a position (horizontal and vertical) in the analyzed image,
 and $d=1$ represents the initial depth position of object in the $ROI$.
 Thus, all the results of depth will be relatives to this value, 
 In this sense only can be calculated relative values of
