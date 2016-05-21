@@ -3,7 +3,7 @@ about the followed target.
 These informations will be relevant to define the parameters 
 as: the relative velocity, the factor of approaching and of departure.
 
-The proposed algorithm begin with a key frame image where a initial $ROI$ is determined; 
+The proposed algorithm begin with a key frame image where a initial Region Of Interest ($ROI$) is determined; 
 the system then receive a stream of image frames and the tracking system 
 enters in looping to follow the target in the frames as is shown in the Fig. \ref{fig:system}.
 
@@ -11,7 +11,7 @@ enters in looping to follow the target in the frames as is shown in the Fig. \re
 \begin{figure}[bhp]
 \includegraphics[width=\columnwidth]{images/figure1-diagram1.eps}
 \caption{With a current $ROI$ selected, a highest value of $PCC$, between the $ROI$ 
-and the Window Of Search (WOS) of next frame, identifies the target; 
+and the Window Of Search ($WOS$) of next frame, identifies the target; 
 the result of search is a displacement vector
 between the first and last position of object. 
 After, this processing is made again to the next frames.}
@@ -21,9 +21,9 @@ After, this processing is made again to the next frames.}
 In a 2 dimensional analysis, the tracked objects given us information about your horizontal 
 and vertical position and relative velocity respect to the observer.
 When the target is analyzed in 3 dimensions, 
-the initial $ROI$ has the position $(x,y,1)$;
+the initial $ROI$ has the position $(x,y,d=1)$;
 where, $x$ and $y$ represent a position (horizontal and vertical) in the analyzed image,
-and $1$ represents the initial depth position of object in the $ROI$.
+and $d=1$ represents the initial depth position of object in the $ROI$.
 Thus, all the results of depth will be relatives to this value, 
 In this sense only can be calculated relative values of
 velocity and the factor of approaching or departure. 
