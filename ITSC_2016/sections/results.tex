@@ -65,7 +65,7 @@ So, your influence in the departure factor can be seen in the Fig. \ref{fig:res_
 \label{fig:res_graph2}
 \end{figure}
 The graphic shows the departure factor in each frame
-of test 2, if we interpret this value as position in each sample time, 
+of test 2, if we interpret this value as the position in each sample time, 
 then the departure factor describes the relative target position.
 So that, in the first image the analyzed object is at a distance $d_0$ 
 and in the last image the object is at a distance of $52.42\%$ of $d_0$.
@@ -78,15 +78,25 @@ approximates the target to the nearest layer.
 \caption{Velocity of departure factor for each frame in the test 2.}
 \label{fig:res_graph2v}
 \end{figure}
-The velocity of departure factor can be seen in the Fig. \ref{fig:res_graph2v}.
+By other side, the velocity of departure factor can be seen in the 
+Fig. \ref{fig:res_graph2v}, where the velocity is calculated
+to $d_0=1$ and $\Delta t=1$. The mean value of the departure
+velocities is equal to $-0.0048$, it indicates that the
+analyzed object is in approaching to the observer. Similarly
+to the case of test 1, this mean velocity can be interpret
+as a mean approach of $0.48\%$ of $d_0$ in each one of 100 frames.
+If we compare the test 1 and 2 to the same $\Delta t=1$, is easy to see
+that the departure velocity is lower than the test 1, 
+but as the test 2 has more analyzed frame the approaching to the observer
+is greater (100 images); 
+not to mention that in the test 1, the small number of images 
+make  unrepresentative the mean value.
 
--0.0048060
-
-
-One application using tracking and departure factor is 
-related with risk of collision. 
-It is possible estimate how fast any object is departing,
-then, if the factor tends to zero or if it changes to values 
-fewer every time, probably, there is a high risk of collision.
+One application that use the tracking and the departure factor 
+is related with risk of collision.
+It is possible to estimate how of fast an object is departing,
+and thus, if the velocity of departure factor tends to zero or 
+if it changes to lower values every time, 
+probably, there is a high risk of collision.
 
 
