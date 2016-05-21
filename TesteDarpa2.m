@@ -5,23 +5,22 @@ clear
 
 addpath(genpath('mfiles'));
 
-%img1=load_image_from_filename('Mini/0000000000.png');
-img1=load_image_from_filename('tests/test1/0000000000.png');
+%DIR_IMAGES='tests/test1/';
+%srcFiles  = dir([DIR_IMAGES,'*.png']);
+DIR_IMAGES='tests/test2/'
+srcFiles  = dir([DIR_IMAGES,'*.jpg']);
 
+img1=load_image_from_filename([DIR_IMAGES,srcFiles(1).name]);
 
 %Setting
 roi_params=select_roi_params_from_image(img1);
 
 %Region of interesting
-%figure;
-%imagesc(img1);
 [ROI]=select_region(roi_params, img1);
-%show_roi(img1,lin0,col0,WSIZE);
 
 search_params.StepSIZE=1; %observacao: se colocar o stepsize em funcao do tamanho do ROI
 
-%srcFiles  = dir('Mini/*.png');
-srcFiles  = dir('tests/test1/*.png');
+
 
 KK=1;
 P{KK}=[roi_params.lin0 roi_params.col0 roi_params.d ];
@@ -31,8 +30,8 @@ WSIZEL0=roi_params.WSIZEL;
 WSIZEC0=roi_params.WSIZEC;
 
 tic
-for c = 1:8 %length(srcFiles)
-    filename = ['tests/test1/', srcFiles(c).name];
+for c = 1:length(srcFiles)
+    filename = [DIR_IMAGES, srcFiles(c).name];
     img2=load_image_from_filename(filename);
     %size(img2)
     [match_params, AREA, LOST] = find_with_pearson(ROI,roi_params,search_params,img2); %pr = PCC maior
@@ -48,7 +47,7 @@ for c = 1:8 %length(srcFiles)
     AREA
     FATD = aprox(ROI, AREA)
     d=sqrt(FATD)*roi_params.d %alterado de d=FATD*roi_params.d
-    vc(c) = c;
+    vc(c) = c-1;
     vd(c) = d;
 
 	KK=KK+1;    
@@ -69,6 +68,6 @@ toc
 save('data_TEsteDarpa2.dat','vc','vd','img2','P','WSIZEL0','WSIZEC0','WSIZELF','WSIZECF');
 rmpath(genpath('mfiles'));
 
-plot_TesteDarpa2
+plot_TesteDarpa2();
 
 

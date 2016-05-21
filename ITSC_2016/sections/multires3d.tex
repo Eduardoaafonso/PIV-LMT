@@ -29,8 +29,8 @@ The algorithm try tracking objects nearest with $\alpha<1$ and objects farthest 
 
 %usa Multi-resolution match criteria e explica isso dos tamanhos
 
-\subsubsection{APPROACHING FACTOR- RELATIVE VELOCITY}
-The approaching factor is a dimensionless number related to the rate of approaching 
+\subsubsection{DEPARTURE FACTOR- RELATIVE VELOCITY}
+The departure factor is a dimensionless number related to the rate of approaching 
 or departure of an object to the observer. The factor
 is determined how showed at equation \ref{eq:relarea},
 
@@ -38,7 +38,7 @@ is determined how showed at equation \ref{eq:relarea},
 f_a \equiv \alpha^2 \equiv \frac{Area_r}{Area_f} 
 \end{equation}
 
-Where $f_a$ and $\alpha$ are defined as the area factor and approaching factor, 
+Where $f_a$ and $\alpha$ are defined as the area factor and departure factor, 
 respectively; $Area_r$ is the area of ROI and $Area_f$ 
 is the area of analyzed region in the current image frame. 
 
@@ -46,7 +46,7 @@ Thus, if we consider that the object analyzed in the $ROI$ was to a distance $d$
 them the object in the analyzed region was to a distance of $\alpha d$ (or $\sqrt{f_a} d$),
 so that if the $i-th$ image was analyzed, then $\alpha_i$ and $d_i=\alpha_i d$ will be obtained.
 
-The approaching factor, $\alpha_i$, has two interpretations, if the rate of approaching increase quickly, 
+The departure factor, $\alpha_i$, has two interpretations, if the rate of departure increase quickly, 
 means that the object is departing. Or the apposite, if factor decreases, the 
 object is approaching.
 
@@ -58,9 +58,12 @@ Relative velocity is calculate using a simples equation of kinematic in physics:
 Where the vector $v_i$ represent the relative velocity in the i-th image frame, 
 $s_i=(x_i,y_i,d_i)$ is the position of match in the i-th image frame
 and $\Delta t$ is the sampling time between image frames.
+Additionally, we call of velocity of departure factor, $v^d_i$, 
+to the scalar number that represent the depth component
+of vector $v_i$.
 
-The calculated velocity  is relative, for the simple reason that the distance (depth) between the 
+The calculated  $v^d_i$  is relative, for the simple reason that the distance (depth) between the 
 camera (observer) and the object in the instant i-th ever will be referenced to $d_0$, the distance of
-initial $ROI$ established by definition to 1. By other side, the distances $x_i$ and $y_i$ are in pixels. 
+initial $ROI$ that is established by definition to 1.
 Finally, in all cases the position $s_i$ is relative to a moving reference system.
 

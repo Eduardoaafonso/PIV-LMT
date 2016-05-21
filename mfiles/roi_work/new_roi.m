@@ -50,7 +50,7 @@ function [NROI nroi_params]=new_roi( img2, ROI, roi_params,match_params, fator_m
     	nroi_params.WSIZEC =WSIZEC; %window size
     	nroi_params.lin0=match_params.lin0_match;
     	nroi_params.col0=match_params.col0_match;
-      nroi_params.d=roi_params.d/match_params.fator;
+        nroi_params.d=roi_params.d/match_params.fator;
     	nroi_params.lin =match_params.lin0_match+floor(WSIZEL*match_params.fator)-1;
     	nroi_params.col =match_params.col0_match+floor(WSIZEC*match_params.fator)-1;
         figure;
