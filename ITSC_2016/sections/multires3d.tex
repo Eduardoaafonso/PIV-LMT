@@ -1,8 +1,26 @@
-\subsubsection{MULTI-LAYER 3D APPROXIMATION}
-The multi-layer is a technique to track objects that move in 3 dimensions. The 
-layers are organized of the smallest to the biggest, 
-there is a rate which layers increase. With this proceeding, the algorithm is 
-capable of track objects that in second scene was larger than first.\\
+\subsubsection{MULTI-SCALE 3D INTERPRETATION}
+The multi-scale is a technique to track objects that moves in 3 dimensions. 
+To understand this technique we need to analyze the same object in 
+two different positions, as in the Figure \ref{fig:multiscale3d}.
+
+\begin{figure}[H]
+\centering
+  \includegraphics[width=.7\columnwidth]{images/Diagrama3.eps}
+  \caption{Interpretation of the area relation in the multi-scale tracking.}
+  \label{fig:multiscale3d}
+\end{figure}
+The figure show, using the colors blue and red, the same object located in two 
+different distances, being these $d$ and $\alpha d$, respectively. 
+In both cases, one picture of scene is obtained,
+so that, the plane of photography is located at a distance $h$ of observer.
+The projections of objects in blue and red, in plane of photography, are
+called of $L_b$ and $L_r$, respectively.
+
+
+The layers are organized of the smallest ($\alpha <1.0$) to the biggest ($\alpha >1.0$), 
+to a set of discrete values of $\alpha$. 
+With this proceeding, the algorithm is capable of track objects 
+that in current frame are larger than in the last.
 
 %usa Multi-resolution match criteria e explica isso dos tamanhos
 
