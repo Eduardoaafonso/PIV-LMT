@@ -4,8 +4,8 @@ The $ROI$ is an important element in the algorithm, because of that this
 will be used as pattern to find a match of tracked object at the current image. 
 The  question in this case is to know the best moment to refresh the $ROI$
 with a new perspective of object. 
-Here, we establish the criteria that when the comparison of images return 
-a $PCC$ lower than $0.925$ and greater than $0.8$, then the $ROI$ is changed with the current 
+Here, we establish the criteria that; when the comparison of images return 
+a $PCC$ value lower than $0.925$ and greater than $0.8$, then the $ROI$ is changed with the current 
 analyzed region and a new position of $ROI$ is establish with $(x_i,y_i,d_i)$. 
 Thus, it was adopted as $0.8$ the lower limit to a match case\cite{Eugene},
 see Fig. \ref{fig:newroicri}. Values less than $0.8$ cause a  lost object alert.
@@ -23,5 +23,5 @@ then the $ROI$ changes to the current analyzed region.}
 \label{fig:newroicri}
 \end{figure}
 
-The system needs to have high level of reliability, so that the lower limit adopted 
-contributes to an operation with minimum of mistakes.
+%The system needs to have a high level of reliability, so that the lower limit adopted 
+%contributes to an operation with minimum of mistakes.

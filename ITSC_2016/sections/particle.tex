@@ -1,12 +1,11 @@
 
 \subsection{PARTICLE IMAGE VELOCIMETRY}
 
-$PIV$ is a technique to determine a velocity field from a stream of consecutive 
-images of seeded flows\cite{Bastiaans}.
-This result is given as a vector field, demonstrating direction, sense and 
-intensity of velocity in each particle. 
-Moreover, it is possible to calculate rapidly the velocities of any part of image.
+$PIV$ is a technique to determine the  velocity field of objects from a stream of images.\cite{Bastiaans}.
+This result is given as a vector field, showing for each particle, direction, sense and intensity of velocity. 
+Moreover, it is possible to calculate rapidly the velocities of any object int the image.
 For this purpose, the $PIV$ technique divides the image in analysis regions (particles), 
-and are searched similarities to these particles in the next image; 
+and are searched similarities to these particles in between two consecutive images 
+(the current image in the stream and the previous); 
 when matches are found, displacement vectors (vector field) are returned,
 the analysis regions are refresh and the process is repeated with the consecutive image.

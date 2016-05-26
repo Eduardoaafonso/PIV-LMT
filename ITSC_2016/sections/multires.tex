@@ -2,13 +2,13 @@
 \subsection{MULTI-SCALE MATCH CRITERIA}
 The match criteria to track objects, in the presented algorithm, 
 it is based in the $PIV$ technique; 
-where, a ROI and a Window Of Search ($WOS$) is defined; and is 
-verified the similarity of $ROI$ with any part of $WOS$, using $PCC$. 
-So that, the highest coefficient of Pearson in the analyzed region 
+where two images, a ROI and a Window Of Search ($WOS$) is defined; and is 
+verified using $PCC$ the similarity of $ROI$ with any part of $WOS$. 
+So that, the highest $PCC$ value in the analyzed region 
 determines the location of the object.
 
 Figure \ref{fig:multires}(a) shows an application in 2 dimensions, where
-the $ROI$ information is searched, in the same scale,  in the entire image.
+the $ROI$ information is searched, in the same scale,  in the $WOS$.
 
 The Figure \ref{fig:multires}(b) reveals how the dimension of depth was included and
 the search is made in different scales (layers). Similarly to the $2D$ case, 

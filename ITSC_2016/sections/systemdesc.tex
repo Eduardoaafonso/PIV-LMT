@@ -3,11 +3,12 @@ about the followed target.
 These informations will be relevant to define parameters 
 as: the relative velocity, the factor of approaching and of departure.
 
-The proposed algorithm is shown in the Fig. \ref{fig:system}, 
+The proposed algorithm is shown in the Fig. \ref{fig:system};
 this begin with a key frame image where a initial Region Of Interest ($ROI$) is determined; 
 the system then receive a stream of image frames and the tracking system 
 enters in looping to follow the target in the next frames.
-
+In this case, to difference of $PIV$, the compared images are 
+the current image in the image stream and the current $ROI$.
 
 \begin{figure}[bhp]
 \includegraphics[width=\columnwidth]{images/figure1-diagram1.eps}
@@ -26,7 +27,7 @@ the initial $ROI$ has the position $(x=x_0,y=x_0,d=d_0=1)$;
 where, $x_0$ and $y_0$ represent a position (horizontal and vertical) in the analyzed image,
 and $d_0=1$ represents the initial depth position of object in the $ROI$ (normalized by definition to $1.0$).
 Thus, all the results of depth will be relatives to this value, 
-In this sense only can be calculated relative values of
+In this sense only can be calculated, relative values of
 velocity and the factor of approaching or departure. 
 
 %Diagrama1
