@@ -1,30 +1,24 @@
 
-\subsection{MULTI-SCALE MATCH CRITERIA}
-The match criteria to track objects, in the presented algorithm, 
-it is based in the $PIV$ technique; 
-where two images, a ROI and a Window Of Search ($WOS$) is defined; and is 
-verified using $PCC$ the similarity of $ROI$ with any part of $WOS$. 
-So that, the highest $PCC$ value in the analyzed region 
-determines the location of the object.
+\subsection{MULTI-SCALE MATCH CRITERION}
+In the presented algorithm, the match criterion to track target is based on the $PIV$ technique, 
+where from two images a ROI and a Window Of Search ($WOS$) are defined. A target (object) is identified 
+from a highest value of correlation ($PCC$) between a selected $ROI$ and a $WOS$, which determines a object location.
 
-Figure \ref{fig:multires}(a) shows an application in 2 dimensions, where
-the $ROI$ information is searched, in the same scale,  in the $WOS$.
+Fig. \ref{fig:multires}(a) shows an application in two dimensions, where
+the regions are compared with a ROI using the same scale.
 
-The Figure \ref{fig:multires}(b) reveals how the dimension of depth was included and
-the search is made in different scales (layers). Similarly to the $2D$ case, 
-in 3 dimensions the target 
-also is found through the highest $PCC$ among $WOS$, but the object found may be 
-bigger or smaller, depending of in which layer the match happens. 
-In all cases, before of be compared, the analyzed region in the $WOS$ was 
-rescaled to have the same size that the $ROI$.
+The Fig. \ref{fig:multires}(b) reveals how the dimension of depth was included and
+the search is made in different scales (layers). Similarly to the two dimension case, 
+in three dimensions the target is also found through the highest $PCC$, but the object found may be 
+bigger or smaller than the last target found.
 
 \begin{figure}[H]
 \centering
   \subfloat[]{\label{subfig:(a)} \includegraphics[width=.5\columnwidth]{images/figure2a.eps}}
   \subfloat[]{\label{subfig:(b)} \includegraphics[width=.5\columnwidth]{images/figure2b.eps}}
   \caption{The red boxes show the analyzed regions and the black boxes represent the $WOS$. 
-  (a) The regions are compared in the same scale with the $ROI$. 
-  (b) The regions are compared with the $ROI$  using different scales.}
+  (a) The regions are compared with a $ROI$ using the same scale. 
+  (b) The regions are compared with a $ROI$ using different scales.}
   \label{fig:multires}
 \end{figure}
 
