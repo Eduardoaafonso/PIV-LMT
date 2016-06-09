@@ -2,10 +2,13 @@
 function h=plot_TesteDarpa2()
 	DATA=load('data_TEsteDarpa2.dat');
 
-	graph = plot(DATA.vc,DATA.vd);
+    ppy = splinefit (DATA.vc,DATA.vd, 10);
+    YY = ppval (ppy, DATA.vc);
+	graph = plot(DATA.vc,DATA.vd,'-o',DATA.vc,YY,'-');
 	grid;
-	hx=xlabel('Analyzed frame');
+	hx=xlabel('Analyzed image');
 	hy=ylabel('Departure factor');
+    legend('Departure factor','Spline fit of departure factor')
 	ylim([0.5 1.2]);
 
 	FONTSIZE=20;
@@ -17,11 +20,17 @@ function h=plot_TesteDarpa2()
 	set(hy,'fontsize',FONTSIZE);%% cambia solamente el texto de y
 	print (hf ,'graph.eps','-deps','-tight',['-F:',int2str(FONTSIZE)]);
 
+    x=DATA.vc(2:length(DATA.vc));
+    dy=diff(DATA.vd);
+    dyy=diff(YY);
 
-	graph = plot(DATA.vc(2:length(DATA.vc)),diff(DATA.vd));
+    MEANdy=mean(dy)
+    MEANdyy=mean(dyy)
+	graph = plot(x,dy,'-o',x,dyy,'-');
 	grid;
-	hx=xlabel('Analyzed frame');
+	hx=xlabel('Analyzed image');
 	hy=ylabel('Velocity of departure factor');
+    legend('Velocity of departure factor','Velocity of spline fit of departure factor')
 	%ylim([0.5 1.2]);
 
 	FONTSIZE=20;
