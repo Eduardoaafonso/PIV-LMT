@@ -1,16 +1,17 @@
 
 \subsection{MULTI-SCALE MATCH CRITERION}
-In the presented algorithm, the match criterion to track target is based on the $PIV$ technique, 
-where from two images a ROI and a Window Of Search ($WOS$) are defined. A target (object) is identified 
-from a highest value of correlation ($PCC$) between a selected $ROI$ and a $WOS$, which determines a object location.
+In the presented algorithm, the match criterion to track targets is based on the $PIV$ technique, 
+where two image regions are defined, a $ROI$ and a $WOS$. 
+The highest value of correlation ($PCC$) between the $ROI$ (Containing the target) and a $WOS$  
+identifies the target, and determines the target location.
 
 Fig. \ref{fig:multires}(a) shows an application in two dimensions, where
-the regions are compared with a ROI using the same scale.
+the regions are compared with a $ROI$ using the same scale.
 
 The Fig. \ref{fig:multires}(b) reveals how the dimension of depth was included and
 the search is made in different scales (layers). Similarly to the two dimension case, 
-in three dimensions the target is also found through the highest $PCC$, but the object found may be 
-bigger or smaller than the last target found.
+in three dimensions the target is also found through the highest $PCC$, but this may be
+found in an analysis region bigger or smaller than in the last match.
 
 \begin{figure}[H]
 \centering

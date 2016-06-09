@@ -1,17 +1,17 @@
 The purpose of our algorithm is to make a three dimensions tracking system, producing position informations 
-about a followed target (ROI).
+about a followed target ($ROI$).
 These informations will be relevant to define parameters 
 as: the relative velocity, the factor of approaching and of departure.
 
 The proposed algorithm is shown in Fig. \ref{fig:system};
-this begin with a key frame image where a initial target is determined; 
-the system then receive a stream of image frames and the tracking system 
-enters in looping to follow this target in the next frames.
+this begin with a key image where a initial target is determined; 
+the system then receive a stream of images and the tracking system 
+enters in looping to follow this target in the next images.
 
 \begin{figure}[bhp]
 \includegraphics[width=\columnwidth]{images/figure1-diagram1.eps}
 \caption{The target is identified from a highest value of correlation (PCC) between a selected ROI and 
-the Window Of Search (WOS) of a current frame; the result of this process is a displacement which is  returned as vector field.}
+the $WOS$ of the current image; the result of this process is a displacement which is  returned as vector field.}
 \label{fig:system}
 \end{figure}
 
