@@ -1,0 +1,43 @@
+Correções artigo LARS2016
+
+1) Explicações vagas
+2) Descrições vagas no estado da arte e melhorar a discussão dessa seção
+3) Aproveitar as 2 outras páginas do artigo
+4) Introdução pobre
+5) Explicar melhor o conceito de PIV, visao monocular e PCC
+6) Metodos e 'tipos' relatados devem ser mencionados
+7) Comparar metodos com PIV (recursos do tipo corners, SURF e SIRF)
+8) Recomendaram citar trabalhos sobre wavelets e moving fovea na parte da multi escalas
+9) Colocar no artigo o tempo de execução do algoritmo e discutir sobre isso
+10) Observar se o algoritmo tem execução suficientemente alta para que o comando chegue aos atuadores em tempo hábil para evitar a colisão
+11) Melhorar nos argumento enriquecendo a introdução e os trabalhos relacionados
+FEITO---12) Modificar a seção Theoretical fundament para Theoretical foundation
+FEITO---13) Modificar a seção Numerical Results para Experimental Results
+FAZENDO---14) Introdução deve contar Motivação, justificativa, objetivo, pequena introdução da metodologia e como o artigo é organizado
+FEITO---15) Conclusão deve ser escrita em apenas um paragrafo
+16) Revisar melhor os trabalhos relacionados para deixar bem claro qual a contribuição original da pesquisa
+17) Alterar a metodologia para que fique clara e seja facilmente reproduzível
+18) Usar testes estatisticos para comparar o nosso resultados com outros (usar curvas ROC)
+19) Colocar informações sobre a camera usada
+20) a camera se mexe ao usa la? como o algoritmo funciona na presença de ruidos? e 'blur'(borrão) causado por carro? Essas questões fazem com que o PCC nao seja a melhor ferramenta usada para comparação
+21) Indicação para usar algoritmo com 'treinamento' para que fique mais robusto
+
+Bibliografia recomendada
+Ulrich Nehmzow. Scientific Methods in Mobile
+Robotics: Quantitative Analysis of Agent Behaviour. Springer, 2006.
+http://www.amazon.com/Scientific-Methods-Mobile-Robotics-Manufacturing/dp/1846280192
+
+22) Mostrar o funcionamento do PIV na seção Algorithm Description Section
+23) Descrever o experimento em detalhes
+24) Explicar melhor a relação PCC, ROI e WOS
+25) Explicar melhor o redimensionamento de matrizes com tamanhos diferentes
+26) Modificar no laxer de 1/\alpha_{2} para 1/\alpha^{2}
+
+informações sobre optical flow indicadas
+http://docs.opencv.org/master/d7/d8b/tutorial_py_lucas_kanade.html#gsc.tab=0
+
+-----------------------------------RESUMINDO-------------------------------------------------
+Melhorar na escrita;
+Discutir mais sobre os trabalhos relacionados na introdução, metodologia e resultados;
+Explicar melhor e com mais detalhes a metodologia para que seja reproduzível;
+Comparar nossos resultados com os trabalhos relacionados;

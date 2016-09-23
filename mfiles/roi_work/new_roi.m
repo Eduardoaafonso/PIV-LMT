@@ -37,22 +37,22 @@ function [NROI nroi_params]=new_roi( img2, ROI, roi_params,match_params, fator_m
   %match_params.lin0_match = match_params.lin0_match -floor(WSIZEL*1.5*fator);
   %match_params.col0_match = match_params.col0_match -floor(WSIZEC*1.5*fator);
   
-     if((match_params.lin0_match+floor(WSIZEL*match_params.fator)-1)<LINMAX) && ((match_params.col0_match+floor(WSIZEC*match_params.fator)-1)<COLMAX) && (match_params.pr <0.925) %%%%MUDANÇA ADICIONEI (WSIZEL*fator<LINMAX) && (WSIZEC*fator<COLMAX)
-        NROI = img2(    match_params.lin0_match+[0:floor(WSIZEL*match_params.fator)-1] , ...
-                        match_params.col0_match+[0:floor(WSIZEC*match_params.fator)-1] ); % new region of interesting image 1 (NROI)
+     if((match_params.lin0_match+floor(match_params.WSIZEL)-1)<LINMAX) && ((match_params.col0_match+floor(match_params.WSIZEC)-1)<COLMAX) && (match_params.pr <0.925) %%%%MUDANÇA ADICIONEI (WSIZEL*fator<LINMAX) && (WSIZEC*fator<COLMAX)
+        NROI = img2(    match_params.lin0_match+[0:floor(match_params.WSIZEL)-1] , ...
+                        match_params.col0_match+[0:floor(match_params.WSIZEC)-1] ); % new region of interesting image 1 (NROI)
         
         %MUDANÇA de WSIZEL+fator para floor(WSIZEL*fator)-1
         %Adicionei o fator como parametro
         
         NROI = double(NROI); %alteracao feita para que o codigo funcione com reducao de imagem.
 
-    	nroi_params.WSIZEL =WSIZEL; %window size
-    	nroi_params.WSIZEC =WSIZEC; %window size
+    	nroi_params.WSIZEL =match_params.WSIZEL; %window size
+    	nroi_params.WSIZEC =match_params.WSIZEC; %window size
     	nroi_params.lin0=match_params.lin0_match;
     	nroi_params.col0=match_params.col0_match;
         nroi_params.d=roi_params.d/match_params.fator;
-    	nroi_params.lin =match_params.lin0_match+floor(WSIZEL*match_params.fator)-1;
-    	nroi_params.col =match_params.col0_match+floor(WSIZEC*match_params.fator)-1;
+    	nroi_params.lin =match_params.lin0_match+floor(match_params.WSIZEL)-1;
+    	nroi_params.col =match_params.col0_match+floor(match_params.WSIZEC)-1;
         figure;
         imagesc(NROI)
 		    refresh

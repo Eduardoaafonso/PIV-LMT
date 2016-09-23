@@ -26,10 +26,10 @@
 % Email: eduardoafonsobaixista@gmail.com
 % website: github https://github.com/Eduardoaafonso/PIV-LMT
 
-function [match_params, AREA,LOST] = find_with_pearson(ROI,roi_params, search_params, img2)
+function [match_params, AREA,LOST, WSIZEC_match, WSIZEL_match] = find_with_pearson(ROI,roi_params, search_params, img2)
 	%setting parameters 
 
-	[lin_match, col_match, pr, AREA, fator_match]= search_match (search_params.StepSIZE, img2, ROI,roi_params);
+	[lin_match, col_match, pr, AREA, fator_match, WSIZEC_match, WSIZEL_match]= search_match (search_params.StepSIZE, img2, ROI,roi_params);
 
 	% vector de avan�o
 	match_params.lin0       = roi_params.lin0;
@@ -40,8 +40,15 @@ function [match_params, AREA,LOST] = find_with_pearson(ROI,roi_params, search_pa
 	match_params.vector_lin = match_params.lin0_match - match_params.lin0;
 	match_params.vector_col = match_params.lin0_match - match_params.lin0;
 	match_params.pr=pr;
+  match_params.WSIZEC = WSIZEC_match;
+  match_params.WSIZEL = WSIZEL_match;
+
   
-  if pr < 0.1 %0.75
+  WSIZEC_match
+  WSIZEL_match
+  fator_match
+  
+  if pr < 0.3 %0.75
     LOST=1;
   else
     LOST=0;

@@ -1,26 +1,24 @@
 \section{INTRODUCTION}
 
-Monocular vision comes being a flourishing field in autonomous vehicles. 
-Several applications have presented solutions to current problems. 
-Although in systems  of low computational cost remain a challenge. 
+Traffic accident has been an important point to government. The world average of people
+died at traffic is around 10 people per 100 thousand, but in countries, like Brazil, it can be worse.
+In 2016, the group which compose the UN General Assembly adopted a resolution for
+improve global road safety and they consider that 2011-2020 is Decade of Action for Road Safety.
+Traffic jam is other problem faced by cities, it is caused by reckless drivers and accidents.
+Many centers of research have been studying solutions to improve this condition and decrease the 
+numbers of death and accidents.
+
+Monocular vision comes is an emerging field in autonomous vehicles. 
+Several application have presented solutions to current problems, 
+however systems  of low computational cost remain a challenge. 
 
 
 The Particle Image Velocimetry ($PIV$)\cite{Bastiaans} technique is used in many fields of 
-knowledge, \cite{Story, Xu}, to calculate the velocity of fluids in different locations. 
-Here, $PIV$ was adjusted to the situation of autonomous vehicles, using a matching criteria based on 
+knowledge, \cite{Story, Xu}, to calculate the velocity of fluids in different parts. 
+Here, $PIV$ was adjusted for the case of autonomous vehicles using matching criteria based on 
 the Pearson Correlation Coefficient ($PCC$)\cite{Miranda Neto} over the KITTI dataset\cite{Geiger}.
 
-Some variables used in this paper can be seen in the Fig. \ref{fig:systemnotation}. 
-Where, the object that will be subject tracking is defined as target.
-A matrix containing only an image of the target is called Region Of Interest ($ROI$).
-By other side, a portion of an image that is under analysis is called Window of Search ($WOS$), 
-and it is a rectangle where the program will search similarities with the $ROI$.
-Finally, each one of sub regions inside the $WOS$ are called analysis region.
-
-\begin{figure}[bhp]
-\centering
-\includegraphics[width=0.7\columnwidth]{images/Diagrama2.eps}
-\caption{Notation of variable names used in this paper.}
-\label{fig:systemnotation}
-\end{figure}
+Here, we define some variable used in the paper. The object of interesting is called target.
+The region of interesting (ROI) is part of image where the target is and
+Window of Search (WOS) is a rectangle where the program will search the ROI. 
 

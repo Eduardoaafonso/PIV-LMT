@@ -21,8 +21,7 @@
 % Email: eduardoafonsobaixista@gmail.com
 % website: github https://github.com/Eduardoaafonso/PIV-LMT
 
-function [lin_match, col_match, pr, AREA, fator_match]= search_match ( StepSIZE, img2, ROI,roi_params) 
-    pr = 0; % inicial pearson
+function [lin_match, col_match, pr, AREA, fator_match, WSIZEC_match, WSIZEL_match]= search_match ( StepSIZE, img2, ROI,roi_params) 
 
     WSIZEL=size(ROI,1);
     WSIZEC=size(ROI,2);
@@ -38,11 +37,11 @@ function [lin_match, col_match, pr, AREA, fator_match]= search_match ( StepSIZE,
     WSIZEC
   
   
-    for fator=0.8:0.05:1.3;
+    for fator=0.8:0.05:1.5;
 
         % LengthSearch = variavel usada para determinar a regiao que ser� varrida pelo ROI
-        LengthSearchL=floor(WSIZEL*fator*1.5);
-        LengthSearchC=floor(WSIZEC*fator*1.5); %0.5
+        LengthSearchL=floor(WSIZEL*fator*.5);
+        LengthSearchC=floor(WSIZEC*fator*.5); %0.5
   
         l0=roi_params.lin0-LengthSearchL;
         if l0<1
@@ -87,7 +86,6 @@ function [lin_match, col_match, pr, AREA, fator_match]= search_match ( StepSIZE,
         
             TEMPROI = double(TEMPROI);
         
-        
             pcc=get_pcc(ROI,TEMPROI);
                 
             if pcc >= pr %the biggest value of PCC
@@ -98,6 +96,8 @@ function [lin_match, col_match, pr, AREA, fator_match]= search_match ( StepSIZE,
                 %MODIFICA��O: +1 para que n�o haja col_match=0, pois a imagem n�o tem coordenada [0,0].
                 AREA=A;
                 fator_match=fator;
+                WSIZEC_match = round(WSIZEC*fator);
+                WSIZEL_match = round(WSIZEL*fator);
             end
         %end
         end
