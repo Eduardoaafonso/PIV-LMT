@@ -49,10 +49,10 @@ function h=plot_vector(DATA)
 
 	N=length(DATA.P);
 
-	lin0=DATA.P{1}(1,1);
-	col0=DATA.P{1}(1,2);
-	delta_lin=DATA.P{N}(1,1)-DATA.P{1}(1,1);
-	delta_col=DATA.P{N}(1,2)-DATA.P{1}(1,2);
+	lin0=((DATA.P{1}(1,1))+DATA.WSIZEL0/2); %ADICIONADO DATA.WSIZEL0/2
+	col0=((DATA.P{1}(1,2))+DATA.WSIZEC0/2);
+	delta_lin=DATA.P{N}(1,1)+DATA.WSIZELF/2-lin0; %Adicionado +DATA.WSIZEL0/2
+	delta_col=DATA.P{N}(1,2)+DATA.WSIZECF/2-col0;
 
 	for II=1:N
 		scatter(DATA.P{II}(1,2),DATA.P{II}(1,1));

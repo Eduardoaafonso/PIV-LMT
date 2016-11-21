@@ -9,7 +9,8 @@ addpath(genpath('mfiles'));
 %srcFiles  = dir([DIR_IMAGES,'*.png']);
 %DIR_IMAGES='tests/test2/'
 %srcFiles  = dir([DIR_IMAGES,'*.jpg']);
-DIR_IMAGES = '/home/eduardo/Projetos/ProjPiv/PIV-LMT/cofre/mini3/gray/teste-300-430/';
+%DIR_IMAGES = '/media/eduardo/6A2EBBE72EBBAA89/IC-UFLA/PIV-LMT/cofre/mini3/gray/teste-300-430/';
+DIR_IMAGES = '/media/eduardo/6A2EBBE72EBBAA89/IC-UFLA/PIV-LMT/tests/400-430/';
 %DIR_IMAGES = '/home/eduardo/Projetos/ProjPiv/PIV-LMT/cofre/test6/';
 srcFiles = dir([DIR_IMAGES,'*.jpg']);
 

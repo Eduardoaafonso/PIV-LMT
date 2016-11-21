@@ -81,12 +81,15 @@ function [lin_match, col_match, pr, AREA, fator_match, WSIZEC_match, WSIZEL_matc
             ROI = double(ROI); 
           
             A=size(TEMPROI,1)*size(TEMPROI,2);
-        
+            
             TEMPROI=resizeminus(ROI,TEMPROI);
         
             TEMPROI = double(TEMPROI);
-        
-            pcc=get_pcc(ROI,TEMPROI);
+            
+            ROIpon = ponderacao(ROI);
+            TEMPROIpon = ponderacao(TEMPROI);
+            
+            pcc=get_pcc(ROIpon,TEMPROIpon);
                 
             if pcc >= pr %the biggest value of PCC
                 pr = pcc;
@@ -98,6 +101,7 @@ function [lin_match, col_match, pr, AREA, fator_match, WSIZEC_match, WSIZEL_matc
                 fator_match=fator;
                 WSIZEC_match = round(WSIZEC*fator);
                 WSIZEL_match = round(WSIZEL*fator);
+                
             end
         %end
         end
