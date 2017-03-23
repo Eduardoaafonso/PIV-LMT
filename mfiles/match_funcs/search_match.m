@@ -1,31 +1,31 @@
 % Esta fun��o pesquisa na imagem 2 qual a parte mais parecida com a regi�o de interesse;
 %
 % inputs
-% StepSIZE = dist�ncia percorrida em pixels entre ROIs;
+% StepSIZE = dist�ncia percorrida em pixels entre RORs;
 % img2 = imagem 2;
-% ROI = regi�o de interesse;
-% roi_params = par�metros do roi antigo 
-%     roi_params.WSIZEL
-%     roi_params.WSIZEC
-%     roi_params.lin0     :linha inicial na imagen
-%     roi_params.col0
-%     roi_params.lin      :linha final na imagen
-%     roi_params.col
+% ROR = regi�o de interesse;
+% ROR_params = par�metros do ROR antigo 
+%     ROR_params.WSIZEL
+%     ROR_params.WSIZEC
+%     ROR_params.lin0     :linha inicial na imagen
+%     ROR_params.col0
+%     ROR_params.lin      :linha final na imagen
+%     ROR_params.col
 %
 % outputs:
-% lin_match = linha do novo ROI;
-% col_match = coluna do novo ROI;
-% pr = coenficiente de pearson do novo ROI;
+% lin_match = linha do novo ROR;
+% col_match = coluna do novo ROR;
+% pr = coenficiente de pearson do novo ROR;
 %
 % Desenvolvedor: Eduardo Afonso, Fernando
 % Email: eduardoafonsobaixista@gmail.com
 % website: github https://github.com/Eduardoaafonso/PIV-LMT
 
-function [lin_match, col_match, pr, AREA, fator_match, WSIZEC_match, WSIZEL_match]= search_match ( StepSIZE, img2, ROI,roi_params) 
+function [lin_match, col_match, pr, AREA, fator_match, WSIZEC_match, WSIZEL_match]= search_match ( StepSIZE, img2, ROR,ROR_params) 
 
-    WSIZEL=size(ROI,1);
-    WSIZEC=size(ROI,2);
-
+    WSIZEL=size(ROR,1);
+    WSIZEC=size(ROR,2);
+    
     LINMAX=size(img2,1);
     COLMAX=size(img2,2);
   
@@ -35,24 +35,25 @@ function [lin_match, col_match, pr, AREA, fator_match, WSIZEC_match, WSIZEL_matc
   
     WSIZEL
     WSIZEC
-  
-  
-    for fator=0.8:0.05:1.5;
+   
+    n=1;
+    %de 0,66:0,01:1,5 
+    for fator=0.86:0.01:1.3;
 
-        % LengthSearch = variavel usada para determinar a regiao que ser� varrida pelo ROI
+        % LengthSearch = variavel usada para determinar a regiao que ser� varrida pelo ROR
         LengthSearchL=floor(WSIZEL*fator*.5);
         LengthSearchC=floor(WSIZEC*fator*.5); %0.5
   
-        l0=roi_params.lin0-LengthSearchL;
+        l0=ROR_params.lin0-LengthSearchL;
         if l0<1
             l0=1;
         end
-        c0=roi_params.col0-LengthSearchC;
+        c0=ROR_params.col0-LengthSearchC;
         if c0<1
             c0=1;
         end
 
-        lf=roi_params.lin0+LengthSearchL;
+        lf=ROR_params.lin0+LengthSearchL;
         if lf>(LINMAX-floor(WSIZEL*fator))
             lf=(LINMAX-floor(WSIZEL*fator));
         end
@@ -61,7 +62,7 @@ function [lin_match, col_match, pr, AREA, fator_match, WSIZEC_match, WSIZEL_matc
             lf=1;
         end
   
-        cf=roi_params.col0+LengthSearchC;
+        cf=ROR_params.col0+LengthSearchC;
         if cf>(COLMAX-floor(WSIZEC*fator))
             cf=(COLMAX-floor(WSIZEC*fator));
         end
@@ -69,27 +70,32 @@ function [lin_match, col_match, pr, AREA, fator_match, WSIZEC_match, WSIZEL_matc
             cf=1;
         end
 
+        vetor_coluna(n) = c0;
+        
+  if  n>2 && vetor_coluna(n-1) != vetor_coluna(n) %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% FAZER
+
+
         for col=c0:StepSIZE:cf;
-        fprintf('factor:%4.2f col:%4d/%4d/%4d\r',fator,c0,col,cf); 
+        fprintf('factor:%4.2f col:%4d/%4d/%4d',fator,c0,col,cf); 
         for lin=l0:StepSIZE:lf; 
         %if ((floor(WSIZEL*fator)+lin-1) < LINMAX) && ((floor(WSIZEC*fator)+col-1) < COLMAX)    
 
-            TEMPROI = img2(   lin + [0: (floor(WSIZEL*fator)-1)] , ... % linhas
+            TEMPROR = img2(   lin + [0: (floor(WSIZEL*fator)-1)] , ... % linhas
                     col + [0: (floor(WSIZEC*fator)-1)]);    % colunas
                     
         
-            ROI = double(ROI); 
+            ROR = double(ROR); 
           
-            A=size(TEMPROI,1)*size(TEMPROI,2);
+            A=size(TEMPROR,1)*size(TEMPROR,2);
             
-            TEMPROI=resizeminus(ROI,TEMPROI);
+            TEMPROR=resizeminus(ROR,TEMPROR);
         
-            TEMPROI = double(TEMPROI);
+            TEMPROR = double(TEMPROR);
             
-            ROIpon = ponderacao(ROI);
-            TEMPROIpon = ponderacao(TEMPROI);
+            RORpon = ponderacao(ROR);
+            TEMPRORpon = ponderacao(TEMPROR);
             
-            pcc=get_pcc(ROIpon,TEMPROIpon);
+            pcc=get_pcc(RORpon,TEMPRORpon);
                 
             if pcc >= pr %the biggest value of PCC
                 pr = pcc;
@@ -105,7 +111,13 @@ function [lin_match, col_match, pr, AREA, fator_match, WSIZEC_match, WSIZEL_matc
             end
         %end
         end
-        end
         fprintf('\n');
+        end
+    else
+    fprintf("nao entrou \n")
+      end
+    n = n+1;
+        
     end
+
 end

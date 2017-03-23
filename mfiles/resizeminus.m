@@ -1,5 +1,5 @@
-function TEMPROI=resizeminus(ROI,TEMPROI)
+function TEMPROR=resizeminus(ROR,TEMPROR)
 
-  TEMPROI = imresize(TEMPROI, size(ROI));
+  TEMPROR = imresize(TEMPROR, size(ROR));
     
   end

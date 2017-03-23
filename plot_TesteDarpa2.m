@@ -45,6 +45,7 @@ function h=plot_TesteDarpa2()
 	h=0;
 end
 
+
 function h=plot_vector(DATA) 
 
 	N=length(DATA.P);

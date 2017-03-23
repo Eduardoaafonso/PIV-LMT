@@ -9,38 +9,51 @@ addpath(genpath('mfiles'));
 %srcFiles  = dir([DIR_IMAGES,'*.png']);
 %DIR_IMAGES='tests/test2/'
 %srcFiles  = dir([DIR_IMAGES,'*.jpg']);
-%DIR_IMAGES = '/media/eduardo/6A2EBBE72EBBAA89/IC-UFLA/PIV-LMT/cofre/mini3/gray/teste-300-430/';
-DIR_IMAGES = '/media/eduardo/6A2EBBE72EBBAA89/IC-UFLA/PIV-LMT/tests/400-430/';
-%DIR_IMAGES = '/home/eduardo/Projetos/ProjPiv/PIV-LMT/cofre/test6/';
-srcFiles = dir([DIR_IMAGES,'*.jpg']);
+%DIR_IMAGES = '/media/eduardo/6A2EBBE72EBBAA89/IC-UFLA/PIV-LMT/tests/64xResolution/300-430/';
+%DIR_IMAGES = '/media/eduardo/6A2EBBE72EBBAA89/IC-UFLA/PIV-LMT/tests/64xResolution/400-430/';
+%DIR_IMAGES = '/media/eduardo/6A2EBBE72EBBAA89/IC-UFLA/PIV-LMT/tests/64xResolution/1-430/';
+%DIR_IMAGES = '/media/eduardo/6A2EBBE72EBBAA89/IC-UFLA/PIV-LMT/tests/128xResolution/300-430';
+%DIR_IMAGES = '/media/eduardo/6A2EBBE72EBBAA89/IC-UFLA/PIV-LMT/tests/128xResolution/1-430';
+DIR_IMAGES = '/media/eduardo/6A2EBBE72EBBAA89/IC-UFLA/PIV-LMT/tests/POVRAY/Teste2/aprox';
 
+srcFiles{1}=0;
+JJ=1;
+for II=30:41
+  srcFiles{JJ} = sprintf(fullfile(DIR_IMAGES,[num2str(II),'.png']));
+  JJ=JJ+1;
+end
 
-img1=load_image_from_filename([DIR_IMAGES,srcFiles(1).name]);
+img1=load_image_from_filename(srcFiles{1});
 
 %Setting
-roi_params=select_roi_params_from_image(img1);
+ROR_params=select_ROR_params_from_image(img1);
 
 %Region of interesting
-[ROI]=select_region(roi_params, img1);
+[ROR]=select_region(ROR_params, img1);
 
-search_params.StepSIZE=1; %observacao: se colocar o stepsize em funcao do tamanho do ROI
+search_params.StepSIZE=1; %observacao: se colocar o stepsize em funcao do tamanho do ROR
 
 
 
 KK=1;
-P{KK}=[roi_params.lin0 roi_params.col0 roi_params.d ];
+P{KK}=[ROR_params.lin0 ROR_params.col0 ROR_params.d ];
 
 
-WSIZEL0=roi_params.WSIZEL;
-WSIZEC0=roi_params.WSIZEC;
+WSIZEL0=ROR_params.WSIZEL;
+WSIZEC0=ROR_params.WSIZEC;
 area=zeros(1,length(srcFiles));
+d=1; %Set of distance
+fator_total =d;
+fator_total1 =d;
+vc=1;
+vd=1;
 
 tic
 for c = 1:length(srcFiles)
-    filename = [DIR_IMAGES, srcFiles(c).name];
+    filename = srcFiles{c};
     img2=load_image_from_filename(filename);
     %size(img2)
-    [match_params, AREA, LOST, WSIZEC_match, WSIZEL_match] = find_with_pearson(ROI,roi_params,search_params,img2); %pr = PCC maior
+    [match_params, AREA, LOST, WSIZEC_match, WSIZEL_match] = find_with_pearson(ROR,ROR_params,search_params,img2); %pr = PCC maior
 	  WSIZELF=sqrt(AREA*WSIZEL0/WSIZEC0);
 	  WSIZECF=sqrt(AREA*WSIZEC0/WSIZEL0);
     fprintf('pearson:%d',match_params.pr);
@@ -49,41 +62,41 @@ for c = 1:length(srcFiles)
       break;
     end
  
-    MAIOR_ROI = plot_square(img2, match_params, c, DIR_IMAGES);
-    AROI=(size(ROI,1)*size(ROI,2))
-    area(c)=AREA;
-    FATD = aprox(ROI, AREA)
-    %roi_params.d : distancia  do ROI usado
+    MAIOR_ROR = plot_square(img2, match_params, c, DIR_IMAGES);
+    AROR=(size(ROR,1)*size(ROR,2)) %Area do ROR
+    area(c)=AREA; %Area do ROR com maior pearson encontrado
+    FATD = aprox(ROR, AREA)
+    %ROR_params.d : distancia  do ROR usado
     % d: distancia atual da regiao de analisis. imagen atual.
-    d=sqrt(FATD)*roi_params.d %alterado de d=FATD*roi_params.d
+    d=sqrt(FATD)*ROR_params.d %alterado de d=FATD*ROR_params.d
     vc(c) = c-1;
-    vd(c) = d;
+    vd(c) = d; %vetor de proporcao de distancia
     
     fator_total(c)=d;
-    fator_total1(c)=roi_params.d;
+    fator_total1(c)=ROR_params.d;
     
 
 	KK=KK+1;    
 	P{KK}=[match_params.lin0_match match_params.col0_match  d];
 
 
-    %ROI=new_roi(
+    %ROR=new_ROR(
     disp(num2str(c));
     
-    [ROI roi_params]=new_roi( img2, ROI,roi_params,match_params);
+    [ROR ROR_params]=new_ROR( img2, ROR,ROR_params,match_params);
     %points_pr.pr modificar para fazer sentido
     
     disp(' ');
 end
 toc
 
-FmedioRoiParamsD = sum(fator_total)/length(srcFiles)
+FmedioRORParamsD = sum(fator_total)/length(srcFiles)
 Fmediod = sum(fator_total1)/length(srcFiles)
 
 
 arquivo = fopen('dados_teste1.dat','w');
 fprintf(arquivo,'%f',fator_total);
-save('dados_teste1.dat', 'FmedioRoiParamsD', 'Fmediod');
+save('dados_teste1.dat', 'FmedioRORParamsD', 'Fmediod');
 fclose(arquivo);
 
 
@@ -93,3 +106,6 @@ rmpath(genpath('mfiles'));
 plot_TesteDarpa2();
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%ROR=Regiao de Referencia (era chamada de ROI)
+%ROI = Regiao de interesse 

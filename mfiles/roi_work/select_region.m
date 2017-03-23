@@ -1,28 +1,28 @@
 %
-% Esta fun��o constroi a regi�o de interesse selecionada 
+% Esta fun��o constROR a regi�o de interesse selecionada 
 %
 % inputs
-% roi_params = 
-% Par�metros do ROI 
-% 	roi_params.WSIZEL
-% 	roi_params.WSIZEC
-% 	roi_params.lin0
-% 	roi_params.col0
-% 	roi_params.lin
-% 	roi_params.col
+% ROR_params = 
+% Par�metros do ROR 
+% 	ROR_params.WSIZEL
+% 	ROR_params.WSIZEC
+% 	ROR_params.lin0
+% 	ROR_params.col0
+% 	ROR_params.lin
+% 	ROR_params.col
 %
 % img1= imagem 1; 
 
 % outputs
-% ROI =  ROI constru�do, utilizando os par�metros do ROI(roi_params);
+% ROR =  ROR constru�do, utilizando os par�metros do ROR(ROR_params);
 %
 % Desenvolvedor: Eduardo Afonso, Fernando
 % Email: eduardoafonsobaixista@gmail.com
 % website: github https://github.com/Eduardoaafonso/PIV-LMT
 
-function ROI=select_region(roi_params, img1)
+function ROR=select_region(ROR_params, img1)
 
-	ROI = zeros(roi_params.WSIZEL,roi_params.WSIZEC);
+	ROR = zeros(ROR_params.WSIZEL,ROR_params.WSIZEC);
 
-	ROI = img1(roi_params.lin0+[0:roi_params.WSIZEL-1],roi_params.col0+[0:roi_params.WSIZEC-1]); %region of interesting image 1 (ROI)
+	ROR = img1(ROR_params.lin0+[0:ROR_params.WSIZEL-1],ROR_params.col0+[0:ROR_params.WSIZEC-1]); %region of interesting image 1 (ROR)
 end
