@@ -1,0 +1,7 @@
+README
+
+Dados1 é um diretório que contém o experimento feito com todas as imagens(300 imagens). 
+Observa-se que aparentemente a recursão não segue a sequência das imagens, comprometendo o resultado!
+
+Devido a isso fiz um outro experimento em Dados2 o qual a recursão usou somente 56 amostras com os intervalos das
+imagens como mostrado no diretório 1-300.
