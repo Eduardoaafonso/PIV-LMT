@@ -11,10 +11,10 @@ displacement and time of computing, applying of conception of derivate it is pos
 \begin{figure}[H]
 \includegraphics[width=\columnwidth]{images/explanationPIV.eps}
 \caption{The PIV operation comparing two frames}
-\label{fig:system}
+\label{fig:twoframes}
 \end{figure}
 
-The figure above shows how PIV works and also demonstrates the relation between Region of Interest (ROI) and 
+The Fig. \ref{fig:twoframes} shows how PIV works and also demonstrates the relation between Region of Interest (ROI) and 
 Window of Search (WOS). WOS involves ROI because WOS is considered the possibles regions that object could be. 
 WOS don't need necessary fill whole image. If WOS is large, so we have an augment of computing but 
 if WOS is small, object can be lost. In our application, we determine WOS from 1,5 of ROI. For example, 
@@ -24,10 +24,10 @@ proven by testes in environment of low velocity of objects (velocity in cities a
 \begin{figure}[H]
 \includegraphics[width=\columnwidth]{images/WOSdivided.eps}
 \caption{WOS is divided in windows of same dimensions of ROI}
-\label{fig:system}
+\label{fig:WOSdivided}
 \end{figure}
 
-ROI is one of most important part of PIV, because it contains followed object. An window of same dimension of ROI is displaced
-along of whole WOS in frame 2, like showed in figure above. One comparison is done and assigned a value in each displacement. 
+ROI is one of most important part of PIV, because it contains target. An window of same dimension of ROI is displaced
+along of whole WOS in frame 2, like showed in Fig. \ref{fig:WOSdivided}. One comparison is done and assigned a value in each displacement. 
 When process finishes, the more height value is considered the new place of ROI. It means that object displaced of initial 
 position in frame 1 to found position in frame 2.
