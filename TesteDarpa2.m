@@ -14,11 +14,12 @@ addpath(genpath('mfiles'));
 %DIR_IMAGES = '/media/eduardo/6A2EBBE72EBBAA89/IC-UFLA/PIV-LMT/tests/64xResolution/1-430/';
 %DIR_IMAGES = '/media/eduardo/6A2EBBE72EBBAA89/IC-UFLA/PIV-LMT/tests/128xResolution/300-430';
 %DIR_IMAGES = '/media/eduardo/6A2EBBE72EBBAA89/IC-UFLA/PIV-LMT/tests/128xResolution/1-430';
-DIR_IMAGES = '/media/eduardo/6A2EBBE72EBBAA89/IC-UFLA/PIV-LMT/tests/POVRAY/Teste2/aprox';
+%DIR_IMAGES = '/media/eduardo/6A2EBBE72EBBAA89/IC-UFLA/PIV-LMT/tests/POVRAY/Teste2/aprox';
+DIR_IMAGES = '/home/eduardo/Projetos/ProjPiv/PIV-LMT/tests/POVRAY/2D/gray1';
 
 srcFiles{1}=0;
 JJ=1;
-for II=30:41
+for II=01:14
   srcFiles{JJ} = sprintf(fullfile(DIR_IMAGES,[num2str(II),'.png']));
   JJ=JJ+1;
 end

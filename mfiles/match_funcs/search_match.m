@@ -72,7 +72,7 @@ function [lin_match, col_match, pr, AREA, fator_match, WSIZEC_match, WSIZEL_matc
 
         vetor_coluna(n) = c0;
         
-  if  n>2 && vetor_coluna(n-1) != vetor_coluna(n) %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% FAZER
+  if  n>2 && vetor_coluna(n-1) != vetor_coluna(n) || fator == 1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% FAZER
 
 
         for col=c0:StepSIZE:cf;

@@ -1,0 +1,48 @@
+The followed informations introduce the results of two different tests 
+using POV-Ray.
+
+In the first test, Fig. \ref{fig:imgpapercerta}, 
+the algorithm makes the tracking of an object through 14 images in sequence with 
+a horizontal displacement to the camera.
+
+\begin{figure}[H]
+\centering
+  \subfloat[]{\label{fig:imgpapercertaa} \includegraphics[width=.48\columnwidth]{images/results_2D.png}}
+  \subfloat[]{\label{fig:imgpapercertab} \includegraphics[width=.48\columnwidth]{images/results_2D.eps}}
+  \caption{The image in (a) represents the target in its initial position 
+   and the image (b) shows the vehicle in its final position.}
+  \label{fig:imgpapercerta}
+\end{figure}
+
+The initial position of target is in the image (a) and the final position in (b), 
+where a vector (in blue) illustrates the resulting trace.
+We can observe that there is a small bend in the image 
+and it generates a slight change of object perspective. 
+The update of the $ROI$ is frequently done, which involves seeing a slight change in area.
+The difference between the initial and final values of the departure factor may 
+be considered constant, as shown in Fig. \ref{fig:res_graph1}.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\columnwidth]{images/results2D_graph.eps}
+\caption{Departure factor for each frame in the test 1.}
+\label{fig:res_graph1}
+\end{figure}
+
+Fig. \ref{fig:res_graph1v} shows the velocity of departure factor
+to a value $d_0=1$ and a $\Delta t=1$. It demonstrates that the variation
+of the departure factor is 0 when compared with 1. 
+It has departure factor (velocity) of $0$. Target is at same distance 
+during 14 frames in relation camera.
+.
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\columnwidth]{images/results2D_graphv.eps}
+\caption{Velocity of departure factor for each frame in the test 1.}
+\label{fig:res_graph1v}
+\end{figure}
+
+In test 1, we can observed the movement in axis X and rotation of target, the last one causes change of ROI more frequent
+because PCC generates a value below of threshold defined in Fig. \ref{fig:newroicri}.
+The high changes of ROI for rotation of target can be showed by bubbles in the superior part of ROI in Fig. 
+\ref{fig:imgpapercerta} (a).

@@ -1,21 +1,22 @@
 \subsection{ERROR REDUCTION}
 
-In this section, we discuss error of analysis of images. The target can be differents forms. However, 
-ROI is rectangular window. We identify certains areas inside of ROI that has more importance than others.
-In Fig. \ref{fig:erroridentified}, there are an error points close of edges because target not occupies whole ROI. 
+In this section, we discuss error in analysis of images. The target has differents forms. However, 
+ROI is rectangular window. Certains areas more importants were identified inside of ROI.
+In Fig. \ref{fig:erroridentified}, there are any areas close of edges that target not occupies. They are
+considered like error areas.
 
 \begin{figure}[H]
 \includegraphics[width=\columnwidth]{images/imageError.eps}
-\caption{Illustration of ROI with error close at edges}
+\caption{Illustration of ROI with error areas close of edge.}
 \label{fig:erroridentified}
 \end{figure}
 
-The rectangular window is used to correlation. In PCC, two matrix at same dimensios can be compared. 
-It's not possible for this correlation generate any date with imagens of differents dimensions. 
-However, PCC has high precision in its analysis.
+Two matrix at same dimensios can be compared in PCC. This method of comparesion doesn't generate
+any date if dimensions of frame are equals. 
+We are also interested to use in several applications PCC because this method has high precision.
 
-We decide solve this problem given a ponderation in PCC. Then, Points that contained the target was considered plus important
-and points of less importance has low weight in correlation.
+We decide solve this problem given a ponderation in PCC. Then, points on the target was considered plus important
+and points out of target has less importance in correlation.
 
 \begin{figure}[H]
 \includegraphics[width=\columnwidth]{images/imageErrorcontroled.eps}
@@ -24,4 +25,5 @@ and points of less importance has low weight in correlation.
 \end{figure}
 
 Points close of edge have less importance and they are in blue in Fig. \ref{fig:errorpondered}. 
-Points close of center of image are red and, probably, they is on the object.
+Points close of center of image are red and, probably, they is on the object. This figure helps 
+to illustrate the application of pondered PCC.

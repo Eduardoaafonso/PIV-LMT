@@ -12,29 +12,29 @@ Monocular vision is an emerging field in autonomous vehicles.
 Several application have presented solutions to current problems, 
 however systems  of low computational cost remain a challenge.
 
-Studies has been showed the use of FPGA (Field Programmable Gate Arrays). In \cite{Honegger}, the platform process date of 
+FPGA (Field Programmable Gate Arrays) has been used in several application in computer vision. The article \cite{Honegger} 
+is an example of these kind studies. \cite{Honegger} presents a platform process date of 
 cameras configured in 127 frames per second and resolution 376x240. It calculates radial distortions, disparity estimation
-and streaming of date. It is used in embedded systems because of low weight. Thus, there are some advances in this research 
-that prove efficiency of this platform. Systems is capable of calculate a relative velocity of any object in the scene. 
-It uses a relative distance between camera and object to estimate velocity on optic axis(Z) and axis X and Y.
+and streaming of date. Embedded systems adopt FPGA for low weight. Thus, there are some advances in this research 
+that prove efficiency of this platform. System implemented is capable of calculate a relative velocity of any object 
+in the scene. It uses a relative distance between camera and object to estimate velocity on optic axis(Z) and axis X and Y.
 
-Other approach about monocular distance and velocity estimation is made in \cite{Breugel}. Authors propose a conception of 
-observability in image like basic requirement to estimate velocity and distance. Input must not be null and it is possible
-identify using equation observability Gramian to linear systems and Lie Algebraic tools to non-linear systems. If 
+Other approach about monocular distance and velocity estimation is showed in \cite{Breugel}. Authors propose a conception of 
+observability in image, it would be basic requirement to estimate velocity and distance. Inputs not null are identified by
+equation observability Gramian to linear systems and Lie Algebraic tools to non-linear systems. If 
 number of terms linearly independents is equal of number of state system, so system is classified like observability and, 
 consequently, velocity and distance must not be zero.
 
 These studies contribute in field of vision monocular to estimation of distance and velocity of object in scene. 
-Our contribution is propose an algorithm that calculate the relative distance with precision using technique of 
-different fields.
+Our contribution is an algorithm that calculate the relative distance using Particle Image Velocimetry.
 
 
 The Particle Image Velocimetry ($PIV$)\cite{Bastiaans} technique is used in many fields of 
 knowledge, \cite{Story, Xu}, to calculate the velocity of fluids in different parts. 
 Here, $PIV$ was adjusted for the case of autonomous vehicles using matching criteria based on 
-the Pearson Correlation Coefficient ($PCC$)\cite{Miranda Neto} over the KITTI dataset\cite{Geiger}.
+the Pearson Correlation Coefficient ($PCC$)\cite{Miranda Neto} over the POV-Ray \cite{povray}.
 
 We define some variable used in the paper. The object of interesting is called target.
-The region of interesting (ROI) is part of image where the target is and
+Where the target is called of The region of interesting (ROI) and
 Window of Search (WOS) is a rectangle where the program will search the ROI. 
 
