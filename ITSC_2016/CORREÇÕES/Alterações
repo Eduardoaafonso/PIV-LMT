@@ -1,9 +1,11 @@
 Feitos
 
 1 - Melhorar a introdução colocando mais artigos a respeito do assunto.
-2 - Descrever melhor o PIV, direcionado para compreender como implementamos a técnica.
-3 - Incluir a explicação do controle de erro alterando para um PCC-ponderado
-4 - Incluir os resultados do POVRay (.../PIV-LMT/tests/POVRAY/Teste2/aprox/results1)
+2 - Descrever melhor o PIV de modo que fique fácil entender como implementamos a técnica.
+3 - Incluir a explicação do controle de erro (PCC ponderado)
+4 - Incluir os resultados do POVRay em 2D e 3D. 
+2D --> (.../PIV-LMT/tests/POVRAY/2D/gray1/results)
+3D --> (.../PIV-LMT/tests/POVRAY/Teste2/aprox/results1)
 5 - Discutir os resultados, montando uma tabela comparativa
 
 A fazer
