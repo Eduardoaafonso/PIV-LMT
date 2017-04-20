@@ -37,9 +37,9 @@ where $f_a$ and $\alpha$ are defined as factor area and departure factor,
 respectively; $Area_r$ is the ROI area and $Area_f$ 
 is the analyzed region in the current image frame. 
 
-Thus, if we consider that the target analyzed in the $ROI$ was to a distance $d_0$,
-then the target in the analyzed region was to a distance of $\alpha d_0$ (or $\sqrt{f_a} d_0$),
-if the $i-th$ image was analyzed, thus $\alpha_i$ and $d_i=\alpha_i d_0$ will be obtained.
+Thus, knowing $\alpha$, if we consider that the target in the $ROI$ was to a distance $d_0$,
+then the target in the analysis region will be to a distance of $\alpha d_0$ (or $\sqrt{f_a} d_0$).
+So that, each $i-th$ frame will have your own $\alpha_i$ value; where, $d_i=\alpha_i d_0$.
 
 The departure factor, $\alpha_i$, has two interpretations: if the rate of departure increases quickly, 
 this  means that the target is departing. If the factor decreases, the 

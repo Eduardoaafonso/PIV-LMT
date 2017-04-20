@@ -6,7 +6,10 @@ It can be used to comparing two images in an object recognition system.
 The following equation describes the $PCC$ method for two gray scale digital images\cite{Eugene},
 represented by the matrices $A$ and $B$ with $M$ elements each one,
 \begin{equation}
-r = \frac{\sum \limits_{i}^{M} (a_i-\mu_a)(b_i-\mu_b)}{\sqrt{\sum \limits_{i}^{M} (a_i-\mu_a)^2} \sqrt{\sum\limits_{i}^{M} (b_i-\mu_b)^2}}.
+r = \frac{\sum \limits_{i}^{M} (a_i-\mu_a)(b_i-\mu_b)}{\sqrt{\sum \limits_{i}^{M} (a_i-\mu_a)^2} \sqrt{\sum\limits_{i}^{M} (b_i-\mu_b)^2}},
+\end{equation}
+\begin{equation}\label{eq:PCC}.
+ r=PCC(A,B)
 \end{equation}
 
 where $a_i$ is the intensity of the i-th pixel in the  matrix $A$, 

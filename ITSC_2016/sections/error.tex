@@ -1,29 +1,46 @@
 \subsection{ERROR REDUCTION}
 
-In this section, we discuss error in analysis of images. The target has differents forms. However, 
-ROI is rectangular window. Certains areas more importants were identified inside of ROI.
-In Fig. \ref{fig:erroridentified}, there are any areas close of edges that target not occupies. They are
+In this section, we discuss about the error in analysis of the images. In this sense,
+we can see that, the targets have different forms; however, 
+a $ROI$ ever will have a rectangular form, so that certain areas will be more important of identify inside of $ROI$.
+In Fig. \ref{fig:erroridentified}, there are some areas close of edges that target not occupies; they are
 considered like error areas.
 
 \begin{figure}[H]
 \includegraphics[width=\columnwidth]{images/imageError.eps}
-\caption{Illustration of ROI with error areas close of edge.}
+\caption{Illustration of $ROI$ with error areas close of edge.}
 \label{fig:erroridentified}
 \end{figure}
 
-Two matrix at same dimensios can be compared in PCC. This method of comparesion doesn't generate
-any date if dimensions of frame are equals. 
-We are also interested to use in several applications PCC because this method has high precision.
-
-We decide solve this problem given a ponderation in PCC. Then, points on the target was considered plus important
-and points out of target has less importance in correlation.
-
+By other side, two matrix with the same dimensions can be compared using $PCC$; 
+this method of comparison doesn't generate data over if the frame are equals,
+and yes over if the frames have a proportional behavior in the relation of your values. 
+Thus, a high percentage of error area when compared with the target area 
+may decrease the correlation level between frames, promoting the loss of the target. 
+We decide solve this problem using a weighing matrix mask over the analyzed regions, 
+before the calculus of $PCC$. This can be seen in the Fig. \ref{fig:errorpondered}.
 \begin{figure}[H]
 \includegraphics[width=\columnwidth]{images/imageErrorcontroled.eps}
 \caption{Illustration of points of most importance (red) and points less importance (blue) in correlation.}
 \label{fig:errorpondered}
 \end{figure}
+Where, points close of edge (in blue color) have less importance, 
+points close of center of image (in red color), probably are on the target, and consequently
+these points will have more importance. 
 
-Points close of edge have less importance and they are in blue in Fig. \ref{fig:errorpondered}. 
-Points close of center of image are red and, probably, they is on the object. This figure helps 
-to illustrate the application of pondered PCC.
+Thus, the $P(x,y)$ value showed in the Eq. (\ref{eq:P}), 
+\begin{equation}\label{eq:P}
+ P(x,y) = \sqrt{e^{ -\frac{|x-\mu_X|^3}{\sigma_X^3}-\frac{|y-\mu_Y|^3}{\sigma_Y^3}  }},
+\end{equation}
+represents a value, in the line $x$ and column $y$, on the weighing matrix mask $P$,
+where $\mu_X=H/2$, $\mu_Y=W/2$, $\sigma_X=H/3$ and $\sigma_Y=W/3$; being $H$ and $W$
+the height and the width, respectively, in the analysis region.
+
+Finally, similarly to seen in the Eq. (\ref{eq:PCC}), we multiply the matrix P, 
+element by element, over the analysis regions
+$A$ and $B$ to calculate the $r_P$ weighted correlation coefficient, 
+\begin{equation}\label{eq:rw}
+ r_P = PCC(P~A, P~B).
+\end{equation}
+
+

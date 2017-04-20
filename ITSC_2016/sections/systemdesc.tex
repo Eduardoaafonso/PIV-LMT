@@ -15,6 +15,35 @@ the $WOS$ of a current frame; the result of this process is a displacement which
 \label{fig:system}
 \end{figure}
 
+\begin{algorithm}[H]
+ \KwData{Initial $ROI$ and a stream image frames, $I_i$, for $0\leq i < N$. }
+ \KwResult{$3D$ target path or a target lost message. }
+ $i \leftarrow 0$ \;\\
+ 
+\While{$i < N$ }
+{
+    read current\;
+    
+    $P$ is filled according the Eq. (\ref{eq:P})\;
+    $r \leftarrow PCC(P\times ROI,P\times AR)$\;
+  
+    \eIf{$0.8 \leq r$}
+    {
+        match case\;
+        \If{$r \leq 0.925$}
+        {
+            $ROI\leftarrow AR$\;
+        }
+    }
+    {
+    \Return  message ``target lost'' \;
+    }
+}
+\\
+\Return path \;
+\caption{How to get a $3D$ target path.}
+\end{algorithm}
+
 In a two dimensional analysis, the tracked target given us information about its horizontal 
 and vertical position and it is relative to the perpendicular velocity with respect to the observer.
 When the target is analyzed in three dimensions, 
