@@ -23,7 +23,9 @@ bigger or smaller than the last target found.
   \label{fig:multires}
 \end{figure}
 
-
+The Algorithm \ref{alg:multires} describe the method explicated in the 
+Fig. \ref{fig:multires}(b), It is represented by the function 
+$multiscale\_match\_criterion()$ and It is used in the Algorithm \ref{alg:system}.
 
 \begin{algorithm}[H]
  \KwData{A $ROI$, your position $P_0$ and an image frame $I_i$. }
@@ -59,10 +61,15 @@ $AR$: Region in $I_i$, at point $P_{max}$, with size $\alpha W$ by $\alpha H$\;
 \caption{$multiscale\_match\_criterion(ROI,P_0,I_i)$ function.}
 \label{alg:multires}
 \end{algorithm}
+We can see that the Algorithm \ref{alg:multires} use internally
+the function $get\_corr\_matrix()$, this function returns a matrix 
+with the correlation values of $ROI$ with the analysis regions
+inside the search window around the central point $P_0$. 
+All the procedure can be seen detailed in the Algorithm \ref{alg:multires2}.
 
 \begin{algorithm}[H]
- \KwData{A $ROI$, your position $P_0$, a departure factor $\alpha$, the search arm, 
- $L$, in pixels and an image frame $I_i$. }
+ \KwData{A $ROI$, your position $P_0$, a departure factor $\alpha$, the search arm 
+ $L$ and an image frame $I_i$. }
  \KwResult{The correlation matrix $A$, compound around the point $P_0$ of $I_i$. }
  ~\\
  $W$: Width of $ROI$\;
@@ -85,7 +92,7 @@ $AR$: Region in $I_i$, at point $P_{max}$, with size $\alpha W$ by $\alpha H$\;
     
 \Return $A$\;
 ~\\
-\caption{$get\_corr\_matrix(ROI,P_0,\alpha,I_i)$ function.}
+\caption{$get\_corr\_matrix(ROI,P_0,\alpha,L,I_i)$ function.}
 \label{alg:multires2}
 \end{algorithm}
 
