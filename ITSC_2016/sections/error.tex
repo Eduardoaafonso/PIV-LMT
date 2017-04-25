@@ -28,19 +28,19 @@ Where, points close of edge (in blue color) have less importance,
 points close of center of image (in red color), probably are on the target, and consequently
 these points will have more importance. 
 
-Thus, the $P(x,y)$ value showed in the Eq. (\ref{eq:P}), 
-\begin{equation}\label{eq:P}
- P(x,y) = \sqrt{e^{ -\frac{|x-\mu_X|^3}{\sigma_X^3}-\frac{|y-\mu_Y|^3}{\sigma_Y^3}  }},
+Thus, the $Q(x,y)$ value showed in the Eq. (\ref{eq:Q}), 
+\begin{equation}\label{eq:Q}
+ Q(x,y) = \sqrt{e^{ -\frac{|x-\mu_X|^3}{\sigma_X^3}-\frac{|y-\mu_Y|^3}{\sigma_Y^3}  }},
 \end{equation}
-represents a value, in the line $x$ and column $y$, on the weighing matrix mask $P$,
+represents a value, in the line $x$ and column $y$, on the weighing matrix mask $Q$,
 where $\mu_X=H/2$, $\mu_Y=W/2$, $\sigma_X=H/3$ and $\sigma_Y=W/3$; being $H$ and $W$
 the height and the width, respectively, in the analysis region.
 
-Finally, similarly to seen in the Eq. (\ref{eq:PCC}), we multiply the matrix P, 
+Finally, similarly to seen in the Eq. (\ref{eq:PCC}), we multiply the matrix $Q$, 
 element by element, over the analysis regions
 $A$ and $B$ to calculate the $r_P$ weighted correlation coefficient, 
 \begin{equation}\label{eq:rw}
- r_P = PCC(P~A, P~B).
+ r_Q = PCC(Q~A, Q~B).
 \end{equation}
 
 

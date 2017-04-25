@@ -23,5 +23,34 @@ then the $ROI$ changes to the current analyzed region.}
 \label{fig:newroicri}
 \end{figure}
 
+The Algorithm \ref{alg:newroi} shows the criteria described in the
+Fig. \ref{fig:newroicri}; the $renew\_roi\_criteria()$ function, explained here,
+it is used by the Algorithm \ref{alg:system} of Fig. \ref{fig:system}.
+
+\begin{algorithm}[H]
+ \KwData{Initial $ROI$, your position $P_0$, the current matched analysis region ($AR$), your position $P$ and the correlation $r$ between them. }
+ \KwResult{The new $ROI$, your position and a status variable, $Found$. }
+
+    $NEWP_0 \leftarrow  P_0$ \;
+    $NEWROI \leftarrow  ROI$ \;
+    
+    \eIf{$0.8 \leq r$}
+    {
+      $Found \leftarrow True$\;
+        message ``target found''\;
+        \eIf{$r \leq 0.925$}
+        {
+            $NEWROI \leftarrow  AR$\;
+            $NEWP_0 \leftarrow  P$\;
+        }
+    }
+    {
+      message ``target lost''\;
+      $Found \leftarrow False$\;
+    }
+\Return  $\{NEWROI,~NEWP_0,~FOUND\}$\;
+\label{alg:newroi}
+\caption{$renew\_roi\_criteria(ROI,P_0,AR,P,r)$ function.}
+\end{algorithm}
 %The system needs to have a high level of reliability, so that the lower limit adopted 
 %contributes to an operation with minimum of mistakes.
