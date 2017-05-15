@@ -8,9 +8,10 @@ two different positions, as in Fig. \ref{fig:multiscale3d}.
   \caption{The multi-scale tracking.}
   \label{fig:multiscale3d}
 \end{figure}
-Fig. 3 shows the same target at two different distances $d$ and $\alpha d$, respectively, in blue and red.
+
+Fig.\ref{fig:multiscale3d} shows the same target at two different distances $d$ and $\alpha d$, respectively, in blue and red.
 The image plane is located at a distance $h$ of the observer.
-The projections of objects, in blue and red are labelled in the image as
+The projections of objects, in blue and red, are labelled in the image as
 $L_b$ and $L_r$, respectively. Making a simple inspection in the
 formed triangles, we can see that $\frac{h}{d}=\frac{L_b}{L}$ and 
 $\frac{h}{\alpha d}=\frac{L_r}{L}$, then $L_b/\alpha= L_r$. 
@@ -19,7 +20,7 @@ is located at a distance $d$ at a time $t_0$,  and a distance $\alpha d$ at a ti
 the width of the target in the image plane is altered by a factor of 1/$\alpha$, 
 and consequently its area is altered by a factor of 1/$\alpha^2$.
 
-The criterion method then searches for objects using different discrete values of $\alpha$. 
+The criterion method the searches for objects using different discrete values of $\alpha$. 
 The algorithm tracks the nearest objects with $\alpha<1$ and objects farthest with $\alpha>1$.
 
 %usa Multi-resolution match criteria e explica isso dos tamanhos
@@ -35,11 +36,11 @@ f_a \equiv \alpha^2 \equiv \frac{Area_r}{Area_f}
 
 where $f_a$ and $\alpha$ are defined as factor area and departure factor, 
 respectively; $Area_r$ is the ROI area and $Area_f$ 
-is the analyzed region in the current image frame. 
+is the analyzed region in the current image frame.
 
 Thus, knowing $\alpha$, if we consider that the target in the $ROI$ was to a distance $d_0$,
 then the target in the analysis region will be to a distance of $\alpha d_0$ (or $\sqrt{f_a} d_0$).
-So that, each $i-th$ frame will have your own $\alpha_i$ value; where, $d_i=\alpha_i d_0$.
+So that, each $i-th$ frame will have its own $\alpha_i$ value; where, $d_i=\alpha_i d_0$.
 
 The departure factor, $\alpha_i$, has two interpretations: if the rate of departure increases quickly, 
 this  means that the target is departing. If the factor decreases, the 

@@ -35,7 +35,7 @@ between two consecutive analysis layers (scales), the algorithm
 approximates the target to the nearest layer.
 
 \begin{figure}[!hbt]
-\includegraphics[width=\columnwidth]{images/grapha_bv.eps}
+\includegraphics[width=\columnwidth]{images/graphvelocity.eps}
 \caption{Velocity of departure factor for each frame in test 2.}
 \label{fig:res_grapha_bv}
 \end{figure}
@@ -67,11 +67,10 @@ Frames & Real Distances (m) & Proportion (\%) & Date of algorithm (\%) & Error (
 
 The velocity of departure factor is shown in 
 Fig. \ref{fig:res_grapha_bv}, where the velocity is calculated
-to $d_0=1$ and $\Delta t=1$. The mean value of the departure
-velocities is equal to $-0.0048$, which indicates that the %%%%%%% (Como calculou esse valor?)
-target is approaching towards the observer. Similar
-to the case of test 1, velocity can be interpret
-as an approach of $0.48\%$ of $d_0$, in each one of 40 frames.
+to $d_0=1$ and $\Delta t=1$. The value of the departure
+velocities is negative, which indicates that the
+target is approaching towards the observer. Relative velocity is calculated 
+using the discrete-time derivate.
 If we compare test 1 and 2 to the same $\Delta t=1$, it is evident 
 that the departure velocity of  test 2  is lower than test 1. 
 Note target approaches more in test 2 and, consequently, departure

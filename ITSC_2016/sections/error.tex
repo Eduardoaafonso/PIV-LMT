@@ -12,12 +12,12 @@ considered like error areas.
 \label{fig:erroridentified}
 \end{figure}
 
-By other side, two matrix with the same dimensions can be compared using $PCC$; 
-this method of comparison doesn't generate data over if the frame are equals,
-and yes over if the frames have a proportional behavior in the relation of your values. 
+Whereas, two matrix with the same dimensions can be compared using $PCC$; 
+this method of comparison doesn't generate data over equals frames.
+On the other hand, if the frames have a proportional change in the relation its values. 
 Thus, a high percentage of error area when compared with the target area 
-may decrease the correlation level between frames, promoting the loss of the target. 
-We decide solve this problem using a weighing matrix mask over the analyzed regions, 
+may decrease the correlation level between frames and target is considered out of scene. 
+We decide solve this problem using a weighting matrix mask over the analyzed regions, 
 before the calculus of $PCC$. This can be seen in the Fig. \ref{fig:errorpondered}.
 \begin{figure}[H]
 \includegraphics[width=\columnwidth]{images/imageErrorcontroled.eps}
@@ -32,7 +32,7 @@ Thus, the $Q(x,y)$ value showed in the Eq. (\ref{eq:Q}),
 \begin{equation}\label{eq:Q}
  Q(x,y) = \sqrt{e^{ -\frac{|x-\mu_X|^3}{\sigma_X^3}-\frac{|y-\mu_Y|^3}{\sigma_Y^3}  }},
 \end{equation}
-represents a value, in the line $x$ and column $y$, on the weighing matrix mask $Q$,
+represents a value, in the line $x$ and column $y$, on the weighting matrix mask $Q$,
 where $\mu_X=H/2$, $\mu_Y=W/2$, $\sigma_X=H/3$ and $\sigma_Y=W/3$; being $H$ and $W$
 the height and the width, respectively, in the analysis region.
 

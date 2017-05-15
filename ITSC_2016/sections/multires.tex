@@ -1,8 +1,8 @@
 
 \subsection{MULTI-SCALE MATCH CRITERION}
-In the presented algorithm, the match criterion to track the target is based on the $PIV$ technique, 
-where from two images a ROI and a Window Of Search ($WOS$) are defined. A target (object) is identified 
-from the highest value of correlation ($PCC$) between a selected $ROI$ and an analysis region in the $WOS$,
+In the presented algorithm, the match criterion to track the target is based on the $PIV$ technique. 
+Region of Interesting ($ROI$) and Window Of Search ($WOS$) are defined. A target (object) is identified 
+from the highest value of correlation ($PCC$) between selected $ROI$ and an analysis region in the $WOS$,
 which determines an object's location.
 
 Fig. \ref{fig:multires}(a) shows an application in two dimensions, where
@@ -23,7 +23,7 @@ bigger or smaller than the last target found.
   \label{fig:multires}
 \end{figure}
 
-The Algorithm \ref{alg:multires} describe the method explicated in the 
+The Algorithm \ref{alg:multires} describes the method explicated in the 
 Fig. \ref{fig:multires}(b), It is represented by the function 
 $multiscale\_match\_criterion()$ and It is used in the Algorithm \ref{alg:system}.
 
@@ -61,9 +61,10 @@ $AR$: Region in $I_i$, at point $P_{max}$, with size $\alpha W$ by $\alpha H$\;
 \caption{$multiscale\_match\_criterion(ROI,P_0,I_i)$ function.}
 \label{alg:multires}
 \end{algorithm}
-We can see that the Algorithm \ref{alg:multires} use internally
+
+We can see that the Algorithm \ref{alg:multires} uses internally
 the function $get\_corr\_matrix()$, this function returns a matrix 
-with the correlation values of $ROI$ with the analysis regions
+with the correlation values of $ROI$ with the analyses of regions
 inside the search window around the central point $P_0$. 
 All the procedure can be seen detailed in the Algorithm \ref{alg:multires2}.
 
