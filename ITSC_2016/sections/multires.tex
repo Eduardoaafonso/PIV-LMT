@@ -27,7 +27,7 @@ The Algorithm \ref{alg:multires} describes the method explicated in the
 Fig. \ref{fig:multires}(b), It is represented by the function 
 $multiscale\_match\_criterion()$ and It is used in the Algorithm \ref{alg:system}.
 
-\begin{algorithm}[H]
+\begin{algorithm}
  \KwData{A $ROI$, your position $P_0$ and an image frame $I_i$. }
  \KwResult{The best matched analysis region, $AR$, your position 
  $P_{max}$ and the correlation value,$r_{max}$, with the $ROI$. }
@@ -68,7 +68,7 @@ with the correlation values of $ROI$ with the analyses of regions
 inside the search window around the central point $P_0$. 
 All the procedure can be seen detailed in the Algorithm \ref{alg:multires2}.
 
-\begin{algorithm}[H]
+\begin{algorithm}
  \KwData{A $ROI$, your position $P_0$, a departure factor $\alpha$, the search arm 
  $L$ and an image frame $I_i$. }
  \KwResult{The correlation matrix $A$, compound around the point $P_0$ of $I_i$. }

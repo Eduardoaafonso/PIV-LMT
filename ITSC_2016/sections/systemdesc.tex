@@ -8,7 +8,7 @@ it begins with a key frame image where a initial target ($ROI$) is determined;
 the system then receives a stream of image frames and the tracking system 
 enters into looping follow this target in the next frames.
 
-\begin{figure}[bhp]
+\begin{figure}[h]
 \includegraphics[width=\columnwidth]{images/figure1-diagram1.eps}
 \caption{The target is identified from a highest value of correlation (PCC) between a selected ROI and an analysis region in
 the $WOS$ of a current frame; the result of this process is a displacement which is  returned as vector field.}
@@ -32,11 +32,11 @@ A initial $ROI$, your position and a stream of $N$ images; with these data, the
 algorithm return a structure called $PATH$ with the position of target in each image frame,
 being $PATH\{i\}=(x_i,y_i,d_i)$ the position of analysis region with target in the image $I_i$.
 
-\begin{algorithm}[H]
+\begin{algorithm}
  \KwData{An initial $ROI$, your position $P_0$ and a stream of images, $I_i$, for $0\leq i < N$. }
  \KwResult{$3D$ target $PATH$ or a target lost message. }
- $i \leftarrow 0$ \;\\
- 
+ $i \leftarrow 0$ \;
+\\
 \While{$i < N$ }
 {
     $\{AR,P,r\} \leftarrow multiscale\_match\_criterion(ROI,P_0,I_i)$\;
