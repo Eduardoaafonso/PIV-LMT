@@ -34,7 +34,7 @@ $multiscale\_match\_criterion()$ and It is used in the Algorithm \ref{alg:system
  ~\\
  $W$: Width of $ROI$\;
  $H$: Height of $ROI$\;
- $L$: Search arm in pixels (defined by the user);
+ $L$: Search arm in pixels (defined by the user)\;
  $\alpha \leftarrow 0.8$\;
  $r_{max} \leftarrow -1.0$\;
  ~\\
@@ -65,8 +65,8 @@ $AR$: Region in $I_i$, at point $P_{max}$, with size $\alpha W$ by $\alpha H$\;
 We can see that the Algorithm \ref{alg:multires} uses internally
 the function $get\_corr\_matrix()$, this function returns a matrix 
 with the correlation values of $ROI$ with the analyses of regions
-inside the search window around the central point $P_0$. 
-All the procedure can be seen detailed in the Algorithm \ref{alg:multires2}.
+inside the $WOS$ around the central point $P_0$. 
+All the procedure of this function can be seen detailed in the Algorithm \ref{alg:multires2}.
 
 \begin{algorithm}
  \KwData{A $ROI$, your position $P_0$, a departure factor $\alpha$, the search arm 

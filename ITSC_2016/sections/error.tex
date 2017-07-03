@@ -13,10 +13,10 @@ considered like error areas.
 \end{figure}
 
 Whereas, two matrix with the same dimensions can be compared using $PCC$; 
-this method of comparison doesn't generate data over equals frames.
-On the other hand, if the frames have a proportional change in the relation its values. 
-Thus, a high percentage of error area when compared with the target area 
-may decrease the correlation level between frames and target is considered out of scene. 
+this method of comparison doesn't generate information over the equality of the frames,
+but It shows if the frames have a proportional changes for pixel values in the same position. 
+Thus, if we consider a high percentage of error area when we compare the frames, It may cause 
+decreasing of the correlation level between frames and will given us a fake impression that the target is out of scene.  
 We decide solve this problem using a weighting matrix mask over the analyzed regions, 
 before the calculus of $PCC$. This can be seen in the Fig. \ref{fig:errorpondered}.
 \begin{figure}[H]
@@ -24,21 +24,22 @@ before the calculus of $PCC$. This can be seen in the Fig. \ref{fig:errorpondere
 \caption{Illustration of points of most importance (red) and points less importance (blue) in correlation.}
 \label{fig:errorpondered}
 \end{figure}
-Where, points close of edge (in blue color) have less importance, 
-points close of center of image (in red color), probably are on the target, and consequently
-these points will have more importance. 
+Where, points close of edge (in blue color) are considered of less importance, 
+points close of center of image (in red color) probably are on the target, and consequently
+these points are considered with more importance. 
 
-Thus, the $Q(x,y)$ value showed in the Eq. (\ref{eq:Q}), 
+Thus, to create a weighting matrix mask $Q$ like the seen in the Fig.\ref{fig:errorpondered},
+we calculate the $Q(x,y)$ value as showed in the Eq. (\ref{eq:Q}), 
 \begin{equation}\label{eq:Q}
  Q(x,y) = \sqrt{e^{ -\frac{|x-\mu_X|^3}{\sigma_X^3}-\frac{|y-\mu_Y|^3}{\sigma_Y^3}  }},
 \end{equation}
-represents a value, in the line $x$ and column $y$, on the weighting matrix mask $Q$,
-where $\mu_X=H/2$, $\mu_Y=W/2$, $\sigma_X=H/3$ and $\sigma_Y=W/3$; being $H$ and $W$
-the height and the width, respectively, in the analysis region.
+where $Q(x,y)$ represents a value, in the line $x$ and column $y$,
+$\mu_X=H/2$, $\mu_Y=W/2$, $\sigma_X=H/3$ and $\sigma_Y=W/3$; being $H$ and $W$
+the height and the width, respectively, in the matrix (analysis region).
 
 Finally, similarly to seen in the Eq. (\ref{eq:PCC}), we multiply the matrix $Q$, 
 element by element, over the analysis regions
-$A$ and $B$ to calculate the $r_P$ weighted correlation coefficient, 
+$A$ and $B$ to calculate the $r_Q$ weighted correlation coefficient, 
 \begin{equation}\label{eq:rw}
  r_Q = PCC(Q~A, Q~B).
 \end{equation}

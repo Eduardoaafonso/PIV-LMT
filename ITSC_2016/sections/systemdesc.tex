@@ -26,10 +26,10 @@ Thus, all the results of depth will be relative to this value. In this sense, th
 the factor of approaching or departure can be calculated.
 
 The Algorithm \ref{alg:system} shows a global vision of system described in the 
-Fig. \ref{fig:system}, the functions used in the algorithm
+Fig. \ref{fig:system}, the functions ($multiscale\_match\_criterion$ and $renew\_roi\_criteria$) used in the algorithm 
 will be explicated in the next sections. The algorithm receives as input parameters
 A initial $ROI$, your position and a stream of $N$ images; with these data, the
-algorithm return a structure called $PATH$ with the position of target in each image frame,
+algorithm returns a structure called $PATH$ with the position of target in each image frame,
 being $PATH\{i\}=(x_i,y_i,d_i)$ the position of analysis region with target in the image $I_i$.
 
 \begin{algorithm}
