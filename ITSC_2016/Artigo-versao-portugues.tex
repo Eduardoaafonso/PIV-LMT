@@ -1,0 +1,125 @@
+\documentclass[letterpaper, 10 pt,conference]{ieeeconf}  % Comment this line out if you need a4paper
+
+%\documentclass[a4paper, 10pt, conference]{ieeeconf}      % Use this line for a4 paper
+
+\IEEEoverridecommandlockouts                              % This command is only needed if 
+                                                          % you want to use the \thanks command
+
+\overrideIEEEmargins                                      % Needed to meet printer requirements.
+
+% See the \addtolength command later in the file to balance the column lengths
+% on the last page of the document
+
+% The following packages can be found on http:\\www.ctan.org
+\usepackage{graphicx} % for pdf, bitmapped graphics files
+\graphicspath{{../}}
+\usepackage{epstopdf} % for postscript graphics files
+\usepackage{mathptmx} % assumes new font selection scheme installed
+\usepackage{times} % assumes new font selection scheme installed
+\usepackage{amsmath} % assumes amsmath package installed
+\usepackage{amssymb}  % assumes amsmath package installed
+\usepackage[caption=false,font=footnotesize]{subfig}
+\usepackage{fixltx2e}
+\usepackage{float}
+\usepackage{verbatim}
+\usepackage[latin1]{inputenc}
+
+\usepackage[]{algorithm2e}
+
+\title{\LARGE \bf
+Aplicação 3D-PIV com visão monocular em veículos autônomos
+}
+
+
+\author{Eduardo da Silva Afonso$^{1}$ and Fernando Pujaico Rivera$^{2}$ and Arthur de Miranda Neto$^{3}$% <-this % stops a space
+\thanks{The authors are with Terrestrial Mobility Lab. at the Federal University of Lavras, Lavras - MG, Brazil.}%
+\thanks{$^{1}$  eduardo.afonso@engautomacao.ufla.br, $^{2}$  201518201@posgrad.ufla.br, $^{3}$  arthur.miranda@deg.ufla.br}%
+}
+
+\begin{document}
+
+
+\maketitle
+\thispagestyle{empty}
+\pagestyle{empty}
+
+\begin{abstract}
+
+\input{sections/abst}
+
+\end{abstract}
+\input{secoes/introducao}
+
+
+\section{FUNDAMENTAÇÃO TEÓRICA}
+\input{secoes/pcc}
+\input{secoes/piv}
+
+
+\section{DESCRIÇÃO DO SISTEMA}
+%\input{sections/systemdesc} %%FAZER
+
+\section{DESCRIÇÃO DO ALGORITMO}
+ 
+%DiagramaX
+%\input{sections/error} %%FAZER
+\input{secoes/criterio-de-busca-em-camadas}
+\input{secoes/abordagem-3D}
+\input{secoes/novoroi}
+
+% descrição do sistemA
+\section{RESULTADOS EXPERIMENTAIS}
+\input{secoes/resultados2D}
+\input{secoes/resultados3D}
+%testes com diferentes parametros
+% tabelas e graficos
+
+
+
+\section{CONCLUSÃO}
+%\input{sections/conclu}
+%\addtolength{\textheight}{-12cm}
+
+%\section*{ACKNOWLEDGMENT}
+
+%\input{sections/ackn}
+
+%FAPEMIG\\
+%numero de bolsa\\
+%numero de projeto\\
+%numero de aluno
+
+
+\begin{thebibliography}{99}
+	\bibitem{Bastiaans} R. J. M. Bastiaans, Cross-correlation PIV; theory, implementation and accuracy. 
+        Eindhoven: Technische Universiteit Eindhoven, 2000. - EUT Report 99-W-OOl. - ISBN: 90-386-2851-X.
+
+	\bibitem{Story} A. Story et al, PIV measurements of the velocity field of a Newtonian Fluid in a stirred tank equipped 
+	with the PMT type impeller.Technical Transactions - Chemistry. 2-Ch/2014.        
+
+	\bibitem{Xu} L. Xu, Computational fluid dynamics analysis and PIV validation of a bionic vortex flow 
+	pulsatile LVAD.Technology and Health Care 23 (2015) S443?S451. DOI 10.3233/THC-150981. IOS Press, 2015.
+	
+        \bibitem{Miranda Neto} A. Miranda Neto et al, Image Processing Using Pearson's Correlation Coefficient: 
+        Applications on Autonomous Robotics. 
+        Autonomous Robot Systems (Robotica), 2013 13th International Conference on, 2013.
+        
+        \bibitem{Geiger} A. Geiger et al,
+        Vision meets Robotics: The KITTI Dataset. International Journal of Robotics Research (IJRR), 2013, 
+        doi:10.1177/0278364913491297 .
+        
+        \bibitem{Eugene} Y. K. Eugene and R.G. Johnston, The Ineffectiveness of the Correlation Coefficient for Image Comparisons.
+        Technical Report LA-UR-96-2474, Los Alamos, 1996.
+        
+        \bibitem{Honegger} D. Honegger et al, Real-time Velocity Estimation based on Optical Flow and disparity matching.
+         Intelligent Robots and Systems (IROS), 2012 IEEE/RSJ International Conference on Intelligent Robots and Systems.
+        
+        \bibitem{Breugel} F. van Breugel, K. Morgansen and M. H Dickinson, Monocular distance estimation from optic flow during
+        active landing maneuvers. Bioinspiration and Biomimetics, Volume 9, Number 2. Published 22 May 2014 IOP Publishing Ltd.
+        
+	\bibitem{povray}  C. Cason et al.Persistence of Vision Pty. Ltd. (2017).Persistence of Vision Raytracer.
+	Persistence of Vision Pty. Ltd., Williamstown, Victoria, Australia. http://www.povray.org/
+	
+\end{thebibliography}
+
+\end{document}

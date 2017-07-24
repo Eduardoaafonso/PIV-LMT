@@ -1,0 +1,87 @@
+\begin{comment}
+
+
+The followed informations introduce the results of two different tests 
+using POV-Ray.
+
+In the first test, Fig. \ref{fig:imgpapercerta}, 
+the algorithm makes the tracking of an object through 14 images in sequence with 
+a horizontal displacement to the camera.
+
+\begin{figure}[H]
+\centering
+  \subfloat[]{\label{fig:imgpapercertaa} \includegraphics[width=.48\columnwidth]{images/results_2D.png}}
+  \subfloat[]{\label{fig:imgpapercertab} \includegraphics[width=.48\columnwidth]{images/results_2D.eps}}
+  \caption{The image in (a) represents the target in its initial position 
+   and the image (b) shows the vehicle in its final position.}
+  \label{fig:imgpapercerta}
+\end{figure}
+
+The initial position of target is in the image (a) and the final position in (b), 
+where a vector (in blue) illustrates the resulting trace.
+We can observe that there is a small bend in the image 
+and it generates a slight change of object perspective. 
+The update of the $ROI$ is frequently done, which involves seeing a slight change in area.
+The difference between the initial and final values of the departure factor may 
+be considered constant, and the value is 1. It means that image doesn't approach to the camera
+%as shown in Fig. \ref{fig:res_graph1}.
+
+%\begin{figure}[H]
+%\centering
+%\includegraphics[width=0.8\columnwidth]{images/results2D_graph.eps}
+%\caption{Departure factor for each frame in the test 1.}
+%\label{fig:res_graph1}
+%\end{figure}
+
+%Fig. \ref{fig:res_graph1v} shows 
+The value of the velocity of departure factor is $d_0=1$ and $\Delta t=1$. 
+It demonstrates that the variation
+of the departure factor is 0 when compared with 1. 
+It has departure factor (velocity) of $0$. Target is at same distance 
+during 14 frames in relation camera.
+.
+%\begin{figure}[H]
+%\centering
+%\includegraphics[width=0.8\columnwidth]{images/results2D_graphv.eps}
+%\caption{Velocity of departure factor for each frame in the test 1.}
+%\label{fig:res_graph1v}
+%\end{figure}
+
+In test 1, we can observed the movement in axis X and rotation of target, the last one causes change of ROI more frequent
+because PCC generates a value below of threshold defined in Fig. \ref{fig:newroicri}.
+The high changes of ROI for rotation of target can be showed by bubbles in the superior part of ROI in Fig. 
+\ref{fig:imgpapercerta} (b).
+
+\end{comment}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%portugues%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+O resultados a seguir foram obtidos nos testes usando o simulador POV-Ray.
+
+No primeiro teste, o algoritmo acompanha o objeto que está em um movimento horizontal em relação a câmera
+pelas sequência das 14 imagens, como mostrado na figura \ref{fig:imgpapercerta}
+
+\begin{figure}[H]
+\centering
+  \subfloat[]{\label{fig:imgpapercertaa} \includegraphics[width=.48\columnwidth]{images/results_2D.png}}
+  \subfloat[]{\label{fig:imgpapercertab} \includegraphics[width=.48\columnwidth]{images/results_2D.eps}}
+  \caption{A imagem (a) representa o objeto em sua posição inicial  
+   e a imagem (b) mostra na sua posição final.}
+  \label{fig:imgpapercerta}
+\end{figure}
+
+A posiçao inicial do objeto está na imagem (a) e a final na (b). De modo que o
+vetor em azul é o resultado da busca feita, ligando a posição inicial com a final.
+Nota-se neste testa, também, uma pequena curvatura na imagem o que ocasiona uma mudança
+na perspectiva do objeto, resultando em uma mudança frequente do $ROI$.
+A diferença entre o valor inicial e final do fator de aproximação é considerado constante
+e igual 1, pois o objeto não se aproxima da câmera.
+
+Neste teste, a velocidade do fator de aproximação é zero, pois não há aproximação e nem
+afastamento do objeto em relação a câmera, sendo $d_0=1$ e $\Delta t=1$.
+
+No teste 1, observa-se uma modificação frequente no ROI e isso ocorre porque as imagens 
+tem uma semelhança menor do que a definida, como mostrando na figura \ref{fig:newroicri}. 
+Na figura\ref{fig:imgpapercerta} (b), é possível identificar a quantidade de atualizações feitas no $ROI$,
+ pois são indicadas com bolas no canto superior esquerdo da imagem.

@@ -1,0 +1,93 @@
+\begin{comment}
+
+\section{INTRODUCTION}
+
+Traffic accident has been an important point to government. The world average of people
+died at traffic is around $10$ people per $100$ thousand, but in some countries, it can be worse.
+In 2016, the group which compose the United Nations General Assembly adopted a resolution for
+improve global road safety and they consider that $2011$-$2020$ is the decade of action for road safety.
+Traffic jam is other problem faced by cities, it is caused by reckless drivers and accidents.
+Many centers of research have been studying solutions to improve this condition and decrease the 
+numbers of death and accidents.
+
+Monocular vision is an emerging field in autonomous vehicles. In this sense,
+several application have presented solutions to current problems, 
+however systems  of low computational cost remain a challenge.
+
+Field Programmable Gate Arrays ($FPGA$) has been used in several application in computer vision. The article \cite{Honegger} 
+show a research that use it. \cite{Honegger} presents a platform process date of 
+cameras configured in $127$ frames per second and resolution $376$x$240$. It calculates radial distortions, disparity estimation
+and streaming of date. Embedded systems adopt $FPGA$ for low weight. Thus, there are some advances in this research 
+that prove efficiency of this platform. System implemented is capable to calculate a relative velocity of any object 
+in the scene. It uses a relative distance between camera and object to estimate velocity on optic axis ($Z$) and axis $X$ and $Y$.
+
+Other approach about monocular distance and velocity estimation is showed in \cite{Breugel}. Authors propose a conception of 
+observability in image, it would be basic requirement to estimate velocity and distance. Inputs not null are identified by
+equation observability Gramian to linear systems and Lie Algebraic tools to non-linear systems. If 
+number of terms linearly independents is equal of number of state system, so system is classified like observability and, 
+consequently, velocity and distance must not be zero.
+
+These studies contribute in field of vision monocular to estimate the distance and velocity of object in scene. 
+Our contribution is an algorithm that calculate the relative distance using Particle Image Velocimetry ($PIV$).
+
+
+The $PIV$ \cite{Bastiaans} technique is used in many fields of 
+knowledge, \cite{Story, Xu}, to calculate the velocity of fluids in different parts. 
+Here, $PIV$ was adjusted for the case of autonomous vehicles using matching criteria based on 
+the Pearson Correlation Coefficient ($PCC$)\cite{Miranda Neto} over the POV-Ray \cite{povray} program.
+
+\end{comment}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%portugues%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{INTRODUCTION}
+
+Os acidentes no trânsito têm se tornado um problema de governo, pois há uma quantidade significativa de pessoas que
+perdem suas vidas neste tipo de acidente. Em 2016, a United Nations General Assembly adotou uma resolução que incorporam medidas que visam 
+a melhoria da segurança em trânsitos na esfera global. O período de 2011 à 2020 está sendo considerado a década da ação a favor
+de um trânsito mais segurança.
+
+Os congestionamentos é um dos agravadores do risco de morte e acidentes em trânsito, além de falhas sejam humanas ou não. 
+Face à essas questões, vários grupos de pesquisas debruçam seus estudos para encontrar soluções viáveis e, desta maneira,
+reduzir o número de acidentes e mortes no trânsito com a contribuição de diversos aparatos tecnológicos, entre eles: as câmeras.
+
+A visão monocular é uma área que vem solucionando diversas questões no âmbito de veículos autônomos e, por conseguinte, 
+contribui para a criação de sistemas mais seguros. Entretanto, o baixo custo computacional ainda é um desavio 
+para as atuais tecnologias. O estado da arte mostra o esforço dos grupos de pesquisas afim de que reduza o custo computacional e,
+também, energético dos sistemas associando critérios para as tomadas de decisões.
+
+Field Programmable Gate Arrays (FPGA) é um dispositivo lógico programável que vem sendo muito utilizado em análise de imagens. \cite{Honegger}
+apresenta uma plataforma para processamento de dados de câmeras configuradas em $127$ frames por segundo com resolução de $376x240$. Essa 
+implementação permite calcular a distorção radial do objeto analisado, estimação da disparidade e o fluxo de dados. Além da 
+velocidade relativa dos eixos ópticos (X, Y e Z).
+
+O conceito de "observabilidade da imagem" é proposto em \cite{Breugel}, o qual sugere requisitos básicos para a estimativa de velocidade e 
+distância de um objeto. Nesta implementação, as entradas nulas são definidas pela equação de sistemas lineares de observabilidade Gramian e,
+para sistemas não-lineares, usa-se as ferramentas de Lie Algebraic. A condição que permite vincular a observabilidade do sistema é dado por:
+se o número de termos linearmente indepentes é igual ao número de estados, então o sistema é observável e, por consequência, a velocidade e a 
+distância não devem ser zeros.
+
+Os artigos mostrados como estado da arte permite observar que há uma pesquisa de alto nível sobre o assunto de visão computacional associada à
+estimativa de velocidade e distância de objetos. A contribuição deste artigo para a área é o uso da técnica Particle Image Velocimetry (PIV) 
+para a estimativa da velocidade e distância relativas de objetos na cena.
+
+PIV \cite{Bastiaans} é uma técnica originariamente usada para determinar velocidade de fluídos, contudo ela foi ajustada para a aplicação em
+veículos autônomos usando critério de busca baseados no coeficiente de correlação de Pearson (PCC em inglês) \cite{Miranda Neto}, simulado 
+no POV-Ray \cite{povray}.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

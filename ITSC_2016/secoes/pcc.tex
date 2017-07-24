@@ -1,0 +1,43 @@
+\begin{comment}
+
+\subsection{THE PEARSON CORRELATION COEFFICIENT}
+
+$PCC$ is used in statistical analyses, pattern recognition and computer vision. 
+It can be used to comparing two images in an object recognition system. 
+The following equation describes the $PCC$ method for two gray scale digital images\cite{Eugene},
+represented by the matrices $A$ and $B$ with $M$ elements each one,
+\begin{equation}
+r = \frac{\sum \limits_{i}^{M} (a_i-\mu_a)(b_i-\mu_b)}{\sqrt{\sum \limits_{i}^{M} (a_i-\mu_a)^2} \sqrt{\sum\limits_{i}^{M} (b_i-\mu_b)^2}},
+\end{equation}
+\begin{equation}\label{eq:PCC}
+ r=PCC(A,B)
+\end{equation}
+
+where $a_i$ is the intensity of the i-th pixel in the  matrix $A$, 
+$b_i$ is the intensity of the i-th pixel in the matrix $B$, 
+$\mu_a$ is the mean intensity of $A$,
+$\mu_b$ is the mean intensity of $B$ and
+$r$ is the correlation coefficient \cite{Miranda Neto}.
+
+\end{comment}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%portugues%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\subsection{Coeficiente de correlação de Pearson - PCC}
+
+PCC é uma ferramenta de comparação sendo nesse caso usada em imagens. Há várias aplicações desse método 
+em diversas áreas, tais como: análise estatística, reconhecimento de padrão e visão computacional. 
+A equação seguinte descreve como é feita essa comparação, sendo específicado para imagens digitais 
+em tons de cinzas \cite{Eugene}, representado pelas matrizes $A$ e $B$ com $M$ elementos.
+
+\begin{equation}
+r = \frac{\sum \limits_{i}^{M} (a_i-\mu_a)(b_i-\mu_b)}{\sqrt{\sum \limits_{i}^{M} (a_i-\mu_a)^2} \sqrt{\sum\limits_{i}^{M} (b_i-\mu_b)^2}},
+\end{equation}
+\begin{equation}\label{eq:PCC}
+ r=PCC(A,B)
+\end{equation}
+
+Sendo $a_i$ a intensidade do i-ésimo pixel na matriz $A$, $b_i$ a intensidade do i-ésimo pixel na matriz
+$B$, $\mu_a$ a média das intensidades de $A$ e $\mu_b$ a média das intensidades de $B$ e $r$ é o coeficiente
+de correlação \cite{Miranda Neto}.

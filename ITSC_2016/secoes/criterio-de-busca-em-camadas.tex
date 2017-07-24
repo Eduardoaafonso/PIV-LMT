@@ -1,0 +1,209 @@
+\begin{comment}
+
+\subsection{MULTI-SCALE MATCH CRITERION}
+In the presented algorithm, the match criterion to track the target is based on the $PIV$ technique. 
+Region of Interesting ($ROI$) and Window Of Search ($WOS$) are defined. A target (object) is identified 
+from the highest value of correlation ($PCC$) between selected $ROI$ and an analysis region in the $WOS$,
+which determines an object's location.
+
+Fig. \ref{fig:multires}(a) shows an application in two dimensions, where
+the regions are compared with a ROI using the same scale.
+
+The Fig. \ref{fig:multires}(b) reveals how the dimension of depth was included and
+the search is made in different scales (layers). Similarly to the two dimension case, 
+in three dimensions the target is also found through the highest $PCC$, but the object found may be 
+bigger or smaller than the last target found.
+
+\begin{figure}[H]
+\centering
+  \subfloat[]{\label{subfig:(a)} \includegraphics[width=.5\columnwidth]{images/figure2a.eps}}
+  \subfloat[]{\label{subfig:(b)} \includegraphics[width=.5\columnwidth]{images/figure2b.eps}}
+  \caption{The red boxes show the analyzed regions and the black boxes represent the $WOS$. 
+  (a) The regions are compared with a $ROI$ using the same scale. 
+  (b) The regions are compared with a $ROI$ using different scales.}
+  \label{fig:multires}
+\end{figure}
+
+The Algorithm \ref{alg:multires} describes the method explicated in the 
+Fig. \ref{fig:multires}(b), It is represented by the function 
+$multiscale\_match\_criterion()$ and It is used in the Algorithm \ref{alg:system}.
+
+\begin{algorithm}
+ \KwData{A $ROI$, your position $P_0$ and an image frame $I_i$. }
+ \KwResult{The best matched analysis region, $AR$, your position 
+ $P_{max}$ and the correlation value,$r_{max}$, with the $ROI$. }
+ ~\\
+ $W$: Width of $ROI$\;
+ $H$: Height of $ROI$\;
+ $L$: Search arm in pixels (defined by the user)\;
+ $\alpha \leftarrow 0.8$\;
+ $r_{max} \leftarrow -1.0$\;
+ ~\\
+    \While{$0.8 \leq \alpha \leq 1.4 $}{
+      
+      $A \leftarrow get\_corr\_matrix(ROI,P_0,\alpha,L,I_i)$\;
+
+      $p_i$: position $(x_i,y_i)$ of maximum value in $A$\;
+
+      $r \leftarrow A(p_i)$\;
+
+      \If{$r > r_{max}$}{
+	$r_{max} \leftarrow r$\;
+	$P_{max} \leftarrow P_0 +p_i-(L,L)$\;
+	$\alpha_{max} \leftarrow \alpha$\;
+      }
+      ~\\
+      $\alpha \leftarrow \alpha +0.05$\;
+    }
+    
+$AR$: Region in $I_i$, at point $P_{max}$, with size $\alpha W$ by $\alpha H$\;      
+\Return $\{AR,P_{max},r_{max}\}$\;
+~\\
+\caption{$multiscale\_match\_criterion(ROI,P_0,I_i)$ function.}
+\label{alg:multires}
+\end{algorithm}
+
+We can see that the Algorithm \ref{alg:multires} uses internally
+the function $get\_corr\_matrix()$, this function returns a matrix 
+with the correlation values of $ROI$ with the analyses of regions
+inside the $WOS$ around the central point $P_0$. 
+All the procedure of this function can be seen detailed in the Algorithm \ref{alg:multires2}.
+
+\begin{algorithm}
+ \KwData{A $ROI$, your position $P_0$, a departure factor $\alpha$, the search arm 
+ $L$ and an image frame $I_i$. }
+ \KwResult{The correlation matrix $A$, compound around the point $P_0$ of $I_i$. }
+ ~\\
+ $W$: Width of $ROI$\;
+ $H$: Height of $ROI$\;
+ $lin_0$: The first term of $P_0$\;
+ $col_0$: The second term of $P_0$\;
+ $A$: Creates a square matrix of $2L+1$ pixels by side and fill it with zeros\;
+
+ ~\\
+    \For{$-L \leq lin \leq L$}{
+    \For{$-L \leq col \leq L$}{
+      $AR$: Region in $I_i$, at point $(lin_0+lin,col_0+col)$, with size $\alpha W$ by $\alpha H$\;
+      $AR \leftarrow $ rescale $AR$ to $ROI$ size\;
+      
+      $Q$ is filled according the Eq. (\ref{eq:Q})\;
+      $A(L+lin,L+col) \leftarrow PCC(Q\times ROI,Q\times AR)$\;
+
+    }
+    }
+    
+\Return $A$\;
+~\\
+\caption{$get\_corr\_matrix(ROI,P_0,\alpha,L,I_i)$ function.}
+\label{alg:multires2}
+\end{algorithm}
+
+
+%onde estava, onde esta agora
+%que tamanho tinha que tamanho tem.
+
+\end{comment}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%portugues%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Critério de busca em camadas}
+
+A busca é baseada no PIV e para isso é necessário definir alguns parâmetros para a estrutura 
+do algoritmo. A região de interesse (Region of Interesting - ROI) é a parte na imagem que contém
+o objeto e a janela de busca (Windowm of Search - WOS) é a possível região que esse objeto pode estar
+no próximos frames. Quando analisada duas imagens, o ROI da segunda imagem é definido a partir do
+valor mais próximo de 1 obtido no PCC. 
+Essa análise consiste na divisão do WOS em janelas menores que sejam do tamanho do ROI, pois o PCC
+só compara imagens do mesmo tamanho. Desta maneira, o WOS é redimensionado proporcionalmente ao 
+tamanho do ROI.
+
+A Fig. \ref{fig:multires}(a) mostra a aplicação em duas dimensiões, aonde as subjanelas dos WOS
+são analisadas com o ROI. 
+
+A Fig. \ref{fig:multires}(b) representa uma aplicação em 3 dimensões, considerando a profundidade
+da imagem. Neste ponto, inclui-se as camadas que consiste na diminuição e aumento do ROI os quais 
+contemplam casos de afastamento e aproximação do objeto, respectivamente.
+
+\begin{figure}[H]
+\centering
+  \subfloat[]{\label{subfig:(a)} \includegraphics[width=.5\columnwidth]{images/figure2a.eps}}
+  \subfloat[]{\label{subfig:(b)} \includegraphics[width=.5\columnwidth]{images/figure2b.eps}}
+  \caption{The red boxes show the analyzed regions and the black boxes represent the $WOS$. 
+  (a) As subjanelas do WOS são comparadas com o ROI em uma única camada. 
+  (b) As subjanelas do WOS sendo comparadas com ROI de diferentes escalas.}
+  \label{fig:multires}
+\end{figure}
+
+O algoritmo \ref{alg:multires} descreve o método apresentado em Fig. \ref{fig:multires}(b), o qual
+é representado pela função $multiscale\_match\_criterion()$ usado no algoritmo \ref{alg:system}.
+
+
+\begin{algorithm}
+ \KwData{ $ROI$, posição do ROI $P_0$ e frame $I_i$. }
+ \KwResult{A melhor região encontrada na análise, $AR$, posição 
+ $P_{max}$ e valor da correlação, $r_{max}$, com o $ROI$. }
+ ~\\
+ $W$: Width of $ROI$\;
+ $H$: Height of $ROI$\;
+ $L$: Search arm in pixels (defined by the user)\;
+ $\alpha \leftarrow 0.8$\;
+ $r_{max} \leftarrow -1.0$\;
+ ~\\
+    \While{$0.8 \leq \alpha \leq 1.4 $}{
+      
+      $A \leftarrow get\_corr\_matrix(ROI,P_0,\alpha,L,I_i)$\;
+
+      $p_i$: position $(x_i,y_i)$ of maximum value in $A$\;
+
+      $r \leftarrow A(p_i)$\;
+
+      \If{$r > r_{max}$}{
+	$r_{max} \leftarrow r$\;
+	$P_{max} \leftarrow P_0 +p_i-(L,L)$\;
+	$\alpha_{max} \leftarrow \alpha$\;
+      }
+      ~\\
+      $\alpha \leftarrow \alpha +0.05$\;
+    }
+    
+$AR$: Region in $I_i$, at point $P_{max}$, with size $\alpha W$ by $\alpha H$\;      
+\Return $\{AR,P_{max},r_{max}\}$\;
+~\\
+\caption{$multiscale\_match\_criterion(ROI,P_0,I_i)$ function.}
+\label{alg:multires}
+\end{algorithm}
+
+O algorithm \ref{alg:multires} usa internamente a função $get\_corr\_matrix()$,
+a sua saída é uma matriz com valores da correlação entre ROI e as subjanelas do WOS
+em torno do ponto $P_0$. Todos os processos da função são detalhados no algoritmo
+\ref{alg:multires2}
+
+
+\begin{algorithm}
+ \KwData{$ROI$, posição $P_0$, fator de afastamento $\alpha$, braço de busca 
+ $L$ e frame $I_i$. }
+ \KwResult{A matriz de correlação $A$, componentes do ponto $P_0$ do frame $I_i$. }
+ ~\\
+ $W$: Width of $ROI$\;
+ $H$: Height of $ROI$\;
+ $lin_0$: The first term of $P_0$\;
+ $col_0$: The second term of $P_0$\;
+ $A$: Creates a square matrix of $2L+1$ pixels by side and fill it with zeros\;
+
+ ~\\
+    \For{$-L \leq lin \leq L$}{
+    \For{$-L \leq col \leq L$}{
+      $AR$: Region in $I_i$, at point $(lin_0+lin,col_0+col)$, with size $\alpha W$ by $\alpha H$\;
+      $AR \leftarrow $ rescale $AR$ to $ROI$ size\;
+      
+      $Q$ is filled according the Eq. (\ref{eq:Q})\;
+      $A(L+lin,L+col) \leftarrow PCC(Q\times ROI,Q\times AR)$\;
+
+    }
+    }
+    
+\Return $A$\;
+~\\
+\caption{$get\_corr\_matrix(ROI,P_0,\alpha,L,I_i)$ function.}
+\label{alg:multires2}
+\end{algorithm}

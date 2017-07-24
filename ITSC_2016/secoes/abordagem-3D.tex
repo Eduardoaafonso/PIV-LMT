@@ -1,0 +1,132 @@
+\begin{comment}
+\subsubsection{MULTI-SCALE 3D INTERPRETATION}
+To understand this technique we need to analyse the same target in 
+two different positions, as in Fig. \ref{fig:multiscale3d}.
+
+\begin{figure}[H]
+\centering
+  \includegraphics[width=.7\columnwidth]{images/Diagrama3.eps}
+  \caption{The multi-scale tracking.}
+  \label{fig:multiscale3d}
+\end{figure}
+
+Fig.\ref{fig:multiscale3d} shows the same target at two different distances $d$ and $\alpha d$, respectively, in blue and red.
+The image plane is located at a distance $h$ of the observer.
+The projections of objects, in blue and red, are labelled in the image as
+$L_b$ and $L_r$, respectively. Making a simple inspection in the
+formed triangles, we can see that $\frac{h}{d}=\frac{L_b}{L}$ and 
+$\frac{h}{\alpha d}=\frac{L_r}{L}$, then $L_b/\alpha= L_r$. 
+From the point of view of the observer, this implies that when a target 
+was located at a distance $d$ at a time $t_0$,  and is moved to a distance $\alpha d$ at a time $t_1$, 
+the width of the target in the image plane is altered by a factor of 1/$\alpha$, 
+and consequently its area is altered by a factor of 1/$\alpha^2$.
+
+The search criterion of objects uses different discrete values of $\alpha$, so that 
+the algorithm tracks nearest objects with $\alpha<1$ and farthest objects  with $\alpha>1$.
+
+%usa Multi-resolution match criteria e explica isso dos tamanhos
+
+\subsubsection{DEPARTURE FACTOR - RELATIVE VELOCITY}
+The departure factor is a dimensionless number related to the rate of approach 
+or departure of a target to the observer. The factor
+is determined in Eq. (\ref{eq:relarea}),
+
+\begin{equation}\label{eq:relarea}
+f_a \equiv \alpha^2 \equiv \frac{Area_r}{Area_f} 
+\end{equation}
+
+where $f_a$ and $\alpha$ are defined as factor area and departure factor, 
+respectively; $Area_r$ is the ROI area and $Area_f$ 
+is the analyzed region in the current image frame.
+
+Thus, knowing $\alpha$, if we consider that the target in the $ROI$ was to a distance $d_0$,
+then the target in the analysis region will be to a distance of $\alpha d_0$ (or $\sqrt{f_a} d_0$).
+So that, each $i-th$ frame will have its own $\alpha_i$ value; where, $d_i=\alpha_i d_0$.
+
+The departure factor, $\alpha_i$, has two interpretations: if the rate of departure increases quickly, 
+this  means that the target is departing. If the factor decreases, the 
+target is approaching.
+
+The relative velocity is using a simple equation of kinematic in physics:
+\begin{equation}
+ v_i = \frac{\Delta s}{\Delta t}= \frac{s_i-s_{i-1}}{\Delta t}.
+\end{equation}
+
+where the vector $v_i$ represents the relative velocity in the i-th image frame, 
+$s_i=(x_i,y_i,d_i)$ is the position of match in the i-th image frame
+and $\Delta t$ is the sampling time between image frames.
+Additionally, we call velocity of departure factor, $v^d_i$, 
+the scalar number which represents the depth component
+of the vector $v_i$.
+
+The calculated  $v^d_i$ value is relative, for the simple reason that the distance (depth) between the 
+camera (observer) and the target in the instance i-th will be referenced to $d_0$, 
+given that the distance of the initial $ROI$ is established by definition to 1.
+Finally, in all cases, the position $s_i$ is relative to the observer (a moving reference system).
+
+\end{comment}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%portugues%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\subsubsection{Interpretação da busca em camadas- 3D}
+
+Para compreender essa técnia é necessário analisar o objeto 
+em diferentes posições, como mostrado na Fig. \ref{fig:multiscale3d}.
+
+\begin{figure}[H]
+\centering
+  \includegraphics[width=.7\columnwidth]{images/Diagrama3.eps}
+  \caption{ Acompanhamento o objeto em camadas.}
+  \label{fig:multiscale3d}
+\end{figure}
+
+A fig. \ref{fig:multiscale3d} mostra o objeto em diferentes posições, 
+$d$ e $\alpha d$, respectivamente em azul e vermelho.
+O plano da imagem é definida pela distância $h$ do observador. As projeções dos objetos,
+azul e vermelho, são representados por $L_b$ e$L_r$, respectivamente. Analisando a forma
+triangular, é possível notar que $\frac{h}{d}=\frac{L_b}{L}$ e $\frac{h}{\alpha d}=\frac{L_r}{L}$, logo 
+$L_b/\alpha= L_r$. 
+Partindo do ponto de vista do observador, quando o objeto estava localizado na distância $d$ no tempo
+$t_0$ e moveu-se para a distância $\alpha d$ no tempo $t_1$, o seu tamanho no plano da imagem 
+foi alterado por um fator de 1/$\alpha$, e consequentemente, a área foi alterada por um fator 1/$\alpha^2$.
+
+O critério de busca dos objetos usa valores discretos de $\alpha$, portanto o algoritmo busca o objeto
+mais próximo com $\alpha<1$ e o mais distante com $\alpha>1$.
+
+
+
+\subsubsection{Fator de afastamento - Velocidade Relativa}
+
+O fator de afastamento é um número adiomensional que relaciona a taxa de 
+aproximação ou de afastamento de um objeto em relação ao seu observador.
+O fator é determinado pela equação (\ref{eq:relarea}),
+
+\begin{equation}\label{eq:relarea}
+f_a \equiv \alpha^2 \equiv \frac{Area_r}{Area_f} 
+\end{equation}
+
+Aonde $f_a$ e $\alpha$ são definidos como um fator de área e de afastamento,
+respectivamente; $Area_r$ é a área do ROI e $Area_f$ é a área da região analisada
+do último frame.
+
+Sabendo $\alpha$, se for considerado que o objeto estava a uma distância $d_0$, então
+sua próxima distância será $\alpha d_0$ (ou $\sqrt{f_a} d_0$). Assim, cada $i-ésimo$ frame
+terá o seu próprio $\alpha_i$ valor, aonde $d_i=\alpha_i d_0$.
+
+O fator de afastamento, $\alpha_i$, tem dois significados: se o fator de afastamento cresce rapidamente 
+significa que o objeto está se afastando e se o fator decresce o objeto está se aproximando.
+
+A velocidade relativa é definida pela equação da cinemática em física:
+
+\begin{equation}
+ v_i = \frac{\Delta s}{\Delta t}= \frac{s_i-s_{i-1}}{\Delta t}.
+\end{equation}
+
+Aonde o vetor $v_i$ representa a velocidade relativa no i-ésimo frame, $s_i=(x_i,y_i,d_i)$ é a posição que
+foi definida pela busca no i-ésimo frame e $\Delta t$ é o intervalo de tempo entre a análise das duas imagens.
+Adicionalmente, o fator da velocidade de afastamento, $v^d_i$, é o número escalar o qual representa a componente
+responsável pela profundida no vetor $v_i$.
+
+O cálculo do valor $v^d_i$ se modifica, pois depende da distância entre a câmera e o objeto. No instante i-ésimo,
+a distância será referenciada como $d_0$, sendo definida como valor 1.
