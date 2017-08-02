@@ -106,42 +106,42 @@ All the procedure of this function can be seen detailed in the Algorithm \ref{al
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%portugues%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection{CritÈrio de busca em camadas}
+\subsection{Crit√©rio de busca em camadas}
 
-A busca È baseada no PIV e para isso È necess·rio definir alguns par‚metros para a estrutura 
-do algoritmo. A regi„o de interesse (Region of Interesting - ROI) È a parte na imagem que contÈm
-o objeto e a janela de busca (Windowm of Search - WOS) È a possÌvel regi„o que esse objeto pode estar
-no prÛximos frames. Quando analisada duas imagens, o ROI da segunda imagem È definido a partir do
-valor mais prÛximo de 1 obtido no PCC. 
-Essa an·lise consiste na divis„o do WOS em janelas menores que sejam do tamanho do ROI, pois o PCC
-sÛ compara imagens do mesmo tamanho. Desta maneira, o WOS È redimensionado proporcionalmente ao 
+A busca √© baseada no PIV e para isso √© necess√°rio definir alguns par√¢metros para a estrutura 
+do algoritmo. A regi√£o de interesse (Region of Interesting - ROI) √© a parte na imagem que cont√©m
+o objeto e a janela de busca (Windowm of Search - WOS) √© a poss√≠vel regi√£o que esse objeto pode estar
+no pr√≥ximos frames. Quando analisada duas imagens, o ROI da segunda imagem √© definido a partir do
+valor mais pr√≥ximo de 1 obtido no PCC. 
+Essa an√°lise consiste na divis√£o do WOS em janelas menores que sejam do tamanho do ROI, pois o PCC
+s√≥ compara imagens do mesmo tamanho. Desta maneira, o WOS √© redimensionado proporcionalmente ao 
 tamanho do ROI.
 
-A Fig. \ref{fig:multires}(a) mostra a aplicaÁ„o em duas dimensiıes, aonde as subjanelas dos WOS
-s„o analisadas com o ROI. 
+A Fig. \ref{fig:multires}(a) mostra a aplica√ß√£o em duas dimensi√µes, aonde as subjanelas dos WOS
+s√£o analisadas com o ROI. 
 
-A Fig. \ref{fig:multires}(b) representa uma aplicaÁ„o em 3 dimensıes, considerando a profundidade
-da imagem. Neste ponto, inclui-se as camadas que consiste na diminuiÁ„o e aumento do ROI os quais 
-contemplam casos de afastamento e aproximaÁ„o do objeto, respectivamente.
+A Fig. \ref{fig:multires}(b) representa uma aplica√ß√£o em 3 dimens√µes, considerando a profundidade
+da imagem. Neste ponto, inclui-se as camadas que consiste na diminui√ß√£o e aumento do ROI os quais 
+contemplam casos de afastamento e aproxima√ß√£o do objeto, respectivamente.
 
 \begin{figure}[H]
 \centering
   \subfloat[]{\label{subfig:(a)} \includegraphics[width=.5\columnwidth]{images/figure2a.eps}}
   \subfloat[]{\label{subfig:(b)} \includegraphics[width=.5\columnwidth]{images/figure2b.eps}}
   \caption{The red boxes show the analyzed regions and the black boxes represent the $WOS$. 
-  (a) As subjanelas do WOS s„o comparadas com o ROI em uma ˙nica camada. 
+  (a) As subjanelas do WOS s√£o comparadas com o ROI em uma √∫nica camada. 
   (b) As subjanelas do WOS sendo comparadas com ROI de diferentes escalas.}
   \label{fig:multires}
 \end{figure}
 
-O algoritmo \ref{alg:multires} descreve o mÈtodo apresentado em Fig. \ref{fig:multires}(b), o qual
-È representado pela funÁ„o $multiscale\_match\_criterion()$ usado no algoritmo \ref{alg:system}.
+O algoritmo \ref{alg:multires} descreve o m√©todo apresentado em Fig. \ref{fig:multires}(b), o qual
+√© representado pela fun√ß√£o $multiscale\_match\_criterion()$ usado no algoritmo \ref{alg:system}.
 
 
 \begin{algorithm}
- \KwData{ $ROI$, posiÁ„o do ROI $P_0$ e frame $I_i$. }
- \KwResult{A melhor regi„o encontrada na an·lise, $AR$, posiÁ„o 
- $P_{max}$ e valor da correlaÁ„o, $r_{max}$, com o $ROI$. }
+ \KwData{ $ROI$, posi√ß√£o do ROI $P_0$ e frame $I_i$. }
+ \KwResult{A melhor regi√£o encontrada na an√°lise, $AR$, posi√ß√£o 
+ $P_{max}$ e valor da correla√ß√£o, $r_{max}$, com o $ROI$. }
  ~\\
  $W$: Width of $ROI$\;
  $H$: Height of $ROI$\;
@@ -173,16 +173,16 @@ $AR$: Region in $I_i$, at point $P_{max}$, with size $\alpha W$ by $\alpha H$\;
 \label{alg:multires}
 \end{algorithm}
 
-O algorithm \ref{alg:multires} usa internamente a funÁ„o $get\_corr\_matrix()$,
-a sua saÌda È uma matriz com valores da correlaÁ„o entre ROI e as subjanelas do WOS
-em torno do ponto $P_0$. Todos os processos da funÁ„o s„o detalhados no algoritmo
+O algorithm \ref{alg:multires} usa internamente a fun√ß√£o $get\_corr\_matrix()$,
+a sua sa√≠da √© uma matriz com valores da correla√ß√£o entre ROI e as subjanelas do WOS
+em torno do ponto $P_0$. Todos os processos da fun√ß√£o s√£o detalhados no algoritmo
 \ref{alg:multires2}
 
 
 \begin{algorithm}
- \KwData{$ROI$, posiÁ„o $P_0$, fator de afastamento $\alpha$, braÁo de busca 
+ \KwData{$ROI$, posi√ß√£o $P_0$, fator de afastamento $\alpha$, bra√ßo de busca 
  $L$ e frame $I_i$. }
- \KwResult{A matriz de correlaÁ„o $A$, componentes do ponto $P_0$ do frame $I_i$. }
+ \KwResult{A matriz de correla√ß√£o $A$, componentes do ponto $P_0$ do frame $I_i$. }
  ~\\
  $W$: Width of $ROI$\;
  $H$: Height of $ROI$\;

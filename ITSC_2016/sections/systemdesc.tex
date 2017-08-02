@@ -36,7 +36,7 @@ being $PATH\{i\}=(x_i,y_i,d_i)$ the position of analysis region with target in t
  \KwData{An initial $ROI$, your position $P_0$ and a stream of images, $I_i$, for $0\leq i < N$. }
  \KwResult{$3D$ target $PATH$ or a target lost message. }
  $i \leftarrow 0$ \;
-\\
+~\\
 \While{$i < N$ }
 {
     $\{AR,P,r\} \leftarrow multiscale\_match\_criterion(ROI,P_0,I_i)$\;
@@ -48,7 +48,7 @@ being $PATH\{i\}=(x_i,y_i,d_i)$ the position of analysis region with target in t
       break while loop\;
     }
 }
-\\
+~\\
 \Return PATH \;
 \caption{How to get a $3D$ target path.}
 \label{alg:system}

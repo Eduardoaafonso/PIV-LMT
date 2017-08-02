@@ -69,10 +69,10 @@ Finally, in all cases, the position $s_i$ is relative to the observer (a moving 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%portugues%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-\subsubsection{InterpretaÁ„o da busca em camadas- 3D}
+\subsubsection{Interpreta√ß√£o da busca em camadas- 3D}
 
-Para compreender essa tÈcnia È necess·rio analisar o objeto 
-em diferentes posiÁıes, como mostrado na Fig. \ref{fig:multiscale3d}.
+Para compreender essa t√©cnia √© necess√°rio analisar o objeto 
+em diferentes posi√ß√µes, como mostrado na Fig. \ref{fig:multiscale3d}.
 
 \begin{figure}[H]
 \centering
@@ -81,52 +81,52 @@ em diferentes posiÁıes, como mostrado na Fig. \ref{fig:multiscale3d}.
   \label{fig:multiscale3d}
 \end{figure}
 
-A fig. \ref{fig:multiscale3d} mostra o objeto em diferentes posiÁıes, 
+A fig. \ref{fig:multiscale3d} mostra o objeto em diferentes posi√ß√µes, 
 $d$ e $\alpha d$, respectivamente em azul e vermelho.
-O plano da imagem È definida pela dist‚ncia $h$ do observador. As projeÁıes dos objetos,
-azul e vermelho, s„o representados por $L_b$ e$L_r$, respectivamente. Analisando a forma
-triangular, È possÌvel notar que $\frac{h}{d}=\frac{L_b}{L}$ e $\frac{h}{\alpha d}=\frac{L_r}{L}$, logo 
+O plano da imagem √© definida pela dist√¢ncia $h$ do observador. As proje√ß√µes dos objetos,
+azul e vermelho, s√£o representados por $L_b$ e$L_r$, respectivamente. Analisando a forma
+triangular, √© poss√≠vel notar que $\frac{h}{d}=\frac{L_b}{L}$ e $\frac{h}{\alpha d}=\frac{L_r}{L}$, logo 
 $L_b/\alpha= L_r$. 
-Partindo do ponto de vista do observador, quando o objeto estava localizado na dist‚ncia $d$ no tempo
-$t_0$ e moveu-se para a dist‚ncia $\alpha d$ no tempo $t_1$, o seu tamanho no plano da imagem 
-foi alterado por um fator de 1/$\alpha$, e consequentemente, a ·rea foi alterada por um fator 1/$\alpha^2$.
+Partindo do ponto de vista do observador, quando o objeto estava localizado na dist√¢ncia $d$ no tempo
+$t_0$ e moveu-se para a dist√¢ncia $\alpha d$ no tempo $t_1$, o seu tamanho no plano da imagem 
+foi alterado por um fator de 1/$\alpha$, e consequentemente, a √°rea foi alterada por um fator 1/$\alpha^2$.
 
-O critÈrio de busca dos objetos usa valores discretos de $\alpha$, portanto o algoritmo busca o objeto
-mais prÛximo com $\alpha<1$ e o mais distante com $\alpha>1$.
+O crit√©rio de busca dos objetos usa valores discretos de $\alpha$, portanto o algoritmo busca o objeto
+mais pr√≥ximo com $\alpha<1$ e o mais distante com $\alpha>1$.
 
 
 
 \subsubsection{Fator de afastamento - Velocidade Relativa}
 
-O fator de afastamento È um n˙mero adiomensional que relaciona a taxa de 
-aproximaÁ„o ou de afastamento de um objeto em relaÁ„o ao seu observador.
-O fator È determinado pela equaÁ„o (\ref{eq:relarea}),
+O fator de afastamento √© um n√∫mero adiomensional que relaciona a taxa de 
+aproxima√ß√£o ou de afastamento de um objeto em rela√ß√£o ao seu observador.
+O fator √© determinado pela equa√ß√£o (\ref{eq:relarea}),
 
 \begin{equation}\label{eq:relarea}
 f_a \equiv \alpha^2 \equiv \frac{Area_r}{Area_f} 
 \end{equation}
 
-Aonde $f_a$ e $\alpha$ s„o definidos como um fator de ·rea e de afastamento,
-respectivamente; $Area_r$ È a ·rea do ROI e $Area_f$ È a ·rea da regi„o analisada
-do ˙ltimo frame.
+Aonde $f_a$ e $\alpha$ s√£o definidos como um fator de √°rea e de afastamento,
+respectivamente; $Area_r$ √© a √°rea do ROI e $Area_f$ √© a √°rea da regi√£o analisada
+do √∫ltimo frame.
 
-Sabendo $\alpha$, se for considerado que o objeto estava a uma dist‚ncia $d_0$, ent„o
-sua prÛxima dist‚ncia ser· $\alpha d_0$ (ou $\sqrt{f_a} d_0$). Assim, cada $i-Èsimo$ frame
-ter· o seu prÛprio $\alpha_i$ valor, aonde $d_i=\alpha_i d_0$.
+Sabendo $\alpha$, se for considerado que o objeto estava a uma dist√¢ncia $d_0$, ent√£o
+sua pr√≥xima dist√¢ncia ser√° $\alpha d_0$ (ou $\sqrt{f_a} d_0$). Assim, cada $i-\tilde{e}simo$ frame
+ter√° o seu pr√≥prio $\alpha_i$ valor, aonde $d_i=\alpha_i d_0$.
 
 O fator de afastamento, $\alpha_i$, tem dois significados: se o fator de afastamento cresce rapidamente 
-significa que o objeto est· se afastando e se o fator decresce o objeto est· se aproximando.
+significa que o objeto est√° se afastando e se o fator decresce o objeto est√° se aproximando.
 
-A velocidade relativa È definida pela equaÁ„o da cinem·tica em fÌsica:
+A velocidade relativa √© definida pela equa√ß√£o da cinem√°tica em f√≠sica:
 
 \begin{equation}
  v_i = \frac{\Delta s}{\Delta t}= \frac{s_i-s_{i-1}}{\Delta t}.
 \end{equation}
 
-Aonde o vetor $v_i$ representa a velocidade relativa no i-Èsimo frame, $s_i=(x_i,y_i,d_i)$ È a posiÁ„o que
-foi definida pela busca no i-Èsimo frame e $\Delta t$ È o intervalo de tempo entre a an·lise das duas imagens.
-Adicionalmente, o fator da velocidade de afastamento, $v^d_i$, È o n˙mero escalar o qual representa a componente
-respons·vel pela profundida no vetor $v_i$.
+Aonde o vetor $v_i$ representa a velocidade relativa no i-√©simo frame, $s_i=(x_i,y_i,d_i)$ √© a posi√ß√£o que
+foi definida pela busca no i-√©simo frame e $\Delta t$ √© o intervalo de tempo entre a an√°lise das duas imagens.
+Adicionalmente, o fator da velocidade de afastamento, $v^d_i$, √© o n√∫mero escalar o qual representa a componente
+respons√°vel pela profundida no vetor $v_i$.
 
-O c·lculo do valor $v^d_i$ se modifica, pois depende da dist‚ncia entre a c‚mera e o objeto. No instante i-Èsimo,
-a dist‚ncia ser· referenciada como $d_0$, sendo definida como valor 1.
+O c√°lculo do valor $v^d_i$ se modifica, pois depende da dist√¢ncia entre a c√¢mera e o objeto. No instante i-√©simo,
+a dist√¢ncia ser√° referenciada como $d_0$, sendo definida como valor 1.

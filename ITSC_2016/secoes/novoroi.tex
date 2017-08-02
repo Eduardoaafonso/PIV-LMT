@@ -63,37 +63,36 @@ it is used by the Algorithm \ref{alg:system} of Fig. \ref{fig:system}.
 
 
 
-\subsection{Cretério para um novo ROI}
+\subsection{CretÃ©rio para um novo ROI}
 
-O ROI é um importante elemento dentro algoritmo, pois ele é a referência do
-atual estado do objeto que será comparado com as imagens posteriores.
-O critério para atualizar o ROI foi determinado a partir da correlação 
-entre as imagens, sendo assim, se o valor da comparação estiver entre $0,925$ 
-e $0,8$ o ROI será atualizado com uma nova posição $(x_i,y_i,d_i)$.
+O ROI Ã© um importante elemento dentro algoritmo, pois ele Ã© a referÃªncia do
+atual estado do objeto que serÃ¡ comparado com as imagens posteriores.
+O critÃ©rio para atualizar o ROI foi determinado a partir da correlaÃ§Ã£o 
+entre as imagens, sendo assim, se o valor da comparaÃ§Ã£o estiver entre $0,925$ 
+e $0,8$ o ROI serÃ¡ atualizado com uma nova posiÃ§Ã£o $(x_i,y_i,d_i)$.
 
-Deste modo, foi adotado que o limite inferior é de 0,8 \cite{Eugene}. Valores
-de comparação abaixo deste, o objeto é tido como perdido, como mostrado na figura
+Deste modo, foi adotado que o limite inferior Ã© de 0,8 \cite{Eugene}. Valores
+de comparaÃ§Ã£o abaixo deste, o objeto Ã© tido como perdido, como mostrado na figura
 \ref{fig:newroicri}.
-Nota-se que o ROI é atualizado para uma escala igual a anterior ou modificada,
-dependendo do valor da comparação dada pelo PCC.
+Nota-se que o ROI Ã© atualizado para uma escala igual a anterior ou modificada,
+dependendo do valor da comparaÃ§Ã£o dada pelo PCC.
 
 
 \begin{figure}[H]
 \includegraphics[width=\columnwidth]{images/figure3.eps}
-\caption{Quando a comparação é maior que $0,8$, incluindo número maiores que $0,925$, significa que o objeto foi encontrado,
-se o PCC é menor que $0,925$ a imagem é tida como perdida e se o coeficiente for maior que $0,8$, então o ROI é atualizado pela imagem de 
-maior correlação.}
+\caption{Quando a comparaÃ§Ã£o Ã© maior que $0,8$, incluindo nÃºmero maiores que $0,925$, significa que o objeto foi encontrado,
+se o PCC Ã© menor que $0,925$ a imagem Ã© tida como perdida e se o coeficiente for maior que $0,8$, entÃ£o o ROI Ã© atualizado pela imagem de 
+maior correlaÃ§Ã£o.}
 \label{fig:newroicri}
 \end{figure}
 
 O algoritmo \ref{alg:newroi} apresenta o criterio descrito na figura \ref{fig:newroicri};
-O função $renew\_roi\_criteria()$ explicada é usada pelo algoritmo \ref{alg:system} da figura \ref{fig:system}
+O funÃ§Ã£o $renew\_roi\_criteria()$ explicada Ã© usada pelo algoritmo \ref{alg:system} da figura \ref{fig:system}
 
 
 \begin{algorithm}
- \KwData{$ROI$ inicial, posição $P_0$, região de busca do frame atual ($AR$), posição $P$ e a correlação $r$ entre eles. }
- \KwResult{O $ROI$ atualizado, posição e seu status, $Found$. }
-
+ \KwData{$ROI$ inicial, posiÃ§Ã£o $P_0$, regiÃ£o de busca do frame atual ($AR$), posiÃ§Ã£o $P$ e a correlaÃ§Ã£o $r$ entre eles. }
+ \KwResult{O $ROI$ atualizado, posiÃ§Ã£o e seu status, $Found$. }
 
     $NEWP_0 \leftarrow  P_0$ \;
     $NEWROI \leftarrow  ROI$ \;
@@ -102,7 +101,7 @@ O função $renew\_roi\_criteria()$ explicada é usada pelo algoritmo \ref{alg:syst
     {
       $Found \leftarrow True$\;
         message ``target found''\;
-        \eIf{$r \leq 0.925$}
+        \If{$r \leq 0.925$}
         {
             $NEWROI \leftarrow  AR$\;
             $NEWP_0 \leftarrow  P$\;
@@ -118,5 +117,3 @@ O função $renew\_roi\_criteria()$ explicada é usada pelo algoritmo \ref{alg:syst
 \end{algorithm}
 %The system needs to have a high level of reliability, so that the lower limit adopted 
 %contributes to an operation with minimum of mistakes.
-Contact GitHub API Training Shop Blog About
-© 2017 GitHub, Inc. Terms Privacy Security Status Help

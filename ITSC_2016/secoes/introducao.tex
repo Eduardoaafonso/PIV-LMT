@@ -41,37 +41,37 @@ the Pearson Correlation Coefficient ($PCC$)\cite{Miranda Neto} over the POV-Ray 
 
 \section{INTRODUCTION}
 
-Os acidentes no trânsito têm se tornado um problema de governo, pois há uma quantidade significativa de pessoas que
-perdem suas vidas neste tipo de acidente. Em 2016, a United Nations General Assembly adotou uma resolução que incorporam medidas que visam 
-a melhoria da segurança em trânsitos na esfera global. O período de 2011 à 2020 está sendo considerado a década da ação a favor
-de um trânsito mais segurança.
+Os acidentes no trÃ¢nsito tÃªm se tornado um problema de governo, pois hÃ¡ uma quantidade significativa de pessoas que
+perdem suas vidas neste tipo de acidente. Em 2016, a United Nations General Assembly adotou uma resoluÃ§Ã£o que incorporam medidas que visam 
+a melhoria da seguranÃ§a em trÃ¢nsitos na esfera global. O perÃ­odo de 2011 Ã  2020 estÃ¡ sendo considerado a dÃ©cada da aÃ§Ã£o a favor
+de um trÃ¢nsito mais seguranÃ§a.
 
-Os congestionamentos é um dos agravadores do risco de morte e acidentes em trânsito, além de falhas sejam humanas ou não. 
-Face à essas questões, vários grupos de pesquisas debruçam seus estudos para encontrar soluções viáveis e, desta maneira,
-reduzir o número de acidentes e mortes no trânsito com a contribuição de diversos aparatos tecnológicos, entre eles: as câmeras.
+Os congestionamentos Ã© um dos agravadores do risco de morte e acidentes em trÃ¢nsito, alÃ©m de falhas sejam humanas ou nÃ£o. 
+Face Ã  essas questÃµes, vÃ¡rios grupos de pesquisas debruÃ§am seus estudos para encontrar soluÃ§Ãµes viÃ¡veis e, desta maneira,
+reduzir o nÃºmero de acidentes e mortes no trÃ¢nsito com a contribuiÃ§Ã£o de diversos aparatos tecnolÃ³gicos, entre eles: as cÃ¢meras.
 
-A visão monocular é uma área que vem solucionando diversas questões no âmbito de veículos autônomos e, por conseguinte, 
-contribui para a criação de sistemas mais seguros. Entretanto, o baixo custo computacional ainda é um desavio 
-para as atuais tecnologias. O estado da arte mostra o esforço dos grupos de pesquisas afim de que reduza o custo computacional e,
-também, energético dos sistemas associando critérios para as tomadas de decisões.
+A visÃ£o monocular Ã© uma Ã¡rea que vem solucionando diversas questÃµes no Ã¢mbito de veÃ­culos autÃ´nomos e, por conseguinte, 
+contribui para a criaÃ§Ã£o de sistemas mais seguros. Entretanto, o baixo custo computacional ainda Ã© um desavio 
+para as atuais tecnologias. O estado da arte mostra o esforÃ§o dos grupos de pesquisas afim de que reduza o custo computacional e,
+tambÃ©m, energÃ©tico dos sistemas associando critÃ©rios para as tomadas de decisÃµes.
 
-Field Programmable Gate Arrays (FPGA) é um dispositivo lógico programável que vem sendo muito utilizado em análise de imagens. \cite{Honegger}
-apresenta uma plataforma para processamento de dados de câmeras configuradas em $127$ frames por segundo com resolução de $376x240$. Essa 
-implementação permite calcular a distorção radial do objeto analisado, estimação da disparidade e o fluxo de dados. Além da 
-velocidade relativa dos eixos ópticos (X, Y e Z).
+Field Programmable Gate Arrays (FPGA) Ã© um dispositivo lÃ³gico programÃ¡vel que vem sendo muito utilizado em anÃ¡lise de imagens. \cite{Honegger}
+apresenta uma plataforma para processamento de dados de cÃ¢meras configuradas em $127$ frames por segundo com resoluÃ§Ã£o de $376x240$. Essa 
+implementaÃ§Ã£o permite calcular a distorÃ§Ã£o radial do objeto analisado, estimaÃ§Ã£o da disparidade e o fluxo de dados. AlÃ©m da 
+velocidade relativa dos eixos Ã³pticos (X, Y e Z).
 
-O conceito de "observabilidade da imagem" é proposto em \cite{Breugel}, o qual sugere requisitos básicos para a estimativa de velocidade e 
-distância de um objeto. Nesta implementação, as entradas nulas são definidas pela equação de sistemas lineares de observabilidade Gramian e,
-para sistemas não-lineares, usa-se as ferramentas de Lie Algebraic. A condição que permite vincular a observabilidade do sistema é dado por:
-se o número de termos linearmente indepentes é igual ao número de estados, então o sistema é observável e, por consequência, a velocidade e a 
-distância não devem ser zeros.
+O conceito de "observabilidade da imagem" Ã© proposto em \cite{Breugel}, o qual sugere requisitos bÃ¡sicos para a estimativa de velocidade e 
+distÃ¢ncia de um objeto. Nesta implementaÃ§Ã£o, as entradas nulas sÃ£o definidas pela equaÃ§Ã£o de sistemas lineares de observabilidade Gramian e,
+para sistemas nÃ£o-lineares, usa-se as ferramentas de Lie Algebraic. A condiÃ§Ã£o que permite vincular a observabilidade do sistema Ã© dado por:
+se o nÃºmero de termos linearmente indepentes Ã© igual ao nÃºmero de estados, entÃ£o o sistema Ã© observÃ¡vel e, por consequÃªncia, a velocidade e a 
+distÃ¢ncia nÃ£o devem ser zeros.
 
-Os artigos mostrados como estado da arte permite observar que há uma pesquisa de alto nível sobre o assunto de visão computacional associada à
-estimativa de velocidade e distância de objetos. A contribuição deste artigo para a área é o uso da técnica Particle Image Velocimetry (PIV) 
-para a estimativa da velocidade e distância relativas de objetos na cena.
+Os artigos mostrados como estado da arte permite observar que hÃ¡ uma pesquisa de alto nÃ­vel sobre o assunto de visÃ£o computacional associada Ã 
+estimativa de velocidade e distÃ¢ncia de objetos. A contribuiÃ§Ã£o deste artigo para a Ã¡rea Ã© o uso da tÃ©cnica Particle Image Velocimetry (PIV) 
+para a estimativa da velocidade e distÃ¢ncia relativas de objetos na cena.
 
-PIV \cite{Bastiaans} é uma técnica originariamente usada para determinar velocidade de fluídos, contudo ela foi ajustada para a aplicação em
-veículos autônomos usando critério de busca baseados no coeficiente de correlação de Pearson (PCC em inglês) \cite{Miranda Neto}, simulado 
+PIV \cite{Bastiaans} Ã© uma tÃ©cnica originariamente usada para determinar velocidade de fluÃ­dos, contudo ela foi ajustada para a aplicaÃ§Ã£o em
+veÃ­culos autÃ´nomos usando critÃ©rio de busca baseados no coeficiente de correlaÃ§Ã£o de Pearson (PCC em inglÃªs) \cite{Miranda Neto}, simulado 
 no POV-Ray \cite{povray}.
 
 

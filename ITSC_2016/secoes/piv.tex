@@ -44,14 +44,14 @@ frame $1$ to another in frame $2$.
 
 \subsection{PARTICLE IMAGE VELOCIMETRY - PIV}
 
-O $PIV$ È uma tÈcnica que determina um campo de velocidade de objetos dentro de um fluxo de imagem \cite{Bastiaans}.
-O resultado do $PIV$ È dado por um campo de vetor que representa a direÁ„o, sentido e intensidade de velocidade de cada 
-partÌcula. AlÈm disso, pode sr usado para acompanhar objetos dentro de um fluxo de imagens.
+O $PIV$ √© uma t√©cnica que determina um campo de velocidade de objetos dentro de um fluxo de imagem \cite{Bastiaans}.
+O resultado do $PIV$ √© dado por um campo de vetor que representa a dire√ß√£o, sentido e intensidade de velocidade de cada 
+part√≠cula. Al√©m disso, pode sr usado para acompanhar objetos dentro de um fluxo de imagens.
 
-O $PIV$ divide a imagem em diferentes possÌveis regiıes aonde o objeto pode ser encontrado. A regi„o que contÈm o objeto de 
-interesse È correlacionada com a prÛxima imagem. Logo que identificado a sua correspondente, um vetor È traÁado do ponto inicial
-atÈ a regi„o encontrada. Assim, evidencia-se um deslocamento entre uma imagem e outra, aplicando a derivada 
-obtÈm-se a estimativa da velocidade relativa.
+O $PIV$ divide a imagem em diferentes poss√≠veis regi√µes aonde o objeto pode ser encontrado. A regi√£o que cont√©m o objeto de 
+interesse √© correlacionada com a pr√≥xima imagem. Logo que identificado a sua correspondente, um vetor √© tra√ßado do ponto inicial
+at√© a regi√£o encontrada. Assim, evidencia-se um deslocamento entre uma imagem e outra, aplicando a derivada 
+obt√©m-se a estimativa da velocidade relativa.
 
 \begin{figure}[H]
 \includegraphics[width=\columnwidth]{images/explanationPIV.eps}
@@ -59,21 +59,21 @@ obtÈm-se a estimativa da velocidade relativa.
 \label{fig:twoframes}
 \end{figure}
 
-A figura \ref{fig:twoframes} ilustra como $PIV$ funciona, demonstrando a relaÁ„o entre a regi„o de interesse ($ROI$) e 
-a janela de busca ($WOS$). $WOS$ È a regi„o aonde o objeto pode ser encontrado sendo proporcional ao tamanho do $ROI$.
-O $WOS$ È definido $1.5$ o tamanho do ROI. Por exemplo, se o ROI tem dimens„o $200\times300$, ent„o o $WOS$ ter· $300\times450$.
-Essa consideraÁ„o foi tomada a partir dos testes feitos e levando em consideraÁ„o os limites de velocidades permitidos em 
+A figura \ref{fig:twoframes} ilustra como $PIV$ funciona, demonstrando a rela√ß√£o entre a regi√£o de interesse ($ROI$) e 
+a janela de busca ($WOS$). $WOS$ √© a regi√£o aonde o objeto pode ser encontrado sendo proporcional ao tamanho do $ROI$.
+O $WOS$ √© definido $1.5$ o tamanho do ROI. Por exemplo, se o ROI tem dimens√£o $200\times300$, ent√£o o $WOS$ ter√° $300\times450$.
+Essa considera√ß√£o foi tomada a partir dos testes feitos e levando em considera√ß√£o os limites de velocidades permitidos em 
 cidades e rodovias.
 
 
 \begin{figure}[H]
 \includegraphics[width=\columnwidth]{images/WOSdivided.eps}
-\caption{O $WOS$ È o espaÁo pelo qual o $ROI$ ser· procurado.}
+\caption{O $WOS$ √© o espa√ßo pelo qual o $ROI$ ser√° procurado.}
 \label{fig:WOSdivided}
 \end{figure}
 
-$ROI$ È uma das partes mais importantes do $PIV$, pois ele contÈm o objeto de interesse. A regi„o de an·lise
-($AR$) da mesma dimens„o do $ROI$ È percorrida pelo $WOS$ na imagem 2, como mostrado na figura \ref{fig:WOSdivided}.
-As comparaÁıes s„o feitas entre as regiıes de ambas imagens e dado um valor para essa comparaÁ„o, quando o processo termina o valor
-maior da correlaÁ„o È a nova posiÁ„o do objeto. Deste modo, traÁa-se um vetor do ponto inicial ($ROI$ na imagem 1) atÈ o ponto final
+$ROI$ √© uma das partes mais importantes do $PIV$, pois ele cont√©m o objeto de interesse. A regi√£o de an√°lise
+($AR$) da mesma dimens√£o do $ROI$ √© percorrida pelo $WOS$ na imagem 2, como mostrado na figura \ref{fig:WOSdivided}.
+As compara√ß√µes s√£o feitas entre as regi√µes de ambas imagens e dado um valor para essa compara√ß√£o, quando o processo termina o valor
+maior da correla√ß√£o √© a nova posi√ß√£o do objeto. Deste modo, tra√ßa-se um vetor do ponto inicial ($ROI$ na imagem 1) at√© o ponto final
 ($ROI$ na imagem 2).
