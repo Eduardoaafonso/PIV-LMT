@@ -1,4 +1,4 @@
-
+\begin{comment}
 The purpose of our algorithm is to make a three dimensions tracking system, producing position informations 
 about a followed target.
 The information will be relevant to define parameters 
@@ -16,6 +16,22 @@ the $WOS$ of a current frame; the result of this process is a displacement which
 \label{fig:system}
 \end{figure}
 
+\end{comment}
+A proposta do algoritmo se baseia em um sistema de $tracking$ em três dimensões, gerando informações
+sobre a posição do objeto. Deste modo, encontra-se a velocidade relativa e fator de aproximação.
+
+O algoritmo ilustrado na fig. \ref{fig:system} tem como parâmetro inicial a cena com o
+objeto ($ROI$) a ser seguido. Posteriormente, o sistema analisa as imagens subsequêntes entrando
+em um $looping$.
+
+\begin{figure}[h]
+\includegraphics[width=\columnwidth]{images/figure1-diagram1.eps}
+\caption{O objeto é encontrado através do maior valor de correlação de Pearson entre $ROI$ e $WOS$ da imagem atual. 
+O resultado desse processo é tido como um deslocamento do objeto, dado por um vetor}
+\label{fig:system}
+\end{figure}
+
+\begin{comment}
 In a two dimensional analysis, the tracked target given us information about its horizontal 
 and vertical position and it is relative to the perpendicular velocity with respect to the observer.
 When the target is analyzed in three dimensions, 
@@ -31,9 +47,21 @@ will be explicated in the next sections. The algorithm receives as input paramet
 A initial $ROI$, your position and a stream of $N$ images; with these data, the
 algorithm returns a structure called $PATH$ with the position of target in each image frame,
 being $PATH\{i\}=(x_i,y_i,d_i)$ the position of analysis region with target in the image $I_i$.
+\end{comment}
+
+O objeto fornece informações sobre sua posição horizontal e vertical em uma análise 2D. Na situação 
+3D, uma variável a mais é incluída $(x=x_0, y=y_0, d=d_0=1)$, sendo que $x_0$ e $y_0$ são as posições 
+horizontal e vertical, respectivamente, e $d_0=1$ representa a profundida inicial do objeto no $ROI$ normalizado em $1.0$. A partir
+deste valor, será possível mensurar a velocidade relativa e o fator de aproximação do objeto.
+
+O algoritmo \ref{alg:system} mostra uma visão geral do sistema descrito na fig. \ref{fig:system}, as funções 
+ ($multiscale\_match\_criterion$ e $renew\_roi\_criteria$) serão discutidas na próxima seção. 
+O algoritmo recebe entradas da posição e sequência de $N$ imagens sobre o $ROI$, o processo retorna 
+uma estrutura chamada $PATH$ com a posição do objeto em cada imagem, sendo que a saída $PATH\{i\}=(x_i,y_i,d_i)$
+é a posição da região analisada do objeto na $I_i$ imagem.
 
 
-
+\begin{comment}
 \begin{algorithm}
  \KwData{An initial $ROI$, your position $P_0$ and a stream of images, $I_i$, for $0\leq i < N$. }
  \KwResult{$3D$ target $PATH$ or a target lost message. }
@@ -55,7 +83,29 @@ being $PATH\{i\}=(x_i,y_i,d_i)$ the position of analysis region with target in t
 \caption{How to get a $3D$ target path.}
 \label{alg:system}
 \end{algorithm}
+\end{comment}
 
+\begin{algorithm}
+ \KwData{$ROI$ inicial, posição no $P_0$ e sequência de imagens, $I_i$, para $0\leq i < N$. }
+ \KwResult{$3D$ objeto $PATH$ ou uma messagem de objeto perdido. }
+ $i \leftarrow 0$ \;
+~\\
+\While{$i < N$ }
+{
+    $\{AR,P,r\} \leftarrow multiscale\_match\_criterion(ROI,P_0,I_i)$\;
+    
+    $\{ROI,P_0,Found\} \leftarrow renew\_roi\_criteria(ROI,P_0,AR,P,r)$\;
+    \eIf{Found}{
+      $PATH\{i\}  \leftarrow P$\;
+    }{
+      break while loop\;
+    }
+}
+~\\
+\Return PATH \;
+\caption{How to get a $3D$ target path.}
+\label{alg:system}
+\end{algorithm}
 
 %Diagrama1
  %A gente vai explicar o algoritmo como uma caixa fechada , que coisa entra e que coisa sai

@@ -1,0 +1,231 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex)
+ restricted \write18 enabled.
+entering extended mode
+(./Artigo-versao-portugues.tex
+LaTeX2e <2016/02/01>
+Babel <3.9q> and hyphenation patterns for 81 language(s) loaded.
+(./ieeeconf.cls
+Document Class: ieeeconf 2004/1/15 revision V1.6b by Pradeep Misra
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ptm.fd)
+-- This is a 10 point document.
+)
+** ATTENTION: Overriding command lockouts (line 5).
+** ATTENTION: Overriding IEEE standard margins (line 8).
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/graphics.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/pdftex-def/pdftex.def
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/infwarerr.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ltxcmds.sty))))
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf.sty
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/grfext.sty
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifluatex.sty))))
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifpdf.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg)))
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/mathptmx.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/times.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/subfig/subfig.sty
+
+Package subfig Warning: Your document class has a bad definition
+ of \endfigure, most likely
+ \let\endfigure=\end@float
+ which has now been changed to
+ \def\endfigure{\end@float}
+ because otherwise subsequent changes to \end@float
+ (like done by several packages changing float behaviour)
+ can't take effect on \endfigure.
+ Please complain to your document class author.
+
+
+Package subfig Warning: Your document class has a bad definition
+ of \endtable, most likely
+ \let\endtable=\end@float
+ which has now been changed to
+ \def\endtable{\end@float}
+ because otherwise subsequent changes to \end@float
+ (like done by several packages changing float behaviour)
+ can't take effect on \endtable.
+ Please complain to your document class author.
+
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/base/fixltx2e.sty
+
+Package fixltx2e Warning: fixltx2e is not required with releases after 2015
+(fixltx2e)                All fixes are now in the LaTeX kernel.
+(fixltx2e)                See the latexrelease package for details.
+
+) (/usr/share/texlive/texmf-dist/tex/latex/float/float.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/verbatim.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
+(/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def
+(/usr/share/texlive/texmf-dist/tex/latex/base/t1enc.dfu)
+(/usr/share/texlive/texmf-dist/tex/latex/base/ot1enc.dfu)
+(/usr/share/texlive/texmf-dist/tex/latex/base/omsenc.dfu)))
+(/usr/share/texlive/texmf-dist/tex/latex/algorithm2e/algorithm2e.sty
+(/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/xspace.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/relsize/relsize.sty)
+********************************************************
+Package `algorithm2e' Release 5.1 -- october 19 2015 --
+- algorithm2e-announce@lirmm.fr mailing list for announcement about releases
+- algorithm2e-discussion@lirmm.fr mailing list for discussion about package
+subscribe by emailing sympa@lirmm.fr with 'subscribe <list> <firstname name>'
+- Author: Christophe Fiorio (christophe.fiorio@umontpellier.fr)
+********************************************************
+) (./Artigo-versao-portugues.aux)
+(/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+) (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ztmcm.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/omlztmcm.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/omsztmcm.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/omxztmcm.fd)
+(./sections/abst.tex) (./secoes/introducao.tex) (./secoes/pcc.tex)
+(./secoes/piv.tex [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+<images/explanationPIV-eps-converted-to.pdf, id=16, 862.22125pt x 493.845pt>
+<use images/explanationPIV-eps-converted-to.pdf>
+<images/WOSdivided-eps-converted-to.pdf, id=17, 244.915pt x 152.57pt>
+<use images/WOSdivided-eps-converted-to.pdf>) (./secoes/descricaoSist.tex
+<images/figure1-diagram1-eps-converted-to.pdf, id=18, 1378.14874pt x 583.17876p
+t> <use images/figure1-diagram1-eps-converted-to.pdf>)
+(./secoes/controleErro.tex [2 <./images/explanationPIV-eps-converted-to.pdf> <.
+/images/WOSdivided-eps-converted-to.pdf> <./images/figure1-diagram1-eps-convert
+ed-to.pdf>]
+<images/imageError-eps-converted-to.pdf, id=30, 913.4125pt x 686.565pt>
+<use images/imageError-eps-converted-to.pdf>
+<images/imageErrorcontroled-eps-converted-to.pdf, id=31, 487.8225pt x 367.3725p
+t> <use images/imageErrorcontroled-eps-converted-to.pdf>)
+(./secoes/criterio-de-busca-em-camadas.tex
+<images/figure2a-eps-converted-to.pdf, id=32, 302.12875pt x 231.86626pt>
+<use images/figure2a-eps-converted-to.pdf>
+<images/figure2b-eps-converted-to.pdf, id=33, 302.12875pt x 231.86626pt>
+<use images/figure2b-eps-converted-to.pdf>
+Overfull \hbox (7.00012pt too wide) in paragraph at lines 129--133
+ [][][] 
+
+Underfull \hbox (badness 10000) in paragraph at lines 176--180
+[]\OT1/ptm/m/n/10 O al-go-rithm 2[] usa in-ter-na-mente a fun[][]ao
+[3 <./images/imageError-eps-converted-to.pdf> <./images/imageErrorcontroled-eps
+-converted-to.pdf> <./images/figure2a-eps-converted-to.pdf> <./images/figure2b-
+eps-converted-to.pdf>]) (./secoes/abordagem-3D.tex
+<images/Diagrama3-eps-converted-to.pdf, id=49, 942.52126pt x 821.0675pt>
+<use images/Diagrama3-eps-converted-to.pdf>
+
+LaTeX Warning: Command \' invalid in math mode on input line 114.
+
+! Please use \mathaccent for accents in math mode.
+\add@accent ...@spacefactor \spacefactor }\accent 
+                                                  #1 #2\egroup \spacefactor ...
+l.114 ... (ou $\sqrt{f_a} d_0$). Assim, cada $i-é
+                                                  simo$ imagem
+! You can't use `\spacefactor' in math mode.
+\add@accent ...}\accent #1 #2\egroup \spacefactor 
+                                                  \accent@spacefactor 
+l.114 ... (ou $\sqrt{f_a} d_0$). Assim, cada $i-é
+                                                  simo$ imagem
+
+Underfull \hbox (badness 3965) in paragraph at lines 120--121
+[]\OT1/ptm/m/n/10 A ve-loci-dade rel-a-tiva []e definida pela equa[][]ao da
+
+LaTeX Warning: Command \' invalid in math mode on input line 126.
+
+! Please use \mathaccent for accents in math mode.
+\add@accent ...@spacefactor \spacefactor }\accent 
+                                                  #1 #2\egroup \spacefactor ...
+l.126 ...representa a velocidade relativa à $i-é
+                                                  simo$ imagem, $s_i=(x_i,y_...
+
+! You can't use `\spacefactor' in math mode.
+\add@accent ...}\accent #1 #2\egroup \spacefactor 
+                                                  \accent@spacefactor 
+l.126 ...representa a velocidade relativa à $i-é
+                                                  simo$ imagem, $s_i=(x_i,y_...
+
+
+LaTeX Warning: Command \' invalid in math mode on input line 127.
+
+! Please use \mathaccent for accents in math mode.
+\add@accent ...@spacefactor \spacefactor }\accent 
+                                                  #1 #2\egroup \spacefactor ...
+l.127 foi definida pela busca na $i-é
+                                      simo$ imagem e $\Delta t$ é o interva...
+
+! You can't use `\spacefactor' in math mode.
+\add@accent ...}\accent #1 #2\egroup \spacefactor 
+                                                  \accent@spacefactor 
+l.127 foi definida pela busca na $i-é
+                                      simo$ imagem e $\Delta t$ é o interva...
+
+[4 <./images/Diagrama3-eps-converted-to.pdf>]
+
+LaTeX Warning: Command \' invalid in math mode on input line 131.
+
+! Please use \mathaccent for accents in math mode.
+\add@accent ...@spacefactor \spacefactor }\accent 
+                                                  #1 #2\egroup \spacefactor ...
+l.131 ...e a câmera e o objeto. No instante $i-é
+                                                  simo$,
+! You can't use `\spacefactor' in math mode.
+\add@accent ...}\accent #1 #2\egroup \spacefactor 
+                                                  \accent@spacefactor 
+l.131 ...e a câmera e o objeto. No instante $i-é
+                                                  simo$,
+) (./secoes/novoroi.tex
+<images/figure3-eps-converted-to.pdf, id=55, 1318.9275pt x 244.915pt>
+<use images/figure3-eps-converted-to.pdf>) (./secoes/resultados2D.tex
+<images/results_2D.png, id=56, 171.64125pt x 128.48pt>
+<use images/results_2D.png>
+<images/results_2D-eps-converted-to.pdf, id=57, 449.68pt x 336.25626pt>
+<use images/results_2D-eps-converted-to.pdf>) (./secoes/resultados3D.tex
+<images/figurea-eps-converted-to.pdf, id=58, 486.81876pt x 366.36874pt>
+<use images/figurea-eps-converted-to.pdf>
+<images/figureb-eps-converted-to.pdf, id=59, 486.81876pt x 366.36874pt>
+<use images/figureb-eps-converted-to.pdf>
+<images/grapha_b-eps-converted-to.pdf, id=60, 498.86375pt x 390.45876pt>
+<use images/grapha_b-eps-converted-to.pdf> [5 <./images/figure3-eps-converted-t
+o.pdf> <./images/results_2D.png (PNG copy)> <./images/results_2D-eps-converted-
+to.pdf> <./images/figurea-eps-converted-to.pdf> <./images/figureb-eps-converted
+-to.pdf>]
+<images/graphvelocity-eps-converted-to.pdf, id=75, 508.90125pt x 394.47375pt>
+<use images/graphvelocity-eps-converted-to.pdf>) (./secoes/conclusao.tex)
+(./secoes/agradecimento.tex) [6 <./images/grapha_b-eps-converted-to.pdf> <./ima
+ges/graphvelocity-eps-converted-to.pdf>]
+
+** Conference Paper **
+Before submitting the final camera ready copy, remember to:
+
+ 1. Manually equalize the lengths of two columns on the last page
+ of your paper;
+
+ 2. Ensure that any PostScript and/or PDF output post-processing
+ uses only Type 1 fonts and that every step in the generation
+ process uses the US letter (8.5in X 11in) paper size.
+
+[7] (./Artigo-versao-portugues.aux) )
+(see the transcript file for additional information){/usr/share/texlive/texmf-d
+ist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy
+10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/sha
+re/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/texlive/texmf
+-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/typ
+e1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/u
+tmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on Artigo-versao-portugues.pdf (7 pages, 392948 bytes).
+Transcript written on Artigo-versao-portugues.log.

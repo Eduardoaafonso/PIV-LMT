@@ -46,23 +46,23 @@ frame $1$ to another in frame $2$.
 
 O $PIV$ é uma técnica que determina um campo de velocidade de objetos dentro de um fluxo de imagem \cite{Bastiaans}.
 O resultado do $PIV$ é dado por um campo de vetor que representa a direção, sentido e intensidade de velocidade de cada 
-partícula. Além disso, pode sr usado para acompanhar objetos dentro de um fluxo de imagens.
+partícula. Além disso, pode ser usado para acompanhar objetos dentro de um fluxo de imagens.
 
-O $PIV$ divide a imagem em diferentes possíveis regiões aonde o objeto pode ser encontrado. A região que contém o objeto de 
-interesse é correlacionada com a próxima imagem. Logo que identificado a sua correspondente, um vetor é traçado do ponto inicial
+O $PIV$ divide a imagem em diferentes possíveis regiões onde o objeto pode ser encontrado. A região que contém o objeto de 
+interesse é correlacionada com a próxima imagem. Após ser encontrado sua correspondente, um vetor é traçado do ponto inicial
 até a região encontrada. Assim, evidencia-se um deslocamento entre uma imagem e outra, aplicando a derivada 
 obtém-se a estimativa da velocidade relativa.
 
 \begin{figure}[H]
 \includegraphics[width=\columnwidth]{images/explanationPIV.eps}
-\caption{Funcionamento do PIV, comparando duas imagens.}
+\caption{Funcionamento do $PIV$, comparando duas imagens.}
 \label{fig:twoframes}
 \end{figure}
 
 A figura \ref{fig:twoframes} ilustra como $PIV$ funciona, demonstrando a relação entre a região de interesse ($ROI$) e 
-a janela de busca ($WOS$). $WOS$ é a região aonde o objeto pode ser encontrado sendo proporcional ao tamanho do $ROI$.
-O $WOS$ é definido $1.5$ o tamanho do ROI. Por exemplo, se o ROI tem dimensão $200\times300$, então o $WOS$ terá $300\times450$.
-Essa consideração foi tomada a partir dos testes feitos e levando em consideração os limites de velocidades permitidos em 
+a janela de busca ($WOS$). $WOS$ é a região onde o objeto pode ser encontrado sendo proporcional ao tamanho do $ROI$.
+O $WOS$ é definido $1.5$ o tamanho do $ROI$. Por exemplo, se o $ROI$ tem dimensão $200\times300$, então o $WOS$ terá $300\times450$.
+Essa consideração foi tomada a partir dos testes feitos e levando em conta os limites de velocidades permitidos em 
 cidades e rodovias.
 
 
@@ -72,8 +72,8 @@ cidades e rodovias.
 \label{fig:WOSdivided}
 \end{figure}
 
-$ROI$ é uma das partes mais importantes do $PIV$, pois ele contém o objeto de interesse. A região de análise
+$ROI$ é uma das partes mais importantes do $PIV$, pois ele contém o objeto de interesse. Uma região de análise
 ($AR$) da mesma dimensão do $ROI$ é percorrida pelo $WOS$ na imagem 2, como mostrado na figura \ref{fig:WOSdivided}.
-As comparações são feitas entre as regiões de ambas imagens e dado um valor para essa comparação, quando o processo termina o valor
+As comparações são feitas entre as regiões de ambas imagens e calculado um valor para essa comparação, quando o processo termina o valor
 maior da correlação é a nova posição do objeto. Deste modo, traça-se um vetor do ponto inicial ($ROI$ na imagem 1) até o ponto final
 ($ROI$ na imagem 2).

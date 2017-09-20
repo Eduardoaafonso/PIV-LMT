@@ -63,19 +63,19 @@ it is used by the Algorithm \ref{alg:system} of Fig. \ref{fig:system}.
 
 
 
-\subsection{Cretério para um novo ROI}
+\subsection{Critério para um novo ROI}
 
-O ROI é um importante elemento dentro algoritmo, pois ele é a referência do
+O $ROI$ é um importante elemento dentro algoritmo, pois ele é a referência do
 atual estado do objeto que será comparado com as imagens posteriores.
-O critério para atualizar o ROI foi determinado a partir da correlação 
+O critério para atualizar o $ROI$ é determinado a partir da correlação 
 entre as imagens, sendo assim, se o valor da comparação estiver entre $0,925$ 
-e $0,8$ o ROI será atualizado com uma nova posição $(x_i,y_i,d_i)$.
+e $0,8$ o $ROI$ será atualizado com uma nova posição $(x_i,y_i,d_i)$.
 
 Deste modo, foi adotado que o limite inferior é de 0,8 \cite{Eugene}. Valores
 de comparação abaixo deste, o objeto é tido como perdido, como mostrado na figura
 \ref{fig:newroicri}.
-Nota-se que o ROI é atualizado para uma escala igual a anterior ou modificada,
-dependendo do valor da comparação dada pelo PCC.
+Nota-se que o $ROI$ é atualizado para uma escala igual a anterior ou modificada,
+dependendo do valor da comparação dada pelo $PCC$.
 
 
 \begin{figure}[H]
@@ -86,8 +86,8 @@ maior correlação.}
 \label{fig:newroicri}
 \end{figure}
 
-O algoritmo \ref{alg:newroi} apresenta o criterio descrito na figura \ref{fig:newroicri};
-O função $renew\_roi\_criteria()$ explicada é usada pelo algoritmo \ref{alg:system} da figura \ref{fig:system}
+O algoritmo \ref{alg:newroi} apresenta o critério descrito na figura \ref{fig:newroicri};
+A função $renew\_roi\_criteria()$ explicada é usada pelo algoritmo \ref{alg:system} da figura \ref{fig:system}
 
 
 \begin{algorithm}
