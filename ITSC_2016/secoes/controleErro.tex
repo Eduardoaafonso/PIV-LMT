@@ -43,7 +43,7 @@ these points are considered with more importance.
 \end{comment}
 
 O método PCC compara duas matrizes de mesma dimensão ponderando cada $pixel$ com o mesmo valor. 
-Por consequência, o valor de correlação reduz visto que existem áreas de erro sendo usadas na comparação
+Por consequência, o valor de correlação se reduz visto que existem áreas de erro sendo usadas na comparação
 dando, assim, uma falsa impressão do objeto fora da cena. 
 Uma matriz ponderada foi proposta para a solução desse problema, como ilustrado na fig. \ref{fig:errorpondered}. 
 Ela é usada antes do cálculo do $PCC$, pois é necessário criar uma ponderação entre as áreas.
@@ -79,7 +79,7 @@ $A$ and $B$ to calculate the $r_Q$ weighted correlation coefficient,
 Os pontos próximos da borda são considerados menos importantes e os mais próximos do centro 
 têm maior relevância, pois é onde o objeto de interesse está.
 
-Assim, para criar uma matriz ponderada $Q$ como mostrado na fig. \ref{fig:errorpondered},
+Assim, para criar uma matriz ponderada $Q$, como mostrado na fig. \ref{fig:errorpondered},
 foi calculado $Q(x,y)$ como representado na equação (\ref{eq:Q}).
 
 \begin{equation}\label{eq:Q}

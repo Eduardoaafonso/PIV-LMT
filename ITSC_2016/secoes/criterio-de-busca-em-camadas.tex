@@ -112,25 +112,24 @@ A busca é baseada no $PIV$ e para isso é necessário definir alguns parâmetro
 do algoritmo. A região de interesse (Region of Interesting - $ROI$) é a parte na imagem que contém
 o objeto e a janela de busca (Windowm of Search - $WOS$) é a possível região que esse objeto pode estar
 no próximos frames. Quando são analisadas duas imagens, o $ROI$ da segunda imagem é definido a partir do
-valor mais próximo de 1 obtido no $PCC$. 
-Essa análise consiste na divisão do $WOS$ em janelas menores que sejam do tamanho do $ROI$, pois o $PCC$
-compara imagens do mesmo tamanho. Desta maneira, o $WOS$ é redimensionado proporcionalmente ao 
-tamanho do $ROI$.
+valor mais próximo de $1.0$ obtido no $PCC$. 
+Essa análise consiste na divisão do $WOS$ em regiões de analises que sejam do tamanho do $ROI$, pois o $PCC$
+compara imagens do mesmo tamanho.
 
-A Fig. \ref{fig:multires}(a) mostra a aplicação em duas dimensiões, onde as subjanelas dos $WOS$
-são analisadas com o $ROI$. 
+A Fig. \ref{fig:multires}(a) mostra a aplicação em duas dimensões, onde as regiões de analises da $WOS$
+são comparadas com o $ROI$. 
 
 A Fig. \ref{fig:multires}(b) representa uma aplicação em 3 dimensões, considerando a profundidade
-da imagem. Neste ponto, inclui-se as camadas, estas consistem na diminuição e aumento do $ROI$ os quais 
+da imagem. Neste ponto, inclui-se as camadas, estas consistem na diminuição e aumento da regiões de analises os quais 
 contemplam casos de afastamento e aproximação do objeto, respectivamente.
 
 \begin{figure}[H]
 \centering
   \subfloat[]{\label{subfig:(a)} \includegraphics[width=.5\columnwidth]{images/figure2a.eps}}
   \subfloat[]{\label{subfig:(b)} \includegraphics[width=.5\columnwidth]{images/figure2b.eps}}
-  \caption{Os retângulos vermelhos mostram as regiões analisadas e o retângulo preto represeta o $WOS$. 
-  (a) As subjanelas do $WOS$ são comparadas com o $ROI$ em uma única camada. 
-  (b) As subjanelas do $WOS$ sendo comparadas com $ROI$ de diferentes escalas.}
+  \caption{Os retângulos vermelhos mostram as regiões analisadas e o retângulo preto representa o $WOS$. 
+  (a) As regiões de analises do $WOS$ são comparadas com o $ROI$ em uma única camada. 
+  (b) As regiões de analises do $WOS$ sendo comparadas com $ROI$ de diferentes escalas é dizer múltiplas camadas.}
   \label{fig:multires}
 \end{figure}
 
@@ -174,7 +173,7 @@ $AR$: Region in $I_i$, at point $P_{max}$, with size $\alpha W$ by $\alpha H$\;
 \end{algorithm}
 
 O algorithm \ref{alg:multires} usa internamente a função $get\_corr\_matrix()$,
-a sua saída é uma matriz com valores da correlação entre $ROI$ e as subjanelas do $WOS$
+a sua saída é uma matriz com valores da correlação entre $ROI$ e as regiões de analises do $WOS$
 em torno do ponto $P_0$. Todos os processos da função são detalhados no algoritmo
 \ref{alg:multires2}
 
