@@ -173,38 +173,44 @@ l.128 foi definida pela busca na $i-é
 
 [4 <./images/Diagrama3-eps-converted-to.pdf>]
 
-LaTeX Warning: Command \' invalid in math mode on input line 132.
+LaTeX Warning: Command \' invalid in math mode on input line 133.
 
 ! Please use \mathaccent for accents in math mode.
 \add@accent ...@spacefactor \spacefactor }\accent 
                                                   #1 #2\egroup \spacefactor ...
-l.132 ...e a câmera e o objeto. No instante $i-é
-                                                  simo$,
+l.133 (observador) e o alvo no instante $i-é
+                                             simo$ será referenciada para $...
+
 ! You can't use `\spacefactor' in math mode.
 \add@accent ...}\accent #1 #2\egroup \spacefactor 
                                                   \accent@spacefactor 
-l.132 ...e a câmera e o objeto. No instante $i-é
-                                                  simo$,
+l.133 (observador) e o alvo no instante $i-é
+                                             simo$ será referenciada para $...
+
 ) (./secoes/novoroi.tex
 <images/figure3-eps-converted-to.pdf, id=55, 1318.9275pt x 244.915pt>
 <use images/figure3-eps-converted-to.pdf>) (./secoes/resultados2D.tex
 <images/results_2D.png, id=56, 171.64125pt x 128.48pt>
 <use images/results_2D.png>
 <images/results_2D-eps-converted-to.pdf, id=57, 449.68pt x 336.25626pt>
-<use images/results_2D-eps-converted-to.pdf>) (./secoes/resultados3D.tex
+<use images/results_2D-eps-converted-to.pdf>
+Underfull \vbox (badness 4608) has occurred while \output is active)
+(./secoes/resultados3D.tex
 <images/figurea-eps-converted-to.pdf, id=58, 486.81876pt x 366.36874pt>
 <use images/figurea-eps-converted-to.pdf>
 <images/figureb-eps-converted-to.pdf, id=59, 486.81876pt x 366.36874pt>
 <use images/figureb-eps-converted-to.pdf>
-<images/grapha_b-eps-converted-to.pdf, id=60, 498.86375pt x 390.45876pt>
-<use images/grapha_b-eps-converted-to.pdf> [5 <./images/figure3-eps-converted-t
-o.pdf> <./images/results_2D.png (PNG copy)> <./images/results_2D-eps-converted-
-to.pdf> <./images/figurea-eps-converted-to.pdf> <./images/figureb-eps-converted
--to.pdf>]
-<images/graphvelocity-eps-converted-to.pdf, id=75, 508.90125pt x 394.47375pt>
-<use images/graphvelocity-eps-converted-to.pdf>) (./secoes/conclusao.tex)
-(./secoes/agradecimento.tex) [6 <./images/grapha_b-eps-converted-to.pdf> <./ima
-ges/graphvelocity-eps-converted-to.pdf>]
+Underfull \vbox (badness 5696) has occurred while \output is active [5 <./image
+s/figure3-eps-converted-to.pdf> <./images/results_2D.png (PNG copy)> <./images/
+results_2D-eps-converted-to.pdf>]
+<images/grapha_b-eps-converted-to.pdf, id=68, 498.86375pt x 390.45876pt>
+<use images/grapha_b-eps-converted-to.pdf>
+<images/graphvelocity-eps-converted-to.pdf, id=69, 508.90125pt x 394.47375pt>
+<use images/graphvelocity-eps-converted-to.pdf>)
+Underfull \vbox (badness 10000) has occurred while \output is active [6 <./imag
+es/figurea-eps-converted-to.pdf> <./images/figureb-eps-converted-to.pdf> <./ima
+ges/grapha_b-eps-converted-to.pdf>] (./secoes/conclusao.tex)
+(./secoes/agradecimento.tex)
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -216,7 +222,8 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the US letter (8.5in X 11in) paper size.
 
-[7] (./Artigo-versao-portugues.aux) )
+[7 <./images/graphvelocity-eps-converted-to.pdf>]
+(./Artigo-versao-portugues.aux) )
 (see the transcript file for additional information){/usr/share/texlive/texmf-d
 ist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/publ
 ic/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
@@ -227,5 +234,5 @@ re/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/texlive/texmf
 -dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/typ
 e1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/u
 tmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Artigo-versao-portugues.pdf (7 pages, 393070 bytes).
+Output written on Artigo-versao-portugues.pdf (7 pages, 393837 bytes).
 Transcript written on Artigo-versao-portugues.log.
