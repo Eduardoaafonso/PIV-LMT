@@ -91,8 +91,9 @@ Partindo do ponto de vista do observador, quando o objeto estava localizado na d
 $t_0$ e moveu-se para a distância $\alpha d$ no tempo $t_1$, o seu tamanho no plano da imagem 
 foi alterado por um fator de 1/$\alpha$, e consequentemente, a área foi alterada por um fator 1/$\alpha^2$.
 
-O critério de busca dos objetos usa valores discretos de $\alpha$, portanto o algoritmo busca o objeto
-mais próximo com $\alpha<1$ e o mais distante com $\alpha>1$.
+O critério de busca dos objetos usa valores discretos de $\alpha$, portanto o algoritmo aproxima este
+ao valor mais próximo; assim, são usados valores $\alpha<1$
+para objetos próximos e  $\alpha>1$ para mais distantes de $d_0$.
 
 
 
@@ -110,7 +111,7 @@ Onde $f_a$ e $\alpha$ são definidos como um fator de área e de aproximação,
 respectivamente; $Area_r$ é a área do $ROI$ e $Area_f$ é a área da região analisada
 do último frame.
 
-Conhecendo $\alpha$, se considerado que o objeto estava a uma distância $d_0$, então
+Conhecendo $\alpha$, e se considerado que o objeto estava a uma distância $d_0$; então,
 sua próxima distância será $\alpha d_0$ (ou $\sqrt{f_a} d_0$). Assim, cada $i-ésimo$ imagem
 terá o seu próprio $\alpha_i$ valor, onde $d_i=\alpha_i d_0$.
 
@@ -128,5 +129,8 @@ foi definida pela busca na $i-ésimo$ imagem e $\Delta t$ é o intervalo de temp
 Adicionalmente, o fator da velocidade de aproximação, $v^d_i$, é o número escalar o qual representa a componente
 responsável pela profundida no vetor $v_i$.
 
-O cálculo do valor $v^d_i$ se modifica, pois depende da distância entre a câmera e o objeto. No instante $i-ésimo$,
-a distância será referenciada como $d_0$, sendo definida como valor 1.
+O valor $v^d_i$ calculado é relativo, pelo simples motivo de que a distância (profundidade) entre a câmara 
+(observador) e o alvo no instante $i-ésimo$ será referenciada para $d_0$; assim a distância do $ROI$ 
+inicial é estabelecida por definição para $d_0=1$. Finalmente, em todos os casos, a posição é 
+relativa ao observador (um sistema de referência móvel).
+
