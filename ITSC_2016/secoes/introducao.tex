@@ -34,46 +34,45 @@ Our contribution is an algorithm that calculate the relative distance using Part
 The $PIV$ \cite{Bastiaans} technique is used in many fields of 
 knowledge, \cite{Story, Xu}, to calculate the velocity of fluids in different parts. 
 Here, $PIV$ was adjusted for the case of autonomous vehicles using matching criteria based on 
-the Pearson Correlation Coefficient ($PCC$)\cite{Miranda Neto} over the POV-Ray \cite{povray} program.
+the Pearson Correlation Coefficient ($CCP$)\cite{Miranda Neto} over the POV-Ray \cite{povray} program.
 
 \end{comment}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%portugues%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{INTRODUÇÃO}
 
-Os acidentes no trânsito têm se tornado um problema de governo, pois há uma quantidade significativa de pessoas que
-perdem suas vidas neste tipo de acidente. Em 2016, a United Nations General Assembly adotou uma resolução que incorporam medidas que visam 
-a melhoria da segurança no trânsitos na esfera global. O período de 2011 à 2020 está sendo considerado a década da ação a favor
-de um trânsito com mais segurança.
+Acidentes de trânsito têm se tornado um problema de estado, pois há uma quantidade significativa de pessoas que
+perdem suas vidas neste tipo de acidente. Em 2016, a Organização das Nações Unidas adotou uma resolução que incorporam medidas que visam 
+a melhoria da segurança no trânsito com um programa global. O período de 2011 à 2020 está sendo considerado a década da ação a favor
+de um trânsito com maior segurança.
 
 Os congestionamentos é um dos agravadores do risco de morte e acidentes de trânsito, além do fato de que as falhas sejam humanas ou não. 
 Face à essas questões, vários grupos de pesquisas debruçam seus estudos para encontrar soluções viáveis e, desta maneira,
 reduzir o número de acidentes e mortes no trânsito com a contribuição de diversos aparatos tecnológicos, entre eles: as câmeras inteligentes.
 
-A visão monocular é uma área que vem solucionando diversas questões no âmbito de veículos autônomos e, por conseguinte, 
-contribui para a criação de sistemas mais seguros. Entretanto, o baixo custo computacional ainda é um desafio 
-para as atuais tecnologias. O estado da arte mostra o esforço dos grupos de pesquisas em reduzir o custo computacional 
-e energético dos sistemas, associando critérios para as tomadas de decisões.
 
-Field Programmable Gate Arrays (FPGA) é um dispositivo lógico programável que vem sendo muito utilizado em análise de imagens.No trabalho visto em
-\cite{Honegger}
-apresenta-se uma plataforma para processamento de dados de câmeras configuradas em $127$ frames por segundo com resolução de $376x240$. Essa 
-implementação permite calcular a distorção radial do objeto analisado, estimação da disparidade e o fluxo de dados. Além da 
-velocidade relativa dos eixos ópticos (X, Y e Z).
+Diversos sensores podem ser aplicados no contexto de veículos autônomos. Dentre eles, 
+câmeras são considerados sensores de baixo-custo e são amplamente utilizadas. 
+Integradas com outros sensores podem produzir resultados complementares devido a 
+quantidade de informações disponíveis nas imagens, como cores, texturas, etc. 
+Se por um lado, os sistemas baseados em visão monocular não dependem de processos 
+complexos de calibração, obter a informação de profundidade pode ser uma difícil 
+tarefa.
 
-O conceito de "observabilidade da imagem" é proposto em \cite{Breugel}, o qual sugere requisitos básicos para a estimativa de velocidade e 
-distância de um objeto. Nesta implementação, as entradas nulas são definidas pela equação de sistemas lineares de observabilidade Gramian e,
-para sistemas não-lineares, usa-se as ferramentas de Lie Algebraic. A condição que permite vincular a observabilidade do sistema é dado por:
+
+Neste sentido, o conceito de "observabilidade da imagem" é proposto em \cite{Breugel}, onde são apresentados requisitos básicos para a estimativa de velocidade e 
+distância de um objeto. Nesta implementação, as entradas nulas são definidas por uma equação de sistemas lineares de observabilidade Gramian e,
+para sistemas não-lineares, usa-se as ferramentas de Lie Algebraic. A condição que permite vincular a observabilidade do sistema é dada por:
 se o número de termos linearmente indepentes é igual ao número de estados, então o sistema é observável e, por consequência, a velocidade e a 
 distância não devem ser zeros.
 
-Os artigos mostrados como estado da arte permite observar que há uma pesquisa de alto nível sobre o assunto de visão computacional associada à
-estimativa de velocidade e distância de objetos. A contribuição deste artigo para a área é o uso da técnica Particle Image Velocimetry (PIV) 
-para a estimativa da velocidade e distância relativas de objetos na cena.
+A solução para a estimativa de velocidade e distância de objetos em uma imagem é 
+apresentada neste artigo à partir do uso da técnica Particle Image Velocimetry (PIV). 
+O PIV é originalmente usado para determinar a velocidade de fluídos, contudo foi 
+ajustado para aplicação em veículos autônomos. Para isso, o Coeficiente de 
+Correlação de Pearson (CCP) \cite{Miranda Neto} foi usado. Simulações foram realizadas no POV-Ray \cite{povray}.
 
-PIV \cite{Bastiaans} é uma técnica originariamente utilizada para determinar velocidade de fluídos, contudo ela foi ajustada para a aplicação em
-veículos autônomos usando critério de busca baseados no coeficiente de correlação de Pearson (PCC em inglês) \cite{Miranda Neto}, simulado 
-no POV-Ray \cite{povray}.
+
 
 
 

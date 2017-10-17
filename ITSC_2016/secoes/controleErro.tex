@@ -25,13 +25,13 @@ assim elas são consideradas áreas de erro, como mostrado na fig. \ref{fig:erro
 \end{figure}
 
 \begin{comment}
-Whereas, two matrix with the same dimensions can be compared using $PCC$; 
+Whereas, two matrix with the same dimensions can be compared using $CCP$; 
 this method of comparison doesn't generate information over the equality of the frames,
 but It shows if the frames have a proportional changes for pixel values in the same position. 
 Thus, if we consider a high percentage of error area when we compare the frames, It may cause 
 decreasing of the correlation level between frames and will given us a fake impression that the target is out of scene.  
 We decide solve this problem using a weighting matrix mask over the analyzed regions, 
-before the calculus of $PCC$. This can be seen in the Fig. \ref{fig:errorpondered}.
+before the calculus of $CCP$. This can be seen in the Fig. \ref{fig:errorpondered}.
 \begin{figure}[H]
 \includegraphics[width=\columnwidth]{images/imageErrorcontroled.eps}
 \caption{Illustration of points of most importance (red) and points less importance (blue) in correlation.}
@@ -42,11 +42,11 @@ points close of center of image (in red color) probably are on the target, and c
 these points are considered with more importance.
 \end{comment}
 
-O método PCC compara duas matrizes de mesma dimensão ponderando cada $pixel$ com o mesmo valor. 
+O método CCP compara duas matrizes de mesma dimensão ponderando cada $pixel$ com o mesmo valor. 
 Por consequência, o valor de correlação se reduz visto que existem áreas de erro sendo usadas na comparação
 dando, assim, uma falsa impressão do objeto fora da cena. 
 Uma matriz ponderada foi proposta para a solução desse problema, como ilustrado na fig. \ref{fig:errorpondered}. 
-Ela é usada antes do cálculo do $PCC$, pois é necessário criar uma ponderação entre as áreas.
+Ela é usada antes do cálculo do $CCP$, pois é necessário criar uma ponderação entre as áreas.
 
 \begin{figure}[H]
 \includegraphics[width=\columnwidth]{images/imageErrorcontroled.eps}
@@ -68,11 +68,11 @@ where $Q(x,y)$ represents a value, in the line $x$ and column $y$,
 $\mu_X=H/2$, $\mu_Y=W/2$, $\sigma_X=H/3$ and $\sigma_Y=W/3$; being $H$ and $W$
 the height and the width, respectively, in the matrix (analysis region).
 
-Finally, similarly to seen in the Eq. (\ref{eq:PCC}), we multiply the matrix $Q$, 
+Finally, similarly to seen in the Eq. (\ref{eq:CCP}), we multiply the matrix $Q$, 
 element by element, over the analysis regions
 $A$ and $B$ to calculate the $r_Q$ weighted correlation coefficient, 
 \begin{equation}\label{eq:rw}
- r_Q = PCC(Q~A, Q~B).
+ r_Q = CCP(Q~A, Q~B).
 \end{equation}
 \end{comment}
 
@@ -90,9 +90,9 @@ Onde $Q(x,y)$ representa um valor na linha $x$, coluna $y$,
 $\mu_X=H/2$, $\mu_Y=W/2$, $\sigma_X=H/3$ e $\sigma_Y=W/3$; sendo $H$ e $W$
 a altura e a largura, respectivamente, na matriz (região de análise).
 
-Finalmente, pode ser visto que na eq. (\ref{eq:PCC}), multiplica-se a matriz $Q$ pelas 
+Finalmente, pode ser visto que na eq. (\ref{eq:CCP}), multiplica-se a matriz $Q$ pelas 
 regiões analisadas $A$ e $B$ afim de calcular $r_Q$ (coeficiente de correlação ponderado).
 
 \begin{equation}\label{eq:rw}
- r_Q = PCC(Q~A, Q~B).
+ r_Q = CCP(Q~A, Q~B).
 \end{equation}

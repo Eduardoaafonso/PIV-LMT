@@ -54,7 +54,7 @@ we have the results of algorithm (departure factor), in the percentage form.
 %Note in first frame, target is $100$\% of distance and the last frame is at $17,18$\% of distance in relation of first frame.
 Finally, the last column represents the error between percentage real distance and the departure factor. 
 As can be seen, the error is diminishing when target is close (around 5 meters), it means that the algorithm has more precision 
-when image of target is bigger because there are more information in ROI. It is a consequence of PCC, 
+when image of target is bigger because there are more information in ROI. It is a consequence of CCP, 
 because in small ROI each pixel charge much information in comparative method. On other hand, if ROI is bigger,
 the information is diluted around pixels; thus, the algorithm has more data to compare.
 Another reason is that in the last frames $1$ pixel of target
@@ -159,7 +159,7 @@ Um ponto a ser discutido nessa seção é a diminuição do erro para distância
 mostra que o algoritmo tem mais precisão conforme a imagem aumenta, pois leva-se em consideração mais informações
 para os cálculos.
 
-Assim, no método de comparação ($PCC$), nota-se que quanto menor seja o $ROI$, 
+Assim, no método de comparação ($CCP$), nota-se que quanto menor seja o $ROI$, 
 maior será o impacto do erro em cada pixel da imagem, 
 e por consequência, uma falta de precisão na descrição do objeto. Contudo, se o objeto cresce de tamanho na cena
 o método terá imagens a ser analisadas com mais informação, e menor percentagem de informação por pixel

@@ -3,7 +3,7 @@
 \subsection{MULTI-SCALE MATCH CRITERION}
 In the presented algorithm, the match criterion to track the target is based on the $PIV$ technique. 
 Region of Interesting ($ROI$) and Window Of Search ($WOS$) are defined. A target (object) is identified 
-from the highest value of correlation ($PCC$) between selected $ROI$ and an analysis region in the $WOS$,
+from the highest value of correlation ($CCP$) between selected $ROI$ and an analysis region in the $WOS$,
 which determines an object's location.
 
 Fig. \ref{fig:multires}(a) shows an application in two dimensions, where
@@ -11,7 +11,7 @@ the regions are compared with a ROI using the same scale.
 
 The Fig. \ref{fig:multires}(b) reveals how the dimension of depth was included and
 the search is made in different scales (layers). Similarly to the two dimension case, 
-in three dimensions the target is also found through the highest $PCC$, but the object found may be 
+in three dimensions the target is also found through the highest $CCP$, but the object found may be 
 bigger or smaller than the last target found.
 
 \begin{figure}[H]
@@ -87,7 +87,7 @@ All the procedure of this function can be seen detailed in the Algorithm \ref{al
       $AR \leftarrow $ rescale $AR$ to $ROI$ size\;
       
       $Q$ is filled according the Eq. (\ref{eq:Q})\;
-      $A(L+lin,L+col) \leftarrow PCC(Q\times ROI,Q\times AR)$\;
+      $A(L+lin,L+col) \leftarrow CCP(Q\times ROI,Q\times AR)$\;
 
     }
     }
@@ -112,8 +112,8 @@ A busca é baseada no $PIV$ e para isso é necessário definir alguns parâmetro
 do algoritmo. A região de interesse (Region of Interesting - $ROI$) é a parte na imagem que contém
 o objeto e a janela de busca (Windowm of Search - $WOS$) é a possível região que esse objeto pode estar
 no próximos frames. Quando são analisadas duas imagens, o $ROI$ da segunda imagem é definido a partir do
-valor mais próximo de $1.0$ obtido no $PCC$. 
-Essa análise consiste na divisão do $WOS$ em regiões de analises que sejam do tamanho do $ROI$, pois o $PCC$
+valor mais próximo de $1.0$ obtido no $CCP$. 
+Essa análise consiste na divisão do $WOS$ em regiões de analises que sejam do tamanho do $ROI$, pois o $CCP$
 compara imagens do mesmo tamanho.
 
 A Fig. \ref{fig:multires}(a) mostra a aplicação em duas dimensões, onde as regiões de analises da $WOS$
@@ -196,7 +196,7 @@ em torno do ponto $P_0$. Todos os processos da função são detalhados no algor
       $AR \leftarrow $ rescale $AR$ to $ROI$ size\;
       
       $Q$ is filled according the Eq. (\ref{eq:Q})\;
-      $A(L+lin,L+col) \leftarrow PCC(Q\times ROI,Q\times AR)$\;
+      $A(L+lin,L+col) \leftarrow CCP(Q\times ROI,Q\times AR)$\;
 
     }
     }

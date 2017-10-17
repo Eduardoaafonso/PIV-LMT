@@ -7,20 +7,20 @@ as pattern to find a match of tracked target at the current image.
 The  question in this case is to know the best moment to refresh the $ROI$
 with a new perspective of target. 
 Here, we establish the criterion that; when the comparison of images return 
-a $PCC$ value lower than $0.925$ and greater than $0.8$, then the $ROI$ is changed with the current 
+a $CCP$ value lower than $0.925$ and greater than $0.8$, then the $ROI$ is changed with the current 
 analyzed region and a new position of $ROI$ is with $(x_i,y_i,d_i)$. 
 Thus, it was adopted as $0.8$ the lower limit to a match case\cite{Eugene},
 see Fig. \ref{fig:newroicri}. Values less than $0.8$ causes a  lost target alert.
 Finally, it is important to note that if the $ROI$ is changed, the new $ROI$ is 
 the real size of the analyzed region and not with the rescaled version used
-in the calculus of the $PCC$.
+in the calculus of the $CCP$.
 
 
 \begin{figure}[H]
 \includegraphics[width=\columnwidth]{images/figure3.eps}
 \caption{When the comparison is greater than $0.8$, including numbers bigger than 
 $0.925$, it means that the target was matched. But if two regions are compared 
-and the $PCC$ is less than $0.925$ and greater than $0.8$, 
+and the $CCP$ is less than $0.925$ and greater than $0.8$, 
 then the $ROI$ changes to the current analyzed region.}
 \label{fig:newroicri}
 \end{figure}
@@ -75,13 +75,13 @@ Deste modo, foi adotado que o limite inferior é de 0,8 \cite{Eugene}. Valores
 de comparação abaixo deste, o objeto é tido como perdido, como mostrado na figura
 \ref{fig:newroicri}.
 Finalmente, é importante notar que, se o $ROI$ for alterado, o novo $ROI$ terá 
-o tamanho real da região analisada e não a versão redimensionada utilizada no cálculo do $PCC$.
+o tamanho real da região analisada e não a versão redimensionada utilizada no cálculo do $CCP$.
 
 
 \begin{figure}[H]
 \includegraphics[width=\columnwidth]{images/figure3.eps}
 \caption{Quando a comparação é maior que $0,8$, incluindo número maiores que $0,925$, significa que o objeto foi encontrado,
-se o PCC é menor que $0,8$ a imagem é tida como perdida e se o coeficiente for maior que $0,8$ e menor que $0,925$, então o ROI é atualizado pela imagem de 
+se o CCP é menor que $0,8$ a imagem é tida como perdida e se o coeficiente for maior que $0,8$ e menor que $0,925$, então o ROI é atualizado pela imagem de 
 maior correlação.}
 \label{fig:newroicri}
 \end{figure}

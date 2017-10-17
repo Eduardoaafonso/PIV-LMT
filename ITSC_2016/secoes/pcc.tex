@@ -2,15 +2,15 @@
 
 \subsection{THE PEARSON CORRELATION COEFFICIENT}
 
-$PCC$ is used in statistical analyses, pattern recognition and computer vision. 
+$CCP$ is used in statistical analyses, pattern recognition and computer vision. 
 It can be used to comparing two images in an object recognition system. 
-The following equation describes the $PCC$ method for two gray scale digital images\cite{Eugene},
+The following equation describes the $CCP$ method for two gray scale digital images\cite{Eugene},
 represented by the matrices $A$ and $B$ with $M$ elements each one,
 \begin{equation}
 r = \frac{\sum \limits_{i}^{M} (a_i-\mu_a)(b_i-\mu_b)}{\sqrt{\sum \limits_{i}^{M} (a_i-\mu_a)^2} \sqrt{\sum\limits_{i}^{M} (b_i-\mu_b)^2}},
 \end{equation}
-\begin{equation}\label{eq:PCC}
- r=PCC(A,B)
+\begin{equation}\label{eq:CCP}
+ r=CCP(A,B)
 \end{equation}
 
 where $a_i$ is the intensity of the i-th pixel in the  matrix $A$, 
@@ -24,18 +24,19 @@ $r$ is the correlation coefficient \cite{Miranda Neto}.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%portugues%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-\subsection{Coeficiente de correlação de Pearson - PCC}
+\subsection{Coeficiente de Correlação de Pearson - CCP}
 
-PCC é uma ferramenta de comparação sendo nesse caso usada em imagens. Há várias aplicações desse método 
-em diversas áreas, tais como: análise estatística, reconhecimento de padrões e visão computacional. 
-A equação seguinte descreve como é feita essa comparação, para duas imagens digitais 
-em tons de cinzas \cite{Eugene}, representadas pelas matrizes $A$ e $B$ com $M$ elementos cada um.
+O Coeficiente de Correlação de Pearson (CCP) é usado em diferentes aplicações,  
+tais como: análise estatística, reconhecimento de padrões e visão computacional. 
+O CCP pode ser calculado para duas imagens digitais 
+em tons de cinzas \cite{Eugene}, nas Equações (\ref{eq:CCP0}) e (\ref{eq:CCP}), 
+em que as imagens são representadas pelas matrizes $A$ e $B$ com $M$ elementos cada uma.
 
-\begin{equation}
+\begin{equation}\label{eq:CCP0}
 r = \frac{\sum \limits_{i}^{M} (a_i-\mu_a)(b_i-\mu_b)}{\sqrt{\sum \limits_{i}^{M} (a_i-\mu_a)^2} \sqrt{\sum\limits_{i}^{M} (b_i-\mu_b)^2}},
 \end{equation}
-\begin{equation}\label{eq:PCC}
- r=PCC(A,B)
+\begin{equation}\label{eq:CCP}
+ r=CCP(A,B)
 \end{equation}
 
 Sendo $a_i$ a intensidade do i-ésimo pixel na matriz $A$, $b_i$ a intensidade do i-ésimo pixel na matriz

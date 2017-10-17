@@ -11,18 +11,18 @@ enters into looping follow this target in the next frames.
 
 \begin{figure}[h]
 \includegraphics[width=\columnwidth]{images/figure1-diagram1.eps}
-\caption{The target is identified from a highest value of correlation (PCC) between a selected ROI and an analysis region in
+\caption{The target is identified from a highest value of correlation (CCP) between a selected ROI and an analysis region in
 the $WOS$ of a current frame; the result of this process is a displacement which is  returned as vector field.}
 \label{fig:system}
 \end{figure}
 
 \end{comment}
 A proposta do algoritmo se baseia em um sistema de $tracking$ em três dimensões, gerando informações
-sobre a posição do objeto. Deste modo, encontra-se a velocidade relativa e fator de aproximação.
+sobre a posição do objeto de inteesse. Tem-se como objetivo encontrar a velocidade relativa e fator de aproximação.
 
-O algoritmo ilustrado na fig. \ref{fig:system} tem como parâmetro inicial a cena com o
-objeto ($ROI$) a ser seguido. Posteriormente, o sistema analisa as imagens subsequêntes entrando
-em um $looping$.
+O algoritmo ilustrado na Figura \ref{fig:system} tem como parâmetro inicial a cena com o
+objeto ($ROI$) a ser seguido. Posteriormente, o sistema analisa as imagens subsequêntes, 
+tendo como referência a imagem de referência, no caso a primeira imagem da sequência.
 
 \begin{figure}[h]
 \includegraphics[width=\columnwidth]{images/figure1-diagram1.eps}
