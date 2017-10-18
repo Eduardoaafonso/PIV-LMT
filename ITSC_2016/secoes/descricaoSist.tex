@@ -18,16 +18,16 @@ the $WOS$ of a current frame; the result of this process is a displacement which
 
 \end{comment}
 A proposta do algoritmo se baseia em um sistema de $tracking$ em três dimensões, gerando informações
-sobre a posição do objeto de inteesse. Tem-se como objetivo encontrar a velocidade relativa e fator de aproximação.
+sobre a posição do objeto de interesse. Tem-se como objetivo encontrar a velocidade relativa, 
+com relação ao observador,  e fator de aproximação a este.
 
 O algoritmo ilustrado na Figura \ref{fig:system} tem como parâmetro inicial a cena com o
-objeto ($ROI$) a ser seguido. Posteriormente, o sistema analisa as imagens subsequêntes, 
+objeto ($ROI$) a ser rastreado. Posteriormente, o sistema analisa as imagens subsequentes, 
 tendo como referência a imagem de referência, no caso a primeira imagem da sequência.
 
 \begin{figure}[h]
 \includegraphics[width=\columnwidth]{images/figure1-diagram1.eps}
-\caption{O objeto é encontrado através do maior valor de correlação de Pearson entre $ROI$ e $WOS$ da imagem atual. 
-O resultado desse processo é tido como um deslocamento do objeto, dado por um vetor}
+\caption{Proposta de algoritmo para rastreamento de objetos baseado no PIV}
 \label{fig:system}
 \end{figure}
 
@@ -49,12 +49,21 @@ algorithm returns a structure called $PATH$ with the position of target in each 
 being $PATH\{i\}=(x_i,y_i,d_i)$ the position of analysis region with target in the image $I_i$.
 \end{comment}
 
-O objeto fornece informações sobre sua posição horizontal e vertical em uma análise 2D. Na situação 
-3D, uma variável a mais é incluída $(x=x_0, y=y_0, d=d_0=1)$, sendo que $x_0$ e $y_0$ são as posições 
-horizontal e vertical, respectivamente, e $d_0=1$ representa a profundida inicial do objeto no $ROI$ normalizado em $1.0$. A partir
+A posição em pixels, do objeto de interesse na imagem, fornece informações 
+sobre a posição horizontal e vertical relativa ao angulo de visão e 
+distancia do observador; dando assim uma perspetiva 
+da posição do objeto em 2D. Para analisar o objeto de interesse em 
+3D, uma componente a mais é incluída, de modo que a posição do objeto esteja representado
+por o ponto $(x=x_0, y=y_0, d=d_0)$, sendo $x_0$ e $y_0$ as posições 
+horizontal e vertical em pixels, respectivamente, e $d_0$ representa a profundida inicial 
+do objeto na imagem, dado que para todos os cálculos o valor de profundidade
+será expressado em função de $d_0$, distancia inicial do objeto de interesse;
+para fines práticos este valor será normalizado a $d_0=1.0$, representando este número
+o $100\textpercent$ da distancia inicial. A partir
 deste valor, será possível mensurar a velocidade relativa e o fator de aproximação do objeto.
 
-O algoritmo \ref{alg:system} mostra uma visão geral do sistema descrito na fig. \ref{fig:system}, as funções 
+O algoritmo \ref{alg:system}, apresentado a seguir, representa a sequência das 
+ações representadas na Figura \ref{fig:system}. As funções 
  ($multiscale\_match\_criterion$ e $renew\_roi\_criteria$) serão discutidas na próxima seção. 
 O algoritmo recebe entradas da posição e sequência de $N$ imagens sobre o $ROI$, o processo retorna 
 uma estrutura chamada $PATH$ com a posição do objeto em cada imagem, sendo que a saída $PATH\{i\}=(x_i,y_i,d_i)$
