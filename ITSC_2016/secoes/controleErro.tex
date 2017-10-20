@@ -14,13 +14,13 @@ considered like error areas.
 \end{figure}
 \end{comment}
 
-Nesta seção, é discutido o tratamento de erro. Nota-se que o objeto pode ter várias formas, contudo
-o $ROI$ é sempre retangular. Há algumas áreas próximos da borda que não são ocupadas pelo objeto de interesse,
-assim elas são consideradas áreas de erro, como mostrado na fig. \ref{fig:erroridentified}
+Nesta seção, é discutido o tratamento do erro produzido pela variação da forma do objeto de interesse dentro de uma
+$ROI$ de forma retangular. É fácil perceber que algumas áreas próximos da borda não são ocupadas pelo objeto de interesse;
+assim, elas são consideradas áreas geradoras de erro, ver Figura. \ref{fig:erroridentified}.
 
 \begin{figure}[H]
 \includegraphics[width=\columnwidth]{images/imageError.eps}
-\caption{Áreas de erro no $ROI$ próximo das bordas.}
+\caption{Áreas geradoras de erro nas bordas da $ROI$.}
 \label{fig:erroridentified}
 \end{figure}
 
@@ -45,7 +45,7 @@ these points are considered with more importance.
 O método CCP compara duas matrizes de mesma dimensão ponderando cada $pixel$ com o mesmo valor. 
 Por consequência, o valor de correlação se reduz visto que existem áreas de erro sendo usadas na comparação
 dando, assim, uma falsa impressão do objeto fora da cena. 
-Uma matriz ponderada foi proposta para a solução desse problema, como ilustrado na fig. \ref{fig:errorpondered}. 
+Uma matriz ponderada foi proposta para a solução desse problema, como ilustrado na Figura \ref{fig:errorpondered}. 
 Ela é usada antes do cálculo do $CCP$, pois é necessário criar uma ponderação entre as áreas.
 
 \begin{figure}[H]
@@ -79,8 +79,8 @@ $A$ and $B$ to calculate the $r_Q$ weighted correlation coefficient,
 Os pontos próximos da borda são considerados menos importantes e os mais próximos do centro 
 têm maior relevância, pois é onde o objeto de interesse está.
 
-Assim, para criar uma matriz ponderada $Q$, como mostrado na fig. \ref{fig:errorpondered},
-foi calculado $Q(x,y)$ como representado na equação (\ref{eq:Q}).
+Assim, para criar uma matriz ponderada $Q$, como mostrado na Figura \ref{fig:errorpondered},
+foi calculado $Q(x,y)$ como representado na Equação (\ref{eq:Q}).
 
 \begin{equation}\label{eq:Q}
  Q(x,y) = \sqrt{e^{ -\frac{|x-\mu_X|^3}{\sigma_X^3}-\frac{|y-\mu_Y|^3}{\sigma_Y^3}  }},

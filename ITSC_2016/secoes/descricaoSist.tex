@@ -52,22 +52,27 @@ being $PATH\{i\}=(x_i,y_i,d_i)$ the position of analysis region with target in t
 A posição em pixels, do objeto de interesse na imagem, fornece informações 
 sobre a posição horizontal e vertical relativa ao angulo de visão e 
 distancia do observador; dando assim uma perspetiva 
-da posição do objeto em 2D. Para analisar o objeto de interesse em 
-3D, uma componente a mais é incluída, de modo que a posição do objeto esteja representado
-por o ponto $(x=x_0, y=y_0, d=d_0)$, sendo $x_0$ e $y_0$ as posições 
-horizontal e vertical em pixels, respectivamente, e $d_0$ representa a profundida inicial 
-do objeto na imagem, dado que para todos os cálculos o valor de profundidade
-será expressado em função de $d_0$, distancia inicial do objeto de interesse;
+da posição do objeto em 2D, $(x, y, d)$, sendo $x$ e $y$ as posições 
+horizontal e vertical em pixels, respectivamente. Para analisar o objeto de interesse em 
+3D, uma componente a mais é incluída, de modo que a posição do objeto esteja representada
+por o ponto $(x, y, d)$, onde $d$ representa a profundidade 
+do objeto na imagem (é dizer distancia entre o objeto e o observador), 
+dado que para todos os cálculos o valor de profundidade
+será expressado em função da posição inicial ($d_0$) do objeto de interesse na primeira imagem,
 para fines práticos este valor será normalizado a $d_0=1.0$, representando este número
 o $100\textpercent$ da distancia inicial. A partir
-deste valor, será possível mensurar a velocidade relativa e o fator de aproximação do objeto.
+deste valor, será possível mensurar a velocidade e o fator de aproximação do objeto
+de forma relativa à posição inicial ao objeto de interesse; de modo que valores de $d$
+maiores que $1.0$ indicarão objetos mais distantes e valores menores que $1.0$, objetos mais próximos.
 
-O algoritmo \ref{alg:system}, apresentado a seguir, representa a sequência das 
-ações representadas na Figura \ref{fig:system}. As funções 
+O algoritmo \ref{alg:system}, representa a sequência das 
+ações descritas na Figura \ref{fig:system}. As funções 
  ($multiscale\_match\_criterion$ e $renew\_roi\_criteria$) serão discutidas na próxima seção. 
-O algoritmo recebe entradas da posição e sequência de $N$ imagens sobre o $ROI$, o processo retorna 
+O algoritmo \ref{alg:system} recebe como entradas, a posição inicial $(x_0, y_0, d_0)$
+da $ROI$ (que contem o objeto de interesse)  
+e uma sequência de $N$ imagens; o processo retorna 
 uma estrutura chamada $PATH$ com a posição do objeto em cada imagem, sendo que a saída $PATH\{i\}=(x_i,y_i,d_i)$
-é a posição da região analisada do objeto na $I_i$ imagem.
+a posição da $ROI$ na imagem $I_i$.
 
 
 \begin{comment}
@@ -95,8 +100,8 @@ uma estrutura chamada $PATH$ com a posição do objeto em cada imagem, sendo que
 \end{comment}
 
 \begin{algorithm}
- \KwData{$ROI$ inicial, posição no $P_0$ e sequência de imagens, $I_i$, para $0\leq i < N$. }
- \KwResult{$3D$ objeto $PATH$ ou uma messagem de objeto perdido. }
+ \KwData{$ROI$ e posição $P_0$ na primeira imagem, e uma sequência de imagens, $I_i$, para $0\leq i < N$. }
+ \KwResult{A variável $PATH$ com a ruta do objeto em $3D$ ou uma mensagem de objeto perdido. }
  $i \leftarrow 0$ \;
 ~\\
 \While{$i < N$ }
@@ -112,7 +117,7 @@ uma estrutura chamada $PATH$ com a posição do objeto em cada imagem, sendo que
 }
 ~\\
 \Return PATH \;
-\caption{How to get a $3D$ target path.}
+\caption{Obtenção da trajetória em $3D$ do objeto de interesse.}
 \label{alg:system}
 \end{algorithm}
 

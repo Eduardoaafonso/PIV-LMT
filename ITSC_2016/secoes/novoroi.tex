@@ -72,7 +72,7 @@ entre as imagens, sendo assim, se o valor da comparação estiver entre $0,8$
 e $0,925$ o $ROI$ será atualizado com uma nova posição $(x_i,y_i,d_i)$.
 
 Deste modo, foi adotado que o limite inferior é de 0,8 \cite{Eugene}. Valores
-de comparação abaixo deste, o objeto é tido como perdido, como mostrado na figura
+de comparação abaixo deste, o objeto é tido como perdido, como mostrado na Figura
 \ref{fig:newroicri}.
 Finalmente, é importante notar que, se o $ROI$ for alterado, o novo $ROI$ terá 
 o tamanho real da região analisada e não a versão redimensionada utilizada no cálculo do $CCP$.
@@ -86,8 +86,8 @@ maior correlação.}
 \label{fig:newroicri}
 \end{figure}
 
-O algoritmo \ref{alg:newroi} apresenta o critério descrito na figura \ref{fig:newroicri};
-A função $renew\_roi\_criteria()$ explicada é usada pelo algoritmo \ref{alg:system} da figura \ref{fig:system}
+O algoritmo \ref{alg:newroi} apresenta o critério descrito na Figura \ref{fig:newroicri};
+A função $renew\_roi\_criteria()$ explicada é usada pelo algoritmo \ref{alg:system} da Figura \ref{fig:system}
 
 
 \begin{algorithm}
