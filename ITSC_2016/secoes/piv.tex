@@ -62,11 +62,14 @@ até a região encontrada. Assim, evidencia-se um deslocamento entre uma imagem 
 \label{fig:twoframes}
 \end{figure}
 
-A Figura \ref{fig:twoframes} ilustra como o $PIV$ funciona, destaque para a relação entre a região de interesse ($ROI$) e 
-a janela de busca ($WOS$). $WOS$ é a região onde o objeto de interesse pode ser encontrado.
-O $WOS$ é definido como sendo $1.5$ o tamanho do $ROI$. Por exemplo, se o $ROI$ tem dimensão $200\times300$, então o $WOS$ terá $300\times450$.
-Essa consideração foi tomada a partir dos testes que levavam em conta os limites de velocidade permitidos em 
-cidades e \colorbox{red}{rodovias}.
+A Figura \ref{fig:twoframes} ilustra como o $PIV$ funciona, 
+destaque para a relação entre a região de interesse ou $ROI$ (do inglês ``Region of Interesting'') e 
+a janela de busca ou $WOS$  (do inglês ``Windowm of Search''). 
+A $WOS$ é a região onde o objeto de interesse pode ser encontrado,
+neste artigo esta é selecionada como sendo $1.5$ vesses o tamanho do $ROI$. 
+Por exemplo, se o $ROI$ tem dimensão $200\times300$, então a $WOS$ terá $300\times450$.
+Essa consideração foi tomada a partir dos testes que 
+levavam em conta os \colorbox{red}{limites de velocidade permitidos em cidades e rodovias}.
 
 
 \begin{figure}[H]

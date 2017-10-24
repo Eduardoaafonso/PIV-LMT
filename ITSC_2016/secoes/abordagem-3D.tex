@@ -39,9 +39,9 @@ where $f_a$ and $\alpha$ are defined as factor area and departure factor,
 respectively; $Area_r$ is the ROI area and $Area_f$ 
 is the analyzed region in the current image frame.
 
-Thus, knowing $\alpha$, if we consider that the target in the $ROI$ was to a distance $d_0$,
-then the target in the analysis region will be to a distance of $\alpha d_0$ (or $\sqrt{f_a} d_0$).
-So that, each $i-th$ frame will have its own $\alpha_i$ value; where, $d_i=\alpha_i d_0$.
+Thus, knowing $\alpha$, if we consider that the target in the $ROI$ was to a distance $d_{ROI}$,
+then the target in the analysis region will be to a distance of $\alpha d_{ROI}$ (or $\sqrt{f_a} d_{ROI}$).
+So that, each $i-th$ frame will have its own $\alpha_i$ value; where, $d_i=\alpha_i d_{ROI}$.
 
 The departure factor, $\alpha_i$, has two interpretations: if the rate of departure increases quickly, 
 this  means that the target is departing. If the factor decreases, the 
@@ -60,7 +60,7 @@ the scalar number which represents the depth component
 of the vector $v_i$.
 
 The calculated  $v^d_i$ value is relative, for the simple reason that the distance (depth) between the 
-camera (observer) and the target in the instance i-th will be referenced to $d_0$, 
+camera (observer) and the target in the instance i-th will be referenced to $d_{ROI}$, 
 given that the distance of the initial $ROI$ is established by definition to 1.
 Finally, in all cases, the position $s_i$ is relative to the observer (a moving reference system).
 
@@ -69,31 +69,35 @@ Finally, in all cases, the position $s_i$ is relative to the observer (a moving 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%portugues%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-\subsubsection{Interpretação da busca em camadas- 3D}
+\subsubsection{Interpretação da busca em camadas - 3D}
 
-Para compreender essa técnia é necessário analisar o objeto 
-em diferentes posições, como mostrado na Figura \ref{fig:multiscale3d}.
-
+Para compreender o método de busca em camadas é necessário analisar a projeção do objeto 
+no plano da imagem para diferentes distancias do objeto com respeito ao observador, 
+como mostrado na Figura \ref{fig:multiscale3d}.
 \begin{figure}[H]
 \centering
   \includegraphics[width=.7\columnwidth]{images/Diagrama3.eps}
   \caption{ Acompanhamento do objeto em camadas.}
   \label{fig:multiscale3d}
 \end{figure}
-
-A Figura \ref{fig:multiscale3d} mostra o objeto em diferentes posições, 
-$d$ e $\alpha d$, respectivamente em azul e vermelho.
-O plano da imagem é definida pela distância $h$ do observador. As projeções dos objetos,
-azul e vermelho, são representados por $L_b$ e $L_r$, respectivamente. Analisando a forma
-triangular, é possível notar que $\frac{h}{d}=\frac{L_b}{L}$ e $\frac{h}{\alpha d}=\frac{L_r}{L}$, logo 
+A Figura \ref{fig:multiscale3d} mostra o objeto de interesse a diferentes distanasias com respeito ao observador, 
+$d$ e $\alpha d$, respectivamente em azul e vermelho, sendo que
+o plano da imagem está localizada a uma distância $h$ do observador. As projeções dos objetos no plano da imagem
+ são representados por $L_b$ e $L_r$, azul e vermelho respectivamente. 
+ Analisando os triângulos formados pelas projeções dos objetos e o ponto de observação, 
+ é possível notar que $\frac{h}{d}=\frac{L_b}{L}$ e $\frac{h}{\alpha d}=\frac{L_r}{L}$, logo 
 $L_b/\alpha= L_r$. 
-Partindo do ponto de vista do observador, quando o objeto estava localizado na distância $d$ no tempo
-$t_0$ e moveu-se para a distância $\alpha d$ no tempo $t_1$, o seu tamanho no plano da imagem 
+Assim, partindo do ponto de vista do observador, quando o objeto estava localizado a uma distância $d$ no tempo
+$t_0$ e moveu-se para a distância $\alpha d$ no tempo $t_1$, o tamanho da projeção do objeto no plano da imagem 
 foi alterado por um fator de 1/$\alpha$, e consequentemente, a área foi alterada por um fator 1/$\alpha^2$.
 
-O critério de busca dos objetos usa valores discretos de $\alpha$, portanto o algoritmo aproxima este
-ao valor mais próximo; assim, são usados valores $\alpha<1$
-para objetos próximos e  $\alpha>1$ para mais distantes de $d_0$.
+Conhecida a relação de $\alpha$ com a distancia entre o objeto e o observador; 
+o critério de busca em $3D$, do objeto de interesse, usa um conjunto de valores 
+discretos de $\alpha$ para determinar a localização, 
+consequentemente se o objeto de interesse estiver localizado num ponto intermédio dos valores
+de $\alpha$ selecionados, o algoritmo aproxima a posição do objeto 
+usando o valor de $\alpha$ mais próximo; assim, são usados valores $\alpha<1$
+para procurar objetos mais próximos que a posição $d_{ROI}$ e  $\alpha>1$ para mais distantes.
 
 
 
@@ -111,9 +115,9 @@ Onde $f_a$ e $\alpha$ são definidos como um fator de área e de aproximação,
 respectivamente; $Area_r$ é a área do $ROI$ e $Area_f$ é a área da região analisada
 do último frame.
 
-Conhecendo $\alpha$, e se considerado que o objeto estava a uma distância $d_0$; então,
-sua próxima distância será $\alpha d_0$ (ou $\sqrt{f_a} d_0$). Assim, cada $i-ésimo$ imagem
-terá o seu próprio $\alpha_i$ valor, onde $d_i=\alpha_i d_0$.
+Conhecendo $\alpha$, e se considerado que o objeto estava a uma distância $d_{ROI}$; então,
+sua próxima distância será $\alpha d_{ROI}$ (ou $\sqrt{f_a} d_{ROI}$). Assim, cada $i-ésimo$ imagem
+terá o seu próprio $\alpha_i$ valor, onde $d_i=\alpha_i d_{ROI}$.
 
 O fator de aproximação, $\alpha_i$, tem dois significados: se o fator de aproximação cresce rapidamente 
 significa que o objeto está se afastando e se o fator decresce o objeto está se aproximando.
@@ -130,7 +134,7 @@ Adicionalmente, o fator da velocidade de aproximação, $v^d_i$, é o número es
 responsável pela profundidade no vetor $v_i$.
 
 O valor $v^d_i$ calculado é relativo, pelo simples motivo de que a distância (profundidade) entre a câmara 
-(observador) e o alvo no instante $i-ésimo$ será referenciada para $d_0$; assim a distância do $ROI$ 
-inicial é estabelecida por definição para $d_0=1$. Finalmente, em todos os casos, a posição é 
+(observador) e o alvo no instante $i-ésimo$ será referenciada para $d_{ROI}$; assim a distância do $ROI$ 
+inicial é estabelecida por definição para $d_{ROI}=1$. Finalmente, em todos os casos, a posição é 
 relativa ao observador (um sistema de referência móvel).
 

@@ -15,7 +15,7 @@ considered like error areas.
 \end{comment}
 
 Nesta seção, é discutido o tratamento do erro produzido pela variação da forma do objeto de interesse dentro de uma
-$ROI$ de forma retangular. É fácil perceber que algumas áreas próximos da borda não são ocupadas pelo objeto de interesse;
+$ROI$ de forma retangular. É fácil perceber que algumas áreas próximas da borda não são ocupadas pelo objeto de interesse;
 assim, elas são consideradas áreas geradoras de erro, ver Figura. \ref{fig:erroridentified}.
 
 \begin{figure}[H]
@@ -42,15 +42,18 @@ points close of center of image (in red color) probably are on the target, and c
 these points are considered with more importance.
 \end{comment}
 
-O método CCP compara duas matrizes de mesma dimensão ponderando cada $pixel$ com o mesmo valor. 
-Por consequência, o valor de correlação se reduz visto que existem áreas de erro sendo usadas na comparação
-dando, assim, uma falsa impressão do objeto fora da cena. 
-Uma matriz ponderada foi proposta para a solução desse problema, como ilustrado na Figura \ref{fig:errorpondered}. 
-Ela é usada antes do cálculo do $CCP$, pois é necessário criar uma ponderação entre as áreas.
+O método CCP compara duas imagens (matrizes) do mesmo tamanho, 
+ponderando cada $pixel$ com o mesmo peso sem importar a posição; 
+consequentemente, o valor da correlação se vê reduzido visto que existem áreas produtoras 
+de erro sendo usadas na comparação,
+podendo assim dar uma falsa impressão de objeto perdido. 
+Uma matriz de ponderação foi proposta para solucionar esse problema, como ilustrado na 
+Figura \ref{fig:errorpondered}, sendo
+ela é usada antes do cálculo do $CCP$.
 
 \begin{figure}[H]
 \includegraphics[width=\columnwidth]{images/imageErrorcontroled.eps}
-\caption{Os pontos mais (vermelho) e os menos (azul) significativos na correlação.}
+\caption{Pontos mais significativos (vermelho) e menos significativos (azul) na correlação.}
 \label{fig:errorpondered}
 \end{figure}
 
@@ -76,23 +79,19 @@ $A$ and $B$ to calculate the $r_Q$ weighted correlation coefficient,
 \end{equation}
 \end{comment}
 
-Os pontos próximos da borda são considerados menos importantes e os mais próximos do centro 
-têm maior relevância, pois é onde o objeto de interesse está.
-
-Assim, para criar uma matriz ponderada $Q$, como mostrado na Figura \ref{fig:errorpondered},
-foi calculado $Q(x,y)$ como representado na Equação (\ref{eq:Q}).
-
+Os pontos próximos da borda (azul) são considerados menos importantes e os mais próximos do centro 
+ (vermelho) têm maior relevância.
+Assim, para criar uma matriz de ponderação $Q$, como a usada na Figura \ref{fig:errorpondered},
+foi calculado $Q(x,y)$ como representado na Equação (\ref{eq:Q}),
 \begin{equation}\label{eq:Q}
- Q(x,y) = \sqrt{e^{ -\frac{|x-\mu_X|^3}{\sigma_X^3}-\frac{|y-\mu_Y|^3}{\sigma_Y^3}  }},
+ Q(x,y) = \sqrt{e^{ -\frac{|x-\mu_X|^3}{\sigma_X^3}-\frac{|y-\mu_Y|^3}{\sigma_Y^3}  }};
 \end{equation}
-
-Onde $Q(x,y)$ representa um valor na linha $x$, coluna $y$,
+onde $Q(x,y)$ é um valor na linha $x$, coluna $y$,
 $\mu_X=H/2$, $\mu_Y=W/2$, $\sigma_X=H/3$ e $\sigma_Y=W/3$; sendo $H$ e $W$
-a altura e a largura, respectivamente, na matriz (região de análise).
+a altura e a largura, respectivamente, da região de análise.
 
-Finalmente, pode ser visto que na eq. (\ref{eq:CCP}), multiplica-se a matriz $Q$ pelas 
-regiões analisadas $A$ e $B$ afim de calcular $r_Q$ (coeficiente de correlação ponderado).
-
+Finalmente, pode ser usada a Equação (\ref{eq:CCP}), multiplicando a matriz $Q$ pelas 
+regiões analisadas $A$ e $B$ afim de obter $r_Q$, o coeficiente ponderado de correlação de Pearson,
 \begin{equation}\label{eq:rw}
  r_Q = CCP(Q~A, Q~B).
 \end{equation}

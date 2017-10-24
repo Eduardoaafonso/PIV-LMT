@@ -17,13 +17,13 @@ the $WOS$ of a current frame; the result of this process is a displacement which
 \end{figure}
 
 \end{comment}
-A proposta do algoritmo se baseia em um sistema de $tracking$ em três dimensões, gerando informações
-sobre a posição do objeto de interesse. Tem-se como objetivo encontrar a velocidade relativa, 
-com relação ao observador,  e fator de aproximação a este.
+A proposta do algoritmo se baseia em um sistema de seguimento em três dimensões, gerando assim informações
+sobre a posição do objeto de interesse, de modo que com esta informação é calculada a velocidade, 
+sendo esta relativa ao observador.
 
-O algoritmo ilustrado na Figura \ref{fig:system} tem como parâmetro inicial a cena com o
-objeto ($ROI$) a ser rastreado. Posteriormente, o sistema analisa as imagens subsequentes, 
-tendo como referência a imagem de referência, no caso a primeira imagem da sequência.
+O algoritmo ilustrado na Figura \ref{fig:system} tem como parâmetro inicial uma cena com o
+objeto de interesse a ser rastreado, dentro de uma $ROI$. Posteriormente, 
+o sistema analisa as imagens subsequentes procurando regiões semelhantes à $ROI$.
 
 \begin{figure}[h]
 \includegraphics[width=\columnwidth]{images/figure1-diagram1.eps}
@@ -52,7 +52,7 @@ being $PATH\{i\}=(x_i,y_i,d_i)$ the position of analysis region with target in t
 A posição em pixels, do objeto de interesse na imagem, fornece informações 
 sobre a posição horizontal e vertical relativa ao angulo de visão e 
 distancia do observador; dando assim uma perspetiva 
-da posição do objeto em 2D, $(x, y, d)$, sendo $x$ e $y$ as posições 
+da posição do objeto em 2D, $(x, y)$, sendo $x$ e $y$ as posições 
 horizontal e vertical em pixels, respectivamente. Para analisar o objeto de interesse em 
 3D, uma componente a mais é incluída, de modo que a posição do objeto esteja representada
 por o ponto $(x, y, d)$, onde $d$ representa a profundidade 
@@ -68,11 +68,14 @@ maiores que $1.0$ indicarão objetos mais distantes e valores menores que $1.0$,
 O algoritmo \ref{alg:system}, representa a sequência das 
 ações descritas na Figura \ref{fig:system}. As funções 
  ($multiscale\_match\_criterion$ e $renew\_roi\_criteria$) serão discutidas na próxima seção. 
-O algoritmo \ref{alg:system} recebe como entradas, a posição inicial $(x_0, y_0, d_0)$
+O algoritmo \ref{alg:system} recebe como entradas, a posição inicial $P_0=(x_0, y_0, d_0)$
 da $ROI$ (que contem o objeto de interesse)  
-e uma sequência de $N$ imagens; o processo retorna 
-uma estrutura chamada $PATH$ com a posição do objeto em cada imagem, sendo que a saída $PATH\{i\}=(x_i,y_i,d_i)$
-a posição da $ROI$ na imagem $I_i$.
+e uma sequência de $N$ imagens. É importante notar que chamaremos $P_0$ a posição inicial
+da $ROI$ na primeira imagem e $P_{ROI}=(x_{ROI}, y_{ROI}, d_{ROI})$ a posição atual da região
+de interesse, dado que o algoritmo atualiza a $ROI$ só quando por o deslocamento e perspetiva da imagem
+o objeto cambia de forma; finalmente, o processo retorna 
+uma estrutura chamada $PATH$ com a posição do objeto de interesse em cada imagem, sendo $PATH\{i\}=(x_i,y_i,d_i)$
+a posição do objeto de interesse na imagem $I_i$.
 
 
 \begin{comment}
@@ -103,12 +106,14 @@ a posição da $ROI$ na imagem $I_i$.
  \KwData{$ROI$ e posição $P_0$ na primeira imagem, e uma sequência de imagens, $I_i$, para $0\leq i < N$. }
  \KwResult{A variável $PATH$ com a ruta do objeto em $3D$ ou uma mensagem de objeto perdido. }
  $i \leftarrow 0$ \;
+ $P_{ROI} \leftarrow P_0$ \;
+ $P \leftarrow P_0$ \;
 ~\\
 \While{$i < N$ }
 {
-    $\{AR,P,r\} \leftarrow multiscale\_match\_criterion(ROI,P_0,I_i)$\;
+    $\{AR,P,r\} \leftarrow multiscale\_match\_criterion(ROI,P,I_i)$\;
     
-    $\{ROI,P_0,Found\} \leftarrow renew\_roi\_criteria(ROI,P_0,AR,P,r)$\;
+    $\{ROI,P_{ROI},Found\} \leftarrow renew\_roi\_criteria(ROI,P_{ROI},AR,P,r)$\;
     \eIf{Found}{
       $PATH\{i\}  \leftarrow P$\;
     }{
