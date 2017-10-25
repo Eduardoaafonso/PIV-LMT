@@ -63,38 +63,38 @@ it is used by the Algorithm \ref{alg:system} of Fig. \ref{fig:system}.
 
 
 
-\subsection{Critério para um novo ROI}
+\subsection{Critério para uma nova ROI}
 
-O $ROI$ é um importante elemento dentro algoritmo, pois ele é a referência do
-atual estado do objeto que será comparado com as imagens posteriores.
-O critério para atualizar o $ROI$ é determinado a partir da correlação 
-entre as imagens, sendo assim, se o valor da comparação estiver entre $0,8$ 
-e $0,925$ o $ROI$ será atualizado com uma nova posição $(x_i,y_i,d_i)$.
+A $ROI$ é um importante elemento dentro algoritmo, pois ele é a referência da
+forma atual do objeto de interesse que será comparado com as imagens posteriores.
+O critério para atualizar a $ROI$ é determinado a partir da correlação 
+entre as regiões de analise, sendo que, se o valor da comparação estiver entre $0,8$ 
+e $0,925$ a $ROI$ será atualizado com uma nova posição $(x_i,y_i,d_i)$.
 
-Deste modo, foi adotado que o limite inferior é de 0,8 \cite{Eugene}. Valores
+Deste modo, foi adotado que o limite inferior é de $0,8$ \cite{Eugene}. Para valores
 de comparação abaixo deste, o objeto é tido como perdido, como mostrado na Figura
 \ref{fig:newroicri}.
-Finalmente, é importante notar que, se o $ROI$ for alterado, o novo $ROI$ terá 
+Finalmente, é importante notar que, se a $ROI$ for alterado, a nova $ROI$ terá 
 o tamanho real da região analisada e não a versão redimensionada utilizada no cálculo do $CCP$.
 
 
 \begin{figure}[H]
 \includegraphics[width=\columnwidth]{images/figure3.eps}
-\caption{Quando a comparação é maior que $0,8$, incluindo número maiores que $0,925$, significa que o objeto foi encontrado,
-se o CCP é menor que $0,8$ a imagem é tida como perdida e se o coeficiente for maior que $0,8$ e menor que $0,925$, então o ROI é atualizado pela imagem de 
+\caption{Quando a comparação é maior que $0,8$, incluindo número maiores que $0,925$, 
+significa que o objeto foi encontrado,
+se o CCP é menor que $0,8$ a imagem é tida como perdida e se o coeficiente for maior que $0,8$ 
+e menor que $0,925$, então a $ROI$ é atualizada pela região de analise de 
 maior correlação.}
 \label{fig:newroicri}
 \end{figure}
 
 O algoritmo \ref{alg:newroi} apresenta o critério descrito na Figura \ref{fig:newroicri};
-A função $renew\_roi\_criteria()$ explicada é usada pelo algoritmo \ref{alg:system} da Figura \ref{fig:system}
-
-
+A função $renew\_roi\_criteria()$ é usada pelo algoritmo \ref{alg:system} da Figura \ref{fig:system}
 \begin{algorithm}
- \KwData{$ROI$ inicial, posição $P_0$, região de analise do frame atual ($AR$), posição $P$ e a correlação $r$ entre eles. }
- \KwResult{O $ROI$ atualizado, posição e seu status, $Found$. }
+ \KwData{$ROI$, posição $P_{ROI}$, região de analise da imagem atual ($AR$), posição $P$ e a correlação $r$ entre a $ROI$ e $AR$. }
+ \KwResult{A $ROI$ atualizada $NEWP_{ROI}$, a posição $NEWP_{ROI}$ e o status $Found$. }
 
-    $NEWP_0 \leftarrow  P_0$ \;
+    $NEWP_{ROI} \leftarrow  P_{ROI}$ \;
     $NEWROI \leftarrow  ROI$ \;
     
     \eIf{$0.8 \leq r$}
@@ -104,16 +104,16 @@ A função $renew\_roi\_criteria()$ explicada é usada pelo algoritmo \ref{alg:s
         \If{$r \leq 0.925$}
         {
             $NEWROI \leftarrow  AR$\;
-            $NEWP_0 \leftarrow  P$\;
+            $NEWP_{ROI} \leftarrow  P$\;
         }
     }
     {
-      message ``target lost''\;
       $Found \leftarrow False$\;
+      message ``target lost''\;
     }
-\Return  $\{NEWROI,~NEWP_0,~FOUND\}$\;
+\Return  $\{NEWROI,~NEWP_{ROI},~FOUND\}$\;
 \label{alg:newroi}
-\caption{$renew\_roi\_criteria(ROI,P_0,AR,P,r)$ function.}
+\caption{$renew\_roi\_criteria(ROI,P_{ROI},AR,P,r)$ function.}
 \end{algorithm}
 %The system needs to have a high level of reliability, so that the lower limit adopted 
 %contributes to an operation with minimum of mistakes.

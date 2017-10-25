@@ -146,64 +146,48 @@ Underfull \hbox (badness 6961) in paragraph at lines 141--68
 -to.pdf> <./images/figure2b-eps-converted-to.pdf> <./images/Diagrama3-eps-conve
 rted-to.pdf>]
 
-LaTeX Warning: Command \' invalid in math mode on input line 119.
-
-! Please use \mathaccent for accents in math mode.
-\add@accent ...@spacefactor \spacefactor }\accent 
-                                                  #1 #2\egroup \spacefactor ...
-l.119 ... $\sqrt{f_a} d_{ROI}$). Assim, cada $i-é
-                                                  simo$ imagem
-! You can't use `\spacefactor' in math mode.
-\add@accent ...}\accent #1 #2\egroup \spacefactor 
-                                                  \accent@spacefactor 
-l.119 ... $\sqrt{f_a} d_{ROI}$). Assim, cada $i-é
-                                                  simo$ imagem
-
-Underfull \hbox (badness 3965) in paragraph at lines 125--126
-[]\OT1/ptm/m/n/10 A ve-loci-dade rel-a-tiva []e definida pela equa[][]ao da
-
-LaTeX Warning: Command \' invalid in math mode on input line 131.
-
-! Please use \mathaccent for accents in math mode.
-\add@accent ...@spacefactor \spacefactor }\accent 
-                                                  #1 #2\egroup \spacefactor ...
-l.131 ...representa a velocidade relativa à $i-é
-                                                  simo$ imagem, $s_i=(x_i,y_...
-
-! You can't use `\spacefactor' in math mode.
-\add@accent ...}\accent #1 #2\egroup \spacefactor 
-                                                  \accent@spacefactor 
-l.131 ...representa a velocidade relativa à $i-é
-                                                  simo$ imagem, $s_i=(x_i,y_...
-
-
 LaTeX Warning: Command \' invalid in math mode on input line 132.
 
 ! Please use \mathaccent for accents in math mode.
 \add@accent ...@spacefactor \spacefactor }\accent 
                                                   #1 #2\egroup \spacefactor ...
-l.132 foi definida pela busca na $i-é
+l.132 ...representa a velocidade relativa à $i-é
+                                                  simo$ imagem, $P_i=(x_i,y_...
+
+! You can't use `\spacefactor' in math mode.
+\add@accent ...}\accent #1 #2\egroup \spacefactor 
+                                                  \accent@spacefactor 
+l.132 ...representa a velocidade relativa à $i-é
+                                                  simo$ imagem, $P_i=(x_i,y_...
+
+
+LaTeX Warning: Command \' invalid in math mode on input line 133.
+
+! Please use \mathaccent for accents in math mode.
+\add@accent ...@spacefactor \spacefactor }\accent 
+                                                  #1 #2\egroup \spacefactor ...
+l.133 foi definida pela busca na $i-é
                                       simo$ imagem e $\Delta t$ é o interva...
 
 ! You can't use `\spacefactor' in math mode.
 \add@accent ...}\accent #1 #2\egroup \spacefactor 
                                                   \accent@spacefactor 
-l.132 foi definida pela busca na $i-é
+l.133 foi definida pela busca na $i-é
                                       simo$ imagem e $\Delta t$ é o interva...
 
 
-LaTeX Warning: Command \' invalid in math mode on input line 137.
+LaTeX Warning: Command \' invalid in math mode on input line 139.
 
 ! Please use \mathaccent for accents in math mode.
 \add@accent ...@spacefactor \spacefactor }\accent 
                                                   #1 #2\egroup \spacefactor ...
-l.137 (observador) e o alvo no instante $i-é
+l.139 (observador) e o alvo no instante $i-é
                                              simo$ será referenciada para $...
 
 ! You can't use `\spacefactor' in math mode.
 \add@accent ...}\accent #1 #2\egroup \spacefactor 
                                                   \accent@spacefactor 
-l.137 (observador) e o alvo no instante $i-é
+l.139 (observador) e o alvo no instante $i-é
                                              simo$ será referenciada para $...
 
 ) (./secoes/novoroi.tex
@@ -213,18 +197,17 @@ l.137 (observador) e o alvo no instante $i-é
 <use images/results_2D.png>
 <images/results_2D-eps-converted-to.pdf, id=57, 449.68pt x 336.25626pt>
 <use images/results_2D-eps-converted-to.pdf>
-Underfull \vbox (badness 10000) has occurred while \output is active [5 <./imag
-es/figure3-eps-converted-to.pdf>]) (./secoes/resultados3D.tex
+Underfull \vbox (badness 2197) has occurred while \output is active [5 <./image
+s/figure3-eps-converted-to.pdf>]) (./secoes/resultados3D.tex
 <images/figurea-eps-converted-to.pdf, id=63, 486.81876pt x 366.36874pt>
 <use images/figurea-eps-converted-to.pdf>
 <images/figureb-eps-converted-to.pdf, id=64, 486.81876pt x 366.36874pt>
 <use images/figureb-eps-converted-to.pdf>
 <images/grapha_b-eps-converted-to.pdf, id=65, 498.86375pt x 390.45876pt>
-<use images/grapha_b-eps-converted-to.pdf>
-Underfull \vbox (badness 10000) has occurred while \output is active [6 <./imag
-es/results_2D.png (PNG copy)> <./images/results_2D-eps-converted-to.pdf> <./ima
-ges/figurea-eps-converted-to.pdf> <./images/figureb-eps-converted-to.pdf> <./im
-ages/grapha_b-eps-converted-to.pdf>]
+<use images/grapha_b-eps-converted-to.pdf> [6 <./images/results_2D.png (PNG cop
+y)> <./images/results_2D-eps-converted-to.pdf> <./images/figurea-eps-converted-
+to.pdf> <./images/figureb-eps-converted-to.pdf> <./images/grapha_b-eps-converte
+d-to.pdf>]
 <images/graphvelocity-eps-converted-to.pdf, id=83, 508.90125pt x 394.47375pt>
 <use images/graphvelocity-eps-converted-to.pdf>) (./secoes/conclusao.tex)
 (./secoes/agradecimento.tex)
@@ -251,5 +234,5 @@ re/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/texlive/texmf
 -dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/typ
 e1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/u
 tmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Artigo-versao-portugues.pdf (7 pages, 395636 bytes).
+Output written on Artigo-versao-portugues.pdf (7 pages, 397314 bytes).
 Transcript written on Artigo-versao-portugues.log.

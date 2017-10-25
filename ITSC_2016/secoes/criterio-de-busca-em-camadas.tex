@@ -179,7 +179,8 @@ esta função tem como saída uma matriz com os valores da correlação da $ROI$
 em torno ao ponto $P_{i-1}$. Todos os processos da função $get\_corr\_matrix()$ são detalhados no algoritmo
 \ref{alg:multires2},
 \begin{algorithm}
- \KwData{$ROI$, posição $P_{i-1}$ sendo este o centro da $WOS$, fator de aproximação $\alpha$, braço de busca 
+ \KwData{$ROI$, posição $P_{i-1}$ sendo este o centro da $WOS$, 
+ fator de aproximação $\alpha$ relativa à distancia $d_{ROI}$, braço de busca 
  $L$ e a imagem $I_i$. }
  \KwResult{A matriz de correlação $A$, da regiões ao redor do ponto $P_{i-1}$ da imagem $I_i$. }
  ~\\

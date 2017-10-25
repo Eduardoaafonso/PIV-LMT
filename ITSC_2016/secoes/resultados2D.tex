@@ -58,10 +58,9 @@ The high changes of ROI for rotation of target can be showed by bubbles in the s
 
 
 O resultados a seguir foram obtidos nos testes usando o simulador POV-Ray.
-
 No primeiro teste, o algoritmo acompanha por uma sequência de 14 imagens 
-o objeto que está em movimento horizontal em relação a câmera, como mostrado na Figura \ref{fig:imgpapercerta}
-
+um objeto de interesse que está em movimento horizontal em relação a câmera, 
+como mostrado na Figura \ref{fig:imgpapercerta}
 \begin{figure}[H]
 \centering
   \subfloat[]{\label{fig:imgpapercertaa} \includegraphics[width=.48\columnwidth]{images/results_2D.png}}
@@ -73,14 +72,12 @@ o objeto que está em movimento horizontal em relação a câmera, como mostrado
 
 A posiçao inicial do objeto está na Figura \ref{fig:imgpapercerta}(a) 
 e a final na Figura \ref{fig:imgpapercerta}(b). De modo que o
-vetor em azul é o resultado da busca feita, ligando a posição inicial com a final.
+vetor em azul é o resultado do seguimento do objeto, ligando a posição inicial com a final.
 Nota-se, uma pequena curvatura na imagem ocasionada por uma mudança
 na perspectiva do objeto, resultando em uma mudança frequente do $ROI$.
-A diferença entre o valor inicial e final do fator de aproximação é considerado constante
-e igual 1, pois o objeto não se aproxima da câmera.
-
+A diferença entre o valor inicial e final do fator de aproximação $\beta$ (relativo a $d_0$) é considerado constante
+e aproximadamente igual 1, pois o objeto não se aproxima da câmera.
 Neste teste, a velocidade do fator de aproximação é zero, pois não há aproximação e nem
-afastamento do objeto em relação a câmera, sendo $\alpha d_0=1$ e $\Delta t=1$.
-
+afastamento do objeto em relação a câmera, sendo $\beta d_0 \approx 1$ e $\Delta t=1$.
 No teste 1, observa-se uma modificação frequente no $ROI$ e isso ocorre porque as imagens 
 tem uma semelhança menor do que a definida, como mostrando na Figura \ref{fig:newroicri}.

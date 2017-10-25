@@ -103,38 +103,40 @@ para procurar objetos mais próximos que a posição $d_{ROI}$ e  $\alpha>1$ par
 
 \subsubsection{Fator de aproximação - Velocidade Relativa}
 
-O fator de aproximação é um número adimensional que relaciona a taxa de 
-aproximação de um objeto em relação ao seu observador.
-O fator é determinado pela Equação (\ref{eq:relarea}),
-
+O fator de aproximação é um número adimensional que descreve a
+aproximação de um objeto ao observador.
+O fator de aproximação relativo à $ROI$ é determinado pela Equação (\ref{eq:relarea}),
 \begin{equation}\label{eq:relarea}
-f_a \equiv \alpha^2 \equiv \frac{Area_r}{Area_f} 
+f_a \equiv \alpha^2 \equiv \frac{Area_r}{Area_f}.
 \end{equation}
-
-Onde $f_a$ e $\alpha$ são definidos como um fator de área e de aproximação,
+Onde $f_a$ e $\alpha$ são definidos como um fator de área e de aproximação relativo à $ROI$,
 respectivamente; $Area_r$ é a área do $ROI$ e $Area_f$ é a área da região analisada
-do último frame.
+da última imagem.
 
-Conhecendo $\alpha$, e se considerado que o objeto estava a uma distância $d_{ROI}$; então,
-sua próxima distância será $\alpha d_{ROI}$ (ou $\sqrt{f_a} d_{ROI}$). Assim, cada $i-ésimo$ imagem
-terá o seu próprio $\alpha_i$ valor, onde $d_i=\alpha_i d_{ROI}$.
+Conhecendo $\alpha$, e considerado que o objeto de interesse dentro da $ROI$ estava a uma distância $d_{ROI}$; então,
+a posição do objeto de interesse na imagem analisada 
+estará localizado a uma distância de $\alpha d_{ROI}$ (ou $\sqrt{f_a} d_{ROI}$). Assim, cada  imagem $I_i$
+terá o seu próprio  valor $d_i$, onde $d_i=\alpha_i d_{ROI}$, sendo que o valor de $d_{ROI}$
+é alterado quando a $ROI$ é trocada.
 
-O fator de aproximação, $\alpha_i$, tem dois significados: se o fator de aproximação cresce rapidamente 
+O fator de aproximação $\alpha_i$, relativo à $ROI$, tem 
+dois significados: se o fator de aproximação cresce rapidamente 
 significa que o objeto está se afastando e se o fator decresce o objeto está se aproximando.
+Da mesma forma, é possível definir $\beta_i$ como o fator de aproximação relativo
+a distancia inicial $d_0$, de modo que $d_i=\beta_i d_0$.
 
-A velocidade relativa é definida pela equação da cinemática em física:
-
+Por outro lado, a velocidade relativa é definida pela equação da cinemática em física,
 \begin{equation}
- v_i = \frac{\Delta s}{\Delta t}= \frac{s_i-s_{i-1}}{\Delta t}.
+ v_i = \frac{\Delta P}{\Delta t}= \frac{P_i-P_{i-1}}{\Delta t};
 \end{equation}
-
-Onde o vetor $v_i$ representa a velocidade relativa à $i-ésimo$ imagem, $s_i=(x_i,y_i,d_i)$ é a posição que
+onde o vetor $v_i$ representa a velocidade relativa à $i-ésimo$ imagem, $P_i=(x_i,y_i,d_i)$ é a posição que
 foi definida pela busca na $i-ésimo$ imagem e $\Delta t$ é o intervalo de tempo entre a análise das duas imagens.
-Adicionalmente, o fator da velocidade de aproximação, $v^d_i$, é o número escalar o qual representa a componente
+Adicionalmente, o fator da velocidade de aproximação, $v^d_i=(d_i-d_{i-1})/{\Delta t}$, 
+é um número escalar o qual representa a componente
 responsável pela profundidade no vetor $v_i$.
 
 O valor $v^d_i$ calculado é relativo, pelo simples motivo de que a distância (profundidade) entre a câmara 
-(observador) e o alvo no instante $i-ésimo$ será referenciada para $d_{ROI}$; assim a distância do $ROI$ 
-inicial é estabelecida por definição para $d_{ROI}=1$. Finalmente, em todos os casos, a posição é 
+(observador) e o alvo no instante $i-ésimo$ será referenciada para $d_0$. 
+Finalmente, em todos os casos, a posição é 
 relativa ao observador (um sistema de referência móvel).
 

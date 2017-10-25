@@ -101,12 +101,12 @@ very close the behavior of the velocity of the normalized real route.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%portugues%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-A funcionalidade do algoritmo é verificado no segundo teste.
-
-O algoritmo compara as imagens e calcula o fator de aproximação, 
-baseando-se na área do $ROI$. Figura \ref{fig:target} representa o 
+A funcionalidade do algoritmo para um caso em $3D$ é verificada no segundo teste;
+nele, similarmente ao primeiro teste, o algoritmo compara um conjunto de imagens 
+e calcula o fator de aproximação, porem neste caso o objeto de interesse tem um movimento
+relativo em colisão com o observador. A Figura \ref{fig:target} representa o 
 acompanhamento do objeto por $40$ imagens. Os retângulos vermelhos
-são as posições inicial e final, ligados por um vetor em azul.
+são as posições das regiões de analises inicial e final, que contem ao objeto de interesse.
 
 \begin{figure}[H]
 \centering
@@ -118,42 +118,53 @@ são as posições inicial e final, ligados por um vetor em azul.
 \end{figure}
 
 Na Figura \ref{fig:target}, observa-se um crescimento no $ROI$ e, por
-consequência, uma modificação do fator de aproximação na Figura \ref{fig:res_grapha_b}.
-
+consequência, uma modificação do fator de aproximação $\beta$ relativo a $d_0$.
+A Figura \ref{fig:res_grapha_b} mostra o fator de aproximação $\beta$ em cada imagem 
+do teste 2 (veja a linha com círculos),
+além disso, é mostrado um ajuste polinomial do fator de aproximação usando 
+um polinômio de ordem 4 (veja a linha com pontos),
+finalmente, mostra-se a rota real do alvo normalizada para $1,0$ como a 
+distância inicial $d_0$ (veja a linha com quadrados);
+como pode ser visto, o alvo está se aproximando com uma velocidade constante.
 \begin{figure}[H]
 \includegraphics[width=\columnwidth]{images/grapha_b.eps}
-\caption{O fator de aproximação para cada imagem no teste 2.}
+\caption{O fator de aproximação $\beta$ relativo a $d_0$, para cada imagem no teste 2.}
 \label{fig:res_grapha_b}
 \end{figure}
 
 
-
-
-
-A Figura \ref{fig:res_grapha_b} mostra o fator de aproximação em cada frame 
-do teste 2 (veja a linha com círculos),
-além disso, é mostrado um ajuste polinomial do fator de aproximação usando 
-um polinômio de ordem 4 (veja a linha com pontos),
-finalmente, mostra-se a rota real do alvo normalizada para $1,0$ na 
-distância máxima (veja a linha com quadrados),
-como pode ser visto, o alvo está se aproximando com uma velocidade constante.
-Se for adotado esse valor normalizado como a posição do objeto para cada imagem, então o fator de aproximação
-descreve a posição relativa do objeto.
-
-Assim, na primeira imagem o objeto analisado está a uma distância $d_0$
-e na última a uma distância $17.18\%$ de $d_0$.
-A aproximação do objeto à câmera é discretizado, portanto se o objeto
-estiver entre duas camadas de análises, o algoritmo aproxima o para
-a camada mais próxima da câmera.
-
-A tabela \ref{tab:tab1} contém o banco de imagens usados no teste 2, sendo um total de 40 imagens geradas
+A tabela \ref{tab:tab1} descreve o resultado da analises do banco 
+de imagens usados no teste 2, sendo um total de 40 imagens geradas
 pelo programa de simulação POV-Ray.
-
+\begin{table}[H]
+\setlength{\tabcolsep}{1 pt} 
+\caption{Tabela de resultados}
+\begin{tabular}{lllll}
+Imagem & Real Dist.(m) & Real Dist.(\%) & Fator de aprox.(\%) & Erro relativo(\%)\\
+1 & 23.5 & 100.0 & 100.0 & 0.0 \\
+10 & 19.0 & 80.85 & 93.46 & 15.60 \\
+20 & 14.0 & 59.57 & 65.16 & 9.37 \\
+30 & 9.0 & 38.30 & 40.46 & 5.65 \\
+40 & 4.0 & 17.02 & 17.18 & 0.93
+\end{tabular}
+\label{tab:tab1}
+\end{table}
 A proporção em porcentagem da distância real está na terceira coluna. Por exemplo, o objeto na primeira imagem
 está a $23.5$ metros da câmera e é considerado $100$\% da distância, por outro lado, na imagem 40 o objeto está a
 $4$ metros da câmera, sendo $17,02$\% em relação ao primeiro. Na quarta coluna estão os resultados do algoritmo (fator
-de aproximação) em porcentagem. Finalmente, a última coluna representa o erro entre a porcentagem da distância real e do
-fator de aproximação.
+de aproximação $\beta$ relativo a $d_0$) em porcentagem. Finalmente, a última coluna representa o erro entre a porcentagem da distância real e do
+fator de aproximação relativo a $d_0$.
+
+Dado que é adotado um valor normalizado de $d_0=1,0$ como a posição do objeto de interesse na primeira 
+imagem, então o fator de aproximação $\beta_i$ na imagem $I_i$ é 
+numericamente igual a $d_i$, e descreve a posição relativa do objeto.
+Assim, na primeira imagem o objeto analisado está a uma distância $d_0$
+e na última a uma distância $d_{40}=17.18\%d_0$.
+
+A aproximação do objeto à câmera é analisada de forma discreta, portanto se o objeto
+estiver entre duas camadas de análises, o algoritmo aproxima o resultado para
+a camada mais próxima. Estas camadas são geradas pelo uso do fator $\alpha$
+descrito no algoritmo \ref{alg:multires}.
 
 Um ponto a ser discutido nessa seção é a diminuição do erro para distâncias próximas a 5 metros. Esse dado 
 mostra que o algoritmo tem mais precisão conforme a imagem aumenta, pois leva-se em consideração mais informações
@@ -169,23 +180,9 @@ verificar que o erro em metros cometido nos primeiros frames analisados são mai
 isso está também relacionado ao tamanho do $ROI$, pois $1$ $pixel$ do objeto na última imagem representa uma distância
 menor do que $1$ $pixel$ na primeira imagem. 
 
-\begin{table}[H]
-\setlength{\tabcolsep}{1 pt} 
-\caption{Tabela de resultados}
-\begin{tabular}{lllll}
-Imagem & Real Dist.(m) & Real Dist.(\%) & Fator de aprox.(\%) & Erro relativo(\%)\\
-1 & 23.5 & 100.0 & 100.0 & 0.0 \\
-10 & 19.0 & 80.85 & 93.46 & 15.60 \\
-20 & 14.0 & 59.57 & 65.16 & 9.37 \\
-30 & 9.0 & 38.30 & 40.46 & 5.65 \\
-40 & 4.0 & 17.02 & 17.18 & 0.93
-\end{tabular}
-\label{tab:tab1}
-\end{table}
-
 A Figura \ref{fig:res_grapha_bv} representa a velocidade dos dados apresentados 
 na Figura \ref{fig:res_grapha_b} calculado de $d_0=1$ à $\Delta t=1$.
-Assim, a velocidade do fator de aproximação (ver línea com círculos) é ajustada por um polinômio
+Assim, a velocidade do fator de aproximação relativo a $d_0$ (ver línea com círculos) é ajustada por um polinômio
 normalizado (ver línea com pontos), segundo o percurso real do objeto (ver línea com quadrados).
 A velocidade relativa do objeto foi calculado usando a derivada
 discreta, sendo que os valores negativos indica que o objeto está
@@ -198,6 +195,6 @@ objeto.
 
 \begin{figure}[H]
 \includegraphics[width=\columnwidth]{images/graphvelocity.eps}
-\caption{Velocidade do fator de aproximação para cada imagem no teste 2.}
+\caption{Velocidade do fator de aproximação relativo a $d_0$, para cada imagem no teste 2.}
 \label{fig:res_grapha_bv}
 \end{figure}
