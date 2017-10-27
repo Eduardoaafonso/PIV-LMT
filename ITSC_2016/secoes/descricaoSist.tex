@@ -17,8 +17,8 @@ the $WOS$ of a current frame; the result of this process is a displacement which
 \end{figure}
 
 \end{comment}
-A proposta do algoritmo se baseia em um sistema de seguimento em três dimensões, gerando assim informações
-sobre a posição do objeto de interesse, de modo que com esta informação é calculada a velocidade, 
+A proposta do algoritmo se baseia em um sistema de seguimento em três dimensões, que gera informações
+da posição do objeto de interesse; com esta informação é calculada a velocidade,
 sendo esta relativa ao observador.
 
 O algoritmo ilustrado na Figura \ref{fig:system} tem como parâmetro inicial uma cena com o
@@ -59,8 +59,8 @@ por o ponto $(x, y, d)$, onde $d$ representa a profundidade
 do objeto na imagem (é dizer distancia entre o objeto e o observador), 
 dado que para todos os cálculos o valor de profundidade
 será expressado em função da posição inicial ($d_0$) do objeto de interesse na primeira imagem,
-para fines práticos este valor será normalizado a $d_0=1.0$, representando este número
-o $100\textpercent$ da distancia inicial. A partir
+para fines práticos, este valor será normalizado a $d_0=1.0$.
+A partir
 deste valor, será possível mensurar a velocidade e um fator de aproximação $\beta$ do objeto
 de forma relativa à posição inicial $d_0$; de modo que valores de $d=\beta d_0$
 maiores que $1.0$ indicarão objetos mais distantes e valores menores que $1.0$, objetos mais próximos.
@@ -68,11 +68,12 @@ maiores que $1.0$ indicarão objetos mais distantes e valores menores que $1.0$,
 O algoritmo \ref{alg:system}, representa a sequência das 
 ações descritas na Figura \ref{fig:system}. As funções 
  ($multiscale\_match\_criterion$ e $renew\_roi\_criteria$) serão discutidas na próxima seção. 
-O algoritmo \ref{alg:system} recebe como entradas, a posição inicial $P_0=(x_0, y_0, d_0)$
-da $ROI$ (que contem o objeto de interesse)  
-e uma sequência de $N$ imagens. É importante notar que chamaremos $P_0$ a posição inicial
+O algoritmo \ref{alg:system} recebe como entradas, a $ROI$ (que contem o objeto de interesse), 
+a posição inicial $P_0=(x_0, y_0, d_0)$
+da $ROI$   
+e uma sequência de $N$ imagens. É importante notar que chamaremos $P_0$ à posição inicial
 da $ROI$ na primeira imagem e $P_{ROI}=(x_{ROI}, y_{ROI}, d_{ROI})$ a posição atual da região
-de interesse, dado que o algoritmo atualiza a $ROI$ só quando por o deslocamento e perspetiva da imagem
+de interesse, dado que o algoritmo atualiza a $ROI$ quando por o deslocamento e perspetiva da imagem
 o objeto cambia de forma; finalmente, o processo retorna 
 uma estrutura chamada $PATH$ com a posição do objeto de interesse em cada imagem, sendo $PATH\{i\}=(x_i,y_i,d_i)$
 a posição do objeto de interesse na imagem $I_i$.

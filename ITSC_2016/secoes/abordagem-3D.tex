@@ -80,8 +80,8 @@ como mostrado na Figura \ref{fig:multiscale3d}.
   \caption{ Acompanhamento do objeto em camadas.}
   \label{fig:multiscale3d}
 \end{figure}
-A Figura \ref{fig:multiscale3d} mostra o objeto de interesse a diferentes distanasias com respeito ao observador, 
-$d$ e $\alpha d$, respectivamente em azul e vermelho, sendo que
+Na Figura \ref{fig:multiscale3d} temos um mesmo objeto visto em dois instantes diferentes pelo observador,
+estando este objeto a uma distancia $d$ e $\alpha d$, respectivamente em azul e vermelho, sendo que
 o plano da imagem está localizada a uma distância $h$ do observador. As projeções dos objetos no plano da imagem
  são representados por $L_b$ e $L_r$, azul e vermelho respectivamente. 
  Analisando os triângulos formados pelas projeções dos objetos e o ponto de observação, 
@@ -93,7 +93,7 @@ foi alterado por um fator de 1/$\alpha$, e consequentemente, a área foi alterad
 
 Conhecida a relação de $\alpha$ com a distancia entre o objeto e o observador; 
 o critério de busca em $3D$, do objeto de interesse, usa um conjunto de valores 
-discretos de $\alpha$ para determinar a localização, 
+discretos de $\alpha$ para determinar a profundidade do objeto na cena, 
 consequentemente se o objeto de interesse estiver localizado num ponto intermédio dos valores
 de $\alpha$ selecionados, o algoritmo aproxima a posição do objeto 
 usando o valor de $\alpha$ mais próximo; assim, são usados valores $\alpha<1$
@@ -110,8 +110,7 @@ O fator de aproximação relativo à $ROI$ é determinado pela Equação (\ref{e
 f_a \equiv \alpha^2 \equiv \frac{Area_r}{Area_f}.
 \end{equation}
 Onde $f_a$ e $\alpha$ são definidos como um fator de área e de aproximação relativo à $ROI$,
-respectivamente; $Area_r$ é a área do $ROI$ e $Area_f$ é a área da região analisada
-da última imagem.
+respectivamente; $Area_r$ é a área da $ROI$ e $Area_f$ é a área da região analisada.
 
 Conhecendo $\alpha$, e considerado que o objeto de interesse dentro da $ROI$ estava a uma distância $d_{ROI}$; então,
 a posição do objeto de interesse na imagem analisada 
@@ -129,14 +128,14 @@ Por outro lado, a velocidade relativa é definida pela equação da cinemática 
 \begin{equation}
  v_i = \frac{\Delta P}{\Delta t}= \frac{P_i-P_{i-1}}{\Delta t};
 \end{equation}
-onde o vetor $v_i$ representa a velocidade relativa à $i-ésimo$ imagem, $P_i=(x_i,y_i,d_i)$ é a posição que
-foi definida pela busca na $i-ésimo$ imagem e $\Delta t$ é o intervalo de tempo entre a análise das duas imagens.
+onde o vetor $v_i$ representa a velocidade relativa à $i-ésima$ imagem, $P_i=(x_i,y_i,d_i)$ é a posição que
+foi definida pela busca na $i-ésima$ imagem e $\Delta t$ é o intervalo de tempo entre a análise das duas imagens.
 Adicionalmente, o fator da velocidade de aproximação, $v^d_i=(d_i-d_{i-1})/{\Delta t}$, 
 é um número escalar o qual representa a componente
 responsável pela profundidade no vetor $v_i$.
 
 O valor $v^d_i$ calculado é relativo, pelo simples motivo de que a distância (profundidade) entre a câmara 
-(observador) e o alvo no instante $i-ésimo$ será referenciada para $d_0$. 
+(observador) e o alvo no instante $i-ésima$ será referenciada para $d_0$. 
 Finalmente, em todos os casos, a posição é 
 relativa ao observador (um sistema de referência móvel).
 

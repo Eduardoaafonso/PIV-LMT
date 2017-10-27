@@ -115,9 +115,9 @@ este algoritmo. Assim nos temos, a região de interesse ou $ROI$
 o objeto de interesse, também precisamos uma janela de busca ou $WOS$
 que é a região onde serão analisadas regiões para identificar a $ROI$. 
 Na técnica $PIV$ tradicional, quando é analisada uma imagen, 
-a posição da $ROI$ na imagem é obtida a partir 
-da posição da região analisada na imagem com o valor de $CCP$ mais próximo de $1.0$,
-quando comparado com a $ROI$. 
+a posição do objeto de interesse na imagem é obtida a partir 
+da posição da região analises na imagem com o valor de $CCP$ mais próximo de $1.0$,
+quando comparada com a $ROI$. 
 Essa análise consiste na divisão da $WOS$ em regiões de analises que sejam do tamanho da $ROI$, pois o $CCP$
 compara imagens do mesmo tamanho.
 
@@ -132,9 +132,9 @@ contemplam casos de afastamento e aproximação do objeto, respectivamente.
 \centering
   \subfloat[]{\label{subfig:(a)} \includegraphics[width=.5\columnwidth]{images/figure2a.eps}}
   \subfloat[]{\label{subfig:(b)} \includegraphics[width=.5\columnwidth]{images/figure2b.eps}}
-  \caption{Os retângulos vermelhos mostram as regiões analisadas e o retângulo preto representa o $WOS$. 
-  (a) As regiões de analises do $WOS$ são comparadas com o $ROI$ em uma única camada. 
-  (b) As regiões de analises do $WOS$ sendo comparadas com $ROI$ de diferentes escalas é dizer múltiplas camadas.}
+  \caption{Os retângulos vermelhos mostram as regiões analisadas e o retângulo preto representa a $WOS$. 
+  (a) As regiões de analises da $WOS$ são comparadas com a $ROI$ em uma única camada. 
+  (b) As regiões de analises da $WOS$ são comparadas com a $ROI$ em diferentes escalas é dizer múltiplas camadas.}
   \label{fig:multires}
 \end{figure}
 

@@ -119,12 +119,12 @@ são as posições das regiões de analises inicial e final, que contem ao objet
 
 Na Figura \ref{fig:target}, observa-se um crescimento no $ROI$ e, por
 consequência, uma modificação do fator de aproximação $\beta$ relativo a $d_0$.
-A Figura \ref{fig:res_grapha_b} mostra o fator de aproximação $\beta$ em cada imagem 
+A Figura \ref{fig:res_grapha_b} mostra o fator $\beta$ em cada imagem 
 do teste 2 (veja a linha com círculos),
-além disso, é mostrado um ajuste polinomial do fator de aproximação usando 
+além disso, é mostrado um ajuste polinomial deste fator usando 
 um polinômio de ordem 4 (veja a linha com pontos),
-finalmente, mostra-se a rota real do alvo normalizada para $1,0$ como a 
-distância inicial $d_0$ (veja a linha com quadrados);
+finalmente, mostra-se a distancia normalizada entre o objeto de interesse e o observador,
+de modo que a distância inicial $d_0=1.0$ (veja a linha com quadrados);
 como pode ser visto, o alvo está se aproximando com uma velocidade constante.
 \begin{figure}[H]
 \includegraphics[width=\columnwidth]{images/grapha_b.eps}
@@ -149,11 +149,14 @@ Imagem & Real Dist.(m) & Real Dist.(\%) & Fator de aprox.(\%) & Erro relativo(\%
 \end{tabular}
 \label{tab:tab1}
 \end{table}
-A proporção em porcentagem da distância real está na terceira coluna. Por exemplo, o objeto na primeira imagem
+A primeira coluna descreve o numero de imagem analisada, por uma questão de espaço, só serão mostrados
+os resultado a cada 10 imagens; a segunda coluna contem a distancia 
+real em metros entre o objeto de interesse e o observador.
+A porcentagem da distância real com $d_0$ está representada na terceira coluna. Por exemplo, o objeto na primeira imagem
 está a $23.5$ metros da câmera e é considerado $100$\% da distância, por outro lado, na imagem 40 o objeto está a
 $4$ metros da câmera, sendo $17,02$\% em relação ao primeiro. Na quarta coluna estão os resultados do algoritmo (fator
-de aproximação $\beta$ relativo a $d_0$) em porcentagem. Finalmente, a última coluna representa o erro entre a porcentagem da distância real e do
-fator de aproximação relativo a $d_0$.
+de aproximação $\beta$ relativo a $d_0$) em porcentagem. Finalmente, a última coluna representa o erro 
+entre a porcentagem da distância real e $\beta$.
 
 Dado que é adotado um valor normalizado de $d_0=1,0$ como a posição do objeto de interesse na primeira 
 imagem, então o fator de aproximação $\beta_i$ na imagem $I_i$ é 
@@ -161,40 +164,43 @@ numericamente igual a $d_i$, e descreve a posição relativa do objeto.
 Assim, na primeira imagem o objeto analisado está a uma distância $d_0$
 e na última a uma distância $d_{40}=17.18\%d_0$.
 
-A aproximação do objeto à câmera é analisada de forma discreta, portanto se o objeto
+É importante ressaltar que a aproximação do objeto à câmera é analisada de forma discreta, 
+portanto se o objeto
 estiver entre duas camadas de análises, o algoritmo aproxima o resultado para
 a camada mais próxima. Estas camadas são geradas pelo uso do fator $\alpha$
-descrito no algoritmo \ref{alg:multires}.
+descrito no algoritmo \ref{alg:multires}. Outra consequência desta discretização
+é a dificuldade de medir deslocamentos horizontais ou verticais, ou aumentos do lado da região de analises,
+menores a $1$ pixel, por lo que quanto maior seja a quantidade de pixels por
+imagem analisada, melhor será o desempenho do algoritmo para pequenos deslocamentos ou variações de área.
 
-Um ponto a ser discutido nessa seção é a diminuição do erro para distâncias próximas a 5 metros. Esse dado 
-mostra que o algoritmo tem mais precisão conforme a imagem aumenta, pois leva-se em consideração mais informações
-para os cálculos.
-
+Um ponto a ser ressaltado é a diminuição do erro para distâncias próximas a 5 metros,  
+os resultados mostram que o algoritmo tem mais precisão no resultado, conforme o objeto de interesse 
+aumenta de área na imagem; isto devido a que este contem mais pixels (informação)
+para os cálculos e adicionalmente cada pixel no objeto de interesse 
+representa uma quantidade menor de metros na cena, de modo que
+o erro em metros diminui.
 Assim, no método de comparação ($CCP$), nota-se que quanto menor seja o $ROI$, 
 maior será o impacto do erro em cada pixel da imagem, 
 e por consequência, uma falta de precisão na descrição do objeto. Contudo, se o objeto cresce de tamanho na cena
-o método terá imagens a ser analisadas com mais informação, e menor percentagem de informação por pixel
+o método terá imagens a ser analisadas com mais informação, e menor percentagem de metros por pixel
 que leva a ter um erro mais controlado, conforme
-mostrado nos testes. Outro ponto a ser abordado é sobre a proporção do erro no decorrer do movimento, é possível
-verificar que o erro em metros cometido nos primeiros frames analisados são maiores e nos últimos menores, sendo que
-isso está também relacionado ao tamanho do $ROI$, pois $1$ $pixel$ do objeto na última imagem representa uma distância
-menor do que $1$ $pixel$ na primeira imagem. 
+mostrado nos testes. 
 
 A Figura \ref{fig:res_grapha_bv} representa a velocidade dos dados apresentados 
-na Figura \ref{fig:res_grapha_b} calculado de $d_0=1$ à $\Delta t=1$.
-Assim, a velocidade do fator de aproximação relativo a $d_0$ (ver línea com círculos) é ajustada por um polinômio
+na Figura \ref{fig:res_grapha_b}, calculados para $d_0=1$ e $\Delta t=1$.
+Assim, a velocidade do fator $\beta$ (ver línea com círculos) é ajustada por um polinômio
 normalizado (ver línea com pontos), segundo o percurso real do objeto (ver línea com quadrados).
 A velocidade relativa do objeto foi calculado usando a derivada
 discreta, sendo que os valores negativos indica que o objeto está
 em direção ao observador.
 
 Para calcular a velocidade, é necessário usar um ajuste polinomial devido 
-às mudanças causadas pela discretização dos dados no fator de aproximação.
+às mudanças abruptas e erro causadas pela discretização dos dados no fator $\beta$.
 Assim, obtém-se uma descrição mais próxima da velocidade relativa do 
 objeto.
 
 \begin{figure}[H]
 \includegraphics[width=\columnwidth]{images/graphvelocity.eps}
-\caption{Velocidade do fator de aproximação relativo a $d_0$, para cada imagem no teste 2.}
+\caption{Velocidade das curvas normalizadas para cada resultado do teste 2.}
 \label{fig:res_grapha_bv}
 \end{figure}

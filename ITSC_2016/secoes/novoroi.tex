@@ -67,12 +67,12 @@ it is used by the Algorithm \ref{alg:system} of Fig. \ref{fig:system}.
 
 A $ROI$ é um importante elemento dentro algoritmo, pois ele é a referência da
 forma atual do objeto de interesse que será comparado com as imagens posteriores.
-O critério para atualizar a $ROI$ é determinado a partir da correlação 
-entre as regiões de analise, sendo que, se o valor da comparação estiver entre $0,8$ 
-e $0,925$ a $ROI$ será atualizado com uma nova posição $(x_i,y_i,d_i)$.
+O critério para atualizar a $ROI$ é determinado a partir da máxima correlação 
+com as regiões de analise, sendo que, se este valor estiver entre $0,8$ 
+e $0,925$ a $ROI$ será atualizada.
 
-Deste modo, foi adotado que o limite inferior é de $0,8$ \cite{Eugene}. Para valores
-de comparação abaixo deste, o objeto é tido como perdido, como mostrado na Figura
+Deste modo, foi adotado que o limite inferior para um valor de $CCP$ valido é de $0,8$ \cite{Eugene}. Para valores
+de $CCP$ abaixo deste, o objeto é tido como perdido, como mostrado na Figura
 \ref{fig:newroicri}.
 Finalmente, é importante notar que, se a $ROI$ for alterado, a nova $ROI$ terá 
 o tamanho real da região analisada e não a versão redimensionada utilizada no cálculo do $CCP$.
@@ -82,7 +82,7 @@ o tamanho real da região analisada e não a versão redimensionada utilizada no
 \includegraphics[width=\columnwidth]{images/figure3.eps}
 \caption{Quando a comparação é maior que $0,8$, incluindo número maiores que $0,925$, 
 significa que o objeto foi encontrado,
-se o CCP é menor que $0,8$ a imagem é tida como perdida e se o coeficiente for maior que $0,8$ 
+se o CCP é menor que $0,8$ o objeto de interesse é tida como perdido e se o coeficiente for maior que $0,8$ 
 e menor que $0,925$, então a $ROI$ é atualizada pela região de analise de 
 maior correlação.}
 \label{fig:newroicri}

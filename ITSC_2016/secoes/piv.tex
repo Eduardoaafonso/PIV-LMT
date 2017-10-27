@@ -44,17 +44,20 @@ frame $1$ to another in frame $2$.
 
 \subsection{Velocimetria por Imagem de Partículas}
 
-A Velocimetria por imagem de partículas (PIV, do inglês Particle Image Velocimetry) 
-é um método óptico que permite a visualização e a análise do movimento de partículas em fluidos, no caso aplicado em imagens \cite{Bastiaans}.
+A velocimetria por imagem de partículas ou $PIV$ (do inglês Particle Image Velocimetry) 
+é um método óptico que permite a visualização e a análise do movimento de partículas em fluidos, 
+usando como dado entrada imagens \cite{Bastiaans}.
 O resultado do $PIV$ é dado por um campo vetorial que representa a direção, sentido e intensidade da velocidade de cada 
-partícula. Além disso, pode ser usado para acompanhar objetos dentro de um fluxo de imagens sequenciais, obtidas por uma câmera por exemplo.
+partícula. Além disso, pode ser usado para acompanhar objetos dentro de um fluxo de imagens sequenciais, 
+obtidas por uma câmera, por exemplo.
 
-O $PIV$ divide a imagem em diferentes possíveis regiões de interesse, onde o objeto de interesse pode ser encontrado. 
-A região que contém o objeto de 
-interesse é correlacionada com a próxima imagem do fluxo, no caso deste exemplo, a imagem 2. 
-Após ser encontrado sua correspondente, um vetor é traçado do ponto inicial
-até a região encontrada. Assim, evidencia-se um deslocamento entre uma imagem e outra em seguida, aplicando-se  a derivada 
-é possível obter a  estimativa da velocidade relativa.
+O $PIV$ divide a imagem em diferentes regiões de analise, onde o objeto de interesse será procurado. 
+A região que contém o objeto de interesse em uma imagem é correlacionada 
+com outra imagem do pacote de imagens, no caso do exemplo da Figura \ref{fig:twoframes} é usada a imagem 2. 
+Após ser encontrado a correspondência, um vetor é traçado do ponto inicial
+até a região encontrada. Assim, evidencia-se um deslocamento entre uma imagem e outra; usando este resultado
+e conhecido os tempos entre a imagem 1 e 2,
+é possível obter uma  estimativa da velocidade relativa.
 
 \begin{figure}[H]
 \includegraphics[width=\columnwidth]{images/explanationPIV.eps}
@@ -62,25 +65,28 @@ até a região encontrada. Assim, evidencia-se um deslocamento entre uma imagem 
 \label{fig:twoframes}
 \end{figure}
 
-A Figura \ref{fig:twoframes} ilustra como o $PIV$ funciona, 
+A Figura \ref{fig:twoframes} ilustra como a técnica $PIV$ funciona, 
 destaque para a relação entre a região de interesse ou $ROI$ (do inglês ``Region of Interesting'') e 
 a janela de busca ou $WOS$  (do inglês ``Windowm of Search''). 
 A $WOS$ é a região onde o objeto de interesse pode ser encontrado,
 neste artigo esta é selecionada como sendo $1.5$ vesses o tamanho do $ROI$. 
 Por exemplo, se o $ROI$ tem dimensão $200\times300$, então a $WOS$ terá $300\times450$.
-Essa consideração foi tomada a partir dos testes que 
-levavam em conta os \colorbox{red}{limites de velocidade permitidos em cidades e rodovias}.
+%Essa consideração foi tomada a partir dos testes que 
+%levavam em conta os \colorbox{red}{limites de velocidade permitidos em cidades e rodovias}.
 
 
+A $ROI$ é uma das partes mais importantes do $PIV$, pois ele contém o objeto de interesse. 
+Esta região é usada como padrão de busca nas regiões de analise na $WOS$;
+uma região de análise ($AR$) da mesma dimensão do $ROI$ é selecionada na $WOS$ na imagem 2,
+uma vista detalhada da $WOS$ pode ser vista na Figura \ref{fig:WOSdivided}, onde as regiões 
+de analises selecionadas estão definidas por retângulos de cor cinza.
+As comparações são realizadas entre as $AR$ e a $ROI$, de modo que são 
+calculados valores de $CCP$. Quando o processo termina, a posição da região com o maior valor
+de correlação é a nova posição do objeto, esta posição pode ser distinguida na Figura \ref{fig:WOSdivided}
+por um retângulo de cor preto. Deste modo, traça-se um vetor desde a posição inicial do objeto 
+de interesse ($ROI$ na imagem 1) até a posição final ($AR$ na imagem 2).
 \begin{figure}[H]
-\includegraphics[width=\columnwidth]{images/WOSdivided.eps}
-\caption{O $WOS$ é o espaço pelo qual o $ROI$ será procurado.}
+\includegraphics[width=0.8\columnwidth]{images/WOSdivided.eps}
+\caption{A $WOS$ é o espaço onde regiões de analises são selecionadas e a $ROI$ é procurada.}
 \label{fig:WOSdivided}
 \end{figure}
-
-$ROI$ é uma das partes mais importantes do $PIV$, pois ele contém o objeto de interesse. Uma região de análise
-($AR$) da mesma dimensão do $ROI$ é percorrida pelo $WOS$ na imagem 2, como mostrado na Figura \ref{fig:WOSdivided}.
-As comparações usando $CCP$, são realizadas entre as regiões de ambas imagens e são 
-calculados valores de correlação. Quando o processo termina, a posição da região com o maior valor
-de correlação é a nova posição do objeto. Deste modo, traça-se um vetor do ponto inicial ($ROI$ na imagem 1) até o ponto final
-($ROI$ na imagem 2).
