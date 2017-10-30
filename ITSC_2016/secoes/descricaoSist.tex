@@ -21,9 +21,10 @@ A proposta do algoritmo se baseia em um sistema de seguimento em três dimensõe
 da posição do objeto de interesse; com esta informação é calculada a velocidade,
 sendo esta relativa ao observador.
 
-O algoritmo ilustrado na Figura \ref{fig:system} tem como parâmetro inicial uma cena com o
-objeto de interesse a ser rastreado, dentro de uma $ROI$. Posteriormente, 
-o sistema analisa as imagens subsequentes procurando regiões semelhantes à $ROI$.
+O algoritmo ilustrado na Figura \ref{fig:system} tem como parâmetro inicial uma imagem com o
+objeto de interesse, dentro de uma $ROI$; posteriormente, 
+o sistema analisará as imagens subsequentes procurando regiões semelhantes à $ROI$
+e salvará as posições do objeto de interesse em cada imagem.
 
 \begin{figure}[h]
 \includegraphics[width=\columnwidth]{images/figure1-diagram1.eps}

@@ -104,18 +104,18 @@ subscribe by emailing sympa@lirmm.fr with 'subscribe <list> <firstname name>'
 Underfull \hbox (badness 3884) in paragraph at lines 50--50
 [][][]\OT1/ptm/m/n/8 Contact authors:$[]$  ed-uardo.afonso@engautomacao.ufla.br
 , $[]$  fer-
-(./sections/abst.tex) (./secoes/introducao.tex) (./secoes/pcc.tex)
+(./secoes/abst.tex) (./secoes/introducao.tex) (./secoes/pcc.tex)
 (./secoes/piv.tex [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
 <images/explanationPIV-eps-converted-to.pdf, id=16, 862.22125pt x 493.845pt>
 <use images/explanationPIV-eps-converted-to.pdf>
 <images/WOSdivided-eps-converted-to.pdf, id=17, 244.915pt x 152.57pt>
 <use images/WOSdivided-eps-converted-to.pdf>) (./secoes/descricaoSist.tex
+Underfull \vbox (badness 1097) has occurred while \output is active
 <images/figure1-diagram1-eps-converted-to.pdf, id=18, 1378.14874pt x 583.17876p
 t> <use images/figure1-diagram1-eps-converted-to.pdf>)
-(./secoes/controleErro.tex
-Underfull \vbox (badness 2229) has occurred while \output is active [2 <./image
-s/explanationPIV-eps-converted-to.pdf> <./images/WOSdivided-eps-converted-to.pd
-f> <./images/figure1-diagram1-eps-converted-to.pdf>]
+(./secoes/controleErro.tex [2 <./images/explanationPIV-eps-converted-to.pdf> <.
+/images/WOSdivided-eps-converted-to.pdf> <./images/figure1-diagram1-eps-convert
+ed-to.pdf>]
 <images/imageError-eps-converted-to.pdf, id=30, 913.4125pt x 686.565pt>
 <use images/imageError-eps-converted-to.pdf>
 <images/imageErrorcontroled-eps-converted-to.pdf, id=31, 487.8225pt x 367.3725p
@@ -231,5 +231,5 @@ re/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/texlive/texmf
 -dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/typ
 e1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/u
 tmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Artigo-versao-portugues.pdf (7 pages, 397986 bytes).
+Output written on Artigo-versao-portugues.pdf (7 pages, 398310 bytes).
 Transcript written on Artigo-versao-portugues.log.
