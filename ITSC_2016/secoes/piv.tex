@@ -46,14 +46,14 @@ frame $1$ to another in frame $2$.
 
 A velocimetria por imagem de partículas ou $PIV$ (do inglês Particle Image Velocimetry) 
 é um método óptico que permite a visualização e a análise do movimento de partículas em fluidos, 
-usando como dado entrada imagens \cite{Bastiaans}.
+usando como dado de entrada imagens \cite{Bastiaans}.
 O resultado do $PIV$ é dado por um campo vetorial que representa a direção, sentido e intensidade da velocidade de cada 
 partícula. Além disso, pode ser usado para acompanhar objetos dentro de um fluxo de imagens sequenciais, 
 obtidas por uma câmera, por exemplo.
 
-O $PIV$ divide a imagem em diferentes regiões de analise, onde o objeto de interesse será procurado. 
-A região da imagem que contém o objeto de interesse  é correlacionada 
-com varias regiões numa imagem do pacote de imagens, no caso do exemplo da 
+O $PIV$ divide a imagem em diferentes regiões de análise, onde o objeto de interesse será procurado. 
+A região da imagem que contém o objeto de interesse é correlacionada 
+com várias regiões numa imagem do pacote de imagens, no caso do exemplo da 
 Figura \ref{fig:twoframes} o objeto é procurado na imagem 2. 
 Após ser encontrado a correspondência, um vetor é traçado do ponto inicial
 até a região encontrada. Assim, evidencia-se um deslocamento entre uma imagem e outra; usando este resultado
@@ -68,20 +68,20 @@ e conhecido os tempos entre a imagem 1 e 2,
 
 A Figura \ref{fig:twoframes} ilustra como a técnica $PIV$ funciona, 
 destaque para a relação entre a região de interesse ou $ROI$ (do inglês ``Region of Interesting'') e 
-a janela de busca ou $WOS$  (do inglês ``Windowm of Search''). 
+a janela de busca ou $WOS$  (do inglês ``Window of Search''). 
 A $WOS$ é a região onde o objeto de interesse será buscado,
-neste artigo a $WOS$ é selecionada como sendo $1.5$ vesses o tamanho do $ROI$. 
+neste artigo a $WOS$ é definida como sendo $1.5$ maior que o tamanho do $ROI$. 
 Por exemplo, se o $ROI$ tem dimensão $200\times300$, então a $WOS$ terá $300\times450$.
 %Essa consideração foi tomada a partir dos testes que 
 %levavam em conta os \colorbox{red}{limites de velocidade permitidos em cidades e rodovias}.
 
 
-A $ROI$ é uma das partes mais importantes do $PIV$, pois ele contém o objeto de interesse. 
-Esta região é usada como padrão de busca nas regiões de analise da $WOS$;
-tradicionalmente na técnica $PIV$, uma região de análise ou $AR$ (do inglês ``Analysis Region'') da mesma dimensão 
+A $ROI$ é uma das partes mais importantes do $PIV$, pois ela contém o objeto de interesse. 
+Esta região é usada como padrão de busca nas regiões de análise da $WOS$;
+tradicionalmente na técnica $PIV$, uma região de análise ou $AR$ (do inglês ``Analysis Region'') de mesma dimensão 
 da $ROI$ é selecionada na $WOS$ e estas são comparadas.
 Na Figura \ref{fig:WOSdivided} pode ser visto como as regiões 
-de analises são selecionadas e são representadas por retângulos de cor cinza.
+de análises são selecionadas e são representadas por retângulos de cor cinza.
 As comparações são realizadas entre as $AR$ e a $ROI$, de modo que são 
 calculados valores de $CCP$. Quando o processo termina, a posição da região com o maior valor
 de correlação é declarada como a nova posição do objeto, esta posição pode ser distinguida na Figura \ref{fig:WOSdivided}

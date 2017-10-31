@@ -103,10 +103,10 @@ very close the behavior of the velocity of the normalized real route.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%portugues%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 A funcionalidade do algoritmo para um caso em $3D$ é verificada no segundo teste;
 nele, similarmente ao primeiro teste, o algoritmo compara um conjunto de imagens 
-e calcula o fator de aproximação, porem neste caso o objeto de interesse tem um movimento
+e calcula o fator de aproximação, porém neste caso o objeto de interesse tem um movimento
 relativo em colisão com o observador. A Figura \ref{fig:target} representa o 
 acompanhamento do objeto por $40$ imagens. Os retângulos vermelhos
-são as posições das regiões de analises inicial e final, que contem ao objeto de interesse.
+são as posições das regiões de análises inicial e final, que contém o objeto de interesse.
 
 \begin{figure}[H]
 \centering
@@ -123,7 +123,7 @@ A Figura \ref{fig:res_grapha_b} mostra o fator $\beta$ em cada imagem
 do teste 2 (veja a linha com círculos),
 além disso, é mostrado um ajuste polinomial deste fator usando 
 um polinômio de ordem 4 (veja a linha com pontos),
-finalmente, mostra-se a distancia normalizada entre o objeto de interesse e o observador,
+finalmente, mostra-se a distância normalizada entre o objeto de interesse e o observador,
 de modo que a distância inicial $d_0=1.0$ (veja a linha com quadrados);
 como pode ser visto, o alvo está se aproximando com uma velocidade constante.
 \begin{figure}[H]
@@ -133,7 +133,7 @@ como pode ser visto, o alvo está se aproximando com uma velocidade constante.
 \end{figure}
 
 
-A tabela \ref{tab:tab1} descreve o resultado da analises do banco 
+A tabela \ref{tab:tab1} descreve o resultado da análises do banco 
 de imagens usados no teste 2, sendo um total de 40 imagens geradas
 pelo programa de simulação POV-Ray.
 \begin{table}[H]
@@ -149,8 +149,8 @@ Imagem & Real Dist.(m) & Real Dist.(\%) & Fator de aprox.(\%) & Erro relativo(\%
 \end{tabular}
 \label{tab:tab1}
 \end{table}
-A primeira coluna descreve o numero de imagem analisada, por uma questão de espaço, só serão mostrados
-os resultado a cada 10 imagens; a segunda coluna contem a distancia 
+A primeira coluna descreve o número de imagem analisada, por uma questão de espaço, só serão mostrados
+os resultado a cada 10 imagens; a segunda coluna contém a distância 
 real em metros entre o objeto de interesse e o observador.
 A porcentagem da distância real com $d_0$ está representada na terceira coluna. Por exemplo, o objeto na primeira imagem
 está a $23.5$ metros da câmera e é considerado $100$\% da distância, por outro lado, na imagem 40 o objeto está a
@@ -168,29 +168,29 @@ e na última a uma distância $d_{40}=17.18\%d_0$.
 portanto se o objeto
 estiver entre duas camadas de análises, o algoritmo aproxima o resultado para
 a camada mais próxima. Estas camadas são geradas pelo uso do fator $\alpha$
-descrito no algoritmo \ref{alg:multires}. Outra consequência desta discretização
-é a dificuldade de medir deslocamentos horizontais ou verticais, ou aumentos do lado da região de analises,
-menores a $1$ pixel, por lo que quanto maior seja a quantidade de pixels por
+descrito no algoritmo \ref{alg:multires}. Outra consequência desta discretização,
+é a dificuldade de medir deslocamentos horizontais ou verticais, ou aumentos do lado da região de análises,
+menores a $1$ pixel, de modo que quanto maior seja a quantidade de pixels por
 imagem analisada, melhor será o desempenho do algoritmo para deslocamentos ou variações de área.
 
 Um ponto a ser ressaltado é a diminuição do erro para distâncias próximas a 5 metros,  
-os resultados mostram que o algoritmo tem mais precisão no resultado, conforme o objeto de interesse 
-aumenta de área na imagem; isto devido a que este contem mais pixels (informação)
+os resultados mostram que o algoritmo tem mais precisão, conforme o objeto de interesse 
+aumenta de área na imagem; pois este contém mais pixels (informação)
 para os cálculos e adicionalmente cada pixel no objeto de interesse 
 representa uma quantidade menor de metros na cena, de modo que
 o erro em metros diminui.
 Assim, no método de comparação ($CCP$), nota-se que quanto menor seja o $ROI$, 
 maior será o impacto do erro em cada pixel da imagem, 
 e por consequência, uma falta de precisão na descrição do objeto. Contudo, se o objeto cresce de tamanho na cena
-o método terá imagens a ser analisadas com mais informação, e menor percentagem de metros por pixel
+o método terá imagens a ser analisadas com mais informação, e menor porcentagem de metros por pixel
 que leva a ter um erro mais controlado, conforme
 mostrado nos testes. 
 
 A Figura \ref{fig:res_grapha_bv} representa a velocidade dos dados apresentados 
 na Figura \ref{fig:res_grapha_b}, calculados para $d_0=1$ e $\Delta t=1$.
-Assim, a velocidade do fator $\beta$ (ver línea com círculos) é ajustada por um polinômio
-normalizado (ver línea com pontos), segundo o percurso real do objeto (ver línea com quadrados).
-A velocidade relativa do objeto foi calculado usando a derivada
+Assim, a velocidade do fator $\beta$ (ver linha com círculos) é ajustada por um polinômio
+normalizado (ver linha com pontos), segundo o percurso real do objeto (ver linha com quadrados).
+A velocidade relativa do objeto foi calculada usando a derivada
 discreta, sendo que os valores negativos indica que o objeto está
 em direção ao observador.
 

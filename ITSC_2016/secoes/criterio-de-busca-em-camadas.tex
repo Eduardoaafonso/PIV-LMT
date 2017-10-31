@@ -110,22 +110,23 @@ All the procedure of this function can be seen detailed in the Algorithm \ref{al
 
 O critério de busca do objeto de interesse está baseada na técnica $PIV$; 
 consequentemente, é necessário definir alguns parâmetros para executar  
-este algoritmo. Assim nos temos, a região de interesse ou $ROI$ 
+este algoritmo. Deste modo, dois parâmetros são considerados sendo: 
+o primeiro a região de interesse ou $ROI$ 
  que é a região ou porção da imagem que contém
-o objeto de interesse, também precisamos uma janela de busca ou $WOS$
+o objeto de interesse e, o segundo, a janela de busca ou $WOS$
 que é a região onde serão analisadas regiões para identificar a $ROI$. 
-Na técnica $PIV$ tradicional, quando é analisada uma imagen, 
+Na técnica $PIV$ tradicional, quando é analisada uma imagem, 
 a posição do objeto de interesse na imagem é obtida a partir 
-da posição da região analises na imagem com o valor de $CCP$ mais próximo de $1.0$,
+da posição da região análise na imagem com o valor de $CCP$ mais próximo de $1.0$,
 quando comparada com a $ROI$. 
-Essa análise consiste na divisão da $WOS$ em regiões de analises que sejam do tamanho da $ROI$, pois o $CCP$
+Essa análise consiste na divisão da $WOS$ em regiões que sejam do tamanho da $ROI$, pois o $CCP$
 compara imagens do mesmo tamanho.
 
 A Figura \ref{fig:multires}(a) mostra a aplicação da técnica $PIV$ (tradicional)
-para duas dimensões, onde as regiões de analises na $WOS$
+para duas dimensões, onde as regiões de análises na $WOS$
 são comparadas com a $ROI$. 
 A Figura \ref{fig:multires}(b) representa uma aplicação em 3 dimensões da técnica $PIV$. 
-Neste ponto, inclui-se camadas, estas consistem na diminuição e aumento da regiões de analises os quais 
+Neste ponto, inclui-se camadas, estas consistem na diminuição e aumento da regiões de análises os quais 
 contemplam casos de afastamento e aproximação do objeto, respectivamente.
 
 \begin{figure}[H]
@@ -175,7 +176,7 @@ $AR$: Region in $I_i$, at point $P_{max}$, with size $\alpha_{max} W$ by $\alpha
 \label{alg:multires}
 \end{algorithm}
 O algoritmo \ref{alg:multires} usa internamente a função $get\_corr\_matrix()$,
-esta função tem como saída uma matriz com os valores da correlação da $ROI$ e as regiões de analises na $WOS$
+esta função tem como saída uma matriz com os valores da correlação da $ROI$ e as regiões de análises na $WOS$
 em torno ao ponto $P_{i-1}$. Todos os processos da função $get\_corr\_matrix()$ são detalhados no algoritmo
 \ref{alg:multires2},
 \begin{algorithm}

@@ -72,7 +72,7 @@ Finally, in all cases, the position $s_i$ is relative to the observer (a moving 
 \subsubsection{Interpretação da busca em camadas - 3D}
 
 Para compreender o método de busca em camadas é necessário analisar a projeção do objeto 
-no plano da imagem para diferentes distancias do objeto com respeito ao observador, 
+no plano da imagem para diferentes distâncias do objeto com respeito ao observador, 
 como mostrado na Figura \ref{fig:multiscale3d}.
 \begin{figure}[H]
 \centering
@@ -80,8 +80,8 @@ como mostrado na Figura \ref{fig:multiscale3d}.
   \caption{ Acompanhamento do objeto em camadas.}
   \label{fig:multiscale3d}
 \end{figure}
-Na Figura \ref{fig:multiscale3d} temos um mesmo objeto visto em dois instantes diferentes pelo observador,
-estando este objeto a uma distancia $d$ e $\alpha d$, respectivamente em azul e vermelho, sendo que
+Na Figura \ref{fig:multiscale3d} há um mesmo objeto visto em dois instantes diferentes pelo observador,
+estando este objeto a uma distância $d$ e $\alpha d$, respectivamente em azul e vermelho, sendo que
 o plano da imagem está localizada a uma distância $h$ do observador. As projeções dos objetos no plano da imagem
  são representados por $L_b$ e $L_r$, azul e vermelho respectivamente. 
  Analisando os triângulos formados pelas projeções dos objetos e o ponto de observação, 
@@ -91,13 +91,13 @@ Assim, partindo do ponto de vista do observador, quando o objeto estava localiza
 $t_0$ e moveu-se para a distância $\alpha d$ no tempo $t_1$, o tamanho da projeção do objeto no plano da imagem 
 foi alterado por um fator de 1/$\alpha$, e consequentemente, a área foi alterada por um fator 1/$\alpha^2$.
 
-Conhecida a relação de $\alpha$ com a distancia entre o objeto e o observador; 
+Conhecida a relação de $\alpha$ com a distância entre o objeto e o observador; 
 o critério de busca em $3D$, do objeto de interesse, usa um conjunto de valores 
 discretos de $\alpha$ para determinar a profundidade do objeto na cena, 
-consequentemente se o objeto de interesse estiver localizado num ponto intermédio dos valores
+consequentemente se o objeto de interesse estiver localizado num ponto intermediário dos valores
 de $\alpha$ selecionados, o algoritmo aproxima a posição do objeto 
 usando o valor de $\alpha$ mais próximo; assim, são usados valores $\alpha<1$
-para procurar objetos mais próximos que a posição $d_{ROI}$ e  $\alpha>1$ para mais distantes.
+para procurar objetos mais próximos que a posição $d_{ROI}$ e $\alpha>1$ para mais distantes.
 
 
 
