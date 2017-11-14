@@ -17,7 +17,8 @@ the $WOS$ of a current frame; the result of this process is a displacement which
 \end{figure}
 
 \end{comment}
-A proposta do algoritmo se baseia em um sistema de seguimento em três dimensões, que gera informações
+A proposta do algoritmo se baseia em um sistema de rastreamento de objetos 
+em três dimensões, gerando informações
 da posição do objeto de interesse; com esta informação é calculada a velocidade,
 sendo esta relativa ao observador.
 
@@ -28,7 +29,7 @@ e salvará as posições do objeto de interesse em cada imagem.
 
 \begin{figure}[h]
 \includegraphics[width=\columnwidth]{images/figure1-diagram1.eps}
-\caption{Proposta de algoritmo para rastreamento de objetos baseado no PIV}
+\caption{Proposta de algoritmo para rastreamento de objetos baseado no PIV.}
 \label{fig:system}
 \end{figure}
 
@@ -56,11 +57,12 @@ distância do observador; dando assim uma perspetiva
 da posição do objeto em 2D, $(x, y)$, sendo $x$ e $y$ as posições 
 horizontal e vertical em pixels, respectivamente. Para analisar o objeto de interesse em 
 3D, uma componente a mais é incluída, de modo que a posição do objeto esteja representada
-por o ponto $(x, y, d)$, onde $d$ representa a profundidade 
+pelo ponto $(x, y, d)$, onde $d$ representa a profundidade 
 do objeto na imagem (distância entre o objeto e o observador), 
 dado que para todos os cálculos o valor de profundidade
-será expressado em função da posição inicial ($d_0$) do objeto de interesse na primeira imagem,
-para fins práticos, este valor será normalizado a $d_0=1.0$.
+será apresentado em função da posição inicial ($d_0$) 
+do objeto de interesse na primeira imagem.
+Para fins práticos, este valor será normalizado a $d_0=1.0$.
 A partir
 deste valor, será possível mensurar a velocidade e um fator de aproximação $\beta$ do objeto
 de forma relativa à posição inicial $d_0$; de modo que valores de $d=\beta d_0$

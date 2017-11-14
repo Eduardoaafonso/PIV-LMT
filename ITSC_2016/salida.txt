@@ -101,27 +101,31 @@ subscribe by emailing sympa@lirmm.fr with 'subscribe <list> <firstname name>'
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omlztmcm.fd)
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omsztmcm.fd)
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omxztmcm.fd)
-Underfull \hbox (badness 3884) in paragraph at lines 50--50
-[][][]\OT1/ptm/m/n/8 Contact authors:$[]$  ed-uardo.afonso@engautomacao.ufla.br
-, $[]$  fer-
+Underfull \hbox (badness 10000) in paragraph at lines 52--52
+[][][]\OT1/ptm/m/n/8 Contact au-thors: ed-uardo.afonso@engautomacao.ufla.br, fe
+r-
 (./secoes/abst.tex) (./secoes/introducao.tex) (./secoes/pcc.tex)
 (./secoes/piv.tex [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
 <images/explanationPIV-eps-converted-to.pdf, id=16, 862.22125pt x 493.845pt>
 <use images/explanationPIV-eps-converted-to.pdf>
 <images/WOSdivided-eps-converted-to.pdf, id=17, 244.915pt x 152.57pt>
-<use images/WOSdivided-eps-converted-to.pdf>) (./secoes/descricaoSist.tex
-Underfull \vbox (badness 1097) has occurred while \output is active
+<use images/WOSdivided-eps-converted-to.pdf>)
+Underfull \vbox (badness 10000) has occurred while \output is active
+(./secoes/descricaoSist.tex
+Underfull \hbox (badness 1389) in paragraph at lines 20--24
+[]\OT1/ptm/m/n/10 A pro-posta do al-go-ritmo se ba-seia em um sis-tema
+
 <images/figure1-diagram1-eps-converted-to.pdf, id=18, 1378.14874pt x 583.17876p
-t> <use images/figure1-diagram1-eps-converted-to.pdf>)
-(./secoes/controleErro.tex [2 <./images/explanationPIV-eps-converted-to.pdf> <.
-/images/WOSdivided-eps-converted-to.pdf> <./images/figure1-diagram1-eps-convert
-ed-to.pdf>]
+t> <use images/figure1-diagram1-eps-converted-to.pdf> [2 <./images/explanationP
+IV-eps-converted-to.pdf> <./images/WOSdivided-eps-converted-to.pdf> <./images/f
+igure1-diagram1-eps-converted-to.pdf>]) (./secoes/controleErro.tex
 <images/imageError-eps-converted-to.pdf, id=30, 913.4125pt x 686.565pt>
 <use images/imageError-eps-converted-to.pdf>
+Underfull \vbox (badness 10000) has occurred while \output is active
 <images/imageErrorcontroled-eps-converted-to.pdf, id=31, 487.8225pt x 367.3725p
-t> <use images/imageErrorcontroled-eps-converted-to.pdf>)
-(./secoes/criterio-de-busca-em-camadas.tex [3 <./images/imageError-eps-converte
-d-to.pdf> <./images/imageErrorcontroled-eps-converted-to.pdf>]
+t> <use images/imageErrorcontroled-eps-converted-to.pdf> [3 <./images/imageErro
+r-eps-converted-to.pdf> <./images/imageErrorcontroled-eps-converted-to.pdf>])
+(./secoes/criterio-de-busca-em-camadas.tex
 <images/figure2a-eps-converted-to.pdf, id=41, 302.12875pt x 231.86626pt>
 <use images/figure2a-eps-converted-to.pdf>
 <images/figure2b-eps-converted-to.pdf, id=42, 302.12875pt x 231.86626pt>
@@ -140,8 +144,7 @@ Underfull \hbox (badness 6961) in paragraph at lines 142--68
 \OT1/ptm/m/n/10 Figura 6[](b), o qual est[]a rep-re-sen-tado pela fun[][]ao
 <images/Diagrama3-eps-converted-to.pdf, id=43, 942.52126pt x 821.0675pt>
 <use images/Diagrama3-eps-converted-to.pdf> [4 <./images/figure2a-eps-converted
--to.pdf> <./images/figure2b-eps-converted-to.pdf> <./images/Diagrama3-eps-conve
-rted-to.pdf>]
+-to.pdf> <./images/figure2b-eps-converted-to.pdf>]
 
 LaTeX Warning: Command \' invalid in math mode on input line 131.
 
@@ -188,13 +191,13 @@ l.138 (observador) e o alvo no instante $i-é
                                              sima$ será referenciada para $...
 
 ) (./secoes/novoroi.tex
-<images/figure3-eps-converted-to.pdf, id=55, 1318.9275pt x 244.915pt>
+<images/figure3-eps-converted-to.pdf, id=53, 1318.9275pt x 244.915pt>
 <use images/figure3-eps-converted-to.pdf>) (./secoes/resultados2D.tex
-<images/results_2D.png, id=56, 171.64125pt x 128.48pt>
+<images/results_2D.png, id=54, 171.64125pt x 128.48pt>
 <use images/results_2D.png>
-<images/results_2D-eps-converted-to.pdf, id=57, 449.68pt x 336.25626pt>
-<use images/results_2D-eps-converted-to.pdf> [5 <./images/figure3-eps-converted
--to.pdf>]) (./secoes/resultados3D.tex
+<images/results_2D-eps-converted-to.pdf, id=55, 449.68pt x 336.25626pt>
+<use images/results_2D-eps-converted-to.pdf> [5 <./images/Diagrama3-eps-convert
+ed-to.pdf> <./images/figure3-eps-converted-to.pdf>]) (./secoes/resultados3D.tex
 <images/figurea-eps-converted-to.pdf, id=63, 486.81876pt x 366.36874pt>
 <use images/figurea-eps-converted-to.pdf>
 <images/figureb-eps-converted-to.pdf, id=64, 486.81876pt x 366.36874pt>
@@ -206,8 +209,40 @@ to.pdf> <./images/figureb-eps-converted-to.pdf> <./images/grapha_b-eps-converte
 d-to.pdf>]
 <images/graphvelocity-eps-converted-to.pdf, id=83, 508.90125pt x 394.47375pt>
 <use images/graphvelocity-eps-converted-to.pdf>) (./secoes/conclusao.tex)
-Underfull \vbox (badness 10000) has occurred while \output is active
 (./secoes/agradecimento.tex)
+Underfull \hbox (badness 10000) in paragraph at lines 141--142
+
+[7 <./images/graphvelocity-eps-converted-to.pdf>]
+
+LaTeX Warning: File `images/Eduardo.jpg' not found on input line 142.
+
+
+! Package pdftex.def Error: File `images/Eduardo.jpg' not found.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.142 ...s/Eduardo.jpg}}]{Eduardo da Silva Afonso}
+                                                  
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pcr.fd)
+
+LaTeX Warning: File `images/Eduardo.jpg' not found on input line 142.
+
+
+! Package pdftex.def Error: File `images/Eduardo.jpg' not found.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.142 ...s/Eduardo.jpg}}]{Eduardo da Silva Afonso}
+                                                  
+<images/Arthur-eps-converted-to.pdf, id=93, 1936.23375pt x 1922.18124pt>
+<use images/Arthur-eps-converted-to.pdf>
+<use images/Arthur-eps-converted-to.pdf>
+<images/Fernando.jpg, id=96, 1182.4175pt x 788.9475pt>
+<use images/Fernando.jpg> <use images/Fernando.jpg>
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -219,17 +254,18 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the US letter (8.5in X 11in) paper size.
 
-[7 <./images/graphvelocity-eps-converted-to.pdf>]
+[8 <./images/Arthur-eps-converted-to.pdf> <./images/Fernando.jpg>]
 (./Artigo-versao-portugues.aux) )
 (see the transcript file for additional information){/usr/share/texlive/texmf-d
 ist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/publ
 ic/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
 fonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
 cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy
-10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/sha
-re/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/texlive/texmf
--dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/typ
-e1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/u
-tmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Artigo-versao-portugues.pdf (7 pages, 398861 bytes).
+10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/
+share/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/texlive/te
+xmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/texlive/texmf-dist/fonts/t
+ype1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/
+utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></u
+sr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on Artigo-versao-portugues.pdf (8 pages, 1219308 bytes).
 Transcript written on Artigo-versao-portugues.log.
