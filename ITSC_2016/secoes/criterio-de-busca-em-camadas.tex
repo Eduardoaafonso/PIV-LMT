@@ -110,36 +110,38 @@ All the procedure of this function can be seen detailed in the Algorithm \ref{al
 
 O critério de busca do objeto de interesse está baseada na técnica $PIV$; 
 consequentemente, é necessário definir alguns parâmetros para executar  
-este algoritmo. Deste modo, dois parâmetros são considerados sendo: 
-o primeiro a região de interesse ou $ROI$ 
+este algoritmo. Deste modo, dois parâmetros são considerados, sendo: 
+o primeiro, a região de interesse ou $ROI$ 
  que é a região ou porção da imagem que contém
-o objeto de interesse e, o segundo, a janela de busca ou $WOS$
+o objeto de interesse; e o segundo a janela de busca ou $WOS$,
 que é a região onde serão analisadas regiões para identificar a $ROI$. 
-Na técnica $PIV$ tradicional, quando é analisada uma imagem, 
+Na técnica $PIV$ em duas dimensões, quando é analisada uma imagem, 
 a posição do objeto de interesse na imagem é obtida a partir 
-da posição da região de análise, na imagem, com o valor de $CCP$ mais próximo de $1.0$,
+da posição da região de análise 
+com o valor de $CCP$ mais próximo de $1$ (um) na imagem,
 quando comparada com a $ROI$. 
-Essa análise consiste na divisão da $WOS$ em regiões que sejam do tamanho da $ROI$, pois o $CCP$
-compara imagens do mesmo tamanho.
+Essa análise consiste na divisão da $WOS$ em regiões que sejam do tamanho da $ROI$, tendo em vista que o $CCP$
+compara imagens de mesmo tamanho.
 
 A Figura \ref{fig:multires}(a) mostra a aplicação da técnica $PIV$ (tradicional)
 para duas dimensões, onde as regiões de análises na $WOS$
 são comparadas com a $ROI$. 
 A Figura \ref{fig:multires}(b) representa uma aplicação em 3 dimensões da técnica $PIV$. 
-Neste ponto, inclui-se camadas, estas consistem na diminuição e aumento da regiões de análises os quais 
-contemplam casos de afastamento e aproximação do objeto, respectivamente.
+Neste caso, a estratégia utilizada baseou-se na inclusão de diferentes áreas de buscas, 
+representadas por camadas, representadas por meio da  diminuição e aumento da regiões de análise
+nos quais podem contemplar casos em que o objeto de interesse possa estar se afastando ou se aproximando do observador.
 
 \begin{figure}[H]
 \centering
   \subfloat[]{\label{subfig:(a)} \includegraphics[width=.5\columnwidth]{images/figure2a.eps}}
   \subfloat[]{\label{subfig:(b)} \includegraphics[width=.5\columnwidth]{images/figure2b.eps}}
-  \caption{Os retângulos vermelhos mostram as regiões analisadas e o retângulo preto representa a $WOS$. 
-  (a) As regiões de analises da $WOS$ são comparadas com a $ROI$ em uma única camada. 
-  (b) As regiões de analises da $WOS$ são comparadas com a $ROI$ em diferentes escalas é dizer múltiplas camadas.}
+  \caption{Os retângulos vermelhos representam as regiões analisadas e o retângulo preto representa a $WOS$. 
+  (a) As regiões de analise da $WOS$ são comparadas com a $ROI$ em uma única camada. 
+  (b) As regiões de analise da $WOS$ são comparadas com a $ROI$ em diferentes escalas, neste caso, por meio de múltiplas camadas.}
   \label{fig:multires}
 \end{figure}
 
-O algoritmo \ref{alg:multires} descreve o método usado na Figura \ref{fig:multires}(b), o qual
+O algoritmo \ref{alg:multires} descreve o método proposto na Figura \ref{fig:multires}(b), o qual
 está representado pela função $multiscale\_match\_criterion()$ no algoritmo \ref{alg:system}.
 \begin{algorithm}
  \KwData{ $ROI$, posição $P_{i-1}$ do objeto de interesse na imagem $I_{i-1}$ e a imagem $I_i$. }
@@ -175,15 +177,16 @@ $AR$: Region in $I_i$, at point $P_{max}$, with size $\alpha_{max} W$ by $\alpha
 \caption{$multiscale\_match\_criterion(ROI,P_{i-1},I_i)$ function.}
 \label{alg:multires}
 \end{algorithm}
-O algoritmo \ref{alg:multires} usa internamente a função $get\_corr\_matrix()$,
-esta função tem como saída uma matriz com os valores da correlação da $ROI$ e as regiões de análises na $WOS$
-em torno ao ponto $P_{i-1}$. Todos os processos da função $get\_corr\_matrix()$ são detalhados no algoritmo
+O algoritmo \ref{alg:multires} usa internamente a função $get\_corr\_matrix()$.
+Esta função tem como saída uma matriz com os valores de correlação entre a $ROI$ e as regiões de análise na $WOS$
+em torno do ponto $P_{i-1}$. Todos os processos envolvidos na função $get\_corr\_matrix()$ são detalhados no algoritmo
 \ref{alg:multires2},
 \begin{algorithm}
  \KwData{$ROI$, posição $P_{i-1}$ sendo este o centro da $WOS$, 
- fator de aproximação $\alpha$ relativa à distancia $d_{ROI}$, braço de busca 
- $L$ e a imagem $I_i$. }
- \KwResult{A matriz de correlação $A$, da regiões ao redor do ponto $P_{i-1}$ da imagem $I_i$. }
+ fator de aproximação $\alpha$ relativa à distância $d_{ROI}$, o valor $L$ que representa a distância do braço de busca 
+ e a imagem $I_i$. }
+ \KwResult{A matriz de correlação $A$, com o resultado de calcula o $CCP$ com as 
+regiões de analise selecionadas ao redor do ponto $P_{i-1}$ na imagem $I_i$. }
  ~\\
  $W$: Width of $ROI$\;
  $H$: Height of $ROI$\;

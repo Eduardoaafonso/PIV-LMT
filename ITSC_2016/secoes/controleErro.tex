@@ -16,11 +16,11 @@ considered like error areas.
 
 Nesta seção, é discutido o tratamento do erro produzido pela variação da forma do objeto de interesse dentro de uma
 $ROI$ de forma retangular. É fácil perceber que algumas áreas próximas da borda não são ocupadas pelo objeto de interesse;
-assim, elas são consideradas áreas geradoras de erro, ver Figura. \ref{fig:erroridentified}.
+assim, elas são consideradas áreas geradoras de erro, como foi apresentado na Figura \ref{fig:erroridentified}.
 
 \begin{figure}[H]
 \includegraphics[width=\columnwidth]{images/imageError.eps}
-\caption{Áreas geradoras de erro nas bordas da $ROI$.}
+\caption{Áreas geradoras de erro nas bordas da Região de Interesse (ROI).}
 \label{fig:erroridentified}
 \end{figure}
 
@@ -42,11 +42,10 @@ points close of center of image (in red color) probably are on the target, and c
 these points are considered with more importance.
 \end{comment}
 
-O método CCP compara duas imagens (matrizes) do mesmo tamanho, 
+O método CCP compara duas imagens (matrizes) de mesmo tamanho, 
 ponderando cada $pixel$ com o mesmo peso sem importar a posição; 
-consequentemente, o valor da correlação se vê reduzido visto que existem áreas 
-geradoras erro sendo usadas na comparação,
-podendo assim dar uma falsa impressão de objeto perdido. 
+consequentemente, o valor da correlação é influenciado pelas áreas 
+geradoras erro.
 Uma matriz de ponderação foi proposta para solucionar esse problema, como ilustrado na 
 Figura \ref{fig:errorpondered}, sendo
 ela usada antes do cálculo do $CCP$.
@@ -88,10 +87,10 @@ foi calculado $Q(x,y)$ como representado na Equação (\ref{eq:Q}),
 \end{equation}
 onde $Q(x,y)$ é um valor na linha $x$, coluna $y$,
 $\mu_X=H/2$, $\mu_Y=W/2$, $\sigma_X=H/3$ e $\sigma_Y=W/3$; sendo $H$ e $W$
-a altura e a largura, respectivamente, da região de análise.
+são a altura e a largura, respectivamente, da região de análise.
 
 Finalmente, pode ser usada a Equação (\ref{eq:CCP}), multiplicando a matriz $Q$ pelas 
-regiões analisadas $A$ e $B$ afim de obter $r_Q$, o coeficiente ponderado de correlação de Pearson,
+regiões analisadas $A$ e $B$ a fim de obter $r_Q$, o coeficiente ponderado de correlação de Pearson,
 \begin{equation}\label{eq:rw}
  r_Q = CCP(Q~A, Q~B).
 \end{equation}

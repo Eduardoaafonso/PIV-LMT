@@ -69,32 +69,32 @@ Finally, in all cases, the position $s_i$ is relative to the observer (a moving 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%portugues%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-\subsubsection{Interpretação da busca em camadas - 3D}
+\subsubsection{Interpretação da busca em camadas - 3 dimensões}
 
-Para compreender o método de busca em camadas é necessário analisar a projeção do objeto 
-no plano da imagem para diferentes distâncias do objeto com respeito ao observador, 
-como mostrado na Figura \ref{fig:multiscale3d}.
+Para compreender o método de busca em camadas é necessário analisar a projeção do objeto de interesse
+no plano da imagem para diferentes distâncias do mesmo com respeito ao observador, 
+como apresentado na Figura \ref{fig:multiscale3d}.
 \begin{figure}[H]
 \centering
   \includegraphics[width=.7\columnwidth]{images/Diagrama3.eps}
   \caption{ Acompanhamento do objeto em camadas.}
   \label{fig:multiscale3d}
 \end{figure}
-Na Figura \ref{fig:multiscale3d} há um mesmo objeto visto em dois instantes diferentes pelo observador,
+Na Figura \ref{fig:multiscale3d} existe um mesmo objeto visto em dois instantes diferentes pelo observador,
 estando este objeto a uma distância $d$ e $\alpha d$, respectivamente em azul e vermelho, sendo que
 o plano da imagem está localizada a uma distância $h$ do observador. As projeções dos objetos no plano da imagem
- são representados por $L_b$ e $L_r$, azul e vermelho respectivamente. 
+ são representados por $L_b$ e $L_r$, azul e vermelho, respectivamente. 
  Analisando os triângulos formados pelas projeções dos objetos e o ponto de observação, 
  é possível notar que $\frac{h}{d}=\frac{L_b}{L}$ e $\frac{h}{\alpha d}=\frac{L_r}{L}$, logo 
 $L_b/\alpha= L_r$. 
-Assim, partindo do ponto de vista do observador, quando o objeto estava localizado a uma distância $d$ no tempo
-$t_0$ e moveu-se para a distância $\alpha d$ no tempo $t_1$, o tamanho da projeção do objeto no plano da imagem 
+Assim, partindo do ponto de vista do observador, quando o objeto de interesse está localizado a uma distância $d$ no tempo
+$t_0$ e se move para a distância $\alpha d$ no tempo $t_1$, o tamanho da projeção do objeto no plano da imagem 
 foi alterado por um fator de 1/$\alpha$, e consequentemente, a área foi alterada por um fator 1/$\alpha^2$.
 
 Conhecida a relação de $\alpha$ com a distância entre o objeto e o observador; 
-o critério de busca em $3D$, do objeto de interesse, usa um conjunto de valores 
+o critério de busca, do objeto de interesse usa um conjunto de valores 
 discretos de $\alpha$ para determinar a profundidade do objeto na cena, 
-consequentemente se o objeto de interesse estiver localizado num ponto intermediário dos valores
+consequentemente, se o objeto de interesse estiver localizado num ponto intermediário dos valores
 de $\alpha$ selecionados, o algoritmo aproxima a posição do objeto 
 usando o valor de $\alpha$ mais próximo; assim, são usados valores $\alpha<1$
 para procurar objetos mais próximos que a posição $d_{ROI}$ e $\alpha>1$ para mais distantes.
@@ -120,9 +120,9 @@ terá o seu próprio  valor $d_i$, onde $d_i=\alpha_i d_{ROI}$, sendo que o valo
 
 O fator de aproximação $\alpha_i$, relativo à $ROI$, tem 
 dois significados: se o fator de aproximação cresce rapidamente 
-significa que o objeto está se afastando e se o fator decresce o objeto está se aproximando.
+significa que o objeto está se afastando, e se o fator decresce o objeto está se aproximando.
 Da mesma forma, é possível definir $\beta_i$ como o fator de aproximação relativo
-a distancia inicial $d_0$, de modo que $d_i=\beta_i d_0$.
+a distância inicial $d_0$, de modo que $d_i=\beta_i d_0$.
 
 Por outro lado, a velocidade relativa é definida pela equação da cinemática em física,
 \begin{equation}
@@ -135,7 +135,7 @@ Adicionalmente, o fator da velocidade de aproximação, $v^d_i=(d_i-d_{i-1})/{\D
 responsável pela profundidade no vetor $v_i$.
 
 O valor $v^d_i$ calculado é relativo, pelo simples motivo de que a distância (profundidade) entre a câmara 
-(observador) e o alvo no instante $i-ésima$ será referenciada para $d_0$. 
+(observador) e o alvo (objeto de interesse) no instante $i-ésima$ será referenciada para $d_0$. 
 Finalmente, em todos os casos, a posição é 
 relativa ao observador (um sistema de referência móvel).
 

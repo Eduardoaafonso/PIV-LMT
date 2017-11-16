@@ -77,6 +77,7 @@ Package fixltx2e Warning: fixltx2e is not required with releases after 2015
 (/usr/share/texlive/texmf-dist/tex/latex/base/t1enc.dfu)
 (/usr/share/texlive/texmf-dist/tex/latex/base/ot1enc.dfu)
 (/usr/share/texlive/texmf-dist/tex/latex/base/omsenc.dfu)))
+(/usr/share/texlive/texmf-dist/tex/latex/hyphenat/hyphenat.sty)
 (/usr/share/texlive/texmf-dist/tex/latex/algorithm2e/algorithm2e.sty
 (/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty)
 (/usr/share/texlive/texmf-dist/tex/latex/tools/xspace.sty)
@@ -101,13 +102,14 @@ subscribe by emailing sympa@lirmm.fr with 'subscribe <list> <firstname name>'
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omlztmcm.fd)
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omsztmcm.fd)
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omxztmcm.fd)
-Underfull \hbox (badness 10000) in paragraph at lines 52--52
+Underfull \hbox (badness 10000) in paragraph at lines 58--58
 [][][]\OT1/ptm/m/n/8 Contact au-thors: ed-uardo.afonso@engautomacao.ufla.br, fe
 r-
 (./secoes/abst.tex) (./secoes/introducao.tex) (./secoes/pcc.tex)
-(./secoes/piv.tex [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-<images/explanationPIV-eps-converted-to.pdf, id=16, 862.22125pt x 493.845pt>
-<use images/explanationPIV-eps-converted-to.pdf>
+(./secoes/piv.tex
+<images/explanationPIV-eps-converted-to.pdf, id=1, 862.22125pt x 493.845pt>
+<use images/explanationPIV-eps-converted-to.pdf> [1{/var/lib/texmf/fonts/map/pd
+ftex/updmap/pdftex.map}]
 <images/WOSdivided-eps-converted-to.pdf, id=17, 244.915pt x 152.57pt>
 <use images/WOSdivided-eps-converted-to.pdf>)
 Underfull \vbox (badness 10000) has occurred while \output is active
@@ -130,21 +132,24 @@ r-eps-converted-to.pdf> <./images/imageErrorcontroled-eps-converted-to.pdf>])
 <use images/figure2a-eps-converted-to.pdf>
 <images/figure2b-eps-converted-to.pdf, id=42, 302.12875pt x 231.86626pt>
 <use images/figure2b-eps-converted-to.pdf>
-Overfull \hbox (7.00012pt too wide) in paragraph at lines 134--138
+Overfull \hbox (7.00012pt too wide) in paragraph at lines 136--140
  [][][] 
 
-Underfull \hbox (badness 10000) in paragraph at lines 175--175
+Underfull \hbox (badness 10000) in paragraph at lines 177--177
 []\OT1/ptm/b/n/10 Algorithm 2: $\OML/ztmcm/m/it/10 multiscale[]match[]criterion
 \OT1/ztmcm/m/n/10 (\OML/ztmcm/m/it/10 ROI; P[]; I[]\OT1/ztmcm/m/n/10 )$
 ) (./secoes/abordagem-3D.tex
-Underfull \hbox (badness 10000) in paragraph at lines 142--68
-[]\OT1/ptm/m/n/10 O al-go-ritmo 2[] de-screve o m[]etodo us-ado na
+Underfull \hbox (badness 10000) in paragraph at lines 144--68
+[]\OT1/ptm/m/n/10 O al-go-ritmo 2[] de-screve o m[]etodo pro-posto na
 
-Underfull \hbox (badness 6961) in paragraph at lines 142--68
+Underfull \hbox (badness 6961) in paragraph at lines 144--68
 \OT1/ptm/m/n/10 Figura 6[](b), o qual est[]a rep-re-sen-tado pela fun[][]ao
 <images/Diagrama3-eps-converted-to.pdf, id=43, 942.52126pt x 821.0675pt>
-<use images/Diagrama3-eps-converted-to.pdf> [4 <./images/figure2a-eps-converted
--to.pdf> <./images/figure2b-eps-converted-to.pdf>]
+<use images/Diagrama3-eps-converted-to.pdf>
+Underfull \hbox (badness 1527) in paragraph at lines 74--82
+[][] \OT1/ptm/m/n/10 Para com-preen-der o m[]etodo de busca em ca-madas []e
+[4 <./images/figure2a-eps-converted-to.pdf> <./images/figure2b-eps-converted-to
+.pdf> <./images/Diagrama3-eps-converted-to.pdf>]
 
 LaTeX Warning: Command \' invalid in math mode on input line 131.
 
@@ -181,23 +186,23 @@ LaTeX Warning: Command \' invalid in math mode on input line 138.
 ! Please use \mathaccent for accents in math mode.
 \add@accent ...@spacefactor \spacefactor }\accent 
                                                   #1 #2\egroup \spacefactor ...
-l.138 (observador) e o alvo no instante $i-é
-                                             sima$ será referenciada para $...
+l.138 ...o (objeto de interesse) no instante $i-é
+                                                  sima$ será referenciada p...
 
 ! You can't use `\spacefactor' in math mode.
 \add@accent ...}\accent #1 #2\egroup \spacefactor 
                                                   \accent@spacefactor 
-l.138 (observador) e o alvo no instante $i-é
-                                             sima$ será referenciada para $...
+l.138 ...o (objeto de interesse) no instante $i-é
+                                                  sima$ será referenciada p...
 
 ) (./secoes/novoroi.tex
-<images/figure3-eps-converted-to.pdf, id=53, 1318.9275pt x 244.915pt>
+<images/figure3-eps-converted-to.pdf, id=55, 1318.9275pt x 244.915pt>
 <use images/figure3-eps-converted-to.pdf>) (./secoes/resultados2D.tex
-<images/results_2D.png, id=54, 171.64125pt x 128.48pt>
+<images/results_2D.png, id=56, 171.64125pt x 128.48pt>
 <use images/results_2D.png>
-<images/results_2D-eps-converted-to.pdf, id=55, 449.68pt x 336.25626pt>
-<use images/results_2D-eps-converted-to.pdf> [5 <./images/Diagrama3-eps-convert
-ed-to.pdf> <./images/figure3-eps-converted-to.pdf>]) (./secoes/resultados3D.tex
+<images/results_2D-eps-converted-to.pdf, id=57, 449.68pt x 336.25626pt>
+<use images/results_2D-eps-converted-to.pdf> [5 <./images/figure3-eps-converted
+-to.pdf>]) (./secoes/resultados3D.tex
 <images/figurea-eps-converted-to.pdf, id=63, 486.81876pt x 366.36874pt>
 <use images/figurea-eps-converted-to.pdf>
 <images/figureb-eps-converted-to.pdf, id=64, 486.81876pt x 366.36874pt>
@@ -209,12 +214,11 @@ to.pdf> <./images/figureb-eps-converted-to.pdf> <./images/grapha_b-eps-converte
 d-to.pdf>]
 <images/graphvelocity-eps-converted-to.pdf, id=83, 508.90125pt x 394.47375pt>
 <use images/graphvelocity-eps-converted-to.pdf>) (./secoes/conclusao.tex)
-(./secoes/agradecimento.tex)
-Underfull \hbox (badness 10000) in paragraph at lines 141--142
+(./secoes/agradecimento.tex) [7 <./images/graphvelocity-eps-converted-to.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 147--148
 
-[7 <./images/graphvelocity-eps-converted-to.pdf>]
 
-LaTeX Warning: File `images/Eduardo.jpg' not found on input line 142.
+LaTeX Warning: File `images/Eduardo.jpg' not found on input line 148.
 
 
 ! Package pdftex.def Error: File `images/Eduardo.jpg' not found.
@@ -223,11 +227,11 @@ See the pdftex.def package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.142 ...s/Eduardo.jpg}}]{Eduardo da Silva Afonso}
+l.148 ...s/Eduardo.jpg}}]{Eduardo da Silva Afonso}
                                                   
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pcr.fd)
 
-LaTeX Warning: File `images/Eduardo.jpg' not found on input line 142.
+LaTeX Warning: File `images/Eduardo.jpg' not found on input line 148.
 
 
 ! Package pdftex.def Error: File `images/Eduardo.jpg' not found.
@@ -236,7 +240,7 @@ See the pdftex.def package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.142 ...s/Eduardo.jpg}}]{Eduardo da Silva Afonso}
+l.148 ...s/Eduardo.jpg}}]{Eduardo da Silva Afonso}
                                                   
 <images/Arthur-eps-converted-to.pdf, id=93, 1936.23375pt x 1922.18124pt>
 <use images/Arthur-eps-converted-to.pdf>
@@ -267,5 +271,5 @@ xmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/texlive/texmf-dist/fonts/t
 ype1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/
 utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></u
 sr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Artigo-versao-portugues.pdf (8 pages, 1219308 bytes).
+Output written on Artigo-versao-portugues.pdf (8 pages, 1220118 bytes).
 Transcript written on Artigo-versao-portugues.log.

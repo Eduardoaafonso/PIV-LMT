@@ -63,26 +63,27 @@ it is used by the Algorithm \ref{alg:system} of Fig. \ref{fig:system}.
 
 
 
-\subsection{Critério para uma nova ROI}
+\subsection{Critério para seleção de uma nova ROI}
 
-A $ROI$ é um importante elemento dentro algoritmo, pois ela é a referência da
+A $ROI$ é um importante elemento no algoritmo proposto, pois ela é a referência da
 forma atual do objeto de interesse que será comparado com as imagens posteriores.
 O critério para atualizar a $ROI$ é determinado a partir da máxima correlação 
 com as regiões de análise, sendo que, se este valor estiver entre $0,8$ 
 e $0,925$ a $ROI$ será atualizada.
 
-Deste modo, foi adotado que o limite inferior para um valor de $CCP$ válido é de $0,8$ \cite{Eugene}. Para valores
-de $CCP$ abaixo deste, o objeto é tido como perdido, como mostrado na Figura
-\ref{fig:newroicri}.
-Finalmente, é importante notar que, se a $ROI$ for alterado, a nova $ROI$ terá 
+Deste modo, foi adotado que o limite inferior para um valor de $CCP$ válido é 
+de $0,8$ \cite{Eugene}, como mostrado na Figura \ref{fig:newroicri}. Para valores
+de $CCP$ abaixo deste, o objeto de interesse é tido como perdido, ou seja, não pode ser rastreado.
+Finalmente, é importante notar que, se a $ROI$ for alterada, a nova $ROI$ terá 
 o tamanho real da região analisada e não a versão redimensionada utilizada no cálculo do $CCP$.
 
 
 \begin{figure}[H]
 \includegraphics[width=\columnwidth]{images/figure3.eps}
-\caption{Quando a comparação é maior que $0,8$, incluindo número maiores que $0,925$, 
-significa que o objeto foi encontrado,
-se o CCP é menor que $0,8$ o objeto de interesse é tida como perdido e se o coeficiente for maior que $0,8$ 
+\caption{Quando a comparação é maior que $0,8$, incluindo coeficientes maiores que $0,925$, 
+significa que o objeto de interesse foi encontrado.
+Se o CCP é menor que $0,8$, o objeto de interesse é tido como perdido, 
+ou seja, não pode ser rastreado, e se o coeficiente for maior que $0,8$ 
 e menor que $0,925$, então a $ROI$ é atualizada pela região de análise de 
 maior correlação.}
 \label{fig:newroicri}

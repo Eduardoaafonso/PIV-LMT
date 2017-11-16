@@ -57,27 +57,27 @@ The high changes of ROI for rotation of target can be showed by bubbles in the s
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%portugues%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-O resultados a seguir foram obtidos nos testes usando o simulador POV-Ray.
-No primeiro teste, o algoritmo acompanha por uma sequência de 14 imagens 
-um objeto de interesse que está em movimento horizontal em relação a câmera, 
-como mostrado na Figura \ref{fig:imgpapercerta}
+Os resultados a seguir foram obtidos em testes usando o simulador POV-Ray.
+No primeiro teste, o algoritmo foi submetido a uma sequência de 14 imagens 
+com apenas um objeto de interesse que estava em movimento horizontal em relação a câmera, 
+como mostrado na Figura \ref{fig:imgpapercerta}.
 \begin{figure}[H]
 \centering
   \subfloat[]{\label{fig:imgpapercertaa} \includegraphics[width=.48\columnwidth]{images/results_2D.png}}
   \subfloat[]{\label{fig:imgpapercertab} \includegraphics[width=.48\columnwidth]{images/results_2D.eps}}
-  \caption{A imagem (a) representa o objeto em sua posição inicial  
-   e a imagem (b) mostra na sua posição final.}
+  \caption{A imagem (a) apresenta o objeto de interesse  em sua posição inicial  
+   e a imagem (b) mostra o mesmo objeto na sua posição final.}
   \label{fig:imgpapercerta}
 \end{figure}
 
-A posiçao inicial do objeto está na Figura \ref{fig:imgpapercerta}(a) 
-e a final na Figura \ref{fig:imgpapercerta}(b). De modo que o
-vetor em azul é o resultado do seguimento do objeto, ligando a posição inicial com a final.
+A posiçao inicial do objeto de interesse está na Figura \ref{fig:imgpapercerta}(a), 
+e a  posição final do mesmo na Figura \ref{fig:imgpapercerta}(b). 
+O vetor em azul é o resultado do rastreamento do objeto, ligando a posição inicial com a final.
 Nota-se, uma pequena curvatura na imagem ocasionada por uma mudança
 na perspectiva do objeto, resultando em uma mudança frequente do $ROI$.
 A diferença entre o valor inicial e final do fator de aproximação $\beta$ (relativo a $d_0$) é observado constante
-e aproximadamente igual 1, pois o objeto não se aproxima da câmera.
+e tem valor aproximado  igual a 1, pois o objeto não se aproxima da câmera, realiza apenas um deslocamento horizontal.
 Neste teste, a velocidade do fator de aproximação é zero, pois não há aproximação e nem
 afastamento do objeto em relação a câmera, sendo $\beta d_0 \approx 1$ e $\Delta t=1$.
-No teste 1, observa-se uma modificação frequente no $ROI$ e isso ocorre porque as imagens 
-tem uma semelhança menor do que a definida, como mostrando na Figura \ref{fig:newroicri}.
+No teste 1, observa-se uma modificação frequente no $ROI$ e isso ocorre pois as imagens 
+tem uma semelhança menor do que a definida (valor de $CCP$ menor a $0,8$), como mostrando na Figura \ref{fig:newroicri}.

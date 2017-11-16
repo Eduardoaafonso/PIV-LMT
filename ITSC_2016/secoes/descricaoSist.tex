@@ -108,7 +108,7 @@ a posição do objeto de interesse na imagem $I_i$.
 
 \begin{algorithm}
  \KwData{$ROI$ e posição $P_0$ na primeira imagem, e uma sequência de imagens, $I_i$, para $0\leq i < N$. }
- \KwResult{A variável $PATH$ com a ruta do objeto em $3D$ ou uma mensagem de objeto perdido. }
+ \KwResult{A variável $PATH$ com o percorrido do objeto em $3D$ ou uma mensagem de objeto perdido (não foi possível rastrear). }
  $i \leftarrow 0$ \;
  $P_{ROI} \leftarrow P_0$ \;
  $P \leftarrow P_0$ \;
