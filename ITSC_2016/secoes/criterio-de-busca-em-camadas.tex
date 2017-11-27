@@ -128,7 +128,7 @@ para duas dimensões, onde as regiões de análises na $WOS$
 são comparadas com a $ROI$. 
 A Figura \ref{fig:multires}(b) representa uma aplicação em 3 dimensões da técnica $PIV$. 
 Neste caso, a estratégia utilizada baseou-se na inclusão de diferentes áreas de buscas, 
-representadas por camadas, representadas por meio da  diminuição e aumento da regiões de análise
+representadas por camadas, representadas por meio da  diminuição e aumento da região de análise
 nos quais podem contemplar casos em que o objeto de interesse possa estar se afastando ou se aproximando do observador.
 
 \begin{figure}[H]
@@ -179,14 +179,15 @@ $AR$: Region in $I_i$, at point $P_{max}$, with size $\alpha_{max} W$ by $\alpha
 \end{algorithm}
 O algoritmo \ref{alg:multires} usa internamente a função $get\_corr\_matrix()$.
 Esta função tem como saída uma matriz com os valores de correlação entre a $ROI$ e as regiões de análise na $WOS$
-em torno do ponto $P_{i-1}$. Todos os processos envolvidos na função $get\_corr\_matrix()$ são detalhados no algoritmo
-\ref{alg:multires2},
+em torno do ponto $P_{i-1}$. Os dois principais passos  na função $get\_corr\_matrix()$ são detalhados no algoritmo
+\ref{alg:multires2}:
 \begin{algorithm}
  \KwData{$ROI$, posição $P_{i-1}$ sendo este o centro da $WOS$, 
- fator de aproximação $\alpha$ relativa à distância $d_{ROI}$, o valor $L$ que representa a distância do braço de busca 
+ fator de aproximação $\alpha$ relativa a distância $d_{ROI}$, o valor $L$ que representa a distância do braço de busca 
  e a imagem $I_i$. }
- \KwResult{A matriz de correlação $A$, com o resultado de calcula o $CCP$ com as 
-regiões de analise selecionadas ao redor do ponto $P_{i-1}$ na imagem $I_i$. }
+ \KwResult{A matriz de correlação $A$, com o resultado da correlação $CCP$ 
+para cada uma das regiões selecionadas para análise  ao redor do ponto 
+$P_{i-1}$ na imagem $I_i$. }
  ~\\
  $W$: Width of $ROI$\;
  $H$: Height of $ROI$\;

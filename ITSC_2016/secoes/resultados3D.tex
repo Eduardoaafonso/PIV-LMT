@@ -102,7 +102,7 @@ very close the behavior of the velocity of the normalized real route.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%portugues%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 A funcionalidade do algoritmo para um caso em $3D$ é verificada no segundo teste;
-nele, similarmente ao primeiro teste, o algoritmo compara um conjunto de imagens 
+nele, similar ao primeiro teste, o algoritmo compara um conjunto de imagens 
 e calcula o fator de aproximação; porém, neste caso, o objeto de interesse tem um movimento
 relativo em direção ao observador. A Figura \ref{fig:target} representa o 
 rastreamento  do objeto de interesse em um fluxo de 40 imagens sequenciais. Os retângulos vermelhos
@@ -119,7 +119,7 @@ são as posições das regiões de análise inicial e final.
 
 Na Figura \ref{fig:target}, observa-se um crescimento na $ROI$ e, por
 consequência, uma modificação do fator de aproximação $\beta$ relativo a $d_0$.
-A Figura \ref{fig:res_grapha_b} apresenta o fator $\beta$ em cada uma das imagens 
+A Figura \ref{fig:res_grapha_b} apresenta o fator $\beta$ para cada uma das imagens 
 do teste 2 (representado na linha com círculos).
 Além disso, um ajuste polinomial deste fator a partir de um polinômio de ordem 4 é apresentado na linha pontilhada.
 Finalmente, na linha com quadrados, é apresentada a distância normalizada entre o objeto de interesse e o observador,
@@ -138,22 +138,23 @@ pelo programa de simulação POV-Ray.
 \begin{table}[H]
 \setlength{\tabcolsep}{1 pt} 
 \caption{Tabela de resultados}
-\begin{tabular}{lllll}
-Imagem & Real Dist.(m) & Real Dist.(\%) & Fator de aprox.(\%) & Erro relativo(\%)\\
-1 & 23.5 & 100.0 & 100.0 & 0.0 \\
-10 & 19.0 & 80.85 & 93.46 & 15.60 \\
-20 & 14.0 & 59.57 & 65.16 & 9.37 \\
-30 & 9.0 & 38.30 & 40.46 & 5.65 \\
-40 & 4.0 & 17.02 & 17.18 & 0.93
+\begin{tabular}{l|l|l|l|l}
+Imagem & Real Dist.(m) & Real Dist.(\%) & Fator de aprox.(\%) & Erro relativo(\%)\\ \hline  \hline
+1 & 23.5 & 100.0 & 100.0 & 0.0 \\ \hline
+10 & 19.0 & 80.85 & 93.46 & 15.60 \\ \hline
+20 & 14.0 & 59.57 & 65.16 & 9.37 \\ \hline
+30 & 9.0 & 38.30 & 40.46 & 5.65 \\ \hline
+40 & 4.0 & 17.02 & 17.18 & 0.93 \\ \hline
 \end{tabular}
 \label{tab:tab1}
 \end{table}
 A primeira coluna representa o número da imagem analisada, e por uma questão de espaço, foram selecionados 
-os resultado a cada 10 imagens; a segunda coluna contém a distância 
+os resultados a cada 10 imagens; a segunda coluna contém a distância 
 real em metros entre o objeto de interesse e o observador.
 A porcentagem da distância real com $d_0$ está representada na terceira coluna. Por exemplo, o objeto na primeira imagem
 está a $23.5$ metros da câmera, por outro lado, na imagem 40 o objeto está a
-$4$ metros da câmera, apresentando uma distância de  $17,02$\% em relação à primeira imagem. Na quarta coluna estão os resultados do algoritmo (fator
+$4$ metros da câmera, apresentando uma distância de  $17,02$\% em relação a 
+primeira imagem. Na quarta coluna estão os resultados do algoritmo (fator
 de aproximação $\beta$ relativo a $d_0$) em porcentagem. Finalmente, a última coluna representa o erro 
 entre a porcentagem da distância real e $\beta$.
 
@@ -161,11 +162,11 @@ Dado que é adotado um valor normalizado de $d_0=1,0$ como a posição do objeto
 imagem, então o fator de aproximação $\beta_i$ na imagem $I_i$ é 
 numericamente igual a $d_i$, e descreve a posição relativa do objeto.
 Assim, na primeira imagem o objeto analisado está a uma distância $d_0$
-e na última a uma distância $d_{40}=17.18\%d_0$.
+e na última imagem a uma distância $d_{40}=17.18\%d_0$.
 
 É importante ressaltar que a aproximação do objeto à câmera é analisada de forma discreta, 
-portanto se o objeto
-estiver entre duas camadas de análises, o algoritmo aproxima o resultado para
+portanto, se o objeto
+estiver entre duas camadas da análise, o algoritmo aproxima o resultado para
 a camada mais próxima. Estas camadas são geradas pelo uso do fator $\alpha$
 descrito no algoritmo \ref{alg:multires}. Outra consequência desta discretização
 é a dificuldade de medir deslocamentos horizontais ou verticais, ou aumentos laterais da região de análise,
@@ -173,20 +174,20 @@ menores a $1$ pixel, de modo que quanto maior for a quantidade de pixels por
 imagem analisada melhor será o desempenho do algoritmo para deslocamentos ou variações de área.
 
 Um ponto a ser ressaltado é a diminuição do erro para distâncias próximas a 5 metros.  
-Os resultados mostram que o algoritmo tem mais precisão, nestes casos, conforme o objeto de interesse 
+Os resultados mostram que o algoritmo tem mais precisão conforme o objeto de interesse 
 aumenta de área na imagem; pois este contém mais pixels (informação)
-para os cálculos e adicionalmente cada pixel no objeto de interesse 
+para os cálculos e, adicionalmente, cada pixel no objeto de interesse 
 representa uma quantidade menor de metros na cena, de modo que
 o erro em metros diminui.
 Assim, no método de comparação ($CCP$), nota-se que quanto menor for a $ROI$ 
 maior será o impacto do erro em cada pixel da imagem, 
-e por consequência, menor precisão na descrição do objeto. 
-Contudo, se o objeto cresce de tamanho na cena,
+e por consequência, menor precisão na descrição do objeto de interesse. 
+Contudo, se o objeto de interesse cresce de tamanho na cena,
 o método terá regiões de analise com mais informação (mais pixels), e menor porcentagem de metros do objeto por pixel,
-que leva a ter um erro em metros mais controlado, conforme mostrado nos testes. 
+o que leva a ter um erro em metros mais controlado, conforme pode se constatar nos testes realizados. 
 
-A Figura \ref{fig:res_grapha_bv} apresenta a velocidade dos dados apresentados 
-na Figura \ref{fig:res_grapha_b}, calculados para $d_0=1$ e $\Delta t=1$.
+A Figura \ref{fig:res_grapha_bv} apresenta a velocidade dos dados da 
+Figura \ref{fig:res_grapha_b}, calculados para $d_0=1$ e $\Delta t=1$.
 Assim, a velocidade do fator $\beta$ (linha com círculos) é ajustada por um polinômio
 normalizado (linha pontilhada), segundo o percurso real do objeto (linha com quadrados).
 A velocidade relativa do objeto foi calculada usando a derivada

@@ -52,17 +52,17 @@ partícula. Além disso, pode ser usado para acompanhar objetos dentro de um flu
 obtidas por uma câmera, por exemplo.
 
 O $PIV$ divide a imagem em diferentes regiões de análise, onde o objeto de interesse será procurado. 
-A região da imagem que contém o objeto de interesse é correlacionada 
-com várias regiões numa imagem do fluxo de imagens. No caso do exemplo na 
-Figura \ref{fig:twoframes} o objeto de interesse é procurado na imagem 2. 
+A região da imagem que contém o objeto de interesse é então correlacionada 
+com as regiões de cada uma das imagens subsequentes do fluxo de imagens. No caso do exemplo na 
+Figura \ref{fig:twoframes}, o objeto de interesse é procurado na imagem 2. 
 Após ser encontrada a correspondência, um vetor é traçado do ponto inicial
-até a região encontrada. Assim, evidencia-se um deslocamento entre uma imagem e outra; usando este resultado
-e conhecido os tempos de aquisição entre a imagem 1 e 2,
+até a região encontrada. Assim,  usando este resultado,
+e conhecidos os tempos de aquisição entre a imagem 1 e 2,
 é possível obter uma  estimativa da velocidade relativa.
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.9\columnwidth]{images/explanationPIV.eps}
-\caption{Funcionamento do $PIV$, com duas imagens.}
+\caption{Funcionamento do $PIV$ com duas imagens.}
 \label{fig:twoframes}
 \end{figure}
 
@@ -70,7 +70,7 @@ A Figura \ref{fig:twoframes} ilustra como a técnica $PIV$ funciona,
 destaque para a relação entre a região de interesse ou $ROI$ (do inglês ``Region of Interesting'') e 
 a janela de busca ou $WOS$  (do inglês ``Window of Search''). 
 A $WOS$ é a região onde o objeto de interesse será buscado.
-Neste artigo a $WOS$ é definida como sendo $1.5$ maior que o tamanho do $ROI$. 
+Neste artigo, a $WOS$ é definida como sendo $1.5$ maior que o tamanho do $ROI$. 
 Por exemplo, se o $ROI$ tem dimensão $200\times300$, então a $WOS$ terá $300\times450$.
 %Essa consideração foi tomada a partir dos testes que 
 %levavam em conta os \colorbox{red}{limites de velocidade permitidos em cidades e rodovias}.
@@ -81,11 +81,11 @@ Esta região é usada como padrão de busca nas regiões de análise da $WOS$;
 tradicionalmente na técnica $PIV$, uma região de análise ou $AR$ (do inglês ``Analysis Region'') de mesma dimensão 
 da $ROI$ é selecionada na $WOS$ e estas são comparadas.
 Na Figura \ref{fig:WOSdivided} pode ser visto como as regiões 
-de análises são selecionadas e são representadas por retângulos na cor cinza.
+de análise são selecionadas e são representadas por retângulos na cor cinza.
 As comparações são realizadas entre todas as $AR$ e a $ROI$, de modo que são 
-calculados valores de $CCP$. Quando o processo termina, a posição da região com o maior valor
-de correlação é declarada como a nova posição do objeto de interesse, 
-esta posição pode ser observada na Figura \ref{fig:WOSdivided}
+calculados valores de $CCP$ para cada comparação. Quando o processo termina, a posição da região com o maior valor
+de correlação é declarada como a nova posição do objeto de interesse. 
+Esta posição pode ser observada na Figura \ref{fig:WOSdivided}
 por um retângulo de cor preto. Deste modo, traça-se um vetor desde a posição inicial do objeto 
 de interesse ($ROI$ na imagem 1) até a posição final ($AR$ na imagem 2).
 \begin{figure}[H]

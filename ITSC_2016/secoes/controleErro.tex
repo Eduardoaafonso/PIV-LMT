@@ -1,4 +1,4 @@
-\subsection{CONTROLE DE ERRO}
+\subsection{Controle do Erro}
 
 \begin{comment}
 In this section, we discuss about the error in analysis of the images. In this sense,
@@ -14,7 +14,7 @@ considered like error areas.
 \end{figure}
 \end{comment}
 
-Nesta seção, é discutido o tratamento do erro produzido pela variação da forma do objeto de interesse dentro de uma
+Nesta seção é discutido o tratamento do erro produzido pela variação da forma do objeto de interesse dentro de uma
 $ROI$ de forma retangular. É fácil perceber que algumas áreas próximas da borda não são ocupadas pelo objeto de interesse;
 assim, elas são consideradas áreas geradoras de erro, como foi apresentado na Figura \ref{fig:erroridentified}.
 
@@ -43,7 +43,7 @@ these points are considered with more importance.
 \end{comment}
 
 O método CCP compara duas imagens (matrizes) de mesmo tamanho, 
-ponderando cada $pixel$ com o mesmo peso sem importar a posição; 
+ponderando cada $pixel$ com o mesmo peso sem importar a sua posição; 
 consequentemente, o valor da correlação é influenciado pelas áreas 
 geradoras erro.
 Uma matriz de ponderação foi proposta para solucionar esse problema, como ilustrado na 

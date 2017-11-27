@@ -81,7 +81,7 @@ como apresentado na Figura \ref{fig:multiscale3d}.
   \label{fig:multiscale3d}
 \end{figure}
 Na Figura \ref{fig:multiscale3d} existe um mesmo objeto visto em dois instantes diferentes pelo observador,
-estando este objeto a uma distância $d$ e $\alpha d$, respectivamente em azul e vermelho, sendo que
+estando este objeto a uma distância $d$ e $\alpha d$, respectivamente, em azul e vermelho, sendo que
 o plano da imagem está localizada a uma distância $h$ do observador. As projeções dos objetos no plano da imagem
  são representados por $L_b$ e $L_r$, azul e vermelho, respectivamente. 
  Analisando os triângulos formados pelas projeções dos objetos e o ponto de observação, 
@@ -89,10 +89,10 @@ o plano da imagem está localizada a uma distância $h$ do observador. As proje�
 $L_b/\alpha= L_r$. 
 Assim, partindo do ponto de vista do observador, quando o objeto de interesse está localizado a uma distância $d$ no tempo
 $t_0$ e se move para a distância $\alpha d$ no tempo $t_1$, o tamanho da projeção do objeto no plano da imagem 
-foi alterado por um fator de 1/$\alpha$, e consequentemente, a área foi alterada por um fator 1/$\alpha^2$.
+é alterado por um fator de 1/$\alpha$; e, consequentemente, a área é alterada por um fator 1/$\alpha^2$.
 
 Conhecida a relação de $\alpha$ com a distância entre o objeto e o observador; 
-o critério de busca, do objeto de interesse usa um conjunto de valores 
+o critério de busca do objeto de interesse usa um conjunto de valores 
 discretos de $\alpha$ para determinar a profundidade do objeto na cena, 
 consequentemente, se o objeto de interesse estiver localizado num ponto intermediário dos valores
 de $\alpha$ selecionados, o algoritmo aproxima a posição do objeto 
@@ -110,7 +110,7 @@ O fator de aproximação relativo à $ROI$ é determinado pela Equação (\ref{e
 f_a \equiv \alpha^2 \equiv \frac{Area_r}{Area_f}.
 \end{equation}
 Onde $f_a$ e $\alpha$ são definidos como um fator de área e de aproximação relativo à $ROI$,
-respectivamente; $Area_r$ é a área da $ROI$ e $Area_f$ é a área da região analisada.
+respectivamente, $Area_r$ é a área da $ROI$ e $Area_f$ é a área da região analisada.
 
 Conhecendo $\alpha$, e considerado que o objeto de interesse dentro da $ROI$ estava a uma distância $d_{ROI}$; então,
 a posição do objeto de interesse na imagem analisada 
@@ -119,16 +119,16 @@ terá o seu próprio  valor $d_i$, onde $d_i=\alpha_i d_{ROI}$, sendo que o valo
 é alterado quando a $ROI$ é trocada.
 
 O fator de aproximação $\alpha_i$, relativo à $ROI$, tem 
-dois significados: se o fator de aproximação cresce rapidamente 
-significa que o objeto está se afastando, e se o fator decresce o objeto está se aproximando.
+duas interpretações: se o fator de aproximação cresce rapidamente 
+significa que o objeto está se afastando; e se o fator decresce o objeto está se aproximando.
 Da mesma forma, é possível definir $\beta_i$ como o fator de aproximação relativo
 a distância inicial $d_0$, de modo que $d_i=\beta_i d_0$.
 
-Por outro lado, a velocidade relativa é definida pela equação da cinemática em física,
+Por outro lado, a velocidade relativa é definida pela equação da cinemática,
 \begin{equation}
  v_i = \frac{\Delta P}{\Delta t}= \frac{P_i-P_{i-1}}{\Delta t};
 \end{equation}
-onde o vetor $v_i$ representa a velocidade relativa à $i-ésima$ imagem, $P_i=(x_i,y_i,d_i)$ é a posição que
+onde o vetor $v_i$ representa a velocidade relativa a $i-ésima$ imagem, $P_i=(x_i,y_i,d_i)$ é a posição que
 foi definida pela busca na $i-ésima$ imagem e $\Delta t$ é o intervalo de tempo entre a análise das duas imagens.
 Adicionalmente, o fator da velocidade de aproximação, $v^d_i=(d_i-d_{i-1})/{\Delta t}$, 
 é um número escalar o qual representa a componente

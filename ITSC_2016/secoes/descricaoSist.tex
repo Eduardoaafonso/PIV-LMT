@@ -25,7 +25,7 @@ sendo esta relativa ao observador.
 O algoritmo ilustrado na Figura \ref{fig:system} tem como parâmetro inicial uma imagem com o
 objeto de interesse, dentro de uma $ROI$; posteriormente, 
 o sistema analisará as imagens subsequentes procurando regiões semelhantes à $ROI$
-e salvará as posições do objeto de interesse em cada imagem.
+e salvará as posição do objeto de interesse em cada uma das imagens.
 
 \begin{figure}[h]
 \includegraphics[width=\columnwidth]{images/figure1-diagram1.eps}
@@ -108,7 +108,7 @@ a posição do objeto de interesse na imagem $I_i$.
 
 \begin{algorithm}
  \KwData{$ROI$ e posição $P_0$ na primeira imagem, e uma sequência de imagens, $I_i$, para $0\leq i < N$. }
- \KwResult{A variável $PATH$ com o percorrido do objeto em $3D$ ou uma mensagem de objeto perdido (não foi possível rastrear). }
+ \KwResult{A variável $PATH$ com a trajetória do objeto em $3D$ ou uma mensagem de objeto perdido (não foi possível rastrear). }
  $i \leftarrow 0$ \;
  $P_{ROI} \leftarrow P_0$ \;
  $P \leftarrow P_0$ \;
