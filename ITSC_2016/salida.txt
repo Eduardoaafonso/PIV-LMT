@@ -216,15 +216,14 @@ y)> <./images/results_2D-eps-converted-to.pdf> <./images/figurea-eps-converted-
 to.pdf> <./images/figureb-eps-converted-to.pdf> <./images/grapha_b-eps-converte
 d-to.pdf>]
 <images/graphvelocity-eps-converted-to.pdf, id=83, 508.90125pt x 394.47375pt>
-<use images/graphvelocity-eps-converted-to.pdf>)
-Underfull \vbox (badness 10000) has occurred while \output is active
-(./secoes/conclusao.tex) (./secoes/agradecimento.tex)
-Underfull \hbox (badness 10000) in paragraph at lines 151--152
+<use images/graphvelocity-eps-converted-to.pdf>
 
-[7 <./images/graphvelocity-eps-converted-to.pdf>]
-<images/Eduardo.jpg, id=93, 477.785pt x 477.785pt> <use images/Eduardo.jpg>
-<use images/Eduardo.jpg>
-Underfull \hbox (badness 7133) in paragraph at lines 152--155
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+) (./secoes/conclusao.tex) (./secoes/agradecimento.tex) [7 <./images/graphveloc
+ity-eps-converted-to.pdf>] <images/Eduardo.jpg, id=93, 477.785pt x 477.785pt>
+<use images/Eduardo.jpg> <use images/Eduardo.jpg>
+Underfull \hbox (badness 7133) in paragraph at lines 131--134
 []\OT1/ptm/b/n/8 Eduardo da Silva Afonso \OT1/ptm/m/n/8 was born in
 <images/Arthur-eps-converted-to.pdf, id=96, 1936.23375pt x 1922.18124pt>
 <use images/Arthur-eps-converted-to.pdf>
@@ -254,5 +253,5 @@ re/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/texlive/texmf
 -dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/typ
 e1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/u
 tmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Artigo-versao-portugues.pdf (8 pages, 1271171 bytes).
+Output written on Artigo-versao-portugues.pdf (8 pages, 1271186 bytes).
 Transcript written on Artigo-versao-portugues.log.
